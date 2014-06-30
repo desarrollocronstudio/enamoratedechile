@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'boogalooregular';
+    src: url('fonts/boogaloo-regular-webfont.eot');
+    src: url('fonts/boogaloo-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/boogaloo-regular-webfont.woff') format('woff'),
+         url('fonts/boogaloo-regular-webfont.ttf') format('truetype'),
+         url('fonts/boogaloo-regular-webfont.svg#boogalooregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'cheap_pine_shadowshadow';
+    src: url('fonts/cheap_pine-shadow-webfont.eot');
+    src: url('fonts/cheap_pine-shadow-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/cheap_pine-shadow-webfont.woff') format('woff'),
+         url('fonts/cheap_pine-shadow-webfont.ttf') format('truetype'),
+         url('fonts/cheap_pine-shadow-webfont.svg#cheap_pine_shadowshadow') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'cheap_pineregular';
+    src: url('fonts/cheap_pine-webfont.eot');
+    src: url('fonts/cheap_pine-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/cheap_pine-webfont.woff') format('woff'),
+         url('fonts/cheap_pine-webfont.ttf') format('truetype'),
+         url('fonts/cheap_pine-webfont.svg#cheap_pineregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cheap_pine_sanssans';
+    src: url('fonts/cheap_pine-sans-webfont.eot');
+    src: url('fonts/cheap_pine-sans-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/cheap_pine-sans-webfont.woff') format('woff'),
+         url('fonts/cheap_pine-sans-webfont.ttf') format('truetype'),
+         url('fonts/cheap_pine-sans-webfont.svg#cheap_pine_sanssans') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
