@@ -13,7 +13,7 @@ class TipController extends BaseController {
 	}
 
 	public function post(){
-		return View::make('post-tip',array("tip" => $tip));
+		return View::make('submit-tip');
 	}
 
 }

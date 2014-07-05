@@ -1,5 +1,3 @@
-<link href="../../../public/css/diego.css" rel="stylesheet" type="text/css">
-
 <div id="footer_content">
     <div class="contenido-footer">
     <span class="copyright">© 2014 LAN AIRLINES S.A. - Todos los derechos reservados.</span>

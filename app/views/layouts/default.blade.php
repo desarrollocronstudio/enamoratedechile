@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="{{ asset('css/normalize.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+         <link rel="stylesheet" href="{{ asset('css/diego.css') }}">
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
@@ -29,6 +30,9 @@
             <div id="content" class="container">
                 @yield('content')
             </div>
+            <footer>
+            @include("incs/footer")
+            </footer>
         </div>
 
         @include("incs/js-footer")

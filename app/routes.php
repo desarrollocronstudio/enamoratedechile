@@ -17,6 +17,6 @@ Route::get('/my_route', 'RoutesController@my_route');
 Route::get('/ideal_route', 'IdealRouteController@index');
 Route::get('/jenny', 'JennyController@index');
 Route::get('/ver/{id}', 'TipController@view');
-Route::get('/post-tip', 'TipController@post');
+Route::get('/submit-tip', 'TipController@post');
 
 Route::post("/cities-autocomplete","CityController@autocomplete");
