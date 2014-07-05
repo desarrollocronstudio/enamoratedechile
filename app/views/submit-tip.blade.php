@@ -42,12 +42,22 @@
         <input name="" type="text" class="input-in" placeholder="gonzalo@mail.com" required />
         </span>
         <span class="dato-in">
-        REGIÓN<br />
+        CATEGORÍA<br />
         <select name="" class="input-in">
           <option>Selecciona una categoría</option>
         </select>
         </span>
+	<div class="dato-picada">*SI TU DATO O PICADA ESTÁ CERCA DE UNA CIUDAD Y NO <br />
+EN ELLA EXACTAMENTE, ESCRÍBELO EN LA DESCRIPCIÓN</div>
 
+	<img src='{{ asset("img/img-form.jpg") }}' />
+    <div class="menu-img">
+    <input name="" type="radio" value="" checked="checked" /> USAR IMAGEN PREDETERMINADA <br />
+    <input name="" type="radio" value="" /> SUBIR IMAGEN
+    
+    <a class="red-btn" href="{{ action('TipController@view',1) }}">{{ trans("BUSCAR") }}</a>
+    
+    </div>
     </div>
     </form>
     </div>
