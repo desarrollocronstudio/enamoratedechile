@@ -6,6 +6,6 @@ function get_geoposition_form_user(){
 		   alert('Found location: ' + lat + ', ' + long);
 		 }, function(){
 		 	alert('Could not find location');
-		 });;
+	 	}
+	 );
 
- </script>

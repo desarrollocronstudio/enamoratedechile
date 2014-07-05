@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="{{ asset('css/normalize.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-         <link rel="stylesheet" href="{{ asset('css/diego.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/diego.css') }}">
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
@@ -27,7 +27,7 @@
             <header>
                 @include("incs/menu-top")
             </header>
-            <div id="content" class="container">
+            <div id="content">
                 @yield('content')
             </div>
             <footer>
