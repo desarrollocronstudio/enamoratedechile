@@ -79,7 +79,7 @@
 	margin:10px 0px 0px 10px;
 }
 .dato-in .input-in{
-	width:267px;
+	width:257px;
 	height:53px;
 		/*para Firefox*/
 	-moz-border-radius: 10px 10px 10px 10px;
@@ -88,4 +88,30 @@
 	/* para Opera */
 	border-radius: 10px 10px 10px 10px;
 	outline:none;
+	padding-left:10px
 }
+.dato-picada{
+	font-size:14px;
+	color:#444343;
+	width:340px;
+	height:53px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:10px !important;
+	clear:both;
+	padding-top:30px;
+	margin-bottom:10px;
+}
+.form-in img{
+	float:left;
+}
+.menu-img{
+	width:283px;
+	height:120px;
+	margin-left:8px;
+	float:left;
+	text-align:left;
+	font-size:15px;
+	padding-left:28px;
+}
+.go-btn{background: url("../img/bg-btn-dato.png") no-repeat; width: 130px; height: 46px; overflow: hidden; display: block; float: right; font-size: 1px; text-indent: -1000px;}
