@@ -36,6 +36,8 @@ class Base extends Migration {
 		Schema::create('regions', function(Blueprint $table) {
 			$table->increments('id');
 			$table->string('name');
+			$table->string('code');
+			$table->string('large_name');
 			$table->engine = 'MyISAM';
 		});
 		Schema::create('provinces', function(Blueprint $table) {
@@ -95,6 +97,8 @@ class Base extends Migration {
 		Schema::drop('tips_categories');
 		Schema::drop('cities');
 		Schema::drop('regions');
+		Schema::drop('provinces');
+		Schema::drop('tip_votes');
 		Schema::drop('people');
 	}
 

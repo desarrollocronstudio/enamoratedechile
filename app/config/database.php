@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'enamorate_chile',
 			'username'  => 'root',
-			'password'  => 'root',
+			'password'  => 'Gonzalo.22',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
