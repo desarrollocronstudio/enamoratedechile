@@ -19,7 +19,10 @@ class TipController extends BaseController {
 		return View::make('submit-tip');
 	}
 	public function save(){
-		print_r(Input::all());
+		$validator = Validator::make(Input::all(),
+		    array(	'name' 		=> 'required|min:3',
+		    		'email'		=> 'required|email')
+		);
 		if(count(Input::all()) > 0){
 			$this->layout = false;
 			return "Hola";

@@ -13,11 +13,11 @@
     <div class="form-in">
         <span class="dato-in">
         NOMBRE<br />
-        <input name="" type="text" class="input-in" placeholder="Ej. Gonzalo Ríos" required  />
+        <input name="name" type="text" class="input-in" placeholder="Ej. Gonzalo Ríos" required  />
         </span>
         <span class="dato-in">
         EMAIL<br />
-        <input name="" type="text" class="input-in" placeholder="gonzalo@mail.com" required />
+        <input name="email" type="text" class="input-in" placeholder="gonzalo@mail.com" required />
         </span>
                 <span class="dato-in">
         RUT<br />
@@ -65,6 +65,8 @@ EN ELLA EXACTAMENTE, ESCRÍBELO EN LA DESCRIPCIÓN</div>
     <textarea name="" cols="" rows="" class="area-form" placeholder="ESTE LUGAR ES UNA EXCELENTE PICADA PARA COMER EN FAMILIA Y CON LOS AMIGOS, ESTA UBICADA EN EL MERCADO DE CHILLÁN.
 
 BUENO, BONITO Y BARATO." ></textarea>
+
+<input type="submit" />
     </div>
     </div>
     </form>
