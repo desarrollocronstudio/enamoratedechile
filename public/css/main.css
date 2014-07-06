@@ -144,6 +144,13 @@ header li a:hover{border-radius:5px; background: #fff; color:#5b5b5b; }
 .categories li a:hover,
 .categories li a.active{background: #f00;}
 
+/* DETALLE CITY */
+.detalle_city{background: url(../img/bg_detalle_city.png) no-repeat 0 0; height: 85px; width:950px; height:710px; display:block;}
+.detalle_city h2{font-family: 'boogalooregular'; font-size:1em; color:#d70303;}
+.detalle_city ul{width: 960px; margin: 0 auto; overflow: hidden; text-align: center; list-style: none;}
+
+
+
 /* ==========================================================================
    Media Queries
    ========================================================================== */

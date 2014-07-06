@@ -15,7 +15,10 @@
 	@include("incs/tip-categories")
 	
     <h3 class="lugar">nombre del lugar</h3>
-    <h4 class="autor">nombre del autor</h3>
+    <h4 class="autor">nombre del autor</h4>
+    <div class="detalle_city">
+    
+    </div>
     <p class="intro">¡Todos estos datos son entregados por usuarios como ustedes, somos una verdadera comunidad!</p>
 </div>
 @stop

@@ -66,6 +66,13 @@ EN ELLA EXACTAMENTE, ESCRÍBELO EN LA DESCRIPCIÓN</div>
 
 BUENO, BONITO Y BARATO." ></textarea>
     </div>
+    
+    <div class="btn-enviar">
+    <input type="button" class="btn-envia-dato" value="SUBE TU DATO" />
+    </div>
+    
+    <div class="dato-picada">*LA INFORMACIÓN QUE NOS ENTREGUES EN ESTE SITIO SERÁ PARA PROPORCIONAR DATOS ÚTILES A LA COMUNIDAD</div>
+    
     </div>
     </form>
     </div>

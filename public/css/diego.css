@@ -40,7 +40,7 @@
 }
 #content-form{
 	width:602px;
-	height:1000px;
+	height:1125px;
 	background-color:#FFF;
 	margin-top:14px;
 	padding:100px 0px 0px 0px;
@@ -49,6 +49,7 @@
 	background-image:url(../img/deja-dato.jpg);
 	background-repeat:no-repeat;
 	background-position:top;
+	margin-bottom:14px;
 	/*para Firefox*/
 	-moz-border-radius: 10px 10px 10px 10px;
 	/*para Safari y Chrome*/
@@ -140,4 +141,27 @@
 	outline:none;
 	padding-left:10px;
 	padding-top:10px;
+}
+.btn-enviar{
+	width:396px;
+	height:71px;
+	float:left;
+	background-image:url(../img/fili_btns.jpg);
+	margin-top:30px;
+	margin-left:80px;
+}
+.btn-envia-dato{
+	width:192px;
+	height: 55px;
+	margin-left:auto;
+	margin-right:auto;
+	background-color:#d70303;
+	text-align:center;
+	border-bottom:solid #9f0000;
+	font-size:25px;
+	color:#FFF;
+	font-family:'boogalooregular','Arial',sans-serif;
+	border-left:0px;
+	border-right:0px;
+	border-top:0px;
 }
