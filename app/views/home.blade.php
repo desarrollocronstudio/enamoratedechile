@@ -8,7 +8,7 @@
 	<h2 class="title">{{ __("Destacado") }}</h2>
 	<p class="intro">¡Todos estos datos son entregados por usuarios como ustedes, somos una verdadera comunidad!</p>
 
-	<section class="datos">
+	<section class="datos container">
 		@foreach ($tips as $tip)
 		<div class="dato-small">
 			<span class="nombre">Nombre del tip</span>

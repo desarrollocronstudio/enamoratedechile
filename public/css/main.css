@@ -65,8 +65,10 @@ html,body{margin: 0; padding: 0;font-family:'boogalooregular','Arial',sans-serif
 .container{max-width:960px; margin: 0 auto; }
 
 /** COMMON **/
-h2.title{font-family:'cheap_pine_sanssans'; text-shadow:0 0 1px #fff; text-transform: uppercase; line-height: 80px; font-size:48px; background: url('../img/bg-title.png') top center no-repeat; margin:0 auto; display: block; }
-h2.city-title{font-family:'cheap_pine_sanssans';height: 147px; text-shadow:0 0 1px #fff; text-transform: uppercase; line-height: 140px; font-size:100px; background: url('../img/bg-city-title.png') top center no-repeat; margin:0 auto; display: block; }
+h2{text-shadow: -1px 1px #fff, -4px 4px #333;}
+h2 span{text-shadow:none;}
+h2.title{font-family:'cheap_pine_sanssans';  text-transform: uppercase; line-height: 80px; font-size:48px; background: url('../img/bg-title.png') top center no-repeat; margin:0 auto; display: block; }
+h2.city-title{font-family:'cheap_pine_sanssans';height: 147px;text-transform: uppercase; line-height: 140px; font-size:100px; background: url('../img/bg-city-title.png') top center no-repeat; margin:0 auto; display: block; }
 h2.city-title span{display: block; font-size: 30px; line-height: 30px; display: block; margin-top: -20px;  }
 
 /* HEADER */
@@ -81,13 +83,6 @@ header li a:hover{border-radius:5px; background: #fff; color:#5b5b5b; }
 .logo{text-align: center; margin: 0 auto; display: block; padding-top: 20px;}
 
 
-/*** HOME ****/
-#home{text-align:center;}
-#home .nav{margin:20px 0;}
-#home .nav a:hover{opacity:0.8;}
-#home .intro{font-size: 24px;}
-
-.main-sep{margin:40px 0; color:#000; height: 1px; box-shadow:0 0 20px #000; background-color: #000; display: block;}
 
 /* Search Box */
 .search-box{overflow:hidden; width: 615px; margin:0 auto; display: none;}
@@ -95,6 +90,25 @@ header li a:hover{border-radius:5px; background: #fff; color:#5b5b5b; }
 .search-box .box{border:solid 3px #444843; width: 435px; padding:5px 10px; height: 30px; font-size: 30px; background:none; }
 .search-box .submit{background: url("../img/bg-btn-search.png");   color: #fff;  border:none; margin-left: 10px; width: 135px; height: 46px; overflow: hidden;}
 .search-box .submit:active{background-position: 0 -46px;}
+
+/* BTNS */
+.red-btn{background: url("../img/bg-btn-dato-txt.png") no-repeat; width: 130px; height: 46px; overflow: hidden; display: block; float: right; font-size: 1px; text-indent: -1000px;}
+.red-btn:hover{opacity: 0.7;}
+.black-btn{background: url('../img/bg-btn-cotiza-pasaje.png') no-repeat; width: 248px; height: 40px; display: block; line-height: 40px; color: #fff; text-decoration: none; text-align: center; margin:10px auto; }
+
+.nav{margin:20px 0;}
+.nav a:hover{opacity:0.8;}
+
+/************************************************************
+    PAGES 
+************************************************************/
+.page{text-align: center;}
+/*** HOME ****/
+#home{text-align:center;}
+#home .intro{font-size: 24px;}
+
+.main-sep{margin:40px 0; color:#000; height: 1px; box-shadow:0 0 20px #000; background-color: #000; display: block;}
+
 
 /** DATO **/
 .datos{overflow:hidden;}
@@ -108,8 +122,10 @@ header li a:hover{border-radius:5px; background: #fff; color:#5b5b5b; }
 .dato-small .meta span.city{width: 60px; text-align: center;}
 .dato-small .text{font-size:18px; height: 80px; margin-top: 5px; border-top:dashed 1px #ccc; padding-top: 10px; }
 .dato-small .rating{float:left; margin-top: 12px;}
-.dato-small .go-btn{background: url("../img/bg-btn-dato-txt.png") no-repeat; width: 130px; height: 46px; overflow: hidden; display: block; float: right; font-size: 1px; text-indent: -1000px;}
-.dato-small .go-btn:hover{opacity: 0.7;}
+
+
+/* SEARCH TIPS */
+#search-tips .info{ font-size:23px; padding:0; margin:0; font-style: italic; }
 
 /* RATING */
 .rating{width:100px; padding-left: 13px; padding-top: 1px; height: 25px; background: url("../img/bg-puntaje.png") no-repeat; overflow: hidden;}
@@ -120,9 +136,9 @@ header li a:hover{border-radius:5px; background: #fff; color:#5b5b5b; }
 
 /* Categories */
 .categories{background: url("../img/bg-menu-categories.png") center top no-repeat; height: 85px;}
-.categories ul{width: 960px; margin: 0 auto; overflow: hidden;}
-.categories li{display: block; float: left; }
-.categories li a{display: block;color: #fff; text-decoration: none; line-height: 49px; margin-top: 17px; padding:0 20px; text-transform: uppercase; font-size: 22px;}
+.categories ul{width: 960px; margin: 0 auto; overflow: hidden; text-align: center; list-style: none;}
+.categories li{ display: inline-block; }
+.categories li a{color: #eee; display: block; text-decoration: none; line-height: 49px; margin-top: 17px; padding:0 25px; text-transform: uppercase; font-size: 22px;}
 .categories li a:hover,
 .categories li a.active{background: #f00;}
 

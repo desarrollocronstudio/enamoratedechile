@@ -2,9 +2,12 @@
 
 class TipController extends BaseController {
 
-	public function list_tips(){
-		$tips = array(1,2,3,4,5,6);
-		return View::make('list-tips',array("tips" => $tips));
+	public function search(){
+		$data = array(
+			"tips" => array(1,2,3,4,5,6),
+			"city"	=> array("name" => "Puerto Varas")
+		);
+		return View::make('list-tips',$data);
 	}
 	public function view($tip_id)
 	{

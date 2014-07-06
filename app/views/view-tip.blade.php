@@ -1,6 +1,6 @@
 @extends("layouts/default")
 @section('content')
-<div class="page" id="home">
+<div class="page" id="view">
 	@include("incs/logo")
 
 	<img style="margin:10px 0 " src="{{ asset('img/img-top-home.jpg') }}" alt="Bienvenido a " />
@@ -8,8 +8,8 @@
 	@include("incs/search-nav")
 
 	<h2 class="city-title">
-		{{ __("Punta Arenas") }}
-		<span>Desde 80 lukas</span>
+		{{ $city['name'] }}
+		<span>Desde {{ $flight_price }} lukas</span>
 	</h2>
 
 	@include("incs/tip-categories")

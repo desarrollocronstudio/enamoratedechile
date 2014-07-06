@@ -1,17 +1,22 @@
 @extends("layouts/default")
 @section('content')
-<div class="page" id="home">
-	<img class="logo" src='{{ asset("img/logo.png") }}' />
+<div class="page" id="search-tips">
+	@include("incs/logo")
 
-	<div class="nav">
-		<a href=""><img src="{{ asset('img/danos-un-dato.png') }}"></a>
-		<a href=""><img src="{{ asset('img/busca-un-dato.png') }}"></a>
-	</div>
+	<img style="margin:10px 0 " src="{{ asset('img/img-top-home.jpg') }}" alt="Bienvenido a " />
 
-	<h2 class="title">{{ __("Destacado") }}</h2>
-	<p class="intro">¡Todos estos datos son entregados por usuarios como ustedes, somos una verdadera comunidad!</p>
+	@include("incs/search-nav")
 
-	<section class="datos">
+	
+	<h2 class="city-title">
+		{{ $city['name'] }}
+		<span>Desde 80 lukas</span>
+	</h2>
+	<a href="" class="black-btn">Cotiza tu pasaje</a>
+	<p class="info">Estos son los destacados en {{ $city['name'] }}</p>
+
+	@include("incs/tip-categories")
+	<section class="datos container">
 		@foreach ($tips as $tip)
 		<div class="dato-small">
 			<span class="nombre">Nombre del tip</span>
@@ -29,7 +34,7 @@
 				<span class="mark"></span>
 				<span class="mark"></span>
 			</div>
-			<a class="go-btn" href="{{ action('TipController@view',1) }}">{{ trans("Leer más") }}</a>
+			<a class="red-btn" href="{{ action('TipController@view',1) }}">{{ trans("Leer más") }}</a>
 		</div>
 		@endforeach
 	</section>
