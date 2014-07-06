@@ -68,6 +68,13 @@ BUENO, BONITO Y BARATO." ></textarea>
 
 <input type="submit" />
     </div>
+    
+    <div class="btn-enviar">
+    <input type="button" class="btn-envia-dato" value="SUBE TU DATO" />
+    </div>
+    
+    <div class="dato-picada">*LA INFORMACIÓN QUE NOS ENTREGUES EN ESTE SITIO SERÁ PARA PROPORCIONAR DATOS ÚTILES A LA COMUNIDAD</div>
+    
     </div>
     </form>
     </div>
