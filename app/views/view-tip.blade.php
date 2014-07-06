@@ -8,11 +8,14 @@
 	@include("incs/search-nav")
 
 	<h2 class="city-title">
-		{{ $city['name'] }}
-		<span>Desde {{ $flight_price }} lukas</span>
-	</h2>
-
+		Puerto Varas
+		<span>Desde 80 lukas</span>
+	</h2> 
+    
 	@include("incs/tip-categories")
-	<p class="intro">¡Todos estos datos son entregados por usuarios como ustedes, somos una verdadera comunidad!</p>
+	
+    <h3 class="lugar">nombre del lugar</h3>
+    <h4 class="autor">nombre del autor</h3>
+    <p class="intro">¡Todos estos datos son entregados por usuarios como ustedes, somos una verdadera comunidad!</p>
 </div>
 @stop

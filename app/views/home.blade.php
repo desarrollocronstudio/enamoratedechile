@@ -1,4 +1,5 @@
 @extends("layouts/default")
+
 @section('content')
 <div class="page" id="home">
 	@include("incs/logo")
@@ -6,7 +7,7 @@
 	@include("incs/search-nav")
 
 	<h2 class="title">{{ __("Destacado") }}</h2>
-	<p class="intro">¡Todos estos datos son entregados por usuarios como ustedes, somos una verdadera comunidad!</p>
+	<p class="intro">¡Todos estos datos!!!!! son entregados por usuarios como ustedes, somos una verdadera comunidad!</p>
 
 	<section class="datos container">
 		@foreach ($tips as $tip)

@@ -114,4 +114,30 @@
 	font-size:15px;
 	padding-left:28px;
 }
-.go-btn{background: url("../img/bg-btn-dato.png") no-repeat; width: 130px; height: 46px; overflow: hidden; display: block; float: right; font-size: 1px; text-indent: -1000px;}
+.bsc-btn{background: url("../img/bg-btn-dato-buscar.png") no-repeat; width: 130px; height: 46px; overflow: hidden; display: block; float: left; font-size: 1px; text-indent: -1000px;}
+.bsc-btn:hover{opacity: 0.7;}
+
+.despcripcion-form{
+	width:auto;
+	height:auto;
+	float:left;
+	margin-top:10px;
+	padding-top:10px;
+	text-align:left;
+}
+.area-form{
+	width:545px;
+	height:173px;
+	float:left;
+	margin-top:10px;
+		/*para Firefox*/
+	-moz-border-radius: 10px 10px 10px 10px;
+	/*para Safari y Chrome*/
+	-webkit-border-radius: 10px 10px 10px 10px;
+	/* para Opera */
+	border-radius: 10px 10px 10px 10px;
+	text-align:left;
+	outline:none;
+	padding-left:10px;
+	padding-top:10px;
+}

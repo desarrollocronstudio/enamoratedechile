@@ -54,9 +54,17 @@ EN ELLA EXACTAMENTE, ESCRÍBELO EN LA DESCRIPCIÓN</div>
     <div class="menu-img">
     <input name="" type="radio" value="" checked="checked" /> USAR IMAGEN PREDETERMINADA <br />
     <input name="" type="radio" value="" /> SUBIR IMAGEN
+    <p>
+    <a class="bsc-btn" href="{{ action('TipController@view',1) }}">{{ trans("BUSCAR") }}</a>
+    </p>
+    </div>
     
-    <a class="red-btn" href="{{ action('TipController@view',1) }}">{{ trans("BUSCAR") }}</a>
-    
+        <div class="despcripcion-form">
+    <span>DESCRIPCIÓN</span>
+    <br />
+    <textarea name="" cols="" rows="" class="area-form" placeholder="ESTE LUGAR ES UNA EXCELENTE PICADA PARA COMER EN FAMILIA Y CON LOS AMIGOS, ESTA UBICADA EN EL MERCADO DE CHILLÁN.
+
+BUENO, BONITO Y BARATO." ></textarea>
     </div>
     </div>
     </form>
