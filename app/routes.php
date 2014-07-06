@@ -19,6 +19,7 @@ Route::get('/jenny', 'JennyController@index');
 Route::get('/ver/{id}', 'TipController@view');
 Route::get('/submit-tip', 'TipController@post');
 Route::get('/search-tips', 'TipController@search');
+Route::post('/submit-tip', 'TipController@save');
 
 
 Route::post("/cities-autocomplete","CityController@autocomplete");

@@ -9,7 +9,7 @@
 	<section class="datos">
     <div id="content-form">
     <h1>ENTRÉGANOS TU DATO PARA TODOS PUEDAN ENAMORARSE DE CHILE</h1>
-    <form action="" method="get">
+    <form action="" method="post">
     <div class="form-in">
         <span class="dato-in">
         NOMBRE<br />
@@ -56,7 +56,7 @@ EN ELLA EXACTAMENTE, ESCRÍBELO EN LA DESCRIPCIÓN</div>
     <input name="" type="radio" value="" /> SUBIR IMAGEN
     
     <a class="red-btn" href="{{ action('TipController@view',1) }}">{{ trans("BUSCAR") }}</a>
-    
+    <input type="submit" />
     </div>
     </div>
     </form>

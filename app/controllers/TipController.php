@@ -18,5 +18,12 @@ class TipController extends BaseController {
 	public function post(){
 		return View::make('submit-tip');
 	}
+	public function save(){
+		print_r(Input::all());
+		if(count(Input::all()) > 0){
+			$this->layout = false;
+			return "Hola";
+		}
+	}
 
 }

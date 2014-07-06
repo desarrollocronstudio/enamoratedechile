@@ -36,6 +36,7 @@
         </div>
 
         @include("incs/js-footer")
-        @yield("js")
+        <!-- JS -->
+        @yield('js')
     </body>
 </html>
