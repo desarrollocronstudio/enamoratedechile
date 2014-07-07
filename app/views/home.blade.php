@@ -27,7 +27,7 @@
 				<span class="mark"></span>
 				<span class="mark"></span>
 			</div>
-			<a class="red-btn" href="{{ action('TipController@view',1) }}">{{ trans("Leer más") }}</a>
+			<a class="red-btn" href="{{ action('TipController@view',array(1,2,3,4,5)) }}">{{ trans("Leer más") }}</a>
 		</div>
 		@endforeach
 	</section>

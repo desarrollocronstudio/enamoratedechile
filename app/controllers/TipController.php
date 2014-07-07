@@ -1,6 +1,7 @@
 <?php
 
 class TipController extends BaseController {
+	
 
 	public function search(){
 		$data = array(
@@ -9,14 +10,24 @@ class TipController extends BaseController {
 		);
 		return View::make('list-tips',$data);
 	}
-	public function view($tip_id)
-	{
+	public function view($tip_id){
 		$tip = Tip::find($tip_id);
 		return View::make('view-tip',array("tip" => $tip));
 	}
 
 	public function post(){
 		return View::make('submit-tip');
+	}
+	public function save(){
+		$input = Input::all();
+		$validator = Validator::make($input,Tip::$rules);
+		 if ($validator->fails()){
+		 	
+		 	print_r($validator->messages());
+		}else{
+			Person::save($input);
+			Tip::getById(1);
+		}
 	}
 
 }
