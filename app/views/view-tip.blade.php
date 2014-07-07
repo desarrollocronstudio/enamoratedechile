@@ -1,4 +1,11 @@
 @extends("layouts/default")
+@section('page_title','Titulo')
+@section('metatags')
+    <meta property="og:url" content="{{ Request::url() }}" /> 
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" /> 
+    <meta property="og:image" content="" />
+@stop
 @section('content')
 <div class="page" id="view">
 	@include("incs/logo")
@@ -39,10 +46,20 @@
 			</div>
             <div class="shared">
             <a class="ruta"></a>
-            <a class="face"></a>
+            <a href="" class="face"></a>
             <a class="tw"></a>
             </div>
     </div>
-    <p class="intro">¡Todos estos datos son entregados por usuarios como ustedes, somos una verdadera comunidad!</p>
+    <div class="fb-comments" data-href="{{ Config::get('app.url')."/" }}{{ Request::path() }}" data-numposts="5" data-colorscheme="light"></div>
 </div>
+<script type="text/javascript">
+    $(".face").click(function(){
+        FB.ui({
+            method: 'share',
+            href: '{{ Request::url() }}',
+        },function(response) {
+           
+        });
+    })
+</script>
 @stop
