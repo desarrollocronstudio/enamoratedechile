@@ -88,6 +88,7 @@
 	-webkit-border-radius: 10px 10px 10px 10px;
 	/* para Opera */
 	border-radius: 10px 10px 10px 10px;
+	border:solid 2px #ccc;
 	outline:none;
 	padding-left:10px
 }
