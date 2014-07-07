@@ -145,10 +145,17 @@ header li a:hover{border-radius:5px; background: #fff; color:#5b5b5b; }
 .categories li a.active{background: #f00;}
 
 /* DETALLE CITY */
-.detalle_city{background: url(../img/bg_detalle_city.png) no-repeat 0 0; height: 85px; width:950px; height:710px; display:block;}
-.detalle_city h2{font-family: 'boogalooregular'; font-size:1em; color:#d70303;}
-.detalle_city ul{width: 960px; margin: 0 auto; overflow: hidden; text-align: center; list-style: none;}
-
+.detalle_city{background: url(../img/bg_detalle_city.png) no-repeat 0 0; width: 910px;height: 670px;display: block;margin: 0 auto;padding: 40px 0 0 40px;}
+.detalle_city h2.slide{font-family: 'boogalooregular';font-size: 1em;color: #d70303;text-shadow: none;text-align: left; clear:both;}
+.detalle_city ul{width: 940px;margin: 0 auto;overflow: hidden;text-align: center;list-style: none;padding: 0;}
+.detalle_city ul li{ float: left;width: 109px;height: 109px;margin: 0 15px 0 0; padding: 0;}
+.detalle_city iframe{ width:850px;height:262px;margin:0 auto; padding: 0; float:left;}
+.detalle_city .rating{ background:none; padding:0;}
+.detalle_city .rating .mark {width: 14px;height: 11px;background: url("../img/hearts.png") no-repeat 0 -22px;overflow: hidden;display: inline-block;}
+.detalle_city .shared{ width:590px; height:60px; float:right;}
+.detalle_city .shared .ruta{ background:url(../img/btn_anadir.png) no-repeat 0 0; width:211px; height:43px; display:block; float:left; cursor:pointer;}
+.detalle_city .shared .face{ background:url(../img/btn_facebook.png) no-repeat 0 0; width:182px; height:46px; display:block; float:left; cursor:pointer;}
+.detalle_city .shared .tw{  background: url(../img/btn_twitter.png) no-repeat 0 0; width:185px; height:46px; display:block; float:left; cursor:pointer;}
 
 
 /* ==========================================================================
