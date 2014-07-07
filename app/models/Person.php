@@ -1,9 +1,9 @@
 <?php
 class Person extends Eloquent {
 	protected $table = 'people';
-	public $rules =  array(	
+	public static $rules =  array(	
 		'name' 		=> 'required|min:3',
-		'email'		=> 'required|email'
+		'email'		=> 'required|email',
 		'rut'		=> 'required');
 	
  

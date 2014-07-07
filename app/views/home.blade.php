@@ -7,7 +7,7 @@
 	@include("incs/search-nav")
 
 	<h2 class="title">{{ __("Destacado") }}</h2>
-	<p class="intro">¡Todos estos datos!!!!! son entregados por usuarios como ustedes, somos una verdadera comunidad!</p>
+	<p class="intro">¡Todos estos datos son entregados por usuarios como ustedes, somos una verdadera comunidad!</p>
 
 	<section class="datos container">
 		@foreach ($tips as $tip)
@@ -27,7 +27,7 @@
 				<span class="mark"></span>
 				<span class="mark"></span>
 			</div>
-			<a class="red-btn" href="{{ action('TipController@view',array(1,2,3,4,5)) }}">{{ trans("Leer más") }}</a>
+			<a class="red-btn" href="{{ action('TipController@view',array(1)) }}">{{ trans("Leer más") }}</a>
 		</div>
 		@endforeach
 	</section>

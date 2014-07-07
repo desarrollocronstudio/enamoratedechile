@@ -40,7 +40,6 @@
 }
 #content-form{
 	width:602px;
-	height:1125px;
 	background-color:#FFF;
 	margin-top:14px;
 	padding:100px 0px 0px 0px;
@@ -59,7 +58,13 @@
 	-webkit-box-shadow: 0px 0px 15px 4px rgba(0,0,0,0.34);
 	-moz-box-shadow: 0px 0px 15px 4px rgba(0,0,0,0.34);
 	box-shadow: 0px 0px 15px 4px rgba(0,0,0,0.34);
+	overflow: hidden;
 }
+#content-form .errors{text-align: center; padding:10px; margin:0 auto; width: 80%; background:lightyellow; border-radius:20px; }
+#content-form .errors p{padding: 0; margin: 0;}
+#content-form .errors ul{padding: 0}
+#content-form .errors li{list-style: none;}
+#content-form .errors strong{text-decoration: underline;}
 #content-form h1{
 	font-size:18px;
 	width:auto;
@@ -79,7 +84,10 @@
 	font-size:18px;
 	margin:10px 0px 0px 10px;
 }
-.dato-in .input-in{
+.dato-in label{text-transform: uppercase;}
+.dato-in input,.dato-in select,.dato-in textarea{
+	font-family: 'boogalooregular','Arial',sans-serif;
+	text-transform: uppercase;
 	width:257px;
 	height:53px;
 		/*para Firefox*/

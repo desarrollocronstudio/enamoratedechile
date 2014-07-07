@@ -7,77 +7,83 @@
 
 
 	<section class="datos">
-    <div id="content-form">
-    <h1>ENTRÉGANOS TU DATO PARA TODOS PUEDAN ENAMORARSE DE CHILE</h1>
-    <form action="" method="post">
-    <div class="form-in">
-        <span class="dato-in">
-        NOMBRE<br />
-        <input name="name" type="text" class="input-in" placeholder="Ej. Gonzalo Ríos" required  />
-        </span>
-        <span class="dato-in">
-        EMAIL<br />
-        <input name="email" type="text" class="input-in" placeholder="gonzalo@mail.com" required />
-        </span>
+        <div id="content-form">
+            <h1>SUBE TU DATO PARA TODOS PUEDAN ENAMORARSE DE CHILE</h1>
+            {{ Form::open() }}
+            <div class="form-in">
+                 @if ( $errors->count() > 0 )
+                    <div class="errors">
+                      <p><strong>Se encontraron los siguientes errores:</strong></p>
+
+                      <ul>
+                        @foreach( $errors->all() as $message )
+                          <li>{{ $message }}</li>
+                        @endforeach
+                      </ul>
+                      </div>
+                    @endif
                 <span class="dato-in">
-        RUT<br />
-        <input name="" type="text" class="input-in" placeholder="16796049-9" required  />
-        </span>
-        <span class="dato-in">
-        EMAIL<br />
-        <input name="" type="text" class="input-in" placeholder="gonzalo@mail.com" required />
-        </span>
-         <span class="dato-in">
-        DÓNDE ES TU DATO<br />
-        <input name="" type="text" class="input-in" placeholder="Chillán" required />
-        </span>
-         <span class="dato-in">
-        REGIÓN<br />
-        <select name="" class="input-in">
-          <option>Selecciona una región</option>
-        </select>
-        </span>
-         <span class="dato-in">
-        NOMBRE DEL LUGAR<br />
-        <input name="" type="text" class="input-in" placeholder="gonzalo@mail.com" required />
-        </span>
-        <span class="dato-in">
-        CATEGORÍA<br />
-        <select name="" class="input-in">
-          <option>Selecciona una categoría</option>
-        </select>
-        </span>
-	<div class="dato-picada">*SI TU DATO O PICADA ESTÁ CERCA DE UNA CIUDAD Y NO <br />
-EN ELLA EXACTAMENTE, ESCRÍBELO EN LA DESCRIPCIÓN</div>
+                    {{ Form::label("Nombre") }}<br />
+                    {{ Form::text('name','',array("placeholder" => "Carlos Ríos","required")); }}
+                </span>
+                <span class="dato-in">
+                    {{ Form::label("Email") }}<br />
+                    {{ Form::text('email','',array("placeholder" => "carlos@mail.com","required")); }}
+                </span>
+                <span class="dato-in">
+                    {{ Form::label("R.U.T.") }}<br />
+                    {{ Form::text('rut','',array("placeholder" => "12345678-9","required")); }}
+                </span>
+                <span class="dato-in">
+                    {{ Form::label("Email") }}<br />
+                    {{ Form::text('email','',array("placeholder" => "carlos@mail.com","required")); }}
+                </span>
+                <span class="dato-in">
+                    {{ Form::label("¿Dónde es tu dato?") }}<br />
+                    {{ Form::text('city','',array("placeholder" => "Ej. Chillán","required")); }}
+                </span>
+                <span class="dato-in">
+                    {{ Form::label("Región") }}<br />
+                    {{ Form::select('region',$regions,array("required")); }}
+                </span>
+                 <span class="dato-in">
+                    {{ Form::label("Nombre del lugar") }}
+                    {{ Form::text('place_name','',array("placeholder" => "Onde'l Pala","required")); }}
+                </span>
+                <span class="dato-in">
+                    {{ Form::label("Cateogría") }}<br />
+                    {{ Form::select('tip_category',$categories,array("required")); }}
+                </span>
+                <div class="dato-picada">*SI TU DATO O PICADA ESTÁ CERCA DE UNA CIUDAD Y NO <br />
+            EN ELLA EXACTAMENTE, ESCRÍBELO EN LA DESCRIPCIÓN</div>
 
-	<img src='{{ asset("img/img-form.jpg") }}' />
-    <div class="menu-img">
-    <input name="" type="radio" value="" checked="checked" /> USAR IMAGEN PREDETERMINADA <br />
-    <input name="" type="radio" value="" /> SUBIR IMAGEN
-    <p>
-    <a class="bsc-btn" href="{{ action('TipController@view',1) }}">{{ trans("BUSCAR") }}</a>
-    </p>
-    </div>
-    
-        <div class="despcripcion-form">
-    <span>DESCRIPCIÓN</span>
-    <br />
-    <textarea name="" cols="" rows="" class="area-form" placeholder="ESTE LUGAR ES UNA EXCELENTE PICADA PARA COMER EN FAMILIA Y CON LOS AMIGOS, ESTA UBICADA EN EL MERCADO DE CHILLÁN.
+            <img src='{{ asset("img/img-form.jpg") }}' />
+            <div class="menu-img">
+                <input name="" type="radio" value="" checked="checked" /> USAR IMAGEN PREDETERMINADA <br />
+                <input name="" type="radio" value="" /> SUBIR IMAGEN
+                <p>
+                    <a class="bsc-btn" href="{{ action('TipController@view',1) }}">{{ trans("BUSCAR") }}</a>
+                </p>
+            
+            </div>
+            <div class="despcripcion-form">
+                {{ Form::label("Descripción") }}
+                <br />
+                {{ Form::textarea("description",null,array("class" => "area-form","placeholder" => "ESTE LUGAR ES UNA EXCELENTE PICADA PARA COMER EN FAMILIA Y CON LOS AMIGOS, ESTA UBICADA EN EL MERCADO DE CHILLÁN. BUENO, BONITO Y BARATO.")) }}    
 
-BUENO, BONITO Y BARATO." ></textarea>
+               
+           
+            </div>
 
-<input type="submit" />
+            <div class="btn-enviar">
+                <input type="submit" class="btn-envia-dato" value="SUBE TU DATO" />
+            </div>
+
+            <div class="dato-picada">*LA INFORMACIÓN QUE NOS ENTREGUES EN ESTE SITIO SERÁ PARA PROPORCIONAR DATOS ÚTILES A LA COMUNIDAD</div>
+
+        </div>
+        {{ Form::token() . Form::close() }}
     </div>
-    
-    <div class="btn-enviar">
-    <input type="button" class="btn-envia-dato" value="SUBE TU DATO" />
-    </div>
-    
-    <div class="dato-picada">*LA INFORMACIÓN QUE NOS ENTREGUES EN ESTE SITIO SERÁ PARA PROPORCIONAR DATOS ÚTILES A LA COMUNIDAD</div>
-    
-    </div>
-    </form>
-    </div>
-	</section>
+</section>
 </div>
 @stop

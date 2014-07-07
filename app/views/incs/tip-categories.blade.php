@@ -1,9 +1,7 @@
 <div class="categories">
 	<ul>
-		<li><a href="">Alojamiento </a></li>
-		<li><a href="">Comida </a></li>
-		<li><a href="">Carretes </a></li>
-		<li><a href="">Qué hacer </a></li>
-		<li><a href="">Datos practicos </a></li>
+		@foreach($tips_categories as $tip)
+			<li><a href="{{ action('TipController@view',array(Input::segment(2),"category" => $tip['id'])) }}">{{ $tip["name"] }}</a></li>
+		@endforeach
 	</ul>
 </div>

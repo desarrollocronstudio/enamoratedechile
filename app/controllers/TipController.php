@@ -16,17 +16,38 @@ class TipController extends BaseController {
 	}
 
 	public function post(){
-		return View::make('submit-tip');
+		$data = array(
+			"regions" 		=> Region::lists("large_name","id"),
+			"categories"	=> TipType::lists("name","id")
+		);
+		return View::make('submit-tip',$data);
 	}
 	public function save(){
 		$input = Input::all();
-		$validator = Validator::make($input,Tip::$rules);
-		 if ($validator->fails()){
-		 	
-		 	print_r($validator->messages());
+
+		$validator = Validator::make($input,Person::$rules,array("required" => "Debes completar el campo :attribute"));
+		if ($validator->fails()){
+			if(Request::ajax()){                    
+				$response_values = array(
+				'validation_failed' => 1,
+				'errors' =>  $v->errors()->toArray());	            
+				return Response::json($response_values);
+			}
+
+		 	return Redirect::to("submit-tip")->withErrors($validator)->withInput();;
 		}else{
-			Person::save($input);
-			Tip::getById(1);
+			$person = new Person;
+			$person->name		= $input["name"];
+			$person->email		= $input["email"];
+			$person->dni		= $input["dni"];
+			$person->dni_type	= "rut";
+			$person->save();
+
+			$tip = new Tip;
+			$tip->name 			= $input["place_name"];
+			$tip->author_id		= $person->id;
+			$tip->save();
+			
 		}
 	}
 
