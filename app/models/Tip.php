@@ -4,14 +4,13 @@ class Tip extends Eloquent {
 		'user_id' 	=> 'required|min:3',
 		'email'		=> 'required|email');
 
-	public function scopePopular($query){
-		TipVote::groupBy('tip_id')->get(array(
-			'tip_id',
-			DB::raw('count(*) as count')
-		));
-	}
+ 	public function author()
+    {
+        return $this->hasOne('People');
+    }
+
 	public function get_featured(){
-		$users = Tip::popular()->get();
+		
 	}
  
 }

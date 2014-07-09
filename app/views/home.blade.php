@@ -12,14 +12,14 @@
 	<section class="datos container">
 		@foreach ($tips as $tip)
 		<div class="dato-small">
-			<span class="nombre">Nombre del tip</span>
-			<div class="img"><img src=""></div>
+			<span class="nombre">{{ $tip["name"] }}</span>
+			<div class="img"><img src="uploads/{{ $tip["image"] }}"></div>
 			<div class="meta">
-				<span class="author">Por: Gonzalo Z.</span>
-				<span class="city">Santiago</span>
-				<span class="type">Comida</span>
+				<span class="author">Por: {{ $tip["author"] }}</span>
+				<span class="city">{{ $tip["place_name"] }}</span>
+				<span class="type">{{ $tip["category_name"]}}</span>
 			</div>
-			<div class="text">Texto de ejemplo</div>
+			<div class="text">{{ substr($tip["content"], 0, 100) }}</div>
 			<div class="rating">
 				<span class="mark active"></span>
 				<span class="mark active"></span>

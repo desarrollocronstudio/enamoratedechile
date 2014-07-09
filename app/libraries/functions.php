@@ -11,15 +11,20 @@ App::finish(function() use ($start_time) {
     echo "<script>console.log('App finish: ".round((microtime(true)-$start_time)*1000,3)." ms')</script>";
 });
 
+Validator::extend('rut', function($attribute, $value, $parameters)
+{
+    return validate_rut($value);
+});
+
+function normalizar_rut($rut){
+	return str_replace(array(",","-","."," "),"",$rut);
+}
 function validate_rut($rut){
-	if(strpos($rut,"-")==false){
-        $RUT[0] = substr($rut, 0, -1);
-        $RUT[1] = substr($rut, -1);
-    }else{
-        $RUT = explode("-", trim($rut));
-    }
-    $elRut = str_replace(".", "", trim($RUT[0]));
+    $rut = normalizar_rut($rut);
+    $elRut = substr($rut, 0, -1);
+    $RUT[1] = substr($rut, -1);
     $factor = 2;
+    $suma = 0;
     for($i = strlen($elRut)-1; $i >= 0; $i--):
         $factor = $factor > 7 ? 2 : $factor;
         $suma += $elRut{$i}*$factor++;
@@ -35,3 +40,13 @@ function validate_rut($rut){
     }
    return ($dv == trim(strtolower($RUT[1])));
 }
+
+function str_rand($length=20) { 
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, strlen($characters) - 1)];
+    }
+    return $randomString;
+
+}  

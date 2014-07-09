@@ -65,6 +65,11 @@
 #content-form .errors ul{padding: 0}
 #content-form .errors li{list-style: none;}
 #content-form .errors strong{text-decoration: underline;}
+
+#content-form #image_file_input{display:none;}
+#content-form #place_photo{width: 220px;}
+#file_name_value{line-height: 40px;}
+
 #content-form h1{
 	font-size:18px;
 	width:auto;

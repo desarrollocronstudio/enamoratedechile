@@ -72,6 +72,7 @@ h2.city-title{font-family:'cheap_pine_sanssans';height: 147px;text-transform: up
 h2.city-title span{display: block; font-size: 30px; line-height: 30px; display: block; margin-top: -20px;  }
 h3.lugar{font-family: 'cheap_pine_sanssans';height: 73px;text-transform: uppercase;line-height: 75px;font-size: 3em;margin: 0 auto;display: block;}
 h4.autor{font-family: Helvetica, Arial, sans-serif;height: 26px;text-transform: uppercase;line-height: 30px;font-size: 0.6em;text-align: center;margin: 0 auto; display: block;background: url(../img/bg_city_autor.png) no-repeat 0 0;width: 310px;}
+.message{background:lightyellow; padding: 20px; border-radius:15px; }
 
 /* HEADER */
 header{background:url("../img/bg-menu-top.png"); height: 51px; }
@@ -156,7 +157,8 @@ header li a:hover{border-radius:5px; background: #fff; color:#5b5b5b; }
 .detalle_city .shared .ruta{ background:url(../img/btn_anadir.png) no-repeat 0 0; width:211px; height:43px; display:block; float:left; cursor:pointer;}
 .detalle_city .shared .face{ background:url(../img/btn_facebook.png) no-repeat 0 0; width:182px; height:46px; display:block; float:left; cursor:pointer;}
 .detalle_city .shared .tw{  background: url(../img/btn_twitter.png) no-repeat 0 0; width:185px; height:46px; display:block; float:left; cursor:pointer;}
-
+.detalle_city .imgs li{width: 150px; overflow: hidden;}
+.detalle_city .imgs li img{width: 100%; border-radius:10px;}
 
 /* BUSCANDO A JENNY */
 .jenny { margin:1em auto; position:relative;}

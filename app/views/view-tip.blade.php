@@ -2,8 +2,8 @@
 @section('page_title','Titulo')
 @section('metatags')
     <meta property="og:url" content="{{ Request::url() }}" /> 
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="" /> 
+    <meta property="og:title" content="Visita {{ $data['name'] }} en {{ $data['place_name'] }}" />
+    <meta property="og:description" content="{{ $data['content'] }}" /> 
     <meta property="og:image" content="" />
 @stop
 @section('content')
@@ -21,21 +21,17 @@
     
 	@include("incs/tip-categories")
 	
-    <h3 class="lugar">nombre del lugar</h3>
-    <h4 class="autor">nombre del autor</h4>
+    <h3 class="lugar">{{ $data["name"] }}</h3>
+    <h4 class="autor">{{ $data["author"] }}</h4>
     <div class="detalle_city">
     <h2 class="slide">Imágenes del lugar</h2>
-    <ul>
-    <li><img src="{{ asset('img/detalle1.jpg') }}"/></li>
-    <li><img src="{{ asset('img/detalle2.jpg') }}" /></li>
-    <li><img src="{{ asset('img/detalle3.jpg') }}" /></li>
-    <li><img src="{{ asset('img/detalle1.jpg') }}"/></li>
-    <li><img src="{{ asset('img/detalle2.jpg') }}"/></li>
-    <li><img src="{{ asset('img/detalle3.jpg') }}"/></li>
-    <li><img src="{{ asset('img/detalle1.jpg') }}" /></li>
+    <ul class="imgs">
+        @foreach($images as $img)
+            <li><img src="{{ asset("uploads/$img") }}"/></li>
+        @endforeach
     </ul>
     <h2 class="slide">Mapa del lugar</h2>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3329.8482786191244!2d-70.6038805!3d-33.42719969999999!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf6e080d5f15%3A0x38cf49fd622be98b!2sCarlos+Ant%C3%BAnez!5e0!3m2!1ses!2scl!4v1404687428294" width="850" height="262" frameborder="0" style="border:0"></iframe>
+    <iframe src="https://www.google.com/maps/embed?q=Darío+urzua+2021" width="850" height="262" frameborder="0" style="border:0"></iframe>
     <h2 class="slide">Si estuviste aquí o te gustó el dato califícalo.</h2>
     <div class="rating">
 				<span class="mark active"></span>
