@@ -26,7 +26,7 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 
-	'local' => array('MacBook-Pro.local'),
+	'local' => array('MacBook-Pro.local','macbook-pro.iptv.microsoft.com'),
 	'anita' => array('Lanita-HP'),
 
 ));
