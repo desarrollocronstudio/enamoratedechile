@@ -186,15 +186,31 @@ header .mobile{display: none;}
 
     /* All Mobile Sizes (devices and browser) */
     @media only screen and (max-width: 767px) {
+        /********* HEADER ***********/
         html,body{width: 100%;overflow: hidden;}
         header{width: 100%; height: 65px; background:#022562 url("../img/logo-mobile.png") no-repeat center center; overflow: hidden;}
         header ul{display: none; width: 100%;background:#022562;opacity:0.99;position: fixed; top: 65px; left: 0; }
         header ul li{display: block;float: none; text-align: center; border:none; background:none; padding:0; border-bottom: solid 1px #666; margin: 0 5% ;}
         header .mobile{display: inherit; }
         header .menu{float:right; line-height: 60px; padding-right: 1.5%;}
+        
+        /************* COMUNES (BOTONES, MENUS, ETC) ****************/
+
+
+        /************* HOME ****************/
         .intro{padding: 0 3%;}
         .datos{text-align: center;}
         .datos .dato-small{margin:0 auto; display: block; overflow: hidden; float: none;}
+
+        /************* BUSCANDO A JENNY ****************/
+
+        
+
+        /************* SUBE UN DATO ****************/
+
+
+
+        /************* ETC... ****************/
     }
     /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
     @media only screen and (min-width: 480px) and (max-width: 767px) {
