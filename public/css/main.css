@@ -219,7 +219,37 @@ header .mobile{display: none;}
 
     /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
     @media only screen and (max-width: 479px) {
-       
+		.search-box {overflow: hidden;width: 315px;margin: 0 auto;display: none;}
+		.search-box .submit {background: url("../img/bg-btn-search.png");color: #fff;border: none;margin: auto;width: 135px;height: 46px;overflow: hidden;float: none;}
+       	.search-box .box {border: solid 3px #444843;width: 80%;padding: 5px 10px;height: 30px;font-size: 30px;background: none;margin: 0 5% 10% 5%;float: none;}
+		
+		h2.city-title {font-family: 'cheap_pine_sanssans';height: 147px;width: 80%;text-transform: uppercase;line-height: 2em;font-size: 3em;background: url('../img/bg-city-title.png') top center no-repeat;margin: 0 auto;display: block;}
+		.categories {background: #000;height: auto;}
+		.categories ul {width: 100%;margin: 0 auto;overflow: hidden;text-align: center;list-style: none;padding: 0;}
+		.categories li {display: block; border-bottom:solid #fff 1px;}
+		.categories li a {margin-top: 0;}
+		
+		img.principal{ display:none;}
+		
+		#search-tips .info {font-size: 1.8em;padding: 0;margin: 5% auto;font-style: italic;}
+		.detalle_city {background: url(../img/bg_mobile_detalle_city.png) repeat-y top center; width: 90%;height: auto;display: block;margin: 0 auto;padding:0 0 0 5%;}
+		.detalle_city .imgs li img {width:100%;float: left;border-radius: 10px;}
+
+		.detalle_city h2.slide {font-family: 'boogalooregular';font-size: 1.8em;color: #d70303;text-shadow:none;text-align: left;clear: both;}
+		.detalle_city h2.recomendacion {font-size: 1.1em;color: #d70303;text-shadow:none;text-align: left;clear: both; line-height: 1.1em;margin: 5% 0;}
+		.detalle_city ul {width: 100%;margin: 0 auto;text-align: center;list-style: none;padding: 0;}
+		.detalle_city .imgs li {width: 125px;overflow: hidden;}
+		.detalle_city iframe {width: 93%; height: 262px; margin: 5% 0; padding: 0;float: left;}
+		.detalle_city .shared {
+width: 100%;
+height: 200px;
+float: none;
+}
+
+		.detalle_city .shared .ruta {margin: 5% auto;float: none;}
+		.detalle_city .shared .face {margin: 5% auto;float: none;}
+		.detalle_city .shared .tw {margin: 5% auto;float: none;}
+		h4.autor {font-family: 'boogalooregular'; font-size: 1.6em;}
     }
 
 /* ==========================================================================

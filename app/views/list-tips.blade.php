@@ -3,7 +3,7 @@
 <div class="page" id="search-tips">
 	@include("incs/logo")
 
-	<img style="margin:10px 0 " src="{{ asset('img/img-top-home.jpg') }}" alt="Bienvenido a " />
+	<img class="principal" style="margin:10px 0 " src="{{ asset('img/img-top-home.jpg') }}" alt="Bienvenido a " />
 
 	@include("incs/search-nav")
 

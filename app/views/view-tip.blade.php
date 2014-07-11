@@ -10,7 +10,7 @@
 <div class="page" id="view">
 	@include("incs/logo")
 
-	<img style="margin:10px 0 " src="{{ asset('img/img-top-home.jpg') }}" alt="Bienvenido a " />
+	<img style="margin:10px 0 " class="principal"  src="{{ asset('img/img-top-home.jpg') }}" alt="Bienvenido a " />
 
 	@include("incs/search-nav")
 
@@ -28,11 +28,16 @@
     <ul class="imgs">
         @foreach($images as $img)
             <li><img src="{{ asset("uploads/$img") }}"/></li>
+            <li><img src="{{ asset("uploads/$img") }}"/></li>
+            <li><img src="{{ asset("uploads/$img") }}"/></li>
+            <li><img src="{{ asset("uploads/$img") }}"/></li>
+            <li><img src="{{ asset("uploads/$img") }}"/></li>
+            <li><img src="{{ asset("uploads/$img") }}"/></li>
         @endforeach
     </ul>
     <h2 class="slide">Mapa del lugar</h2>
     <iframe src="https://www.google.com/maps/embed?q=Darío+urzua+2021" width="850" height="262" frameborder="0" style="border:0"></iframe>
-    <h2 class="slide">Si estuviste aquí o te gustó el dato califícalo.</h2>
+    <h2 class="slide recomendacion">Si estuviste aquí o te gustó el dato califícalo.</h2>
     <div class="rating">
 				<span class="mark active"></span>
 				<span class="mark active"></span>
