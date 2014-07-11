@@ -16,6 +16,10 @@ class TipController extends BaseController {
 		$images = array($tip["image"]);
 		return View::make('view-tip',array("data" => $tip,"images" => $images));
 	}
+	public function featured(){
+		$tips = Tip::get_featured();
+		return View::make('home',array("tips" => $tips));
+	}
 
 	public function post(){
 		$data = array(

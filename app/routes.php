@@ -12,9 +12,9 @@
 */
 
 Route::get('/', 'HomeController@index');
-Route::get('/featured', 'FeaturedController@index');
-Route::get('/my_route', 'RoutesController@my_route');
-Route::get('/ideal_route', 'IdealRouteController@index');
+Route::get('/featured', 'TipController@featured');
+Route::get('/my_route', 'RouteController@my_route');
+Route::get('/ideal_route', 'RouteController@ideal');
 Route::get('/jenny', 'JennyController@index');
 Route::get('/ver/{id}', 'TipController@view');
 Route::get('/search-tips', 'TipController@search');
