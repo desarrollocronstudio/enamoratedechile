@@ -6,8 +6,9 @@
 
 	@include("incs/search-nav")
 
-	<h2 class="title">{{ __("Destacado") }}</h2>
-	<p class="intro">¡Todos estos datos son entregados por usuarios como ustedes, somos una verdadera comunidad!</p>
+	<h2 class="title">{{ __("Mi ruta") }}</h2>
+    <h3 class="ruta">¡HOLA CARLOS HIDALGO!</h3>
+	<p class="intro">Estos son los datos y picadas que has guardado como favoritos en tus navegaciones anteriores</p>
 
 	<section class="datos container">
 		@foreach ($tips as $tip)
