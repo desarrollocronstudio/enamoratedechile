@@ -71,8 +71,10 @@ h2.title{font-family:'cheap_pine_sanssans';  text-transform: uppercase; line-hei
 h2.city-title{font-family:'cheap_pine_sanssans';height: 147px;text-transform: uppercase; line-height: 140px; font-size:100px; background: url('../img/bg-city-title.png') top center no-repeat; margin:0 auto; display: block; }
 h2.city-title span{display: block; font-size: 30px; line-height: 30px; display: block; margin-top: -20px;  }
 h3.lugar{font-family: 'cheap_pine_sanssans';height: 73px;text-transform: uppercase;line-height: 75px;font-size: 3em;margin: 0 auto;display: block;}
-h4.autor{font-family: Helvetica, Arial, sans-serif;height: 26px;text-transform: uppercase;line-height: 30px;font-size: 0.6em;text-align: center;margin: 0 auto; display: block;background: url(../img/bg_city_autor.png) no-repeat 0 0;width: 310px;}
+h4.autor{font-family: Helvetica, Arial, sans-serif;height: 26px;text-transform: uppercase;line-height: 30px;font-family: 'boogalooregular'; font-size: 1.6em;text-align: center;margin: 0 auto; display: block;background: url(../img/bg_city_autor.png) no-repeat 0 0;width: 310px;}
 .message{background:lightyellow; padding: 20px; border-radius:15px; }
+.mobile{display: none;}
+.desktop{display: inherit; }
 
 /* HEADER */
 header{background:url("../img/bg-menu-top.png"); height: 51px; }
@@ -84,7 +86,6 @@ header ul li:first-child{background: none;}
 header li a{ color:#fff; font-size: 24px; line-height: 31px; text-decoration: none; padding: 2px; font-weight: normal; }
 header li a:hover{border-radius:5px; background: #fff; color:#5b5b5b; }
 .logo{text-align: center; margin: 0 auto; display: block; padding-top: 20px; max-width: 80%;}
-header .mobile{display: none;}
 
 
 /* Search Box */
@@ -138,28 +139,38 @@ header .mobile{display: none;}
 .rating .mark:hover{background-position: 0 -22px; }
 .rating .mark.active:hover{background-position: 0 0; opacity:0.8;}
 
+/* RATING-BIG */
+.rating-big{width: 400px; text-align: left; overflow: hidden;}
+.rating-big .mark{width: 32px; height: 27px; background: url("../img/hearts-big.png") no-repeat 0 0px; overflow: hidden; display: block; float:left; cursor: pointer;  }
+.rating-big .mark.active{background-position: 0 -27px; }
+.rating-big:hover .mark{background-position: 0 0;}
+.rating-big .mark.hover{background-position: 0 -27px;}
+.rating-big label{font-size: 0.9em; display: block; float: left; height: 30px; line-height: 30px; color: #d70303; padding-left: 10px;}
+
 /* Categories */
 .categories{background: url("../img/bg-menu-categories.png") center top no-repeat; height: 85px;}
-.categories ul{width: 960px; margin: 0 auto; overflow: hidden; text-align: center; list-style: none;}
+.categories ul{width: 100%; padding:0; margin: 0 auto; overflow: hidden; text-align: center; list-style: none;}
 .categories li{ display: inline-block; }
 .categories li a{color: #eee; display: block; text-decoration: none; line-height: 49px; margin-top: 17px; padding:0 25px; text-transform: uppercase; font-size: 22px;}
-.categories li a:hover,
+.categories li a:hover{background: #fff; color:#333;}
 .categories li a.active{background: #f00;}
 
 /* DETALLE CITY */
 .detalle_city{background: url(../img/bg_detalle_city.png) no-repeat 0 0; width: 910px;height: 670px;display: block;margin: 0 auto;padding: 40px 0 0 40px;}
 .detalle_city h2.slide{font-family: 'boogalooregular';font-size: 1em;color: #d70303;text-shadow: none;text-align: left; clear:both;}
 .detalle_city ul{width: 940px;margin: 0 auto;overflow: hidden;text-align: center;list-style: none;padding: 0;}
-.detalle_city ul li{ float: left;width: 109px;height: 109px;margin: 0 15px 0 0; padding: 0;}
-.detalle_city iframe{ width:850px;height:262px;margin:0 auto; padding: 0; float:left;}
-.detalle_city .rating{ background:none; padding:0;}
-.detalle_city .rating .mark {width: 14px;height: 11px;background: url("../img/hearts.png") no-repeat 0 -22px;overflow: hidden;display: inline-block;}
+.detalle_city ul li{ float: left;width: 109px;height: 109px;margin: 0 15px 10px 0; padding: 0;}
+.detalle_city #map{ width:850px;height:262px;margin:0 auto; padding: 0; float:left;}
 .detalle_city .shared{ width:590px; height:60px; float:right;}
+.detalle_city .shared a:hover{opacity: 0.7;}
 .detalle_city .shared .ruta{ background:url(../img/btn_anadir.png) no-repeat 0 0; width:211px; height:43px; display:block; float:left; cursor:pointer;}
 .detalle_city .shared .face{ background:url(../img/btn_facebook.png) no-repeat 0 0; width:182px; height:46px; display:block; float:left; cursor:pointer;}
 .detalle_city .shared .tw{  background: url(../img/btn_twitter.png) no-repeat 0 0; width:185px; height:46px; display:block; float:left; cursor:pointer;}
-.detalle_city .imgs li{width: 150px; overflow: hidden;}
+.detalle_city .imgs li{width: 150px; overflow: hidden; border-radius:10px;}
 .detalle_city .imgs li img{width: 100%; border-radius:10px;}
+#view .comments{max-width: 90%; width: 910px; margin: 0 auto; background: #eee}
+#view .comments iframe,
+#view .comments .fb-comments span{width: 100% !important;}
 
 /* BUSCANDO A JENNY */
 .jenny { margin:1em auto; position:relative;}
@@ -187,20 +198,24 @@ header .mobile{display: none;}
     /* All Mobile Sizes (devices and browser) */
     @media only screen and (max-width: 767px) {
         /********* HEADER ***********/
-        html,body{width: 100%;overflow: hidden;}
+        html,body{width: 100%;}
         header{width: 100%; height: 65px; background:#022562 url("../img/logo-mobile.png") no-repeat center center; overflow: hidden;}
         header ul{display: none; width: 100%;background:#022562;opacity:0.99;position: fixed; top: 65px; left: 0; }
         header ul li{display: block;float: none; text-align: center; border:none; background:none; padding:0; border-bottom: solid 1px #666; margin: 0 5% ;}
-        header .mobile{display: inherit; }
         header .menu{float:right; line-height: 60px; padding-right: 1.5%;}
         
+        footer{text-align: center;}
+        footer .contenido-footer{float: none; overflow: hidden; height: auto; margin: 0 auto; }
+        footer .copyright{float:none; display: block}
+        footer .social-media{margin: 0 auto; float: none; display: block; width: 100px;}
         /************* COMUNES (BOTONES, MENUS, ETC) ****************/
-
-
-        /************* HOME ****************/
-        .intro{padding: 0 3%;}
         .datos{text-align: center;}
         .datos .dato-small{margin:0 auto; display: block; overflow: hidden; float: none;}
+        .mobile{display: inherit; }
+        .desktop{display: none; }
+        /************* HOME ****************/
+        .intro{padding: 0 3%;}
+        
 
         /************* BUSCANDO A JENNY ****************/
 
@@ -209,6 +224,20 @@ header .mobile{display: none;}
         /************* SUBE UN DATO ****************/
 
 
+        /************* DETALLE TIP ********************/
+        .detalle_city {background-size: 100% 100%; width: 90%;height: auto;display: block;margin: 0 auto;padding:55px 0 30px 5%;}
+        .detalle_city .imgs li img {width:100%;float: left;border-radius: 10px;}
+        .principal{display: none;}
+        .detalle_city h2.slide {font-family: 'boogalooregular';font-size: 1.8em;color: #d70303;text-shadow:none;text-align: left;clear: both; margin: 0}
+        .detalle_city h2.recomendacion {font-size: 1.1em;color: #d70303;text-shadow:none;text-align: left;clear: both; line-height: 1.1em;margin: 5% 0;}
+        .detalle_city ul {width: 100%;margin: 0 auto;text-align: center;list-style: none;padding: 0;}
+        .detalle_city .imgs li {width: 125px;overflow: hidden;}
+        .detalle_city #map {width: 93%; height: 262px; margin: 2% 0; padding: 0;float: left;}
+        .detalle_city .shared {width: 100%;height: 200px;float: none;}
+
+        .detalle_city .shared .ruta {margin: 5% auto;float: none;}
+        .detalle_city .shared .face {margin: 5% auto;float: none;}
+        .detalle_city .shared .tw {margin: 5% auto;float: none;}
 
         /************* ETC... ****************/
     }
@@ -224,32 +253,14 @@ header .mobile{display: none;}
        	.search-box .box {border: solid 3px #444843;width: 80%;padding: 5px 10px;height: 30px;font-size: 30px;background: none;margin: 0 5% 10% 5%;float: none;}
 		
 		h2.city-title {font-family: 'cheap_pine_sanssans';height: 147px;width: 80%;text-transform: uppercase;line-height: 2em;font-size: 3em;background: url('../img/bg-city-title.png') top center no-repeat;margin: 0 auto;display: block;}
-		.categories {background: #000;height: auto;}
+		.categories {background: #000;height: auto; width: 80%; margin:0 auto;}
 		.categories ul {width: 100%;margin: 0 auto;overflow: hidden;text-align: center;list-style: none;padding: 0;}
-		.categories li {display: block; border-bottom:solid #fff 1px;}
+		.categories li {display: block; border-bottom:solid #333 1px;}
 		.categories li a {margin-top: 0;}
 		
 		img.principal{ display:none;}
 		
 		#search-tips .info {font-size: 1.8em;padding: 0;margin: 5% auto;font-style: italic;}
-		.detalle_city {background: url(../img/bg_mobile_detalle_city.png) repeat-y top center; width: 90%;height: auto;display: block;margin: 0 auto;padding:0 0 0 5%;}
-		.detalle_city .imgs li img {width:100%;float: left;border-radius: 10px;}
-
-		.detalle_city h2.slide {font-family: 'boogalooregular';font-size: 1.8em;color: #d70303;text-shadow:none;text-align: left;clear: both;}
-		.detalle_city h2.recomendacion {font-size: 1.1em;color: #d70303;text-shadow:none;text-align: left;clear: both; line-height: 1.1em;margin: 5% 0;}
-		.detalle_city ul {width: 100%;margin: 0 auto;text-align: center;list-style: none;padding: 0;}
-		.detalle_city .imgs li {width: 125px;overflow: hidden;}
-		.detalle_city iframe {width: 93%; height: 262px; margin: 5% 0; padding: 0;float: left;}
-		.detalle_city .shared {
-width: 100%;
-height: 200px;
-float: none;
-}
-
-		.detalle_city .shared .ruta {margin: 5% auto;float: none;}
-		.detalle_city .shared .face {margin: 5% auto;float: none;}
-		.detalle_city .shared .tw {margin: 5% auto;float: none;}
-		h4.autor {font-family: 'boogalooregular'; font-size: 1.6em;}
     }
 
 /* ==========================================================================
@@ -290,7 +301,7 @@ float: none;
 .visuallyhidden.focusable:focus {
     clip: auto;
     height: auto;
-    margin: 0;
+    margin: 0
     overflow: visible;
     position: static;
     width: auto;

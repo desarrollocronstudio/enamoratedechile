@@ -6,6 +6,6 @@
             <span class="btn-social"><a href="#"><img src='{{ asset("img/social-media-footer_tw.png") }}' border="0" /></a></span>
             <span class="btn-social"><a href="#"><img src='{{ asset("img/social-media-footer_ytb.png") }}' border="0" /></a></span>
         </span>
-    <span class="up-btn"><a href="#"><img src='{{ asset("img/btn-up.png") }}' border="0" /></a></span>
+    <span class="up-btn desktop"><a href="#"><img src='{{ asset("img/btn-up.png") }}' border="0" /></a></span>
     </div>
 </div>

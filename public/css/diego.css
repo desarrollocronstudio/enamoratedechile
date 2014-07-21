@@ -1,10 +1,11 @@
 #footer_content{
 	width:100%;
-	height:32px;
+	min-height:32px;
 	background-color:#161a2f;
+	overflow: hidden;
 }
 .contenido-footer{
-	width:978px;
+	width:980px;
 	height:32px;
 	margin-left:auto;
 	margin-right:auto;
@@ -31,6 +32,7 @@
 	border-left:1px solid #2b2f44;
 	float:left;
 }
+.btn-social a:hover{opacity: 0.8}
 .up-btn{
 	width:121px;
 	height:32px;

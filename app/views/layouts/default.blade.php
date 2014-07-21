@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
         <link rel="stylesheet" href="{{ asset('css/diego.css') }}">
 
-        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="{{ asset('js/vendor/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -27,13 +27,13 @@
             
             <header>
                 @include("incs/menu-top")
-                <span class="mobile menu"><img src="img/menu-mobile.png"></span>
+                <span class="mobile menu"><img src="{{ asset('img/menu-mobile.png') }}"></span>
             </header>
             <div id="content">
                 @yield('content')
             </div>
             <footer>
-            @include("incs/footer")
+                @include("incs/footer")
             </footer>
         </div>
 
@@ -41,5 +41,6 @@
         
         <!-- JS -->
         @yield('js')
+
     </body>
 </html>
