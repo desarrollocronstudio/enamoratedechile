@@ -15,6 +15,7 @@ class Base extends Migration {
 		Schema::create('tips_categories', function(Blueprint $table) {
 			$table->increments('id');
 			$table->string('name');
+			$table->integer('order');
 			$table->text('description');
 			$table->engine = 'MyISAM';
 		});
@@ -28,7 +29,7 @@ class Base extends Migration {
 			$table->string('dni');
 			$table->char('dni_type',3);
 			$table->text('description');
-
+			$table->boolean('active');
 			$table->timestamps();
             $table->softDeletes();
             $table->engine = 'MyISAM';
@@ -71,6 +72,7 @@ class Base extends Migration {
 		Schema::create('tips', function(Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('place_name');
             $table->string('image');
             $table->string('images');
             $table->text('content');

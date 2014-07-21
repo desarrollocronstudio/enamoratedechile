@@ -21,6 +21,17 @@ Route::get('/search-tips', 'TipController@search');
 
 Route::get('/submit-tip', 'TipController@post');
 Route::post('/submit-tip', 'TipController@save');
+Route::post("/tips/add-to-my-route","TipController@add_to_my_route");
+
+
+
+Route::get("/create-seeds",function(){
+	Iseed::generateSeed('cities');
+	Iseed::generateSeed('provinces');
+	Iseed::generateSeed('regions');
+	Iseed::generateSeed('tips_categories');
+	return "OK";
+});
 
 
 Route::post("/cities-autocomplete","CityController@autocomplete");

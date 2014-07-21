@@ -4,7 +4,11 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.2.*"
+		"laravel/framework": "4.2.*",
+		"codesleeve/social": "dev-master",
+		"barryvdh/laravel-migration-generator": "dev-master",
+		"orangehill/iseed": "dev-master",
+		"facebook/php-sdk": "*"
 	},
 	"autoload": {
 		"classmap": [

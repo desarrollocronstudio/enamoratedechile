@@ -7,6 +7,7 @@
 
     <div class="facebox">
         <h4>Conéctate con Facebook para rellenar los campos solicitados</h4>
+        <a href="{{ Social::login('facebook') }}" class="facebook-login"><img src='{{ asset("img/btn-fb-connect.png") }}' alt="Conectar con Facebook" /></a>
     </div>
     <section class="datos">
         <div id="content-form">
@@ -24,80 +25,93 @@
                 </div>
                 @endif
                 @if ( Session::has('tip_saved') )
-                <div class="message">
-                    Tu dato ha sido guardado exitosamente. ¡Gracias!
-                </div>
-                @endif
-                <span class="dato-in">
-                    {{ Form::label("Nombre") }}<br />
-                    {{ Form::text('name','',array("placeholder" => "Carlos Ríos","required")); }}
-                </span>
-                <span class="dato-in">
-                    {{ Form::label("Email") }}<br />
-                    {{ Form::text('email','',array("placeholder" => "carlos@mail.com","required")); }}
-                </span>
-                <span class="dato-in">
-                    {{ Form::label("R.U.T.") }}<br />
-                    {{ Form::text('rut','',array("placeholder" => "12345678-9","required")); }}
-                </span>
-                <span class="dato-in">
-                    {{ Form::label("Email") }}<br />
-                    {{ Form::text('email','',array("placeholder" => "carlos@mail.com","required")); }}
-                </span>
-                <span class="dato-in">
-                    {{ Form::label("¿Dónde es tu dato?") }}<br />
-                    {{ Form::text('city','',array("placeholder" => "Ej. Chillán","required")); }}
-                </span>
-                <span class="dato-in">
-                    {{ Form::label("Región") }}<br />
-                    {{ Form::select('region',$regions,array("required")); }}
-                </span>
-                <span class="dato-in">
-                    {{ Form::label("Nombre del lugar") }}
-                    {{ Form::text('place_name','',array("placeholder" => "Onde'l Pala","required")); }}
-                </span>
-                <span class="dato-in">
-                    {{ Form::label("Cateogría") }}<br />
-                    {{ Form::select('tip_category',$categories,array("required")); }}
-                </span>
-                <div class="map">
-                    
-                </div>
-                <div class="dato-picada">
-                    *SI TU DATO O PICADA ESTÁ CERCA DE UNA CIUDAD Y NO<br />
-                    EN ELLA EXACTAMENTE, ESCRÍBELO EN LA DESCRIPCIÓN
-                </div>
-
-                <img id="place_photo" data-default='{{ asset("img/img-form.jpg") }}' src='{{ asset("img/img-form.jpg") }}' />
-                <div class="menu-img">
-
-                    {{ Form::radio("image_type[]",'default',true,array("id" => "default_image")) }}
-                    {{ Form::label("default_image","USAR IMAGEN PREDETERMINADA") }} 
-                    <br />
-                    {{ Form::radio("image_type[]",'custom','',array("id" => "custom_image")) }}
-                    {{ Form::label("custom_image","SUBIR IMAGEN") }} 
-                    
-                    <div class="image_upload_box">
-                        <a class="bsc-btn" href="">{{ trans("BUSCAR") }}</a>
-                        {{ Form::file("image",array("accept" => "image/*","id" => "image_file_input")) }}
-                        <span id="file_name_value"></span>
+                    <div class="message" style='margin:40px 10px'>
+                        Tu dato ha sido guardado exitosamente. ¡Gracias!
+                    </div>
+                @else
+                    <span class="dato-in">
+                        {{ Form::label("Nombre") }}<br />
+                        {{ Form::text('name','',array(
+                            "placeholder" => "Carlos Ríos",
+                            "required",
+                            "data-fb-name" => "name")); 
+                        }}
+                    </span>
+                    <span class="dato-in">
+                        {{ Form::label("Email") }}<br />
+                        {{ Form::text('email','',array(
+                            "placeholder" => "carlos@mail.com",
+                            "required",
+                            "data-fb-name" => "email")); 
+                        }}
+                    </span>
+                    <span class="dato-in">
+                        {{ Form::label("R.U.T.") }}<br />
+                        {{ Form::text('rut','',array("placeholder" => "12345678-9","required")); }}
+                    </span>
+                    <span class="dato-in">
+                        {{ Form::label("Email") }}<br />
+                       {{ Form::text('email','',array(
+                            "placeholder" => "carlos@mail.com",
+                            "required",
+                            "data-fb-name" => "email")); 
+                        }}
+                    </span>
+                    <span class="dato-in">
+                        {{ Form::label("¿Dónde es tu dato?") }}<br />
+                        {{ Form::text('city','',array("placeholder" => "Ej. Chillán","required")); }}
+                    </span>
+                    <span class="dato-in">
+                        {{ Form::label("Región") }}<br />
+                        {{ Form::select('region',$regions,array("required")); }}
+                    </span>
+                    <span class="dato-in">
+                        {{ Form::label("Nombre del lugar") }}
+                        {{ Form::text('place_name','',array("placeholder" => "Onde'l Pala","required")); }}
+                    </span>
+                    <span class="dato-in">
+                        {{ Form::label("Cateogría") }}<br />
+                        {{ Form::select('tip_category',$categories,array("required")); }}
+                    </span>
+                    <div class="map">
+                        
+                    </div>
+                    <div class="dato-picada">
+                        *SI TU DATO O PICADA ESTÁ CERCA DE UNA CIUDAD Y NO<br />
+                        EN ELLA EXACTAMENTE, ESCRÍBELO EN LA DESCRIPCIÓN
                     </div>
 
-                </div>
-                <div class="despcripcion-form">
-                    {{ Form::label("DESCRIPCIÓN") }}
-                    <br />
-                    {{ Form::textarea("description",null,array("class" => "area-form","placeholder" => "ESTE LUGAR ES UNA EXCELENTE PICADA PARA COMER EN FAMILIA Y CON LOS AMIGOS, ESTA UBICADA EN EL MERCADO DE CHILLÁN. BUENO, BONITO Y BARATO.")) }}    
+                    <img id="place_photo" data-default='{{ asset("img/img-form.jpg") }}' src='{{ asset("img/img-form.jpg") }}' />
+                    <div class="menu-img">
+
+                        {{ Form::radio("image_type[]",'default',true,array("id" => "default_image")) }}
+                        {{ Form::label("default_image","USAR IMAGEN PREDETERMINADA") }} 
+                        <br />
+                        {{ Form::radio("image_type[]",'custom','',array("id" => "custom_image")) }}
+                        {{ Form::label("custom_image","SUBIR IMAGEN") }} 
+                        
+                        <div class="image_upload_box">
+                            <a class="bsc-btn" href="">{{ trans("BUSCAR") }}</a>
+                            {{ Form::file("image",array("accept" => "image/*","id" => "image_file_input")) }}
+                            <span id="file_name_value"></span>
+                        </div>
+
+                    </div>
+                    <div class="despcripcion-form">
+                        {{ Form::label("DESCRIPCIÓN") }}
+                        <br />
+                        {{ Form::textarea("description",null,array("class" => "area-form","placeholder" => "ESTE LUGAR ES UNA EXCELENTE PICADA PARA COMER EN FAMILIA Y CON LOS AMIGOS, ESTA UBICADA EN EL MERCADO DE CHILLÁN. BUENO, BONITO Y BARATO.")) }}    
 
 
 
-                </div>
+                    </div>
 
-                <div class="btn-enviar">
-                    <input type="submit" class="btn-envia-dato" value="SUBE TU DATO" />
-                </div>
+                    <div class="btn-enviar">
+                        <input type="submit" class="btn-envia-dato" value="SUBE TU DATO" />
+                    </div>
 
-                <div class="dato-picada">*LA INFORMACIÓN QUE NOS ENTREGUES EN ESTE SITIO SERÁ PARA PROPORCIONAR DATOS ÚTILES A LA COMUNIDAD</div>
+                    <div class="dato-picada">*LA INFORMACIÓN QUE NOS ENTREGUES EN ESTE SITIO SERÁ PARA PROPORCIONAR DATOS ÚTILES A LA COMUNIDAD</div>
+                @endif
             </div>
         </div>
         {{ Form::token() . Form::close() }}
@@ -144,5 +158,27 @@
         })
 
     })
+    $(".facebook-login").click(function(){
+        facebook_connect(function(){
+            autofill_fields();
+        });
+        return false;
+    });
+
+    $(document).bind("fb_load",function(){
+        FB.getLoginStatus(function(response) {
+            if (response.status === 'connected') {
+                autofill_fields();
+            }
+        });
+    });
+    function autofill_fields(){
+        FB.api('/me', function(response) {
+            for (var key in response){
+                $("[data-fb-name="+key+"]").val(response[key]);    
+            }
+            
+        });
+    }
 </script>
 @append

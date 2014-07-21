@@ -50,3 +50,14 @@ function str_rand($length=20) {
     return $randomString;
 
 }  
+
+function init_facebook(){
+     $config = array(
+        'appId' => Config::get('facebook.appId'),
+        'secret' => Config::get('facebook.secret'),
+    );
+
+    $facebook = new Facebook($config);
+
+    return $facebook;
+}

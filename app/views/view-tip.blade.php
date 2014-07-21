@@ -23,12 +23,12 @@
     <a name="tip-data"></a>
 
     <h3 class="lugar">{{ $data["name"] }}</h3>
-    <h4 class="autor">{{ $data["author"] }}</h4>
+    <h4 class="autor">{{ Str::words($data["author"],1) }}</h4>
     <div class="detalle_city">
         <h2 class="slide">Imágenes del lugar</h2>
         <ul class="imgs">
             @foreach($images as $img)
-            <li><img src="{{ asset("uploads/$img") }}"/></li>
+                <li><img src="{{ asset("uploads/$img") }}" alt="{{ $data['name'] }}" /></li>
             @endforeach
         </ul>
         <h2 class="slide">Mapa del lugar</h2>
@@ -45,7 +45,7 @@
             <label></label>
         </div>
         <div class="shared">
-            <a class="ruta"></a>
+            <a class="ruta" href=""></a>
             <a href="" class="face"></a>
             <a class="tw"></a>
         </div>
@@ -76,31 +76,40 @@
         $('html, body').animate({
             scrollTop: $(".city-title").offset().top
         }, 0);
-    })
-    $(".face").click(function(){
-        FB.ui({
-            method: 'share',
-            href: '{{ Request::url() }}',
-        },function(response) {
+        $(".face").click(function(){
+            FB.ui({
+                method: 'share',
+                href: '{{ Request::url() }}',
+            },function(response) {
 
+            });
+        })
+        $(".ruta").click(function(){
+            var tip_id ='{{ $data["id"] }}';
+            $.post("{{ URL::to('/tips/add-to-my-route') }}",{'id':tip_id},function(res){
+                alert(res);
+            });
+            return false;
         });
-    })
 
-    $(".rating-big .mark").hover(function(){
-        var $mark = $(this);
-        for(var i = 0; i <= $(".rating-big .mark").index($mark); i++){
-            $(".rating-big .mark:eq("+i+")").addClass("hover")
-        }
-        $(".rating-big label").html($mark.attr("alt"));
-    },function(){
-        $(".rating-big .mark").removeClass("hover");
-        $(".rating-big label").html("").html($(".rating-big .clicked").attr("alt"));
-    }).click(function(){
-        $(".rating-big .mark").removeClass("active").removeClass("clicked");
-        var $mark = $(this).addClass("clicked");
-        for(var i = 0; i <= $(".rating-big .mark").index($mark); i++){
-            $(".rating-big .mark:eq("+i+")").addClass("active")
-        }
-    })
+        $(".rating-big .mark").hover(function(){
+            var $mark = $(this);
+            for(var i = 0; i <= $(".rating-big .mark").index($mark); i++){
+                $(".rating-big .mark:eq("+i+")").addClass("hover")
+            }
+            $(".rating-big label").html($mark.attr("alt"));
+        },function(){
+            $(".rating-big .mark").removeClass("hover");
+            $(".rating-big label").html("").html($(".rating-big .clicked").attr("alt"));
+        }).click(function(){
+            $(".rating-big .mark").removeClass("active").removeClass("clicked");
+            var $mark = $(this).addClass("clicked");
+            for(var i = 0; i <= $(".rating-big .mark").index($mark); i++){
+                $(".rating-big .mark:eq("+i+")").addClass("active")
+            }
+        })
+
+
+    });
 </script>
 @append

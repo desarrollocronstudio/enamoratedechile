@@ -1,5 +1,7 @@
 <?php
 include(app_path()."/libraries/functions.php");
+
+
 /*
 |--------------------------------------------------------------------------
 | Register The Laravel Class Loader
