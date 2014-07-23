@@ -75,6 +75,10 @@ h4.autor{font-family: Helvetica, Arial, sans-serif;height: 26px;text-transform: 
 .message{background:lightyellow; padding: 20px; border-radius:15px; }
 .mobile{display: none;}
 .desktop{display: inherit; }
+a:hover{opacity: 0.9;}
+
+.btn-red{background: url("../img/bg-btn-dato.png") no-repeat; width: 130px; height: 46px; border:none; color: #fff;display: inline-block; text-decoration: none; text-align: center;line-height: 46px;}
+.btn-red:hover{opacity: 0.8;}
 
 /* HEADER */
 header{background:url("../img/bg-menu-top.png"); height: 51px; }
@@ -104,6 +108,31 @@ header li a:hover{border-radius:5px; background: #fff; color:#5b5b5b; }
 .nav a img{ max-width: 80%;}
 .nav a:hover{opacity:0.8;}
 
+/*************************************
+POPUP 
+*************************************/
+.popup{background:rgba(0,0,0,0.8); padding-top: 10%; position: fixed; top: 0; left: 0; width: 100%; height: 90%; z-index: 1;}
+.popup .bg{background: url("../img/bg-popup.png") repeat-y; background-size: 100% 100%;width: 90%; max-width: 340px; margin: 0 auto; }
+.popup .bg .wrapper{padding:45px 40px 20px 40px; position: relative; z-index: 2;}
+
+/*************************************
+LOGIN 
+*************************************/
+#signup{}
+/*
+#signup .top{background: url("../img/top-popup.png") no-repeat; width:351px; height: 156px; display: block; }
+#signup .bottom{background: url("../img/bottom-popup.png") no-repeat; width:351px; height: 156px; display: block; position: relative; margin-top: -60px; }
+*/
+#signup form input{display: block; clear: both; width: 94%; margin: 5% 0; outline:none; padding: 3%; font-family: 'boogalooregular'; border-radius:5px; border:solid 1px #ccc; font-size: 15px;}
+#signup .facebook-connect img{width: 100%;}
+#signup hr{background: url("../img/hr-or.png") no-repeat; width: 259px; margin: 0 auto; display: block; height: 20px; margin: 10px auto; border:none;}
+#signup .btn-red{border:none; width: 136px; margin: 5px auto; padding: 0;  }
+#signup .mini-profile{display: none;}
+#signup .mini-profile img{width: 50px; height: 50px; border-radius:5px; float:left; background: #ccc; }
+#signup .mini-profile .name{float: left; display: block; padding-left: 10px;}
+
+#thanks h3{margin: 0;}
+#thanks .btn-red{margin:0 auto; display: block;}
 /************************************************************
     PAGES 
 ************************************************************/

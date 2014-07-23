@@ -1,10 +1,18 @@
 <?php
-class Person extends Eloquent {
+use Illuminate\Auth\UserTrait;
+use Illuminate\Auth\UserInterface;
+use Illuminate\Auth\Reminders\RemindableTrait;
+use Illuminate\Auth\Reminders\RemindableInterface;
+
+class Person extends Eloquent implements UserInterface, RemindableInterface {
+	use UserTrait, RemindableTrait;
+	
 	protected $table = 'people';
 	public static $rules =  array(	
 		'name' 		=> 'required|min:3',
 		'email'		=> 'required|email',
 		'rut'		=> 'required|rut');
 	
+	protected $hidden = array('password', 'remember_token');
  
 }

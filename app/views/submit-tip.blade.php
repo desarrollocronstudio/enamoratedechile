@@ -5,10 +5,6 @@
 
 	@include("incs/search-nav")
 
-    <div class="facebox">
-        <h4>Conéctate con Facebook para rellenar los campos solicitados</h4>
-        <a href="{{ Social::login('facebook') }}" class="facebook-login"><img src='{{ asset("img/btn-fb-connect.png") }}' alt="Conectar con Facebook" /></a>
-    </div>
     <section class="datos">
         <div id="content-form">
             <h1>SUBE TU DATO PARA TODOS PUEDAN ENAMORARSE DE CHILE</h1>
@@ -121,6 +117,10 @@
 @stop
 @section('js')
 <script type="text/javascript">
+    @unless (Auth::check()) 
+        show_popup("signup",null,null,false);
+    @endunless
+
     function readURL(input) {
 
         if (input.files && input.files[0]) {

@@ -11,13 +11,16 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', array("as" => "home", "uses" => 'HomeController@index'));
 Route::get('/featured', 'TipController@featured');
 Route::get('/my_route', 'RouteController@my_route');
 Route::get('/ideal_route', 'RouteController@ideal');
 Route::get('/jenny', 'JennyController@index');
 Route::get('/ver/{id}', 'TipController@view');
 Route::get('/search-tips', 'TipController@search');
+Route::get("/signup",array("as" =>"signup","uses" => 'UserController@signup'));
+Route::post("/signup",array("as" =>"save-signup","uses" => 'UserController@save_signup'));
+Route::get("/partials/{name}","PartialController@show");
 
 Route::get('/submit-tip', 'TipController@post');
 Route::post('/submit-tip', 'TipController@save');

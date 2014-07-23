@@ -7,8 +7,21 @@ class BaseController extends Controller {
 	 *
 	 * @return void
 	 */
+
+
+	
 	protected function setupLayout()
 	{
+		$fb = init_facebook();
+		if(!Auth::check()){
+			$fbid = $fb->getUser();
+			$user = Person::where('fbid', $fbid)->first();
+			if ($user && Auth::login($user))
+			{
+			    //return Redirect::intended('home');
+			}
+		}
+
 		if ( ! is_null($this->layout))
 		{
 			$this->layout = View::make($this->layout);

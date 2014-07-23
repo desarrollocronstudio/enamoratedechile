@@ -27,9 +27,12 @@ class Base extends Migration {
 			$table->string('email');
 			$table->string('phone');
 			$table->string('dni');
+			$table->string('password');
+			$table->rememberToken();
 			$table->char('dni_type',3);
 			$table->text('description');
 			$table->boolean('active');
+			$table->boolean('confirmed_email');
 			$table->timestamps();
             $table->softDeletes();
             $table->engine = 'MyISAM';

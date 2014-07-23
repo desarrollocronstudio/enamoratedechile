@@ -15,6 +15,8 @@
 </script>
 <div id="fb-root"></div>
 <script>
+  var BASE_URL = '<?php echo URL::to("/"); ?>';
+  var CURRENT_URL = '<?php echo URL::current(); ?>';
   window.fbAsyncInit = function() {
 
     FB.init({
