@@ -14,5 +14,11 @@ class Person extends Eloquent implements UserInterface, RemindableInterface {
 		'rut'		=> 'required|rut');
 	
 	protected $hidden = array('password', 'remember_token');
- 
+
+	public function profile_image(){
+		if($this->fbid){
+			return "//graph.facebook.com/".$this->fbid."/picture";
+		}
+		return asset("img/default_profile.jpg");
+	}
 }

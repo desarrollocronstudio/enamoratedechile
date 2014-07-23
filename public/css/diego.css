@@ -107,6 +107,7 @@
 	outline:none;
 	padding-left:10px
 }
+.dato-in.ok input{border-color:green;}
 .dato-picada{
 	font-size:14px;
 	color:#444343;

@@ -31,47 +31,30 @@ class TipController extends BaseController {
 	public function save(){
 
 		$input = Input::all();
-
-		$validator = Validator::make($input,Tip::$rules,array(
-			"required" 	=> "Debes completar el campo :attribute",
-			"rut"		=> "El R.U.T. ingresado es inválido"));
+		$user_id = 
+		$rules =  array(	
+			'user_id' 		=> 'required|min:3',
+			'placen_name'	=> 'required',
+			'category_id'	=> 'required'
+		);
+		$validator = Validator::make($input,$rules,array(
+			"required" 	=> "Debes completar el campo :attribute"
+		));
 		if ($validator->fails()){
 			if(Request::ajax()){                    
 				$response_values = array(
-				'validation_failed' => 1,
-				'errors' =>  $v->errors()->toArray());	            
+					'validation_failed' => 1,
+					'errors' =>  $validator->errors()->toArray()
+				);
 				return Response::json($response_values);
 			}
 
 		 	return Redirect::back()->withErrors($validator)->withInput();
 		}else{
-			$input = Input::all();
-			$input["rut"] = normalizar_rut($input["rut"]);
-
-			$exists = Person::where(function($query) use ($input){
-				$query->where("dni","=",$input["rut"])->where("dni_type","=","rut");
-			});
-			if(isset($input["fbid"]))
-				$exists->orWhere("fbid",$input["fbid"]);
-			
-			$data = $exists->get();
-			//Chck if is connected to Facebook.
-
-			$fb = init_facebook();
-			$user = $fb->getUser();
-
-			$person = ($data->count() > 0)?$data[0]:new Person;
-			if($user)$person->fbid = $user;
-			$person->name		= $input["name"];
-			$person->email		= $input["email"];
-			$person->dni		= normalizar_rut($input["rut"]);
-			$person->dni_type	= "rut";
-			$person->save();
-
 
 			$tip = new Tip;
 			$tip->name 			= $input["place_name"];
-			$tip->author_id		= $person->id;
+			$tip->author_id		= $input["user_id"];
 			$tip->content 		= $input["description"];
 			$tip->type_id 		= $input["tip_category"];
 			$tip->place_name	= $input["place_name"];

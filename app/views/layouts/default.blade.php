@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
         <link rel="stylesheet" href="{{ asset('css/diego.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/autocomplete.css') }}">
 
         <script src="{{ asset('js/vendor/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
     </head>

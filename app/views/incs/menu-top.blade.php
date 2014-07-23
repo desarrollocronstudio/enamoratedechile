@@ -9,7 +9,7 @@
 	<div class="userdata"> 
 		@if (Auth::check())
 			<div class="user">
-				<img src="https://graph.facebook.com/{{Auth::user()->fbid}}/picture" alt="{{ Auth::user()->name }}" />
+				<img src="{{ Auth::user()->profile_image() }}" alt="{{ Auth::user()->name }}" />
 				<span>{{ Auth::user()->name }}</span>
 				<a href="{{ action('logout') }}">Cerrar sesión</a>
 			</div>

@@ -79,11 +79,15 @@ $(function(){
 		show_popup("login");
 		return false;
 	});
+
+	$(".autocomplete").autocomplete();
 });
+
+
 
 function show_popup(name,cb,data,canClose){
 	data = data || false;
-	canClose = canClose || true;
+	if(typeof(canClose) == "undefined")canClose = true;
 	$.get("/partials/"+name,data,function(res){
 		var $popup = $("<div class='popup'>");
 		$popup.html(res).hide();
@@ -96,7 +100,7 @@ function show_popup(name,cb,data,canClose){
 				$(this).remove();
 			});
 		}
-		
+		alert(canClose);
 		if(canClose){
 			$popup.click(function(e){
 				if(e.target != this)return;

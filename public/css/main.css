@@ -91,7 +91,7 @@ header li a{ color:#fff; font-size: 24px; line-height: 31px; text-decoration: no
 header li a:hover{border-radius:5px; background: #fff; color:#5b5b5b; }
 header .submenu{width: 810px; margin: 0 auto; clear: both; overflow: hidden;}
 header .submenu .user{width:230px;float:right;padding: 5px; margin-top: 15px; border-radius: 10px; background: rgba(255,255,255,0.7); overflow: hidden;}
-header .submenu .user img{width: 35px; height: 35px; border-radius: 35px; display: block; float:right; padding: 3px 0 3px 10px;}
+header .submenu .user img{width: 35px; height: 35px; border-radius: 35px; display: block; float:right; margin: 3px 0 3px 10px; border:solid 2px #666;}
 header .submenu .user span{display: block; width: 180px; float: right;text-align: right;}
 header .submenu .userdata .user a{display: block; float: right; text-align: right; padding-left: 33px; color: #000; font-size: 13px; font-weight: normal; margin-top: -5px;}
 header .submenu .userdata{width:300px; float:right; text-align: right;}

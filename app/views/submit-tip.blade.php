@@ -25,13 +25,15 @@
                         Tu dato ha sido guardado exitosamente. ¡Gracias!
                     </div>
                 @else
-                    <span class="dato-in">
-                        {{ Form::label("¿Dónde es tu dato?") }}<br />
-                        {{ Form::text('city','',array("placeholder" => "Ej. Chillán","required")); }}
-                    </span>
+                    <div class="autocomplete">
+                        <span class="dato-in">
+                            {{ Form::label("¿Dónde es tu dato?") }}<br />
+                            {{ Form::text('city','',array('data-source' => "get-cities?q=","placeholder" => "Ej. Chillán","required")); }}
+                        </span>
+                    </div>
                     <span class="dato-in">
                         {{ Form::label("Región") }}<br />
-                        {{ Form::select('region',$regions,array("required")); }}
+                        {{ Form::select('region',$regions,array("required","")); }}
                     </span>
                     <span class="dato-in">
                         {{ Form::label("Nombre del lugar") }}

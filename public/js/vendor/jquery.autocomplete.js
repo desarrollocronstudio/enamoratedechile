@@ -12,12 +12,12 @@
     {
         //puede haber mas de un autocomplete que cargar por eso esto los levanta a todos
         $(this).each(function(){
-            
-            
+             
+             
             // aplico los estilos a los elementos elegidos
             $(this).addClass('autocomplete-jquery-aBox');
-            
-            
+             
+             
             // guardo en una variable una nueva funcion que asigna el texto del 
             // link que paso en that al input donde escribimos.
             // esto seleccionaria el link del cuadro autocompletar
@@ -28,12 +28,13 @@
                 // remuevo el cuadro de autocompletar, se supone si ya seleccionaste
                 // un valor no se necesita mas
                 $(that).parent().remove();
-                                    
+                                     
             }
             // busco el input y le asigno un evento al presionar una tecla
             $(this).find('input').bind('keyup',function(event){
                 var input=$(this);
-                
+                var xhr = false;
+                 
                 // codigo de la tecla persionada
                 var code=event.keyCode;
                 // si es Enter => seleccionar el link marcado 
@@ -50,20 +51,20 @@
                     if ($('.autocomplete-jquery-mark').size()>0){
                         mark=$('.autocomplete-jquery-mark').attr('data-id');
                         $('.autocomplete-jquery-mark').removeClass('autocomplete-jquery-mark');
-                             
+                              
                         if (code==38){
                             mark --;
                         }else{
                             mark ++;
                         }
-                             
+                              
                         if (mark > elements.size()){
                             mark=0;
                         }else if (mark < 0){
                             mark=elements.size();
                         }
-                             
-                             
+                              
+                              
                     }
                     elements.each(function(){
                         if ($(this).attr('data-id')==mark)
@@ -71,9 +72,9 @@
                             $(this).addClass('autocomplete-jquery-mark');
                         }
                     });                             
-                             
+                              
                 }
-                
+                 
                 // si es una letra o caracter, ejecutar el autocompletar
                 // con este filtro solo toma caracteres para la busqueda
                 else if((code>47 && code<91)||(code>96 && code<123) || code ==8 )
@@ -84,8 +85,11 @@
                     // tomo el valor del combo actualmente
                     var value = input.val();
                     url+=value;
-                    //busco en el server la info 
-                    $.getJSON(url,{}, function(data){
+                    //busco en el server la info
+                     if(xhr != false && xhr.readystate != 4){
+                        xhr.abort();
+                    } 
+                    xhr = $.getJSON(url,{}, function(data){
                         // si encontro algo 
                         // creo un cuadro debajo del input con los resultados
                         input.parent().find('.autocomplete-jquery-results').remove();
@@ -95,33 +99,37 @@
                         // le damos algunos estilos al combo 
                         result.css({'width':width});
                         result.css({'left':left});
-                        
-                        
+                         
+                         
                         result.addClass('autocomplete-jquery-results');
+                        var count = 0;
                         for(index in data)
                         {
                             //agrego un link por resultado
                             if(data.hasOwnProperty(index))
                                 {
+                                    count++;
                                     var a = $('<a>');
                                     a.html(data[index]);
                                     a.addClass('autocomplete-jquery-item');
                                     var widthFixed=width - 3;
                                     a.css({'width':widthFixed});
                                     a.attr('href',"#");
-
-                                    a.click(function(){
+ 
+                                    a.click(function(e){
                                         // funcion que pone el texto en input
                                         selectItem(this);
+                                        e.preventDefault();
                                     })
                                     a.attr('data-id',index);
                                     $(result).append(a);
                                 }
                         }
-                        if (data.length>0)
+                        if (count>0)
                         {
+
                             input.parent().append(result);
-                            result.fadeIn('slow');
+                            result.fadeIn('fast');
                         }
                     });
                 }

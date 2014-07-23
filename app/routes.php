@@ -45,4 +45,7 @@ Route::get("/create-seeds",function(){
 });
 
 
-Route::post("/cities-autocomplete","CityController@autocomplete");
+Route::any("/get-cities","CityController@cities");
+
+
+
