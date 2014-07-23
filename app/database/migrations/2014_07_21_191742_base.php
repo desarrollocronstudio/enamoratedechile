@@ -80,9 +80,11 @@ class Base extends Migration {
             $table->string('images');
             $table->text('content');
             $table->integer('author_id')->unsigned();
+            $table->integer('city_id')->unsigned();
             $table->integer('type_id')->unsigned();
             $table->foreign('author_id')->references('id')->on("people");
             $table->foreign('type_id')->references('id')->on("tips_categories");
+            $table->foreign('city_id')->references('id')->on("cities");
 
             $table->timestamps();
             $table->softDeletes();

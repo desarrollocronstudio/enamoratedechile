@@ -32,7 +32,7 @@ class TipController extends BaseController {
 
 		$input = Input::all();
 
-		$validator = Validator::make($input,Person::$rules,array(
+		$validator = Validator::make($input,Tip::$rules,array(
 			"required" 	=> "Debes completar el campo :attribute",
 			"rut"		=> "El R.U.T. ingresado es inválido"));
 		if ($validator->fails()){

@@ -19,7 +19,7 @@ $(function(){
 		});
 		return false;
 	});
-	$(document).on("submit","#signup form",function(){
+	$(document).on("submit","#signup form",function(e){
 		var obj = this;
 		if($(this).data("sending"))return false;
 		$(this).data("sending",true);
@@ -42,6 +42,41 @@ $(function(){
 				$("#signup").html();
 			}
 		});
+		e.preventDefault();
+	});
+
+	/* LOGIN! */
+	$(document).on("click","#login .facebook-connect",function(){
+		var obj = this;
+		var $parent = $(this).parent();
+		facebook_connect(function(response){
+			window.location.reload();
+		});
+		return false;
+	});
+	$(document).on("submit","#login form",function(e){
+		var obj = this;
+		if($(this).data("sending"))return false;
+		$(this).data("sending",true);
+		$(this).find("[type=submit]").val("Iniciando sesión...");
+		$.post(BASE_URL+"/login",$(this).serialize(),function(res){
+			if(res.loged){
+				$("#signup").parent().remove();
+				window.location.reload();
+			}else{
+				$(this).data("sending",false);
+				$(this).find("[type=submit]").val("Iniciar sesión");
+				alert(res.msg);
+			}
+		});
+		e.preventDefault();
+	});
+	$(document).on("click",".signup",function(){
+		show_popup("signup");
+		return false;
+	});
+	$(document).on("click",".login",function(){
+		show_popup("login");
 		return false;
 	});
 });
@@ -56,6 +91,11 @@ function show_popup(name,cb,data,canClose){
 		$popup.fadeIn(function(){
 			if(typeof(cb)=="function")cb($popup);
 		});
+		$popup.close = function(){
+			$popup.fadeOut(function(){
+				$(this).remove();
+			});
+		}
 		
 		if(canClose){
 			$popup.click(function(e){

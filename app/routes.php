@@ -18,9 +18,17 @@ Route::get('/ideal_route', 'RouteController@ideal');
 Route::get('/jenny', 'JennyController@index');
 Route::get('/ver/{id}', 'TipController@view');
 Route::get('/search-tips', 'TipController@search');
+Route::get("/partials/{name}","PartialController@show");
+
+/***********************
+AUTH
+***********************/
 Route::get("/signup",array("as" =>"signup","uses" => 'UserController@signup'));
 Route::post("/signup",array("as" =>"save-signup","uses" => 'UserController@save_signup'));
-Route::get("/partials/{name}","PartialController@show");
+Route::get("/logout",array("as" => "logout","uses" => "UserController@logout"));
+Route::get("/login",array("as" => "login","uses" => "UserController@show_login"));
+Route::post("/login",array("as" => "do-login","uses" => "UserController@login"));
+
 
 Route::get('/submit-tip', 'TipController@post');
 Route::post('/submit-tip', 'TipController@save');

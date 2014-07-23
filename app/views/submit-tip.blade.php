@@ -26,34 +26,6 @@
                     </div>
                 @else
                     <span class="dato-in">
-                        {{ Form::label("Nombre") }}<br />
-                        {{ Form::text('name','',array(
-                            "placeholder" => "Carlos Ríos",
-                            "required",
-                            "data-fb-name" => "name")); 
-                        }}
-                    </span>
-                    <span class="dato-in">
-                        {{ Form::label("Email") }}<br />
-                        {{ Form::text('email','',array(
-                            "placeholder" => "carlos@mail.com",
-                            "required",
-                            "data-fb-name" => "email")); 
-                        }}
-                    </span>
-                    <span class="dato-in">
-                        {{ Form::label("R.U.T.") }}<br />
-                        {{ Form::text('rut','',array("placeholder" => "12345678-9","required")); }}
-                    </span>
-                    <span class="dato-in">
-                        {{ Form::label("Email") }}<br />
-                       {{ Form::text('email','',array(
-                            "placeholder" => "carlos@mail.com",
-                            "required",
-                            "data-fb-name" => "email")); 
-                        }}
-                    </span>
-                    <span class="dato-in">
                         {{ Form::label("¿Dónde es tu dato?") }}<br />
                         {{ Form::text('city','',array("placeholder" => "Ej. Chillán","required")); }}
                     </span>
@@ -158,27 +130,9 @@
         })
 
     })
-    $(".facebook-login").click(function(){
-        facebook_connect(function(){
-            autofill_fields();
-        });
-        return false;
-    });
 
     $(document).bind("fb_load",function(){
-        FB.getLoginStatus(function(response) {
-            if (response.status === 'connected') {
-                autofill_fields();
-            }
-        });
+        
     });
-    function autofill_fields(){
-        FB.api('/me', function(response) {
-            for (var key in response){
-                $("[data-fb-name="+key+"]").val(response[key]);    
-            }
-            
-        });
-    }
 </script>
 @append

@@ -2,6 +2,39 @@
 
 class UserController extends BaseController {
 	
+	public function logout(){
+		$fb_key = 'fbsr_'.Config::get("facebook.appId");
+		setcookie($fb_key, '', time()-3600);
+		$fb = init_facebook();
+		$fb->destroySession();
+		Auth::logout();
+
+		return Redirect::to("/");
+	}
+	public function login(){
+		$check = array("dni" => Input::get('rut'),"dni_type" => "rut","password" => Input::get("password"));
+		if($res = Auth::attempt($check)){
+			if(Request::ajax()){                   
+				$response_values = array(
+					'loged' => true,
+					'user_data' =>  Auth::user()
+				);	            
+				return Response::json($response_values);
+			}
+		}else{
+			if(Request::ajax()){                   
+				$response_values = array(
+					'loged' => false,
+					'msg'	=> "Rut y contraseña no coinciden"
+				);	            
+				return Response::json($response_values);
+			}
+		}
+		
+	}
+	public function show_login(){
+		return View::make("login");
+	}
 
 	public function signup(){
 		return View::make('signup');
@@ -51,7 +84,7 @@ class UserController extends BaseController {
 			$person->dni_type	= "rut";
 			$person->password 	= Hash::make($input["password"]);
 			$person->save();
-			
+
 			if(Request::ajax()){                   
 				$response_values = array(
 					'validation_failed' => false,
