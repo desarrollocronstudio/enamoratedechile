@@ -132,7 +132,15 @@
         })
 
     })
-
+    $(".autocomplete input").autocomplete({
+      source: "get-cities",
+      minLength: 2,
+      select: function( event, ui ) {
+        console.log( ui.item ?
+          "Selected: " + ui.item.value + " aka " + ui.item.id :
+          "Nothing selected, input was " + this.value );
+      }
+    });
     $(document).bind("fb_load",function(){
         
     });

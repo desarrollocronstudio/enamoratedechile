@@ -50,7 +50,24 @@ $(function(){
 		var obj = this;
 		var $parent = $(this).parent();
 		facebook_connect(function(response){
-			window.location.reload();
+			$.getJSON("/login/check-login",function(res){
+				if(res.loged){
+					window.location.reload();
+				}else{
+					if(res.facebook){
+						$(obj).closest('.popup').remove();
+						show_popup('signup',function(){
+							FB.api("/me",function(data){
+								$("#signup [name=name]").val(data.name);
+								$("#signup [name=email]").val(data.email);
+							});
+						});	
+					}else{
+						alert("Usuario y contraseña no coinciden")
+					}
+				}
+			});
+			//window.location.reload();
 		});
 		return false;
 	});
@@ -79,8 +96,6 @@ $(function(){
 		show_popup("login");
 		return false;
 	});
-
-	$(".autocomplete").autocomplete();
 });
 
 
@@ -100,7 +115,6 @@ function show_popup(name,cb,data,canClose){
 				$(this).remove();
 			});
 		}
-		alert(canClose);
 		if(canClose){
 			$popup.click(function(e){
 				if(e.target != this)return;

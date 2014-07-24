@@ -39,6 +39,16 @@ class UserController extends BaseController {
 	public function signup(){
 		return View::make('signup');
 	}
+
+	public function check(){
+		$fb = init_facebook();
+		$fb->getUser();
+
+		return Response::json([
+			'loged'			=> Auth::check(),
+			'facebook'		=> $fb->getUser()
+		]);
+	}
 	
 	public function save_signup(){
 		$input = Input::all();

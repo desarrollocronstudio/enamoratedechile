@@ -28,8 +28,14 @@ Route::post("/signup",array("as" =>"save-signup","uses" => 'UserController@save_
 Route::get("/logout",array("as" => "logout","uses" => "UserController@logout"));
 Route::get("/login",array("as" => "login","uses" => "UserController@show_login"));
 Route::post("/login",array("as" => "do-login","uses" => "UserController@login"));
+Route::get("/login/check-login",[
+	'as' 	=> 'check-login',
+	'uses'	=> 'userController@check'
+]);
 
-
+/***********************
+TIPS
+***********************/
 Route::get('/submit-tip', 'TipController@post');
 Route::post('/submit-tip', 'TipController@save');
 Route::post("/tips/add-to-my-route","TipController@add_to_my_route");

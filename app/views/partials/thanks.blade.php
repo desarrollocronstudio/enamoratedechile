@@ -9,9 +9,7 @@
 (function(){
 	$popup = $("#thanks").parent();
 	$popup.find(".close").click(function(){
-		$popup.fadeOut(function(){
-			$(this).remove()
-		});
+		window.location.reload();
 		return false;
 	});
 })();
