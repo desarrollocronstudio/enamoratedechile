@@ -3,6 +3,18 @@
 <script src="{{ asset('js/vendor/ui/jquery-ui.js') }}"></script>
 <script src="{{ asset('js/plugins.js') }}"></script>
 <script src="{{ asset('js/main.js') }}"></script>
+<script>
+$(function(){
+  $("#search-form .box").autocomplete({
+      source: '{{ action("get-cities") }}',
+      minLength: 2,
+      delay:100,
+      select: function( event, ui ) {
+        window.location = "{{ URL::to('/search') }}"+"/"+ui.item.id+"/"+ui.item.value.replace(" ","-");
+      }
+    });
+});
+</script>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script>

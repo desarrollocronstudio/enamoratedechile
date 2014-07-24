@@ -26,15 +26,17 @@
                     </div>
                 @else
                     <div class="autocomplete">
-                        <span class="dato-in">
+                        <span class="dato-in large">
                             {{ Form::label("¿Dónde es tu dato?") }}<br />
-                            {{ Form::text('city','',array('data-source' => "get-cities?q=","placeholder" => "Ej. Chillán","required")); }}
+                            {{ Form::hidden('city','',
+                                ["required"]); 
+                            }}
+                            {{ Form::text('city_search','',[
+                                "placeholder" => "Comienza a escribir el nombre de la ciudad...",
+                                "required"
+                            ]); }}
                         </span>
                     </div>
-                    <span class="dato-in">
-                        {{ Form::label("Región") }}<br />
-                        {{ Form::select('region',$regions,array("required","")); }}
-                    </span>
                     <span class="dato-in">
                         {{ Form::label("Nombre del lugar") }}
                         {{ Form::text('place_name','',array("placeholder" => "Onde'l Pala","required")); }}
@@ -132,13 +134,17 @@
         })
 
     })
-    $(".autocomplete input").autocomplete({
+    $(".autocomplete input[type=text]").autocomplete({
       source: "get-cities",
       minLength: 2,
+      delay:100,
       select: function( event, ui ) {
-        console.log( ui.item ?
-          "Selected: " + ui.item.value + " aka " + ui.item.id :
-          "Nothing selected, input was " + this.value );
+        var $hidden = $(this).parent().find("[type=hidden]");
+        if(ui.item){
+           $hidden.val(ui.item.id);
+        }else{
+            $hidden.val("");
+        }
       }
     });
     $(document).bind("fb_load",function(){

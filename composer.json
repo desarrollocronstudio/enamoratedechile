@@ -9,7 +9,8 @@
 		"barryvdh/laravel-migration-generator": "dev-master",
 		"orangehill/iseed": "dev-master",
 		"facebook/php-sdk": "*",
-		"magniloquent/magniloquent": "dev-master"
+		"magniloquent/magniloquent": "dev-master",
+		"vespakoen/menu": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

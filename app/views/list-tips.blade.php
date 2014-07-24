@@ -7,7 +7,7 @@
 
 	@include("incs/search-nav")
 
-	
+	<a id="cs"></a>
 	<h2 class="city-title">
 		{{ $city['name'] }}
 		<span>Desde 80 lukas</span>
@@ -40,3 +40,8 @@
 	</section>
 </div>
 @stop
+@section("js")
+<script>
+	window.location.hash="cs";
+</script>
+@append

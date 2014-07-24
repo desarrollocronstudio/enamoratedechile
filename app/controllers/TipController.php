@@ -3,10 +3,12 @@
 class TipController extends BaseController {
 	
 
-	public function search(){
+	public function search($city_id,$city_name){
+		$city = City::find($city_id);
+		if(!$city)Redirect::back();
 		$data = array(
 			"tips" => array(1,2,3,4,5,6),
-			"city"	=> array("name" => "Puerto Varas")
+			"city"	=> array("name" => $city->name)
 		);
 		return View::make('list-tips',$data);
 	}
@@ -29,16 +31,19 @@ class TipController extends BaseController {
 		return View::make('submit-tip',$data);
 	}
 	public function save(){
+		if(!Auth::check()){
+			return Redirect::back()->with('not_loged', true)->withInput();
+		}
 
 		$input = Input::all();
-		$user_id = 
+		$input["user_id"] = Auth::user()->id;
 		$rules =  array(	
-			'user_id' 		=> 'required|min:3',
-			'placen_name'	=> 'required',
-			'category_id'	=> 'required'
+			'city'		=> 'required',
+			'tip_category'	=> 'required'
 		);
 		$validator = Validator::make($input,$rules,array(
-			"required" 	=> "Debes completar el campo :attribute"
+			"city.required" 			=> "Debes seleccionar una ciudad. ¿Donde es tu dato?",
+			'tip_category.required'		=> "Debes indicar una categoría para tu dato"
 		));
 		if ($validator->fails()){
 			if(Request::ajax()){                    

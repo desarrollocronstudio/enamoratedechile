@@ -1,10 +1,11 @@
-<ul class="menu main-nav">
-    <li><a href="{{ action('HomeController@index') }}">{{ __("INICIO") }}</a></li>
-    <li><a href="{{ action('TipController@featured') }}">{{ __("DESTACADOS")}}</a></li>
-    <li><a href="{{ action('RouteController@my_route') }}">{{ __("MI RUTA")}}</a></li>
-    <li><a href="{{ action('RouteController@ideal') }}">{{ __("LA RUTA IDEAL")}}</a></li>
-    <li><a href="{{ action('JennyController@index') }}">{{ __("BUSCANDO A JENNY")}}</a></li>
-</ul>
+{{ 
+	Menu::handler('main')->addClass("menu main-nav")
+		->add(action('HomeController@index'),"INICIO")
+		->add(action('TipController@featured'),'DESTACADOS')
+		->add(action('RouteController@my_route'),"MI RUTA")
+		->add(action('RouteController@ideal'),'LA RUTA IDEAL')
+		->add(action('JennyController@index'),'BUSCANDO A JENNY') 
+}}
 <div class='submenu'>
 	<div class="userdata"> 
 		@if (Auth::check())

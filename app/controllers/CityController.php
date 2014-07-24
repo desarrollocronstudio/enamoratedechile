@@ -4,15 +4,15 @@ class CityController extends BaseController {
 
 	public function cities()
 	{
-		$q = Input::get("q");
+		$q = Input::get("term");
 		$words = explode(" ",$q);
 		if($q){
-			$cities = City::where('name','LIKE','%'.$q.'%')->select('id','name')->get();
+			$cities = City::where('name','LIKE','%'.$q.'%')->select('id','name as label')->get();
 		}else{
 			$cities = City::all();
 		}
 		return Response::json(
-			$cities->lists('name','id')
+			$cities->toArray()
 		);
 	}
 

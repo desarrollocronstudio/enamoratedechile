@@ -91,6 +91,8 @@
 	font-size:18px;
 	margin:10px 0px 0px 10px;
 }
+.dato-in.large{width: 500px; margin-bottom: 10px;}
+.dato-in.large input{width: 520px;}
 .dato-in label{text-transform: uppercase;}
 .dato-in input,.dato-in select,.dato-in textarea{
 	font-family: 'boogalooregular','Arial',sans-serif;

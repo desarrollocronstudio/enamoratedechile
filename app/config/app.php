@@ -124,6 +124,7 @@ return array(
 
 		'Barryvdh\MigrationGenerator\MigrationGeneratorServiceProvider',
 		'Orangehill\Iseed\IseedServiceProvider',
+		'Menu\MenuServiceProvider',
 		'Codesleeve\Social\SocialServiceProvider'
 	),
 
@@ -192,7 +193,8 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 
-		'Social' => 'Codesleeve\Social\Social',
+		'Social' 		  => 'Codesleeve\Social\Social',
+		'Menu'			  => 'Menu\Menu'
 	),
 
 );

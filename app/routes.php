@@ -11,7 +11,10 @@
 |
 */
 
-Route::get('/', array("as" => "home", "uses" => 'HomeController@index'));
+Route::get('/', [
+	"as" => "home", 
+	"uses" => 'HomeController@index'
+]);
 Route::get('/featured', 'TipController@featured');
 Route::get('/my_route', 'RouteController@my_route');
 Route::get('/ideal_route', 'RouteController@ideal');
@@ -39,7 +42,10 @@ TIPS
 Route::get('/submit-tip', 'TipController@post');
 Route::post('/submit-tip', 'TipController@save');
 Route::post("/tips/add-to-my-route","TipController@add_to_my_route");
-
+Route::get('/search/{city_id}/{city_name}',[
+	'as' 	=> "tip_search",
+	'uses'	=> "TipController@search"
+]);
 
 
 Route::get("/create-seeds",function(){
@@ -51,7 +57,10 @@ Route::get("/create-seeds",function(){
 });
 
 
-Route::any("/get-cities","CityController@cities");
+Route::any("/get-cities",[
+	'as' 	=> 'get-cities',
+	'uses'	=> "CityController@cities"
+]);
 
 
 
