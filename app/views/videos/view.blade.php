@@ -3,7 +3,7 @@
 <div class="page" id="jenny">
   @include("incs/logo")
   <div class="jenny">
-    <a id="video"></a>
+    <a id="view-content"></a>
     <h2 class="title_jenny">{{ $featured->name }}</h2>
 
     <div class="video">
@@ -19,7 +19,7 @@
             <a href="{{ action('view_video',$video->id) }}">
             </a>
           </div>
-          <a href="{{ action('view_video',[$video->type,$video->id]) }}#video" class="vervideo"></a>
+          <a href="{{ action('view_video',[$video->type,$video->id]) }}#view-content" class="vervideo"></a>
         </div>
       @endforeach
     </div>

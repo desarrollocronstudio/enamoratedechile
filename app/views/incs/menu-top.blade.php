@@ -1,10 +1,10 @@
 {{ 
 	Menu::handler('main')->addClass("menu main-nav")
 		->add(action('home'),"INICIO")
-		->add(action('featured'),'DESTACADOS')
-		->add(action('RouteController@my_route'),"MI RUTA")
-		->add(action('list_videos','ideal'),'LA RUTA IDEAL')
-		->add(action('list_videos','jenny'),'BUSCANDO A JENNY') 
+		->add(action('featured')."#view-content",'DESTACADOS')
+		->add(action('RouteController@my_route')."#view-content","MI RUTA")
+		->add(action('list_videos','ideal')."#view-content",'LA RUTA IDEAL')
+		->add(action('list_videos','jenny')."#view-content",'BUSCANDO A JENNY') 
 }}
 <div class='submenu'>
 	<div class="userdata"> 

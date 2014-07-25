@@ -99,6 +99,16 @@ class Base extends Migration {
             $table->engine = 'MyISAM';
         });
 
+        Schema::create('tips_person', function(Blueprint $table) {
+            $table->increments('id');
+            $table->integer('author_id')->unsigned();
+            $table->integer('tip_id')->unsigned();
+            $table->foreign('author_id')->references('id')->on("people");
+            $table->foreign('tip_id')->references('id')->on("tips");
+            $table->timestamps();
+            $table->engine = 'MyISAM';
+        });
+
         Schema::create('videos', function(Blueprint $table) {
             $table->increments('id');
             $table->string('name');
@@ -125,6 +135,7 @@ class Base extends Migration {
 		Schema::drop('provinces');
 		Schema::drop('tip_votes');
 		Schema::drop('people');
+		Schema::drop('tips_person');
 		Schema::drop('videos');
 	}
 

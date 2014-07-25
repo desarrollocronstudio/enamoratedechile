@@ -15,9 +15,18 @@ Route::get('/', [
 	"as" => "home", 
 	"uses" => 'HomeController@index'
 ]);
-Route::get('/my_route', 'RouteController@my_route');
 Route::get('/search-tips', 'TipController@search');
 Route::get("/partials/{name}","PartialController@show");
+
+/***********************
+MY ROUTE
+***********************/
+Route::get('/my_route', [
+	'as' 	=> 'my_route',
+	'uses'	=> 'RouteController@my_route']);
+Route::any("/tips/add-to-my-route/{id}",[
+	'as'	=> 'add_to_route',
+	'uses'	=> 'RouteController@add_to_my_route']);
 
 /***********************
 AUTH
@@ -54,10 +63,6 @@ Route::get('/submit-tip', [
 Route::post('/submit-tip', [
 	'as'	=> 'save_tip',
 	'uses'	=> 'TipController@save'
-]);
-Route::post("/tips/add-to-my-route",[
-	'as'	=> 'add_to_route',
-	'uses'	=> 'TipController@add_to_my_route'
 ]);
 Route::get('/search/{city_id}/{city_name}',[
 	'as' 	=> "tip_search",

@@ -72,7 +72,7 @@ h2.city-title{font-family:'cheap_pine_sanssans';height: 147px;text-transform: up
 h2.city-title span{display: block; font-size: 30px; line-height: 30px; display: block; margin-top: -20px;  }
 h3.lugar{font-family: 'cheap_pine_sanssans';height: 73px;text-transform: uppercase;line-height: 75px;font-size: 3em;margin: 0 auto;display: block;}
 h4.autor{font-family: Helvetica, Arial, sans-serif;height: 26px;text-transform: uppercase;line-height: 30px;font-family: 'boogalooregular'; font-size: 1.6em;text-align: center;margin: 0 auto; display: block;background: url(../img/bg_city_autor.png) no-repeat 0 0;width: 310px;}
-.message{background:lightyellow; padding: 20px; border-radius:15px; }
+.message{background:lightyellow; padding: 20px; border-radius:15px; width: 60%; margin: 0 auto; }
 .mobile{display: none;}
 .desktop{display: inherit; }
 a:hover{opacity: 0.85;}
@@ -148,7 +148,7 @@ LOGIN
 #signup .mini-profile{display: none;}
 #signup .mini-profile img{width: 50px; height: 50px; border-radius:5px; float:left; background: #ccc; }
 #signup .mini-profile .name{float: left; display: block; padding-left: 10px;}
-
+#signup .already_registered{display: block; text-align: center; padding-bottom: 10px;}
 
 #login form input{display: block; clear: both; width: 94%; margin: 5% 0; outline:none; padding: 3%; font-family: 'boogalooregular'; border-radius:5px; border:solid 1px #ccc; font-size: 15px;}
 #login .facebook-connect img{width: 100%;}
@@ -160,7 +160,7 @@ LOGIN
 /************************************************************
     PAGES 
 ************************************************************/
-.page{text-align: center;}
+.page{text-align: center; padding-bottom: 30px;}
 /*** HOME ****/
 #home{text-align:center;}
 #home .intro{font-size: 24px;}

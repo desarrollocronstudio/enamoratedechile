@@ -104,8 +104,4 @@ class TipController extends BaseController {
 
 		}
 	}
-
-	public function add_to_my_route(){
-		return "hola";
-	}
 }

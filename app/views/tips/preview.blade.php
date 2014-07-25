@@ -17,5 +17,5 @@
 			<span class="mark {{ ($i > $tip->rating_cache)?'':'active'  }}"></span>
 		@endfor
 	</div>
-	<a class="red-btn" href="{{ action('view-tip',array($tip->id)) }}">{{ trans("Leer más") }}</a>
+	<a class="red-btn" href="{{ action('view-tip',array($tip->id)) }}#view-content">{{ trans("Leer más") }}</a>
 </div>

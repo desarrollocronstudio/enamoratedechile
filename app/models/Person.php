@@ -21,4 +21,8 @@ class Person extends Eloquent implements UserInterface, RemindableInterface {
 		}
 		return asset("img/default_profile.jpg");
 	}
+
+	public function saved_tips(){
+		return $this->belongsToMany('Tip','tips_person','author_id','tip_id');
+	}
 }

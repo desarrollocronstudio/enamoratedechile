@@ -39,5 +39,9 @@ class Tip extends Eloquent {
 		$this->rating_count = $reviews->count();
 		$this->save();
 	}
+
+	public function users_who_saved_it(){
+		return $this->hasMany('Peron');
+	}
  
 }

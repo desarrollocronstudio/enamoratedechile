@@ -12,6 +12,11 @@
             {{ Form::hidden('place_lat',null,array("id" => "place_lat")) }}
             {{ Form::hidden('place_lng',null,array("id" => "place_lng")) }}
             <div class="form-in">
+                @if ( !Auth::check() )
+                    <div class="message warning">
+                        Debes iniciar sesión para poder incribir tu dato. 
+                    </div>
+                @endif
                 @if ( $errors->count() > 0 )
                 <div class="errors">
                     <p><strong>Se encontraron los siguientes errores:</strong></p>
@@ -23,7 +28,7 @@
                 </div>
                 @endif
                 @if ( Session::has('tip_saved') )
-                    <div class="message" style='margin:40px 10px'>
+                    <div class="message">
                         Tu dato ha sido guardado exitosamente. ¡Gracias!
                     </div>
                 @else
@@ -105,7 +110,7 @@
     var map = false;
     var marker = false;
     @unless (Auth::check()) 
-        show_popup("signup",null,null,false);
+        show_popup("signup",null,null,true);
     @endunless
 
     function readURL(input) {
@@ -159,7 +164,6 @@
             });
           }
         });*/
-        alert(USER_IP);
         $(".autocomplete input[type=text]").geocomplete({
             map: "#map",
             mapOptions: {

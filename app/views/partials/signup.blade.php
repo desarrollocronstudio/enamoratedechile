@@ -17,6 +17,7 @@
 		{{ Form::password("password",array("placeholder" => "Contraseña")) }}
 		{{ Form::password("password_confirmation",array("placeholder" => "Confirma contraseña")) }}
 		{{ Form::submit("Regístrate",array("class" => "btn-red")) }}
+		<a class="already_registered" href="#" onclick="show_popup('login');$(this).closest('.popup').remove();">Ya estoy registrado</a>
 		{{ Form::close() }}
 
 	</div>

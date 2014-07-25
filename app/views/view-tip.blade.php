@@ -46,7 +46,7 @@
             <label></label>
         </div>
         <div class="shared">
-            <a class="ruta" href=""></a>
+            <a class="ruta" href="{{ action('add_to_route',$tip->id) }}"></a>
             <a href="" class="face"></a>
             <a class="tw"></a>
         </div>
@@ -85,8 +85,9 @@ $(function(){
         scrollTop: $(".city-title").offset().top
     }, 0);
     $(".ruta").click(function(){
+        return;
         var tip_id ='{{ $tip->id }}';
-        $.post("{{ URL::to('/tips/add-to-my-route') }}",{'id':tip_id},function(res){
+        $.post("{{ URL::to('/tips/add-to-my-route/'.$tip->id) }}",function(res){
             alert(res);
         });
         return false;
@@ -130,5 +131,6 @@ function post_rating(rating){
         }
     },"json");
 }
+
 </script>
 @append
