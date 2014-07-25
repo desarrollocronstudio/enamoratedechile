@@ -9,6 +9,8 @@
         <div id="content-form">
             <h1>SUBE TU DATO PARA TODOS PUEDAN ENAMORARSE DE CHILE</h1>
             {{ Form::open(array("files" => true)) }}
+            {{ Form::hidden('place_lat',null,array("id" => "place_lat")) }}
+            {{ Form::hidden('place_lng',null,array("id" => "place_lng")) }}
             <div class="form-in">
                 @if ( $errors->count() > 0 )
                 <div class="errors">
@@ -29,7 +31,7 @@
                         <span class="dato-in large">
                             {{ Form::label("¿Dónde es tu dato?") }}<br />
                             {{ Form::hidden('city','',
-                                ["required"]); 
+                                ["required","id" => "city_name"]); 
                             }}
                             {{ Form::text('city_search','',[
                                 "placeholder" => "Comienza a escribir el nombre de la ciudad...",
@@ -45,8 +47,13 @@
                         {{ Form::label("Cateogría") }}<br />
                         {{ Form::select('tip_category',$categories,array("required")); }}
                     </span>
-                    <div class="map">
-                        
+                    <div class="precisar">
+                       <p>Puedes arrastrar el marcados para precisar mejor la ubicación de tu dato.</p>
+                    </div>
+                    <div id="map-container">
+                        <div id="map">
+                                
+                        </div>
                     </div>
                     <div class="dato-picada">
                         *SI TU DATO O PICADA ESTÁ CERCA DE UNA CIUDAD Y NO<br />
@@ -92,7 +99,11 @@
 </div>
 @stop
 @section('js')
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+<script type="text/javascript" src="{{ asset('js/vendor/jquery.geocomplete.js') }} "></script>
 <script type="text/javascript">
+    var map = false;
+    var marker = false;
     @unless (Auth::check()) 
         show_popup("signup",null,null,false);
     @endunless
@@ -132,23 +143,67 @@
             readURL(this);
             $("#file_name_value").html(this.value.substr(this.value.lastIndexOf("\\")+1,15));
         })
+        /*$(".autocomplete input[type=text]").autocomplete({
+          source: "get-cities",
+          minLength: 2,
+          delay:100,
+          select: function( event, ui ) {
+            var $hidden = $(this).parent().find("[type=hidden]");
+            if(ui.item){
+               $hidden.val(ui.item.id);
+            }else{
+                $hidden.val("");
+            }
+            get_geo(ui.item.value+",chile",function(status,pos){
+                if(status)change_pos(pos[0],pos[1]);
+            });
+          }
+        });*/
+        $(".autocomplete input[type=text]").geocomplete({
+            map: "#map",
+            mapOptions: {
+                zoom: 14
+            },
+            location:"Santiago, Chile",
+            componentRestrictions:{country: 'cl'},
+            markerOptions: {
+                draggable: true
+            }
+        });
+        var map = $(".autocomplete input[type=text]").geocomplete("map");
+        map.setZoom(16);
 
-    })
-    $(".autocomplete input[type=text]").autocomplete({
-      source: "get-cities",
-      minLength: 2,
-      delay:100,
-      select: function( event, ui ) {
-        var $hidden = $(this).parent().find("[type=hidden]");
-        if(ui.item){
-           $hidden.val(ui.item.id);
-        }else{
-            $hidden.val("");
+        //initialize_map();
+    }).bind("geocode:result", function(event, result){
+        console.log(result);
+        var city = false;
+        $.each(result.address_components, function (i, address_component) {
+            if (address_component.types[0] == "locality"){
+                city=address_component.long_name;
+            }
+        });
+        
+        if(city==false){
+            console.log("vaciooo");
+            $(".autocomplete input[type=text]").geocomplete("find","Santiago, Chile");
+            return false;
         }
-      }
+        $("#city_name").val(city);
+        $("#place_lat").val(result.geometry.location.k);
+        $("#place_lng").val(result.geometry.location.B);
+
+        
+    }).bind("geocode:dragged", function(event, latLng){ 
+        $(".autocomplete input[type=text]").geocomplete("find", latLng.toString());
     });
     $(document).bind("fb_load",function(){
         
     });
+
+    
+    $(document).bind("position_changed",function(e,lat,lng){
+        $("#place_lat").val(lat);
+        $("#place_lng").val(lng);
+    })
 </script>
 @append

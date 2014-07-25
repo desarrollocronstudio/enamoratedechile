@@ -13,7 +13,7 @@ html {
     line-height: 1.4;
 }
 
-::-moz-selection {
+::-moz-selection {  
     background: #b3d4fc;
     text-shadow: none;
 }
@@ -90,7 +90,7 @@ header ul li:first-child{background: none;}
 header li a{ color:#fff; font-size: 24px; line-height: 31px; text-decoration: none; padding: 2px; font-weight: normal; }
 header li a:hover{border-radius:5px; background: #fff; color:#5b5b5b; }
 header ul li.active a{border-radius:5px; background: #fff; color:#000;}
-header .submenu{width: 810px; margin: 0 auto; clear: both; overflow: hidden;}
+header .submenu{width: 810px; margin: 0 auto; clear: both; }
 header .submenu .user{width:230px;float:right;padding: 5px; margin-top: 15px; border-radius: 10px; background: rgba(255,255,255,0.7); overflow: hidden;}
 header .submenu .user img{width: 35px; height: 35px; border-radius: 35px; display: block; float:right; margin: 3px 0 3px 10px; border:solid 2px #666;}
 header .submenu .user span{display: block; width: 180px; float: right;text-align: right;}
@@ -98,7 +98,7 @@ header .submenu .userdata .user a{display: block; float: right; text-align: righ
 header .submenu .userdata{width:300px; float:right; text-align: right;}
 header .submenu .userdata a{color: #000;  font-size: 1em;  display: inline-block; padding: 3px 10px; text-decoration: none; text-transform: uppercase;}
 header .submenu .userdata a:hover{color: #333;}
-.logo{text-align: center; margin: 0 auto; display: block; padding-top: 20px; max-width: 80%;}
+.logo{text-align: center; clear: both; margin: 0 auto; display: block;  display: block;  max-width: 80%; mar}
 
 
 /* Search Box */
@@ -169,6 +169,7 @@ LOGIN
 .dato-small .meta span{display:block; float: left; border-left: solid 1px #ccc; line-height: 10px; font-size: 10px; font-family: 'Helvetica','Arial',sans-serif; color: #7a7a7a; padding: 0 10px; }
 .dato-small .meta span.author{border:none; padding-left: 0; width:100px;}
 .dato-small .meta span.city{width: 60px; text-align: center;}
+.dato-small .meta span.type{width: 40px; text-align: center;}
 .dato-small .text{font-size:18px; height: 80px; margin-top: 5px; border-top:dashed 1px #ccc; padding-top: 10px; }
 .dato-small .rating{float:left; margin-top: 12px;}
 
@@ -215,6 +216,10 @@ LOGIN
 #view .comments{max-width: 90%; width: 910px; margin: 0 auto; background: #eee}
 #view .comments iframe,
 #view .comments .fb-comments span{width: 100% !important;}
+
+/* SUBMIT TIP */
+#submit-tip #map-container{width:104%; background: #ccc; clear: both; float: left; margin-left: -4%; }
+#submit-tip #map{width: 100%; height: 190px;}
 
 /* BUSCANDO A JENNY */
 .jenny { margin:1em auto; position:relative;}

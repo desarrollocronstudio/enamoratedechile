@@ -6,17 +6,41 @@ class TipController extends BaseController {
 	public function search($city_id,$city_name){
 		$city = City::find($city_id);
 		if(!$city)Redirect::back();
+		$position = $city->get_position();
+		
+		$lat = $position["lat"];
+		$lng = $position["lng"];
+		$distances = [20,50,80,100,200,500,800,1000];
+		$minimum_places = 3;
+		foreach($distances as $distance){
+			$table = 'tips';
+
+			$select = "*,((ACOS(SIN($lat * PI() / 180) * SIN(lat * PI() / 180) + COS($lat * PI() / 180) * COS(lat * PI() / 180) * COS(($lng - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) AS `distance`";
+			$having = "`distance`<=$distance";
+
+			$tips = Tip::selectRaw(DB::raw($select))
+				->havingRaw(DB::raw($having))
+				->orderBy('distance','ASC')
+				->simplePaginate(6);
+			if($tips->count() > $minimum_places)break;
+		}
+		
+		
+
+
 		$data = array(
-			"tips" => array(1,2,3,4,5,6),
-			"city"	=> array("name" => $city->name)
+			"tips" 		=> $tips,
+			"distance"	=> $distance,
+			"city"		=> $city
 		);
 		return View::make('list-tips',$data);
 	}
+	
 	public function view($tip_id){
-		$tip = Tip::find(1)->where('tips.id',$tip_id)->join('tips_categories as tc', 'tc.id', '=', 'type_id')->join('people', 'people.id', '=', 'author_id')->select('people.name as author','tips.id','tips.name','tips.image','tc.name as category_name','content')->get();
-		$tip = $tip[0];
-		$images = array($tip["image"]);
-		return View::make('view-tip',array("data" => $tip,"images" => $images));
+		$tip = Tip::find($tip_id);
+		return View::make('view-tip',[
+			"tip" 			=> $tip
+		]);
 	}
 	public function featured(){
 		$tips = Tip::get_featured();
@@ -59,10 +83,13 @@ class TipController extends BaseController {
 
 			$tip = new Tip;
 			$tip->name 			= $input["place_name"];
+			$tip->city_name		= $input['city'];
 			$tip->author_id		= $input["user_id"];
 			$tip->content 		= $input["description"];
 			$tip->type_id 		= $input["tip_category"];
-			$tip->place_name	= $input["place_name"];
+			$tip->lat 			= $input["place_lat"];
+			$tip->lng 			= $input["place_lng"];
+			$tip->place_name	= $input["city_search"];
 			if (Input::hasFile('image')){
 				$filename = str_rand(12).".".strtolower(Input::file("image")->getClientOriginalExtension());
 				if(Input::file('image')->move(public_path()."/uploads",$filename)){

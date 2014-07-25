@@ -10,7 +10,8 @@
 		"orangehill/iseed": "dev-master",
 		"facebook/php-sdk": "*",
 		"magniloquent/magniloquent": "dev-master",
-		"vespakoen/menu": "dev-master"
+		"vespakoen/menu": "dev-master",
+		"willdurand/geocoder": "@stable"
 	},
 	"autoload": {
 		"classmap": [

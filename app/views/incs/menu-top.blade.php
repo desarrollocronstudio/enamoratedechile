@@ -1,10 +1,10 @@
 {{ 
 	Menu::handler('main')->addClass("menu main-nav")
-		->add(action('HomeController@index'),"INICIO")
-		->add(action('TipController@featured'),'DESTACADOS')
+		->add(action('home'),"INICIO")
+		->add(action('featured'),'DESTACADOS')
 		->add(action('RouteController@my_route'),"MI RUTA")
-		->add(action('RouteController@ideal'),'LA RUTA IDEAL')
-		->add(action('JennyController@index'),'BUSCANDO A JENNY') 
+		->add(action('ideal_route'),'LA RUTA IDEAL')
+		->add(action('jenny'),'BUSCANDO A JENNY') 
 }}
 <div class='submenu'>
 	<div class="userdata"> 
@@ -18,5 +18,8 @@
 			<a href="{{ action('login') }}" class="login">Iniciar sesión</a>
 			<a href="{{ action('signup') }}" class="signup">Regístrate</a>
 		@endif
+	</div>
+	<div class="shares">
+	<div class="fb-like" data-href="{{ URL::to('/')}}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
 	</div>
 </div>	

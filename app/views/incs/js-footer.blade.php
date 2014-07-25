@@ -5,10 +5,26 @@
 <script src="{{ asset('js/main.js') }}"></script>
 <script>
 $(function(){
+  var cache = {};
+  $("#search-form").submit(function(){
+    return false;
+  });
   $("#search-form .box").autocomplete({
-      source: '{{ action("get-cities") }}',
+       source: function( request, response ) {
+        var term = request.term;
+        if ( term in cache ) {
+          response( cache[ term ] );
+          return;
+        }
+ 
+        $.getJSON( '{{ action("get-cities") }}', request, function( data, status, xhr ) {
+          cache[ term ] = data;
+          response( data );
+        });
+      },
       minLength: 2,
-      delay:100,
+      delay:0,
+
       select: function( event, ui ) {
         window.location = "{{ URL::to('/search') }}"+"/"+ui.item.id+"/"+ui.item.value.replace(" ","-");
       }

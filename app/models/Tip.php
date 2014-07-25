@@ -6,11 +6,38 @@ class Tip extends Eloquent {
 
  	public function author()
     {
-        return $this->hasOne('People');
+        return $this->belongsTo('Person');
     }
-
+    public function category()
+    {
+        return $this->belongsTo('TipType','type_id','id');
+    }
+    public function images(){
+    	return array($this->image());
+    }
+    
+	public function reviews()
+	{
+		return $this->hasMany('Review');
+	}
 	public static function get_featured($length = 6){
-		return Tip::take($length)->join('tips_categories as tc', 'tc.id', '=', 'type_id')->join('people', 'people.id', '=', 'author_id')->select('tips.id', 'people.name as author','tips.name','tips.image','tc.name as category_name','content')->get();
+		return Tip::take($length)->orderBy('rating_cache','DESC')->get();
+	}
+
+	public function city(){
+		return $this->belongsTo('City');
+	}
+	public function image(){
+		return ($this->image)?asset('uploads/'.$this->image):asset('img/img-form.jpg');
+	}
+
+	public function recalculateRating()
+	{
+		$reviews = $this->reviews();
+		$avgRating = $reviews->avg('rating');
+		$this->rating_cache = round($avgRating,1);
+		$this->rating_count = $reviews->count();
+		$this->save();
 	}
  
 }

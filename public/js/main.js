@@ -8,13 +8,19 @@ $(function(){
 		var obj = this;
 		var $parent = $(this).parent();
 		facebook_connect(function(response){
-			FB.api("/me?fields=id,name,email",function(data){
-				$(obj).hide();
-				$profile_info = $parent.find(".mini-profile").fadeIn();
-				$profile_info.find("img").attr("src","https://graph.facebook.com/"+data.id+"/picture");
-				$profile_info.find(".name").html(data.name);
-				$("#signup [name=name]").val(data.name);
-				$("#signup [name=email]").val(data.email);
+			$.getJSON("/login/check-login",function(res){
+				if(res.loged){
+					window.location.reload();
+				}else{
+					FB.api("/me?fields=id,name,email",function(data){
+						$(obj).hide();
+						$profile_info = $parent.find(".mini-profile").fadeIn();
+						$profile_info.find("img").attr("src","https://graph.facebook.com/"+data.id+"/picture");
+						$profile_info.find(".name").html(data.name);
+						$("#signup [name=name]").val(data.name);
+						$("#signup [name=email]").val(data.email);
+					});
+				}
 			});
 		});
 		return false;
@@ -67,7 +73,6 @@ $(function(){
 					}
 				}
 			});
-			//window.location.reload();
 		});
 		return false;
 	});

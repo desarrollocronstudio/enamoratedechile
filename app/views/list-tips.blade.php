@@ -10,33 +10,23 @@
 	<a id="cs"></a>
 	<h2 class="city-title">
 		{{ $city['name'] }}
-		<span>Desde 80 lukas</span>
+		<!--<span>Desde 80 lukas</span>-->
 	</h2>
-	<a href="" class="black-btn">Cotiza tu pasaje</a>
-	<p class="info">Estos son los destacados en {{ $city['name'] }}</p>
+	<!--<a href="" class="black-btn">Cotiza tu pasaje</a>-->
+	<p class="info">Estos son los destacados cerca de {{ $city['name'] }}</p>
 
 	@include("incs/tip-categories")
+	<!-- Distance: {{ $distance }}kms.-->
 	<section class="datos container">
-		@foreach ($tips as $tip)
-		<div class="dato-small">
-			<span class="nombre">Nombre del tip</span>
-			<div class="img"><img src=""></div>
-			<div class="meta">
-				<span class="author">Por: Gonzalo Z.</span>
-				<span class="city">Santiago</span>
-				<span class="type">Comida</span>
+		@if ($tips->count() > 0)
+			@foreach ($tips as $tip)
+				@include("tips.preview",["tip" => $tip])
+			@endforeach
+		@else 
+			<div class='message'>
+				Aún no tenemos tips en este lugar. ¡Se el primero en agregar uno!
 			</div>
-			<div class="text">Texto de ejemplo</div>
-			<div class="rating">
-				<span class="mark active"></span>
-				<span class="mark active"></span>
-				<span class="mark active"></span>
-				<span class="mark"></span>
-				<span class="mark"></span>
-			</div>
-			<a class="red-btn" href="{{ action('TipController@view',1) }}">{{ trans("Leer más") }}</a>
-		</div>
-		@endforeach
+		@endif
 	</section>
 </div>
 @stop

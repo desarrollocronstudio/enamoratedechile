@@ -56,14 +56,18 @@ class Base extends Migration {
 			$table->string('name');
 			$table->integer("province_id")->unsigned();
 			$table->foreign("province_id")->references('id')->on("provinces");
-			$table->float('lat');
-			$table->float('lng');
+            $table->decimal('lat','18','12');
+			$table->decimal('lng','18','12');
 			$table->engine = 'MyISAM';
 		});
 		Schema::create('tip_votes', function(Blueprint $table) {
             $table->increments('id');
             $table->integer('author_id')->unsigned();
             $table->integer('tip_id')->unsigned();
+            $table->integer('rating')->unsigned();
+            $table->boolean('approved');
+            $table->text('comment');
+            $table->boolean('spam');
             $table->foreign('author_id')->references('id')->on("people");
             $table->foreign('tip_id')->references('id')->on("tips");
 
@@ -75,20 +79,34 @@ class Base extends Migration {
 		Schema::create('tips', function(Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('city_name');
             $table->string('place_name');
             $table->string('image');
             $table->string('images');
+            $table->float('rating_cache');
+            $table->integer('rating_count');
+            $table->decimal('lat','18','12');
+			$table->decimal('lng','18','12');
             $table->text('content');
             $table->integer('author_id')->unsigned();
-            $table->integer('city_id')->unsigned();
             $table->integer('type_id')->unsigned();
             $table->foreign('author_id')->references('id')->on("people");
             $table->foreign('type_id')->references('id')->on("tips_categories");
-            $table->foreign('city_id')->references('id')->on("cities");
 
             $table->timestamps();
             $table->softDeletes();
 
+            $table->engine = 'MyISAM';
+        });
+
+        Schema::create('videos', function(Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->enum('type',array('ideal','jenny'));
+            $table->string('youtube_code');
+            $table->boolean('active');
+            $table->boolean('featured');
+            $table->timestamps();
             $table->engine = 'MyISAM';
         });
 	}
@@ -107,6 +125,7 @@ class Base extends Migration {
 		Schema::drop('provinces');
 		Schema::drop('tip_votes');
 		Schema::drop('people');
+		Schema::drop('videos');
 	}
 
 }

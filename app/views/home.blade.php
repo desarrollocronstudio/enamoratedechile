@@ -1,8 +1,17 @@
 @extends("layouts/default")
+@section('metatags')
+<meta property="og:url" content="{{ URL::to('/?i=1') }}" /> 
+<meta property="og:title" content="Enámorate de Chile - LAN.com" />
+
+<meta property="og:description" content="Encuentra los mejores datos a lo largo de todo Chile, y hazte parte de nuestra comunidad dejando los tuyos." /> 
+<meta property="og:image" content="{{ asset('img/logo.png') }}" />
+@stop
 
 @section('content')
 <div class="page" id="home">
 	@include("incs/logo")
+
+	<img style="margin:10px 0 " class="principal"  src="{{ asset('img/img-top-home.jpg') }}" alt="Bienvenido a " />
 
 	@include("incs/search-nav")
 
@@ -11,24 +20,7 @@
 
 	<section class="datos container">
 		@foreach ($tips as $tip)
-		<div class="dato-small">
-			<span class="nombre">{{ $tip["name"] }}</span>
-			<div class="img"><img src="uploads/{{ $tip["image"] }}"></div>
-			<div class="meta">
-				<span class="author">Por: {{ $tip["author"] }}</span>
-				<span class="city">{{ $tip["place_name"] }}</span>
-				<span class="type">{{ $tip["category_name"]}}</span>
-			</div>
-			<div class="text">{{ substr($tip["content"], 0, 100) }}</div>
-			<div class="rating">
-				<span class="mark active"></span>
-				<span class="mark active"></span>
-				<span class="mark active"></span>
-				<span class="mark"></span>
-				<span class="mark"></span>
-			</div>
-			<a class="red-btn" href="{{ action('TipController@view',array($tip['id'])) }}">{{ trans("Leer más") }}</a>
-		</div>
+			@include("tips.preview",["tip" => $tip])
 		@endforeach
 	</section>
 </div>

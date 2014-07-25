@@ -81,14 +81,17 @@
 	width:582px;
 	height:auto;
 	float:left;
-	padding-left:20px;
+	padding-left:4%;
 }
+.precisar{clear: both; float: left;}
+.precisar p{margin:0; margin-top: 20px; padding-left: 10px; color: #333;}
 .dato-in{
 	width:271px;
 	height:82px;
 	float:left;
 	text-align:left;
 	font-size:18px;
+	display: block;
 	margin:10px 0px 0px 10px;
 }
 .dato-in.large{width: 500px; margin-bottom: 10px;}
