@@ -61,7 +61,7 @@ textarea {
    GDZ - STYLES
    ========================================================================== */
 html,body{margin: 0; padding: 0;font-family:'boogalooregular','Arial',sans-serif; font-size: 18px; background:url("../img/bg.jpg") top center ;}
-#container{ min-height: 600px; margin-top: -23px;}
+#container{ min-height: 600px; margin-top: -50px;}
 .container{max-width:960px; margin: 0 auto; }
 #content{position: relative; background:url("../img/bg.jpg") #e1ead9 top center ;}
 
