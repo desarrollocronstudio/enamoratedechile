@@ -3,8 +3,8 @@
 		->add(action('home'),"INICIO")
 		->add(action('featured'),'DESTACADOS')
 		->add(action('RouteController@my_route'),"MI RUTA")
-		->add(action('ideal_route'),'LA RUTA IDEAL')
-		->add(action('jenny'),'BUSCANDO A JENNY') 
+		->add(action('list_videos','ideal'),'LA RUTA IDEAL')
+		->add(action('list_videos','jenny'),'BUSCANDO A JENNY') 
 }}
 <div class='submenu'>
 	<div class="userdata"> 

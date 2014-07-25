@@ -2,6 +2,15 @@ $(function(){
 	$("header .mobile.menu").click(function(){
 		$("header ul").toggle();
 	});
+	 $(".face").click(function(){
+        FB.ui({
+            method: 'share',
+            href: CURRENT_URL,
+        },function(response) {
+
+        });
+        return false;
+    })
 
 	/* SIGN UP */
 	$(document).on("click","#signup .facebook-connect",function(){

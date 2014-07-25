@@ -45,6 +45,7 @@ $(function(){
 <script>
   var BASE_URL = '<?php echo URL::to("/"); ?>';
   var CURRENT_URL = '<?php echo URL::current(); ?>';
+  var USER_IP = '{{ Request::getClientIp() }}';  
   window.fbAsyncInit = function() {
 
     FB.init({

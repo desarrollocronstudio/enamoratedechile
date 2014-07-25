@@ -20,8 +20,8 @@ class Tip extends Eloquent {
 	{
 		return $this->hasMany('Review');
 	}
-	public static function get_featured($length = 6){
-		return Tip::take($length)->orderBy('rating_cache','DESC')->get();
+	public function scopeFeatured($query){
+		return $query->orderBy('rating_cache','DESC');
 	}
 
 	public function city(){

@@ -84,15 +84,6 @@ $(function(){
     $('html, body').animate({
         scrollTop: $(".city-title").offset().top
     }, 0);
-    $(".face").click(function(){
-        FB.ui({
-            method: 'share',
-            href: '{{ Request::url() }}',
-        },function(response) {
-
-        });
-        return false;
-    })
     $(".ruta").click(function(){
         var tip_id ='{{ $tip->id }}';
         $.post("{{ URL::to('/tips/add-to-my-route') }}",{'id':tip_id},function(res){

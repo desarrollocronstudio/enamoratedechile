@@ -35,13 +35,13 @@ Route::get("/login/check-login",[
 /***********************
 Videos
 ***********************/
-Route::get('/ideal_route', [
-	'as' 	=> 'ideal_route',
-	'uses'	=> 'VideoController@ideal_index'
+Route::get('/videos/{type}', [
+	'as' 	=> 'list_videos',
+	'uses'	=> 'VideoController@index'
 ]);
-Route::get('/jenny', [
-	'as' 	=> 'jenny',
-	'uses'	=> 'VideoController@jenny_index'
+Route::get('/videos/{type}/{id}',[
+	'as'	=> 'view_video',
+	'uses'	=> 'VideoController@view'
 ]);
 
 /***********************

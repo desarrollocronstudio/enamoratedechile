@@ -3,15 +3,19 @@
 class VideoController extends BaseController {
 
 	
-	public function jenny_index()
+	public function index($type)
 	{
-
-		 return View::make('videos.jenny');
+		if(!in_array($type,['jenny','ideal'])){
+			return Redirect::to("/");
+		}
+		$featured = Video::type($type)->featured()->first();
+		$videos = Video::type($type)->where('id','<>',$featured->id)->get();
+		return View::make('videos.view',['videos' => $videos,'featured'=>$featured,'autoplay' => false]);
 	}
-
-	public function ideal_index()
+	public function view($type,$id)
 	{
-
-		 return View::make('videos.ideal_route');
+		$featured = Video::where('id',$id)->first();
+		$videos = Video::type($featured->type)->where('id','<>',$id)->get();
+		return View::make('videos.view',['videos' => $videos,'featured'=>$featured,'autoplay' => true]);
 	}
 }

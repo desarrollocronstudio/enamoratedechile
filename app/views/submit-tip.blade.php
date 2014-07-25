@@ -159,12 +159,13 @@
             });
           }
         });*/
+        alert(USER_IP);
         $(".autocomplete input[type=text]").geocomplete({
             map: "#map",
             mapOptions: {
                 zoom: 14
             },
-            location:"Santiago, Chile",
+            location:USER_IP,
             componentRestrictions:{country: 'cl'},
             markerOptions: {
                 draggable: true
@@ -184,8 +185,8 @@
         });
         
         if(city==false){
-            console.log("vaciooo");
-            $(".autocomplete input[type=text]").geocomplete("find","Santiago, Chile");
+            
+            $(".autocomplete input[type=text]").geocomplete("find",USER_IP);
             return false;
         }
         $("#city_name").val(city);

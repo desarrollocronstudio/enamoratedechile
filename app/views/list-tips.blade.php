@@ -7,7 +7,7 @@
 
 	@include("incs/search-nav")
 
-	<a id="cs"></a>
+	<a id="view-content"></a>
 	<h2 class="city-title">
 		{{ $city['name'] }}
 		<!--<span>Desde 80 lukas</span>-->
@@ -28,10 +28,11 @@
 			</div>
 		@endif
 	</section>
+	{{ $tips->fragment('anchor-content')->appends(array('cat' => Input::get('cat')))->links() }}
 </div>
 @stop
 @section("js")
 <script>
-	window.location.hash="cs";
+	window.location.hash="view-content";
 </script>
 @append

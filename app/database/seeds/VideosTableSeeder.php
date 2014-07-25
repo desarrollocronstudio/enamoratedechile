@@ -40,6 +40,24 @@ class VideosTableSeeder extends Seeder {
 				'name' 			=> 'Jenny 4',
 				'youtube_code'	=> 'J8BKS0O1w9c'
 			),
+
+			//IDEAL
+			array (
+				'type' 			=> 'ideal',
+				'featured'		=> true,
+				'active'		=> true,
+				'name' 			=> 'Safety Instructions',
+				'youtube_code'	=> 'DuiuM-gmqto'
+			),
+
+			array (
+				'type' 			=> 'ideal',
+				'featured'		=> false,
+				'active'		=> true,
+				'name' 			=> 'Ad from 1992',
+				'youtube_code'	=> 'jst3DOHfvrQ'
+			),
+
 		));
 	}
 

@@ -117,6 +117,15 @@ header .submenu .userdata a:hover{color: #333;}
 .nav a img{ max-width: 80%;}
 .nav a:hover{opacity:0.8;}
 
+/* PAGINTATION */
+.pagination,
+.pagination li{list-style: none; padding:0; margin: 0;}
+.pagination{text-align: center; padding: 30px 0;}
+.pagination li{display: inline-block; line-height: 25px;}
+.pagination li a,
+.pagination li span{display: inline-block;width: 25px; height: 25px; padding:5px; border:solid 1px #ccc;border-radius:5px; margin: 5px; background: #666  }
+.pagination li a{background: #ccc; text-decoration: none; color: #000; }
+
 /*************************************
 POPUP 
 *************************************/
@@ -198,7 +207,7 @@ LOGIN
 .categories li{ display: inline-block; }
 .categories li a{color: #eee; display: block; text-decoration: none; line-height: 49px; margin-top: 17px; padding:0 25px; text-transform: uppercase; font-size: 22px;}
 .categories li a:hover{background: #fff; color:#333;}
-.categories li a.active{background: #f00;}
+.categories li.active a{background: #f00;}
 
 /* DETALLE CITY */
 .detalle_city{background: url(../img/bg_detalle_city.png) no-repeat 0 0; width: 910px;height: 670px;display: block;margin: 0 auto;padding: 40px 0 0 40px;}
@@ -225,14 +234,15 @@ LOGIN
 .jenny { margin:1em auto; position:relative;}
 .jenny .title_jenny{font-family: 'boogalooregular';font-size: 1em;color: #d70303;text-shadow: none;text-align: left; clear:both; width:670px; margin:1em auto;}
 .jenny .video{background: #000; width:690px;height:436px;display: block;margin: 0 auto; padding:0;}
-.jenny .video iframe{ width:674px;height:379px;display: block;margin: 0 auto;padding:0; border:none;}
+.jenny .video iframe{ width:674px;height:430px;display: block;margin: 5px auto;padding:0; border:none;}
 .jenny .shared {  width:674px; height:46px; display:block; margin: 1em auto;}
 .jenny .shared .face{ background:url(../img/btn_facebook.png) no-repeat 0 0; width:182px; height:46px; display:block; float:right;}
 .jenny .shared .tw{  background: url(../img/btn_twitter.png) no-repeat 0 0; width:185px; height:46px; display:block;  float:right;}
 .jenny .separate {   height:10px; clear:both;}
 .jenny .miniaturas{ width:980px; margin:1em auto; padding:0; min-height:500px;}
 .jenny .miniaturas .thumbs{ width: 286px;height: 265px;float: left;margin: 0 20px 0 0;padding: 30px 0 0 20px;background: url(../img/bg_thumbs_videos.png) no-repeat 0 0;}
-.jenny .miniaturas .thumbs img{ float:left; margin:0; padding:0;}
+.jenny .miniaturas .thumbs .img{width: 260px; margin:0 0 0 0px; background-color: #ccc; height: 120px; overflow: hidden; background-size: 100%; background-position: center center;}
+.jenny .miniaturas .thumbs img{ float:left; margin:0; padding:0; width: 100%; }
 .jenny .miniaturas .thumbs .vervideo{ float:right; background:url(../img/btn_vervideo.png) no-repeat 0 0; width:129px; height:39px; display:block; margin: 10px 20px 0 0; padding:0;}
 .jenny .miniaturas .thumbs h2{font-family: 'boogalooregular';font-size: 0.7em; color: #d70303;text-shadow: none;text-align: left; margin:1em auto;}
 /* #Media Queries

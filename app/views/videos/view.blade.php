@@ -1,0 +1,29 @@
+@extends("layouts.default")
+@section('content')
+<div class="page" id="jenny">
+  @include("incs/logo")
+  <div class="jenny">
+    <a id="video"></a>
+    <h2 class="title_jenny">{{ $featured->name }}</h2>
+
+    <div class="video">
+      <iframe width="674" height="390" src="//www.youtube.com/embed/{{ $featured->youtube_code }}?{{ $autoplay?'autoplay=1':''}}" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="shared"> <a href="#" class="tw"></a> <a href="#" class="face"></a> </div>
+    <div class="separate"></div>
+    <div class="miniaturas">
+      @foreach($videos as $video)
+        <div class="thumbs">
+          <h2>{{$video->name}}</h2>
+          <div class="img" style="background-image:url({{ $video->thumbnail() }});">
+            <a href="{{ action('view_video',$video->id) }}">
+            </a>
+          </div>
+          <a href="{{ action('view_video',[$video->type,$video->id]) }}#video" class="vervideo"></a>
+        </div>
+      @endforeach
+    </div>
+    <div class="separate"></div>
+  </div>
+</div>
+@stop

@@ -61,3 +61,18 @@ function init_facebook(){
 
     return $facebook;
 }
+
+function qs_url($qs = array(),$merge = array())
+{
+    if($merge == true)$merge = Request::query();
+    $qs = array_merge($merge,$qs);
+    $url = "";
+    if (count($qs)){
+
+        foreach($qs as $key => $value){
+            $qs[$key] = sprintf('%s=%s',$key, urlencode($value));
+        }
+        $url = sprintf('%s?%s', $url, implode('&', $qs));
+    }
+    return $url;
+}

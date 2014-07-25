@@ -15,6 +15,7 @@
 
 	@include("incs/search-nav")
 
+	<a id="view-content">&nbsp;</a>
 	<h2 class="title">{{ __("Destacados") }}</h2>
 	<p class="intro">¡Todos estos datos son entregados por usuarios como ustedes, somos una verdadera comunidad!</p>
 
@@ -23,5 +24,6 @@
 			@include("tips.preview",["tip" => $tip])
 		@endforeach
 	</section>
+	{{ $tips->fragment('view-content')->links() }}
 </div>
 @stop

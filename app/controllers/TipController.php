@@ -18,10 +18,13 @@ class TipController extends BaseController {
 			$select = "*,((ACOS(SIN($lat * PI() / 180) * SIN(lat * PI() / 180) + COS($lat * PI() / 180) * COS(lat * PI() / 180) * COS(($lng - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) AS `distance`";
 			$having = "`distance`<=$distance";
 
-			$tips = Tip::selectRaw(DB::raw($select))
+			$query = Tip::selectRaw(DB::raw($select))
 				->havingRaw(DB::raw($having))
-				->orderBy('distance','ASC')
-				->simplePaginate(6);
+				->orderBy('distance','ASC');
+			
+			if(Input::get('cat'))$query->where('type_id',Input::get('cat'));
+
+			$tips = $query->simplePaginate(1);
 			if($tips->count() > $minimum_places)break;
 		}
 		
@@ -43,8 +46,8 @@ class TipController extends BaseController {
 		]);
 	}
 	public function featured(){
-		$tips = Tip::get_featured();
-		return View::make('home',array("tips" => $tips));
+		$tips = Tip::featured()->simplePaginate(6);
+		return View::make('featured',array("tips" => $tips));
 	}
 
 	public function post(){
