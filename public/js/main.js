@@ -18,7 +18,24 @@ $(function(){
 
         });
         return false;
-    })
+    });
+	$('.tw').click(function(event) {
+		var url = "http://twitter.com/share?text=Encuentra los mejores datos a lo largo de todo Chile";
+	    var width  = 575,
+	        height = 400,
+	        left   = ($(window).width()  - width)  / 2,
+	        top    = ($(window).height() - height) / 2,
+	        url    = url,
+	        opts   = 'status=1' +
+	                 ',width='  + width  +
+	                 ',height=' + height +
+	                 ',top='    + top    +
+	                 ',left='   + left;
+	    
+	    window.open(url, 'twitter3', opts);
+	 
+	    return false;
+	  });
 
 	/* SIGN UP */
 	$(document).on("click","#signup .facebook-connect",function(){
