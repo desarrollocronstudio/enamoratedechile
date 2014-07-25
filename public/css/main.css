@@ -247,8 +247,8 @@ LOGIN
 .jenny .separate {   height:10px; clear:both;}
 .jenny .miniaturas{ width:980px; margin:1em auto; padding:0;}
 .jenny .miniaturas .thumbs{ width: 286px;height: 265px;float: left;margin: 0 20px 0 0;padding: 30px 0 0 20px;background: url(../img/bg_thumbs_videos.png) no-repeat 0 0;}
-.jenny .miniaturas .thumbs .img{width: 260px; margin:0 0 0 0px; background-color: #ccc; height: 120px; overflow: hidden; background-size: 100%; background-position: center center;}
-.jenny .miniaturas .thumbs img{ float:left; margin:0; padding:0; width: 100%; }
+.jenny .miniaturas .thumbs .img{width: 260px; margin:0 0 0 0px; background-color: #ccc;text-align: center; height: 120px; overflow: hidden; background-size: 100%; background-position: center center;}
+.jenny .miniaturas .thumbs img{  margin:0; padding:0; width: 100px; line-height: 100px; padding-top: 30px; }
 .jenny .miniaturas .thumbs .vervideo{ float:right; background:url(../img/btn_vervideo.png) no-repeat 0 0; width:129px; height:39px; display:block; margin: 10px 20px 0 0; padding:0;}
 .jenny .miniaturas .thumbs h2{font-family: 'boogalooregular';font-size: 0.7em; color: #d70303;text-shadow: none;text-align: left; margin:1em auto;}
 /* #Media Queries

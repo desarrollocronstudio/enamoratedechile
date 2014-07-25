@@ -26,7 +26,8 @@
         <div class="thumbs">
           <h2>{{$video->name}}</h2>
           <div class="img" style="background-image:url({{ $video->thumbnail() }});">
-            <a href="{{ action('view_video',$video->id) }}">
+            <a href="{{ action('view_video',[$video->type,$video->id]) }}#view-content">
+              <img src="{{ asset('img/btn-play.png') }} " alt="">
             </a>
           </div>
           <a href="{{ action('view_video',[$video->type,$video->id]) }}#view-content" class="vervideo"></a>
