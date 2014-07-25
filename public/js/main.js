@@ -120,8 +120,8 @@ $(function(){
 				$("#signup").parent().remove();
 				window.location.reload();
 			}else{
-				$(this).data("sending",false);
-				$(this).find("[type=submit]").val("Iniciar sesión");
+				$(obj).data("sending",false);
+				$(obj).find("[type=submit]").val("Iniciar sesión");
 				alert(res.msg);
 			}
 		});
@@ -134,14 +134,20 @@ $(function(){
 		$(this).data("sending",true);
 		$(this).find("[type=submit]").val("Recuperando...");
 		$.post(BASE_URL+"/forgot",$(this).serialize(),function(res){
-			if(res.status){
+			console.log(res);
+			if(!res.status){
 				$(obj).data("sending",false);
 				$(obj).find("[type=submit]").val("Recuperar");
-				$("#forgot .msg").html(res.msg);
+				$("#forgot .msg").html("Ocurrió un error. Revisa que tu email esté bien ingresado");
 			}else{
-				$("#forgot .msg").html(res.msg);
+				$("#forgot .msg").html("Revisa tu correo con las instrucciones para continuar.");
+				$("#forgot .btn-red").remove();
+				$a = $("<a class='btn-red'>").html("OK").click(function(){
+					$(this).closest(".popup").remove();
+				});
+				$("#forgot .wrapper").append($a);
 			}
-		});
+		},"json");
 		e.preventDefault();
 	});
 

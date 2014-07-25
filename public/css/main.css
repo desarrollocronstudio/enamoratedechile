@@ -220,7 +220,7 @@ LOGIN
 .categories li.active span{background: #f00;}
 
 /* DETALLE CITY */
-.detalle_city{background: url(../img/bg_detalle_city.png) no-repeat 0 0; overflow: hidden; width: 910px; background-size:auto 100%;display: block;margin: 0 auto;padding: 40px 0 20px 40px;}
+.detalle_city{background: url(../img/bg_detalle_city.png) no-repeat 0 0; overflow: hidden; width: 910px; background-size:100% 100%;display: block;margin: 0 auto;padding: 40px 0 20px 40px;}
 .detalle_city h2.slide{font-family: 'boogalooregular';font-size: 1em;color: #d70303;text-shadow: none;text-align: left; clear:both;}
 .detalle_city .images ul{width: auto;margin: 0 auto;overflow: hidden;text-align: center;list-style: none;padding: 0;}
 .detalle_city .images ul li{ float: left;width: 180px;height: 109px;margin: 0 15px 10px 0; padding: 0;}
@@ -259,6 +259,13 @@ LOGIN
 .jenny .miniaturas .thumbs img{  margin:0; padding:0; width: 100px; line-height: 100px; padding-top: 30px; }
 .jenny .miniaturas .thumbs .vervideo{ float:right; background:url(../img/btn_vervideo.png) no-repeat 0 0; width:129px; height:39px; display:block; margin: 10px 20px 0 0; padding:0;}
 .jenny .miniaturas .thumbs h2{font-family: 'boogalooregular';font-size: 0.7em; color: #d70303;text-shadow: none;text-align: left; margin:1em auto;}
+
+
+/* PASSWORD */
+.password.form{width: 300px; max-width: 80%; margin: 0 auto;}
+.password form input{display: block; clear: both; width: 94%; margin: 5% 0; outline:none; padding: 3%; font-family: 'boogalooregular'; border-radius:5px; border:solid 1px #ccc; font-size: 15px;}
+
+
 /* #Media Queries
 ================================================== */
 
