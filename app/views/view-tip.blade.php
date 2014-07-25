@@ -1,11 +1,11 @@
 @extends("layouts/default")
 @section('page_title',ucwords($tip->name))
 @section('metatags')
-<meta property="og:url" content="{{ Request::url() }}" /> 
-<meta property="og:title" content="Visita {{ $tip->name }} en {{ $tip->city_name }}" />
+    <meta property="og:url" content="{{ Request::url() }}" /> 
+    <meta property="og:title" content="Visita {{ $tip->name }} en {{ $tip->city_name }}" />
 
-<meta property="og:description" content="{{ $tip->content }}" /> 
-<meta property="og:image" content="{{ $tip->image() }}" />
+    <meta property="og:description" content="{{ $tip->content }}" /> 
+    <meta property="og:image" content="{{ $tip->image() }}" />
 @stop
 @section('content')
 <div class="page" id="view">
