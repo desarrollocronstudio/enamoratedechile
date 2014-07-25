@@ -61,7 +61,7 @@ textarea {
    GDZ - STYLES
    ========================================================================== */
 html,body{margin: 0; padding: 0;font-family:'boogalooregular','Arial',sans-serif; font-size: 18px; background:url("../img/bg.jpg") top center ;}
-#container{ min-height: 600px;}
+#container{ min-height: 600px; margin-top: -23px;}
 .container{max-width:960px; margin: 0 auto; }
 #content{position: relative; background:url("../img/bg.jpg") top center ;}
 
@@ -245,7 +245,7 @@ LOGIN
 .jenny .shared .face{ background:url(../img/btn_facebook.png) no-repeat 0 0; width:182px; height:46px; display:block; float:right;}
 .jenny .shared .tw{  background: url(../img/btn_twitter.png) no-repeat 0 0; width:185px; height:46px; display:block;  float:right;}
 .jenny .separate {   height:10px; clear:both;}
-.jenny .miniaturas{ width:980px; margin:1em auto; padding:0; min-height:500px;}
+.jenny .miniaturas{ width:980px; margin:1em auto; padding:0;}
 .jenny .miniaturas .thumbs{ width: 286px;height: 265px;float: left;margin: 0 20px 0 0;padding: 30px 0 0 20px;background: url(../img/bg_thumbs_videos.png) no-repeat 0 0;}
 .jenny .miniaturas .thumbs .img{width: 260px; margin:0 0 0 0px; background-color: #ccc; height: 120px; overflow: hidden; background-size: 100%; background-position: center center;}
 .jenny .miniaturas .thumbs img{ float:left; margin:0; padding:0; width: 100%; }
@@ -319,7 +319,16 @@ LOGIN
         .detalle_city .shared .face {margin: 5% auto;float: none;}
         .detalle_city .shared .tw {margin: 5% auto;float: none;}
 
-        /************* ETC... ****************/
+        /************* SUBE UN TIP ****************/
+        #content-form{width: 100%; background-size: 100%;}
+        .dato-in.large input{width: 78%;}
+        .form-in{width: 100%; padding-left: 0;}
+        .form-in img{float: none;}
+        .menu-img{text-align: center;float: none; padding:0; margin: 0; padding-top: 10px; width: 100%;}
+        .bsc-btn{margin: 0 auto; float: none;}
+        .despcripcion-form{width: 90%; margin: 0 auto; padding: 0; float: none; overflow: hidden; padding-bottom: 10px;}
+        .area-form{width: 93%; padding: 3%; margin: 0;}
+        .btn-enviar{width: 100%; float: none; margin: 0 auto; overflow: hidden; padding-top: 10px; background-repeat: no-repeat; background-position: center center; }
     }
     /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
     @media only screen and (min-width: 480px) and (max-width: 767px) {
