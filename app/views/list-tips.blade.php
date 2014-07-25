@@ -12,7 +12,7 @@
 		{{ $city['name'] }}
 		<!--<span>Desde 80 lukas</span>-->
 	</h2>
-	<!--<a href="" class="black-btn">Cotiza tu pasaje</a>-->
+	<a href="http://www.lan.com" class="black-btn">Cotiza tu pasaje</a>
 	<p class="info">Estos son los destacados cerca de {{ $city['name'] }}</p>
 
 	@include("incs/tip-categories",['active' => Input::get('cat'),'usable' => true])

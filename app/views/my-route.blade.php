@@ -4,7 +4,7 @@
 	<meta property="og:title" content="Enámorate de Chile - LAN.com" />
 
 	<meta property="og:description" content="Encuentra los mejores datos a lo largo de todo Chile, y hazte parte de nuestra comunidad dejando los tuyos." /> 
-	<meta property="og:image" content="{{ asset('img/logo.png') }}" />
+	<meta property="og:image" content="{{ asset('img/logo-square.png') }}" />
 @stop
 
 @section('content')

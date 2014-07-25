@@ -119,6 +119,13 @@ class Base extends Migration {
             $table->timestamps();
             $table->engine = 'MyISAM';
         });
+
+        Schema::create('password_reminders', function(Blueprint $table)
+		{
+			$table->string('email')->index();
+			$table->string('token')->index();
+			$table->timestamp('created_at');
+		});
 	}
 
 	/**
@@ -137,6 +144,7 @@ class Base extends Migration {
 		Schema::drop('people');
 		Schema::drop('tips_person');
 		Schema::drop('videos');
+		Schema::drop('password_reminders');
 	}
 
 }

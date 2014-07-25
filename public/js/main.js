@@ -127,6 +127,25 @@ $(function(){
 		});
 		e.preventDefault();
 	});
+
+	$(document).on("submit","#forgot form",function(e){
+		var obj = this;
+		if($(this).data("sending"))return false;
+		$(this).data("sending",true);
+		$(this).find("[type=submit]").val("Recuperando...");
+		$.post(BASE_URL+"/forgot",$(this).serialize(),function(res){
+			if(res.status){
+				$(obj).data("sending",false);
+				$(obj).find("[type=submit]").val("Recuperar");
+				$("#forgot .msg").html(res.msg);
+			}else{
+				$("#forgot .msg").html(res.msg);
+			}
+		});
+		e.preventDefault();
+	});
+
+
 	$(document).on("click",".signup",function(){
 		show_popup("signup");
 		return false;

@@ -12,7 +12,7 @@ class VideoController extends BaseController {
 			'url'		=> URL::current(),
 			'title' 	=> $type =='jenny'?"Videos: Buscando a Jenny":"Videos: La ruta ideal",
 			'content'	=> 'Revisa los videos que Enamórate de Chile tiene para tí',
-			'image'		=> asset("img/logo.png")];
+			'image'		=> asset("img/logo-square.png")];
 
 		$featured = Video::type($type)->featured()->first();
 		$videos = Video::type($type)->where('id','<>',$featured->id)->get();
@@ -26,7 +26,7 @@ class VideoController extends BaseController {
 			'url'		=> URL::current(),
 			'title' 	=> "Video: ".$featured->name,
 			'content'	=> 'Revisa los videos que Enamórate de Chile tiene para tí',
-			'image'		=> asset("img/logo.png"),
+			'image'		=> $featured->thumbnail(),
 			'video'		=> 'http://www.youtube.com/v/'.$featured->youtube_code];
 		return View::make('videos.view',['videos' => $videos,'featured'=>$featured,'autoplay' => true,'og' => $og]);
 	}

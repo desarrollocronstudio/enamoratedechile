@@ -24,7 +24,7 @@ class VideosTableSeeder extends Seeder {
 				'featured'		=> false,
 				'active'		=> true,
 				'name' 			=> 'Jenny 2',
-				'youtube_code'	=> 'vG3A-17m0o8.'
+				'youtube_code'	=> 'vG3A-17m0o8'
 			),
 			array (
 				'type' 			=> 'jenny',

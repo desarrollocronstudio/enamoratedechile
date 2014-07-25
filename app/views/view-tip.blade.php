@@ -26,12 +26,20 @@
     <h3 class="lugar">{{ $tip->name }}</h3>
     <h4 class="autor">{{ Str::words($tip->author->name,1,'') }}</h4>
     <div class="detalle_city">
-        <h2 class="slide">Imágenes del lugar</h2>
-        <ul class="imgs">
-            @foreach($tip->images() as $img)
-                <li><img src="{{ $img }}" alt="{{ $tip['name'] }}" /></li>
-            @endforeach
-        </ul>
+        <div class="images">
+            <h2 class="slide">Imágenes del lugar</h2>
+            <ul class="imgs">
+                @foreach($tip->images() as $img)
+                    <li><a href="{{ $img }}" rel="shadowbox[gal]">
+                        <img src="{{ $img }}" alt="{{ $tip['name'] }}" />
+                    </a></li>
+                @endforeach
+            </ul>
+        </div>
+        <div class="detail">
+            <h2 class="slide">Detalle</h2>
+            <p>{{ $tip->content }}</p>
+        </div>
         <h2 class="slide">Mapa del lugar</h2>
         <div id="map">
 
@@ -131,6 +139,6 @@ function post_rating(rating){
         }
     },"json");
 }
-
+Shadowbox.init();
 </script>
 @append

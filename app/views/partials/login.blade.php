@@ -3,7 +3,7 @@
 	<div class="wrapper">
 		
 		<a href="" class="facebook-connect">
-			<img src="img/btn-fb-connect.png" alt="Conectar con Facebook">
+			<img src="{{ asset('img/btn-fb-connect.png') }}" alt="Conectar con Facebook">
 		</a>
 		<hr />
 		{{ Form::open(array("url" => "register")) }}
@@ -11,6 +11,7 @@
 		{{ Form::password("password",array("placeholder" => "Contraseña")) }}
 		{{ Form::submit("Iniciar sesión",array("class" => "btn-red")) }}
 		{{ Form::close() }}
+		<a class="already_registered" href="#" onclick="show_popup('forgot');$(this).closest('.popup').remove();">¿Olvidó su contraseña?</a>
 
 	</div>
 	<span class="bottom"></span>

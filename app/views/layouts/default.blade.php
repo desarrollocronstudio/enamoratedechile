@@ -10,6 +10,9 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
 
+        <link rel="icon" href="{{ URL::to('/img/logo-small.png') }}" type="image/x-icon">
+        <link rel="shortcut icon" href="{{ URL::to('/img/logo-small.png') }}" type="image/x-icon">
+
         @yield('metatags')
 
         <link rel="stylesheet" href="{{ asset('css/normalize.min.css') }}">
@@ -17,10 +20,12 @@
         <link rel="stylesheet" href="{{ asset('css/diego.css') }}">
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
         <link rel="stylesheet" href="{{ asset('js/vendor/ui/jquery-ui.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/shadowbox.css') }}">
 
         <script src="{{ asset('js/vendor/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
     </head>
     <body>
+        
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->

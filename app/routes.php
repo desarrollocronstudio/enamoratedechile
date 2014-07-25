@@ -40,7 +40,11 @@ Route::get("/login/check-login",[
 	'as' 	=> 'check-login',
 	'uses'	=> 'UserController@check'
 ]);
-
+ Route::controller('password', 'RemindersController');
+Route::post("/forgot",[
+	'as'	=> 'forgot',
+	'uses'	=> 'RemindersController@postRemind'
+	]);
 /***********************
 Videos
 ***********************/
