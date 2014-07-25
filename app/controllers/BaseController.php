@@ -14,11 +14,17 @@ class BaseController extends Controller {
 	{
 		$fb = init_facebook();
 		if(!Auth::check()){
-			$fbid = $fb->getUser();
-			$user = Person::where('fbid', $fbid)->first();
-			if ($user && Auth::login($user))
-			{
-			    //return Redirect::intended('home');
+			try{
+				$fbid = $fb->getUser();
+			}catch(Exception $e){
+				$fbid=false;
+			}
+			if($fbid){
+				$user = Person::where('fbid', $fbid)->first();
+				if ($user && Auth::login($user))
+				{
+				    //return Redirect::intended('home');
+				}
 			}
 		}
 
