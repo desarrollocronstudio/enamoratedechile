@@ -24,7 +24,7 @@ class TipController extends BaseController {
 			
 			if(Input::get('cat'))$query->where('type_id',Input::get('cat'));
 
-			$tips = $query->simplePaginate(1);
+			$tips = $query->simplePaginate(6);
 			if($tips->count() > $minimum_places)break;
 		}
 		
