@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => "gonzunigad@gmail.com", 'name' => "Cabeza"),
+	'from' => array('address' => "emailserver.chile@gmail.com", 'name' => "Enamórate de Chile"),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return array(
 	|
 	*/
 
-	'username' => 'gonzunigad@gmail.com',
+	'username' => 'emailserver.chile@gmail.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return array(
 	|
 	*/
 
-	'password' => 'Barco2Vela2',
+	'password' => 'EmailServer567',
 
 	/*
 	|--------------------------------------------------------------------------
