@@ -169,7 +169,7 @@
             mapOptions: {
                 zoom: 14
             },
-            location:USER_IP,
+            location:'Santiago, Chile',
             componentRestrictions:{country: 'cl'},
             markerOptions: {
                 draggable: true
@@ -190,7 +190,7 @@
         
         if(city==false){
             
-            $(".autocomplete input[type=text]").geocomplete("find",USER_IP);
+            $(".autocomplete input[type=text]").geocomplete("find",'Santiago, Chile');
             return false;
         }
         $("#city_name").val(city);
