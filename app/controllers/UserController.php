@@ -3,12 +3,16 @@
 class UserController extends BaseController {
 	
 	public function logout(){
-		$fb_key = 'fbsr_'.Config::get("facebook.appId");
-		setcookie($fb_key, '', time()-3600);
-		$fb = init_facebook();
-		$fb->destroySession();
-		Auth::logout();
+		try{
 
+			$fb_key = 'fbsr_'.Config::get("facebook.appId");
+			setcookie($fb_key, '', time()-3600);
+			$fb = init_facebook();
+			$fb->destroySession();
+			Auth::logout();
+		}catch(Exception $e){
+			
+		}
 		return Redirect::to("/");
 	}
 	public function login(){
