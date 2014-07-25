@@ -348,8 +348,10 @@ LOGIN
 		.categories ul {width: 100%;margin: 0 auto;overflow: hidden;text-align: center;list-style: none;padding: 0;}
 		.categories li {display: block; border-bottom:solid #333 1px;}
 		.categories li a {margin-top: 0;}
-		
+		h3.lugar{font-size: 2em;}
 		img.principal{ display:none;}
+        .rating-big label{height: auto;}
+        .rating-big{max-width: 100%;}
 		
 		#search-tips .info {font-size: 1.8em;padding: 0;margin: 5% auto;font-style: italic;}
     }
