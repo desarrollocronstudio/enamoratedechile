@@ -38,7 +38,7 @@ Route::get("/login",array("as" => "login","uses" => "UserController@show_login")
 Route::post("/login",array("as" => "do-login","uses" => "UserController@login"));
 Route::get("/login/check-login",[
 	'as' 	=> 'check-login',
-	'uses'	=> 'userController@check'
+	'uses'	=> 'UserController@check'
 ]);
 
 /***********************

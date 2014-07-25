@@ -17,7 +17,7 @@
     <h2 class="title_jenny">{{ $featured->name }}</h2>
 
     <div class="video">
-      <iframe width="674" height="390" src="//www.youtube.com/embed/{{ $featured->youtube_code }}?{{ $autoplay?'autoplay=1':''}}" frameborder="0" allowfullscreen></iframe>
+      <iframe width="674" height="390" src="//www.youtube.com/embed/{{ $featured->youtube_code }}?rel=0&{{ $autoplay?'autoplay=1':''}}" frameborder="0" allowfullscreen></iframe>
     </div>
     <div class="shared"> <a href="#" class="tw"></a> <a href="#" class="face"></a> </div>
     <div class="separate"></div>
