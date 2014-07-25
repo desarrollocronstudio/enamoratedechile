@@ -15,8 +15,10 @@
 				<a href="{{ action('logout') }}">Cerrar sesión</a>
 			</div>
 		@else 
-			<a href="{{ action('login') }}" class="login">Iniciar sesión</a>
-			<a href="{{ action('signup') }}" class="signup">Regístrate</a>
+			<div class="links">
+				<a href="{{ action('login') }}" class="login">Iniciar sesión</a>
+				<a href="{{ action('signup') }}" class="signup">Regístrate</a>
+			</div>
 		@endif
 	</div>
 	<div class="shares">
