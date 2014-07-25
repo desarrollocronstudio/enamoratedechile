@@ -1,6 +1,14 @@
 $(function(){
+	var swiped = false;
 	$("header .mobile.menu").click(function(){
-		$("header ul").toggle();
+		if(!swiped){
+			$("#content,header.mobile").animate({left:270},500);
+			swiped = true;
+		}else{
+			$("#content,header.mobile").animate({left:0},500);
+			swiped=false;
+		}
+		
 	});
 	 $(".face").click(function(){
         FB.ui({

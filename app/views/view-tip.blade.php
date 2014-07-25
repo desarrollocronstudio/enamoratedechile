@@ -20,7 +20,7 @@
 		<!--<span>Desde 80 lukas</span>-->
 	</h2> 
 
-	@include("incs/tip-categories")
+	@include("incs/tip-categories",['active' => $tip->type_id,'usable' => false])
     <a name="tip-data"></a>
 
     <h3 class="lugar">{{ $tip->name }}</h3>

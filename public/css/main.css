@@ -63,6 +63,7 @@ textarea {
 html,body{margin: 0; padding: 0;font-family:'boogalooregular','Arial',sans-serif; font-size: 18px; background:url("../img/bg.jpg") top center ;}
 #container{ min-height: 600px;}
 .container{max-width:960px; margin: 0 auto; }
+#content{position: relative; background:url("../img/bg.jpg") top center ;}
 
 /** COMMON **/
 h2{text-shadow: -1px 1px #fff, -4px 4px #333;}
@@ -80,8 +81,11 @@ a:hover{opacity: 0.85;}
 .btn-red{background: url("../img/bg-btn-dato.png") no-repeat; width: 130px; height: 46px; border:none; color: #fff;display: inline-block; text-decoration: none; text-align: center;line-height: 46px;}
 .btn-red:hover{opacity: 0.8;}
 
+/* MAIN NAV */
+#main-nav{display: none;}
+
 /* HEADER */
-header{background:url("../img/bg-menu-top.png") repeat-x; height: 71px; }
+header{background:url("../img/bg-menu-top.png") repeat-x; position: relative; z-index: 1; height: 71px; }
 header ul,
 header ul li{margin:0; padding: 0; list-style: none;}
 header ul{width: 810px; margin:0 auto;}
@@ -205,9 +209,11 @@ LOGIN
 .categories{background: url("../img/bg-menu-categories.png") center top no-repeat; height: 85px;}
 .categories ul{width: 100%; padding:0; margin: 0 auto; overflow: hidden; text-align: center; list-style: none;}
 .categories li{ display: inline-block; }
-.categories li a{color: #eee; display: block; text-decoration: none; line-height: 49px; margin-top: 17px; padding:0 25px; text-transform: uppercase; font-size: 22px;}
+.categories li a,
+.categories li span{color: #eee; display: block; text-decoration: none; line-height: 49px; margin-top: 17px; padding:0 25px; text-transform: uppercase; font-size: 22px;}
 .categories li a:hover{background: #fff; color:#333;}
-.categories li.active a{background: #f00;}
+.categories li.active a,
+.categories li.active span{background: #f00;}
 
 /* DETALLE CITY */
 .detalle_city{background: url(../img/bg_detalle_city.png) no-repeat 0 0; width: 910px;height: 670px;display: block;margin: 0 auto;padding: 40px 0 0 40px;}
@@ -258,13 +264,24 @@ LOGIN
     @media only screen and (max-width: 767px) {
         /********* HEADER ***********/
         html,body{width: 100%;}
-        header{width: 100%; height: 65px; background:#022562 url("../img/logo-mobile.png") no-repeat center center; overflow: hidden;}
-        header ul{display: none; width: 100%;background:#022562;opacity:0.99;position: fixed; top: 65px; left: 0; }
+        header.mobile{width: 100%; height: 65px; background:#022562 url("../img/logo-mobile.png") no-repeat center center; overflow: hidden;}
+        /*header ul{display: none; width: 100%;background:#022562;opacity:0.99;position: fixed; top: 65px; left: 0; }
         header ul li{display: block;float: none; text-align: center; border:none; background:none; padding:0; border-bottom: solid 1px #666; margin: 0 5% ;}
         header .menu{float:right; line-height: 60px; padding-right: 1.5%;}
-        
-        footer{text-align: center;}
-        footer .contenido-footer{float: none; overflow: hidden; height: auto; margin: 0 auto; }
+        header .submenu{display: none;}*/
+        header .menu{float:left; line-height: 60px; padding-right: 1.5%;}
+        header.desktop{display: block; position: fixed; top: 0; left: 0; z-index: 0; width: 270px; height: 100%; background: #232323;}
+        header.desktop ul{width: 100%; padding-top: 50px;}
+        header.desktop ul li{display: block;float: none; text-align: center; border:none; background:none; padding:0; border-bottom: solid 1px #666; margin: 0 5% ;}
+        #content{z-index: 2;}
+        header.desktop .submenu{width: 100%; padding-top: 20px;}
+        header.desktop .submenu .userdata{width: 100%; float: none;}
+        header.desktop .submenu .user{margin: 0 auto; float: none;}
+        header.desktop .submenu .shares{text-align: center; padding-top: 20px;}
+
+        footer{text-align: center; position: fixed; width: 100%; bottom:0; left: 0; z-index: 2;}
+        footer #footer_content{width: 100%;}
+        footer .contenido-footer{width:100%;float: none; overflow: hidden; height: auto; margin: 0 auto; }
         footer .copyright{float:none; display: block}
         footer .social-media{margin: 0 auto; float: none; display: block; width: 100px;}
         /************* COMUNES (BOTONES, MENUS, ETC) ****************/

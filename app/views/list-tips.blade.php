@@ -15,7 +15,7 @@
 	<!--<a href="" class="black-btn">Cotiza tu pasaje</a>-->
 	<p class="info">Estos son los destacados cerca de {{ $city['name'] }}</p>
 
-	@include("incs/tip-categories")
+	@include("incs/tip-categories",['active' => Input::get('cat'),'usable' => true])
 	<!-- Distance: {{ $distance }}kms.-->
 	<section class="datos container">
 		@if ($tips->count() > 0)
