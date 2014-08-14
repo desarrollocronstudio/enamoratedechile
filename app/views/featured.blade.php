@@ -13,7 +13,7 @@
 
 
 	<a id="view-content">&nbsp;</a>
-	<h2 class="title">{{ __("Destacados") }}</h2>
+	<h2 class="title">{{ __("Los datos más populares") }}</h2>
 	<p class="intro">¡Todos estos datos son entregados por usuarios como ustedes, somos una verdadera comunidad!</p>
 
 	<section class="datos container">
