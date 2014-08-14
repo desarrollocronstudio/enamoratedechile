@@ -8,7 +8,7 @@
     <section class="datos">
         <div id="content-form">
             <h1>SUBE TU DATO PARA TODOS PUEDAN ENAMORARSE DE CHILE</h1>
-            {{ Form::open(array("files" => true)) }}
+            {{ Form::open(array("files" => true,"id" => "submit-form")) }}
             {{ Form::hidden('place_lat',null,array("id" => "place_lat")) }}
             {{ Form::hidden('place_lng',null,array("id" => "place_lng")) }}
             <div class="form-in">
@@ -49,8 +49,8 @@
                         {{ Form::text('place_name','',array("placeholder" => "Onde'l Pala","required")); }}
                     </span>
                     <span class="dato-in">
-                        {{ Form::label("Cateogría") }}<br />
-                        {{ Form::select('tip_category',$categories,array("required")); }}
+                        {{ Form::label("Categoría") }}<br />
+                        {{ Form::select('tip_category',['' => "Seleccione una categoría"]+$categories,null,array("required",'data-img-source' => URL::to('/category/{id}/pictures') )); }}
                     </span>
                     <div class="precisar">
                        <p>Puedes arrastrar el marcados para precisar mejor la ubicación de tu dato.</p>
@@ -65,13 +65,17 @@
                         EN ELLA EXACTAMENTE, ESCRÍBELO EN LA DESCRIPCIÓN
                     </div>
 
-                    <img id="place_photo" data-default='{{ asset("img/img-form.jpg") }}' src='{{ asset("img/img-form.jpg") }}' />
+                    <div class="available_pictures">
+
+                    </div>
+                    {{ Form::hidden("default_picture",null,['id' => 'default_picture']) }}
+
                     <div class="menu-img">
 
-                        {{ Form::radio("image_type[]",'default',true,array("id" => "default_image")) }}
-                        {{ Form::label("default_image","USAR IMAGEN PREDETERMINADA") }} 
+                        {{ Form::radio("image_type",'default',true,array("id" => "default_image")) }}
+                        {{ Form::label("default_image","SELECCIONAR UNA IMAGEN PREDETERMINADA") }}
                         <br />
-                        {{ Form::radio("image_type[]",'custom','',array("id" => "custom_image")) }}
+                        {{ Form::radio("image_type",'custom','',array("id" => "custom_image")) }}
                         {{ Form::label("custom_image","SUBIR IMAGEN") }} 
                         
                         <div class="image_upload_box">
@@ -109,9 +113,8 @@
 <script type="text/javascript">
     var map = false;
     var marker = false;
-    @unless (Auth::check()) 
-        show_popup("signup",null,null,true);
-    @endunless
+    var waiting_signin = false;
+    var loged = {{ Auth::check()?"true":"false" }};
 
     function readURL(input) {
 
@@ -205,10 +208,55 @@
         
     });
 
+    function change_available_pictures(id){
+        $ap = $(".available_pictures").hide().html("");
+        $("#default_picture").val("");
+        var url = $("[name=tip_category]").data("img-source");
+        url = url.replace("{id}",id);
+
+        $.get(url,function(data){
+            for(var i in data.images){
+                var img = data.images[i];
+                console.log(img);
+                $ap.append("<img src='{{ URL::to('img/default')."/" }}"+img+"' alt='' />");
+            }
+            $ap.fadeIn(500);
+        },"json");
+    }
+    $("#submit-tip").on("click",".available_pictures img",function(e){
+        $(this).addClass("selected").siblings().removeClass("selected");
+        var index = $(".available_pictures img").index(this);
+        $("#default_picture").val(index);
+        e.preventDefault();
+    });
+
+    $("#submit-form").submit(function(e){
+        if(!loged){
+            waiting_signin = true;
+            show_popup("signup",null,null,true);
+            e.preventDefault();
+        }
+    });
+
+    $("[name=tip_category]").change(function(){
+        change_available_pictures(this.value);
+    });
+    change_available_pictures($("[name=tip_category]").val());
     
     $(document).bind("position_changed",function(e,lat,lng){
         $("#place_lat").val(lat);
         $("#place_lng").val(lng);
     })
+
+$(function(){
+    $("body").unbind("connected");
+    $("body").bind("connected",function(){
+        loged = true;
+       if(waiting_signin){
+        $("#submit-form").submit();
+       }
+    });
+})
+
 </script>
 @append

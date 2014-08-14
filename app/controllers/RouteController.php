@@ -6,6 +6,10 @@ class RouteController extends BaseController {
 		if(Auth::check()){
 			$tips = Auth::user()->saved_tips()->simplePaginate(6);
 		}
+        foreach($tips as $key => $tip){
+            $tip->id = $tip->tip_id;
+            $tips[$key] = $tip;
+        }
 		return View::make("my-route",array("tips" => $tips));
 	}
 

@@ -28,7 +28,13 @@ class Tip extends Eloquent {
 		return $this->belongsTo('City');
 	}
 	public function image(){
-		return ($this->image)?asset('uploads/'.$this->image):asset('img/img-form.jpg');
+        if($this->image){
+           return asset('uploads/'.$this->image);
+        }else{
+            $pics = $this->category->pictures();
+            return URL::to("/img/default")."/".((isset($pics[$this->default_image]))?$pics[$this->default_image]:"");
+        }
+        return false;
 	}
 
 	public function recalculateRating()

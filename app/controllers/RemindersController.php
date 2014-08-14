@@ -19,8 +19,8 @@ class RemindersController extends Controller {
 	 */
 	public function postRemind()
 	{
-		switch ($response = Password::remind(Input::only('email'),function($message){
-			$message->subject('Recuera tu contraseña');
+		switch ($response = Password::remind( ["dni_type"=>"rut","dni" => normalizar_rut(Input::only('rut'))],function($message){
+			$message->subject('Recupera tu contraseña');
 		}))
 		{
 			case Password::INVALID_USER:
@@ -58,25 +58,31 @@ class RemindersController extends Controller {
 	public function postReset()
 	{
 		$credentials = Input::only(
-			'email', 'password', 'password_confirmation', 'token'
+			'password', 'password_confirmation', 'token'
 		);
+		$credentials['dni_type'] = 'rut';
+		$credentials['dni'] = Input::get("rut");
 
-		$response = Password::reset($credentials, function($user, $password)
+		$user_id = false;
+		$response = Password::reset($credentials, function($user, $password) use ($user_id)
 		{
+			
 			$user->password = Hash::make($password);
-
+			$user_id = $user->id;
 			$user->save();
+			Auth::loginUsingId($user_id);
 		});
-
 		switch ($response)
 		{
 			case Password::INVALID_PASSWORD:
+				return Redirect::back()->with('error', 'La contraseña ingresada no es válida')->withInput();
 			case Password::INVALID_TOKEN:
+				return Redirect::back()->with('error', 'El código de autorización para cambiar tu contraseña expiró. Comienza el proceso de recuperación nuevamente.')->withInput();
 			case Password::INVALID_USER:
-				return Redirect::back()->with('error', 'No pudimos reestablecer tu contraseña. Intenta nuevamente.');
+				return Redirect::back()->with('error', 'No pudimos reestablecer tu contraseña. Intenta nuevamente.')->withInput();
 
 			case Password::PASSWORD_RESET:
-				return Redirect::back()->with("ok",true);
+				return Redirect::to("/");
 		}
 	}
 

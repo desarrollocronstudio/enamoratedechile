@@ -10,7 +10,6 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-
 Route::get('/', [
 	"as" => "home", 
 	"uses" => 'HomeController@index'
@@ -79,6 +78,14 @@ Route::get('/ver/{id}', [
 Route::get('/featured', [
 	'as'	=> 'featured',
 	'uses'	=> 'TipController@featured'
+]);
+
+/***********************
+cateogires
+ ***********************/
+Route::get('/category/{id}/pictures', [
+    'as'	=> 'category.pictures',
+    'uses'	=> 'TipCategoryController@pictures'
 ]);
 
 /***********************

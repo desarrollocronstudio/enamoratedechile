@@ -44,7 +44,9 @@ $(function(){
 		facebook_connect(function(response){
 			$.getJSON("/login/check-login",function(res){
 				if(res.loged){
-					window.location.reload();
+                    $("#signup").parent().remove();
+                    $("body").trigger("connected");
+					//window.location.reload();
 				}else{
 					FB.api("/me?fields=id,name,email",function(data){
 						$(obj).hide();
@@ -78,7 +80,7 @@ $(function(){
 				$("#signup").parent().remove();
 				show_popup("thanks",function($popup){
 					
-				})
+				});
 				$("#signup").html();
 			}
 		});
@@ -92,7 +94,9 @@ $(function(){
 		facebook_connect(function(response){
 			$.getJSON("/login/check-login",function(res){
 				if(res.loged){
-					window.location.reload();
+                    $("#login").parent().remove();
+                    $("body").trigger("connected");
+                    //window.location.reload();
 				}else{
 					if(res.facebook){
 						$(obj).closest('.popup').remove();
@@ -117,8 +121,9 @@ $(function(){
 		$(this).find("[type=submit]").val("Iniciando sesión...");
 		$.post(BASE_URL+"/login",$(this).serialize(),function(res){
 			if(res.loged){
-				$("#signup").parent().remove();
-				window.location.reload();
+				$("#login").parent().remove();
+                $("body").trigger("connected");
+				//window.location.reload();
 			}else{
 				$(obj).data("sending",false);
 				$(obj).find("[type=submit]").val("Iniciar sesión");
@@ -134,13 +139,13 @@ $(function(){
 		$(this).data("sending",true);
 		$(this).find("[type=submit]").val("Recuperando...");
 		$.post(BASE_URL+"/forgot",$(this).serialize(),function(res){
-			console.log(res);
 			if(!res.status){
 				$(obj).data("sending",false);
 				$(obj).find("[type=submit]").val("Recuperar");
-				$("#forgot .msg").html("Ocurrió un error. Revisa que tu email esté bien ingresado");
+				$("#forgot .msg").html("Ocurrió un error. Revisa que tu RUT esté bien ingresado.");
 			}else{
 				$("#forgot .msg").html("Revisa tu correo con las instrucciones para continuar.");
+				$("#forgot input").remove();
 				$("#forgot .btn-red").remove();
 				$a = $("<a class='btn-red'>").html("OK").click(function(){
 					$(this).closest(".popup").remove();
@@ -198,3 +203,9 @@ function facebook_connect(on_success, on_failure){
 		}
 	});
 }
+
+$("body").bind("connected",function(){
+   alert ("Hola");
+    return true;
+    window.location.reload();
+});

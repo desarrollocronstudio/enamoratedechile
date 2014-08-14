@@ -11,7 +11,8 @@
 		"facebook/php-sdk": "*",
 		"magniloquent/magniloquent": "dev-master",
 		"vespakoen/menu": "dev-master",
-		"willdurand/geocoder": "@stable"
+		"willdurand/geocoder": "@stable",
+		"guzzlehttp/guzzle": "4.*"
 	},
 	"autoload": {
 		"classmap": [

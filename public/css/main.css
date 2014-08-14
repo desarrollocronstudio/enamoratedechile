@@ -88,12 +88,17 @@ a:hover{opacity: 0.85;}
 header{background:url("../img/bg-menu-top.png") repeat-x; position: relative; z-index: 1; height: 71px; }
 header ul,
 header ul li{margin:0; padding: 0; list-style: none;}
-header ul{width: 810px; margin:0 auto;}
-header ul li{float:left; padding: 12px 22px; padding-top: 8px; background: top left url('../img/menu-separator.png') no-repeat; }
+header ul{width: 610px; margin:0 auto;}
+header ul.complete{width:910px;}
+header ul li{float:left; padding: 12px 15px; padding-top: 8px; background: top left url('../img/menu-separator.png') no-repeat; }
 header ul li:first-child{background: none;}
-header li a{ color:#fff; font-size: 24px; line-height: 31px; text-decoration: none; padding: 2px; font-weight: normal; }
+header li a{ color:#fff; font-size: 17px; line-height: 25px; text-decoration: none; padding: 2px; font-weight: normal; display: inline-block; }
+header li a.double{line-height: 18px; text-align: center; margin-top: -5px;}
 header li a:hover{border-radius:5px; background: #fff; color:#5b5b5b; }
 header ul li.active a{border-radius:5px; background: #fff; color:#000;}
+header ul li a.img-btn:hover{background: #666 !important;}
+header ul li.active a.img-btn{background: #666 !important;}
+
 header .submenu{width: 810px; margin: 0 auto; clear: both; }
 header .submenu .user{width:230px;float:right;padding: 5px; margin-top: 15px; border-radius: 10px; background: rgba(255,255,255,0.7); overflow: hidden;}
 header .submenu .user img{width: 35px; height: 35px; border-radius: 35px; display: block; float:right; margin: 3px 0 3px 10px; border:solid 2px #666;}
@@ -169,9 +174,16 @@ LOGIN
     PAGES 
 ************************************************************/
 .page{text-align: center; padding-bottom: 30px;}
+
 /*** HOME ****/
 #home{text-align:center;}
-#home .intro{font-size: 24px;}
+#home .intro{font-size: 24px; font-style: italic;}
+.site_intro{overflow: hidden; clear: both; width: 95%; max-width: 600px;position: relative; min-height: 170px; text-align: center; margin: 0 auto; margin-bottom: -23px }
+.site_intro .texts{width: 500px;}
+.site_intro h3{font-family: 'cheap_pine_sanssans'; font-weight: normal; background:url("../img/separedor_titulo.png") no-repeat center bottom; text-transform: uppercase; padding-bottom: 12px; font-size: 24px; margin-bottom: 10px; }
+.site_intro p{font-size:24px; width: 80%; display: block; text-align: center; margin: 0 auto; margin-bottom: 10px; }
+.site_intro img{position:absolute; bottom: 0; right: 0; }
+
 
 .main-sep{margin:40px 0; color:#000; height: 1px; box-shadow:0 0 20px #000; background-color: #000; display: block;}
 
@@ -190,9 +202,15 @@ LOGIN
 .dato-small .text{font-size:18px; height: 80px; margin-top: 5px; border-top:dashed 1px #ccc; padding-top: 10px; }
 .dato-small .rating{float:left; margin-top: 12px;}
 
+/* SUBE TU DATO */
+.available_pictures img{width: 42%; margin: 2%; border: solid 5px #ccc; cursor: pointer;}
+.available_pictures img.selected{border-color: red;}
 
 /* SEARCH TIPS */
 #search-tips .info{ font-size:23px; padding:0; margin:0; font-style: italic; }
+#search-tips .cotizar{float:right;}
+#search-tips .dedo{width: 1046px; height: 211px; background: url("../img/bg-dedo-cuadro.png") no-repeat; margin:0 auto; position: relative; }
+#search-tips .dedo h4{position:absolute; top:40px; left: 450px; width: 200px; font-size: 24px; }
 
 /* RATING */
 .rating{width:100px; padding-left: 13px; padding-top: 1px; height: 25px; background: url("../img/bg-puntaje.png") no-repeat; overflow: hidden;}
@@ -214,10 +232,12 @@ LOGIN
 .categories ul{width: 100%; padding:0; margin: 0 auto; overflow: hidden; text-align: center; list-style: none;}
 .categories li{ display: inline-block; }
 .categories li a,
-.categories li span{color: #eee; display: block; text-decoration: none; line-height: 49px; margin-top: 17px; padding:0 25px; text-transform: uppercase; font-size: 22px;}
+.categories li span{color: #eee; display: block; text-decoration: none; line-height: 49px; margin-top: 17px; padding:0 15px; text-transform: uppercase; font-size: 18px;}
 .categories li a:hover{background: #fff; color:#333;}
 .categories li.active a,
 .categories li.active span{background: #f00;}
+
+
 
 /* DETALLE CITY */
 .detalle_city{background: url(../img/bg_detalle_city.png) no-repeat 0 0; overflow: hidden; width: 910px; background-size:100% 100%;display: block;margin: 0 auto;padding: 40px 0 20px 40px;}
@@ -239,6 +259,10 @@ LOGIN
 #view .comments{max-width: 90%; width: 910px; margin: 0 auto; background: #eee}
 #view .comments iframe,
 #view .comments .fb-comments span{width: 100% !important;}
+
+/** MY ROUTE **/
+#my_route .ruta{font-size: 26px; font-style: italic; text-transform: uppercase; margin: 0;}
+#my_route .intro{font-size: 24px; font-style: italic; max-width:90%; width: 500px; margin: 0 auto; display: block; }
 
 /* SUBMIT TIP */
 #submit-tip #map-container{width:104%; background: #ccc; clear: both; float: left; margin-left: -4%; }
@@ -309,7 +333,7 @@ LOGIN
         .desktop{display: none; }
         /************* HOME ****************/
         .intro{padding: 0 3%;}
-        
+
 
         /************* BUSCANDO A JENNY ****************/
         .jenny .video{width: 90%; height: 230px;}

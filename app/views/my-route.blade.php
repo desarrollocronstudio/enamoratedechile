@@ -8,15 +8,12 @@
 @stop
 
 @section('content')
-<div class="page" id="home">
+<div class="page" id="my_route">
 	@include("incs/logo")
 
-	<img style="margin:10px 0 " class="principal"  src="{{ asset('img/img-top-home.jpg') }}" alt="Bienvenido a " />
-
-	@include("incs/search-nav")
 
 	<a id="view-content">&nbsp;</a>
-	<h2 class="title">{{ __("Mi ruta") }}</h2>
+	<h2 class="city-title">{{ __("Mis favoritos") }}</h2>
 
 	@if (Auth::check())
     	<h3 class="ruta">¡Hola, {{ Str::words(Auth::user()->name,1,'') }}!</h3>

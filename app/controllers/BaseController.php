@@ -32,6 +32,7 @@ class BaseController extends Controller {
 		{
 			$this->layout = View::make($this->layout);
 			View::share("tips_categories",TipType::remember(60)->get());
+            View::share("is_home",false);
 		}
 	}
 

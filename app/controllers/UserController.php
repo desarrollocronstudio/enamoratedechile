@@ -16,7 +16,7 @@ class UserController extends BaseController {
 		return Redirect::to("/");
 	}
 	public function login(){
-		$check = array("dni" => Input::get('rut'),"dni_type" => "rut","password" => Input::get("password"));
+		$check = array("dni" => normalizar_rut(Input::get('rut')),"dni_type" => "rut","password" => Input::get("password"));
 		if($res = Auth::attempt($check)){
 			if(Request::ajax()){                   
 				$response_values = array(

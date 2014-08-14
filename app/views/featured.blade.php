@@ -11,9 +11,6 @@
 <div class="page" id="home">
 	@include("incs/logo")
 
-	<img style="margin:10px 0 " class="principal"  src="{{ asset('img/img-top-home.jpg') }}" alt="Bienvenido a " />
-
-	@include("incs/search-nav")
 
 	<a id="view-content">&nbsp;</a>
 	<h2 class="title">{{ __("Destacados") }}</h2>

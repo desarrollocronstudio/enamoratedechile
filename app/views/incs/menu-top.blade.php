@@ -1,11 +1,19 @@
-{{ 
-	Menu::handler('main')->addClass("menu main-nav")
+<?php
+	$menu = Menu::handler('main')->addClass("menu main-nav")
 		->add(action('home'),"INICIO")
-		->add(action('featured')."#view-content",'DESTACADOS')
-		->add(action('RouteController@my_route')."#view-content","MI RUTA")
-		->add(action('list_videos','ideal')."#view-content",'LA RUTA IDEAL')
-		->add(action('list_videos','jenny')."#view-content",'BUSCANDO A JENNY') 
-}}
+		->add(action('featured')."#view-content",'POPULARES')
+		->add(action('RouteController@my_route')."#view-content","MIS FAVORITOS")
+		->add(action('list_videos','ideal')."#view-content",'ESPECIAL<BR />SAN PEDRO',null,['class'=>'double'])
+		->add(action('list_videos','jenny')."#view-content",'BUSCANDO A JENNY');
+
+	if(!$is_home){
+	    $menu->addClass("complete");
+	    $menu->add(action('home')."#busca","<img src='".asset("img/btn-busca-un-dato-top.png")."' alt='' />",null,['class' => 'img-btn']);
+	    $menu->add(action('submit_tip_form'),"<img src='".asset("img/btn-sube-tu-dato-top.png")."' alt='' />",null,['class' => 'img-btn']);
+	}
+
+	echo $menu;
+?>
 <div class='submenu'>
 	<div class="userdata"> 
 		@if (Auth::check())

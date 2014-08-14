@@ -11,12 +11,21 @@
 <div class="page" id="home">
 	@include("incs/logo")
 
-	<img style="margin:10px 0 " class="principal"  src="{{ asset('img/img-top-home.jpg') }}" alt="Bienvenido a " />
+	<div class="site_intro">
+	    <div class="texts">
+            <h3>¡Se parte de esta gran comunidad de datos y picadas de Chile! </h3>
+            <p>Busca un dato o entréganos el tuyo y comienza a enamorarte de Chile</p>
+	    </div>
+	    <img src="{{ asset('img/dedo.png') }}" alt="Dedo"/>
+	</div>
 
 	@include("incs/search-nav")
 
-	<h2 class="title">{{ __("Destacados") }}</h2>
-	<p class="intro">¡Todos estos datos son entregados por usuarios como ustedes, somos una verdadera comunidad!</p>
+	<h2 class="title">{{ __("Los datos más populares") }}</h2>
+	<p class="intro">
+	    Estos son los datos que más le han gustado a nuestra comunidad.<br />
+        ¡Navégalos y descubre por que son tan famosos!
+    </p>
 
 	<section class="datos container">
 		@foreach ($tips as $tip)

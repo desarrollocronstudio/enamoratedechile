@@ -11,10 +11,6 @@
 <div class="page" id="view">
 	@include("incs/logo")
 
-	<img style="margin:10px 0 " class="principal"  src="{{ asset('img/img-top-home.jpg') }}" alt="Bienvenido a " />
-
-	@include("incs/search-nav")
-
 	<h2 class="city-title">
 		{{ $tip->city_name }}
 		<!--<span>Desde 80 lukas</span>-->
@@ -46,10 +42,10 @@
         </div>
         <h2 class="slide recomendacion">Si estuviste aquí o te gustó el dato califícalo.</h2>
         <div class="rating-big">
-            <span class="mark" alt="Ahí nomás"></span>
             <span class="mark" alt="Ni chicha ni limoná"></span>
-            <span class="mark" alt="Muy piola"></span>
-            <span class="mark" alt="Lo repetiría"></span>
+            <span class="mark" alt="Piola"></span>
+            <span class="mark" alt="Está bacán"></span>
+            <span class="mark" alt="Lo recomiendo"></span>
             <span class="mark" alt="Me enamoré"></span>
             <label></label>
         </div>

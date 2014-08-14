@@ -52,8 +52,10 @@ class TipController extends BaseController {
 
 	public function post(){
 		$data = array(
-			"regions" 		=> Region::lists("large_name","id"),
-			"categories"	=> TipType::lists("name","id")
+			"regions" 		=> Region::remember(120)->lists("large_name","id"),
+			"categories"	=> TipType::remember(120)->lists("name","id"),
+
+
 		);
 		return View::make('submit-tip',$data);
 	}
@@ -64,13 +66,30 @@ class TipController extends BaseController {
 
 		$input = Input::all();
 		$input["user_id"] = Auth::user()->id;
-		$rules =  array(	
-			'city'		=> 'required',
+
+		$rules =  array(
+            'image_type'    => 'required',
+			'city'		    => 'required',
 			'tip_category'	=> 'required'
 		);
+        if(Input::has('image_type')){
+            if(Input::get('image_type') =="default"){
+                $rules['default_picture'] = 'required|integer|min:0|max:1';
+            }else{
+                $rules['image'] = 'required';
+            }
+
+
+        }
+
+
 		$validator = Validator::make($input,$rules,array(
 			"city.required" 			=> "Debes seleccionar una ciudad. ¿Donde es tu dato?",
-			'tip_category.required'		=> "Debes indicar una categoría para tu dato"
+			'tip_category.required'		=> "Debes indicar una categoría para tu dato",
+            "default_picture.required"  => "Debes seleccionar una imagen para tu dato",
+            "image_type.required"       => "Debes seleccionar el tipo de imagen que necesitas",
+            'image.required'            => "Debes subir una imagen",
+
 		));
 		if ($validator->fails()){
 			if(Request::ajax()){                    
@@ -83,7 +102,6 @@ class TipController extends BaseController {
 
 		 	return Redirect::back()->withErrors($validator)->withInput();
 		}else{
-
 			$tip = new Tip;
 			$tip->name 			= $input["place_name"];
 			$tip->city_name		= $input['city'];
@@ -93,7 +111,9 @@ class TipController extends BaseController {
 			$tip->lat 			= $input["place_lat"];
 			$tip->lng 			= $input["place_lng"];
 			$tip->place_name	= $input["city_search"];
-			if (Input::hasFile('image')){
+            $tip->image         = "";
+            $tip->default_image = $input["default_picture"];
+            if(Input::get('image_type') == "custom"){
 				$filename = str_rand(12).".".strtolower(Input::file("image")->getClientOriginalExtension());
 				if(Input::file('image')->move(public_path()."/uploads",$filename)){
 					$tip->image = $filename;

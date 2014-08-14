@@ -8,8 +8,8 @@
 				<div class="password form">
 					<form action="{{ action('RemindersController@postReset') }}" method="POST">
 					    <h3>Restablecer contraseña</h3>
-					    <input type="hidden" name="token" value="{{ $token }}">
-					    <input type="email" name="email" placeholder="Email">
+					    {{ Form::hidden('token',$token) }}
+					    {{ Form::text('rut',null,['placeholder' => 'RUT']) }}
 					    <input type="password" name="password" placeholder="Nueva contraseña">
 					    <input type="password" name="password_confirmation" placeholder="Confirma tu nueva contraseña">
 					    <input type="submit" value="Reestablecer contraseña">
