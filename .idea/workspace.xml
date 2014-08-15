@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3760a16a-703e-4353-9f41-fb5cfb258372" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tips/thanks.blade.php" afterPath="$PROJECT_DIR$/app/views/tips/thanks.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Tip.php" afterPath="$PROJECT_DIR$/app/models/Tip.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="wc.iws" />
@@ -27,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="thanks.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/tips/thanks.blade.php">
+      <file leaf-file-name="Tip.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/Tip.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22222222" vertical-offset="0" max-vertical-offset="900">
-              <caret line="10" column="33" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.8" vertical-offset="340" max-vertical-offset="1260">
+              <caret line="53" column="39" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -69,7 +69,6 @@
         <option value="$PROJECT_DIR$/public/css/diego.css" />
         <option value="$PROJECT_DIR$/app/views/videos/view.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/VideoController.php" />
-        <option value="$PROJECT_DIR$/app/models/Tip.php" />
         <option value="$PROJECT_DIR$/app/views/view-tip.blade.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_07_21_191742_base.php" />
         <option value="$PROJECT_DIR$/app/controllers/TipController.php" />
@@ -79,6 +78,7 @@
         <option value="$PROJECT_DIR$/public/css/main.css" />
         <option value="$PROJECT_DIR$/app/views/submit-tip.blade.php" />
         <option value="$PROJECT_DIR$/app/views/tips/thanks.blade.php" />
+        <option value="$PROJECT_DIR$/app/models/Tip.php" />
       </list>
     </option>
   </component>
@@ -253,7 +253,13 @@
       <option name="project" value="LOCAL" />
       <updated>1408117980191</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="PUnto finales en mensaje de gracias">
+      <created>1408118160877</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1408118160877</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -301,7 +307,8 @@
     <MESSAGE value="Nuevas funcionalidad. Multi foto al submit" />
     <MESSAGE value="Cambio de titulo" />
     <MESSAGE value="Mejoras form submit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mejoras form submit" />
+    <MESSAGE value="PUnto finales en mensaje de gracias" />
+    <option name="LAST_COMMIT_MESSAGE" value="PUnto finales en mensaje de gracias" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -477,14 +484,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Tip.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64444447" vertical-offset="340" max-vertical-offset="1240">
-          <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/view-tip.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.06666667" vertical-offset="0" max-vertical-offset="3220">
@@ -606,6 +605,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22222222" vertical-offset="0" max-vertical-offset="900">
           <caret line="10" column="33" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Tip.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8" vertical-offset="340" max-vertical-offset="1260">
+          <caret line="53" column="39" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="39" />
           <folding />
         </state>
       </provider>

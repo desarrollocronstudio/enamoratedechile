@@ -51,6 +51,7 @@ class Tip extends Eloquent {
 	}
 
     public function alreadyVotedByCurrentUser(){
+        if(!Auth::check())return false;
         return $this->reviews()->where('author_id',Auth::user()->id)->first();
     }
  
