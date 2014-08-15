@@ -67,6 +67,12 @@ Route::post('/submit-tip', [
 	'as'	=> 'save_tip',
 	'uses'	=> 'TipController@save'
 ]);
+
+Route::get('/thanks/tip', [
+    'as'	=> 'tips.thanks',
+    'uses'	=> 'TipController@thanks'
+]);
+
 Route::get('/search/{city_id}/{city_name}',[
 	'as' 	=> "tip_search",
 	'uses'	=> "TipController@search"
@@ -79,6 +85,7 @@ Route::get('/featured', [
 	'as'	=> 'featured',
 	'uses'	=> 'TipController@featured'
 ]);
+
 
 /***********************
 cateogires

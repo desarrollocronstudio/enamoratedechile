@@ -49,5 +49,9 @@ class Tip extends Eloquent {
 	public function users_who_saved_it(){
 		return $this->hasMany('Peron');
 	}
+
+    public function alreadyVotedByCurrentUser(){
+        return $this->reviews()->where('author_id',Auth::user()->id)->first();
+    }
  
 }

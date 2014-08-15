@@ -41,10 +41,15 @@ class TipController extends BaseController {
 	
 	public function view($tip_id){
 		$tip = Tip::find($tip_id);
+        if(!$tip)return Redirect::route("featured");
+        $total_reviews = $tip->rating_count;
 		return View::make('view-tip',[
-			"tip" 			=> $tip
+			"tip" 			=> $tip,
+            'total_reviews' => $total_reviews,
+            'already_voted' => $tip->alreadyVotedByCurrentUser()
 		]);
 	}
+
 	public function featured(){
 		$tips = Tip::featured()->simplePaginate(6);
 		return View::make('featured',array("tips" => $tips));
@@ -120,8 +125,19 @@ class TipController extends BaseController {
 				}	
 			}
 			$tip->save();
-			return Redirect::back()->with('tip_saved', true);
+			return Redirect::route('tips.thanks')->with('tip.last_saved', $tip->id);
 
 		}
 	}
+    public function thanks(){
+        $tip_id = Session::get('tip.last_saved');
+        Session::reflash();
+        $tip = Tip::find($tip_id);
+        if(!$tip){
+            return Redirect::route('submit_tip_form');
+        }
+        return View::make('tips.thanks',[
+            "tip" 			=> $tip
+        ]);
+    }
 }

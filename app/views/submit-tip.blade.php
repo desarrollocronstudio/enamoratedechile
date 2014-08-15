@@ -3,8 +3,6 @@
 <div class="page" id="submit-tip">
 	@include("incs/logo")
 
-	@include("incs/search-nav")
-
     <section class="datos">
         <div id="content-form">
             <h1>SUBE TU DATO PARA TODOS PUEDAN ENAMORARSE DE CHILE</h1>
@@ -101,8 +99,9 @@
                     <div class="dato-picada">*LA INFORMACIÓN QUE NOS ENTREGUES EN ESTE SITIO SERÁ PARA PROPORCIONAR DATOS ÚTILES A LA COMUNIDAD</div>
                 @endif
             </div>
+
+            {{ Form::token() . Form::close() }}
         </div>
-        {{ Form::token() . Form::close() }}
     </div>
 </section>
 </div>

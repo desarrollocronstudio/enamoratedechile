@@ -14,6 +14,7 @@
   @include("incs/logo")
   <div class="jenny">
     <a id="view-content"></a>
+    <p class="intro">{{ $intro }}</p>
     <h2 class="title_jenny">{{ $featured->name }}</h2>
 
     <div class="video">

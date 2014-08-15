@@ -90,6 +90,7 @@ class Base extends Migration {
             $table->decimal('lat','18','12');
 			$table->decimal('lng','18','12');
             $table->text('content');
+            $table->boolean("active")->default(false);
             $table->integer('author_id')->unsigned();
             $table->integer('type_id')->unsigned();
             $table->foreign('author_id')->references('id')->on("people");

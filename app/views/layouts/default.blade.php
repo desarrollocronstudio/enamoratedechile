@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title> @yield("page_title",'Enamórate de Chile')- LAN</title>
+        <title> @yield("page_title",'Enamórate de Chile') - LAN</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
 
@@ -27,7 +27,7 @@
     <body>
         
         <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            <p class="browsehappy">Están usando un navegador web <strong>obsoleto</strong>. Por favor <a href="http://browsehappy.com/">actualizalo</a> para mejorar tu experiencia.</p>
         <![endif]-->
         <header class="mobile">
              <span class="mobile menu"><img src="{{ asset('img/menu-mobile.png') }}"></span>

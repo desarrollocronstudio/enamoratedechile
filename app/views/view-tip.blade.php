@@ -48,6 +48,21 @@
             <span class="mark" alt="Lo recomiendo"></span>
             <span class="mark" alt="Me enamoré"></span>
             <label></label>
+            @if ($already_voted)
+                <img class="already_voted" src="{{ asset('img/already-rated.png') }}" alt="Ya calificaste este dato" />
+            @endif
+
+        </div>
+        <div class="rating-count">
+            <img src="{{ asset('img/black-heart.png') }}" alt="" />
+            <span>
+                @if ($total_reviews === 0)
+                    Este dato aún no ha sido calificado ¡Sé el primero!
+                @elseif ($total_reviews > 0)
+                    Este dato ha sido calificado {{ $total_reviews." ".(($total_reviews > 1)?"veces":"vez") }}
+                @endif
+
+            </span>
         </div>
         <div class="shared">
             <a class="ruta" href="{{ action('add_to_route',$tip->id) }}"></a>
@@ -83,6 +98,7 @@
 </script>
 <script type="text/javascript">
 var current_rating = Math.round({{ $tip->rating_cache }});
+var already_rated = {{ ($already_voted)?"true":"false"; }};
 $(function(){
     initialize();
     $('html, body').animate({
