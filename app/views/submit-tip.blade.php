@@ -69,13 +69,15 @@
                     {{ Form::hidden("default_picture",null,['id' => 'default_picture']) }}
 
                     <div class="menu-img">
+                        <div class="option">
+                            {{ Form::radio("image_type",'default',true,array("id" => "default_image")) }}
+                            {{ Form::label("default_image","USAR IMAGEN PREDETERMINADA") }}
+                        </div>
+                        <div class="option">
+                            {{ Form::radio("image_type",'custom','',array("id" => "custom_image")) }}
+                            {{ Form::label("custom_image","SUBIR IMAGEN") }}
+                        </div>
 
-                        {{ Form::radio("image_type",'default',true,array("id" => "default_image")) }}
-                        {{ Form::label("default_image","SELECCIONAR UNA IMAGEN PREDETERMINADA") }}
-                        <br />
-                        {{ Form::radio("image_type",'custom','',array("id" => "custom_image")) }}
-                        {{ Form::label("custom_image","SUBIR IMAGEN") }} 
-                        
                         <div class="image_upload_box">
                             <a class="bsc-btn" href="">{{ trans("BUSCAR") }}</a>
                             {{ Form::file("image",array("accept" => "image/*","id" => "image_file_input")) }}
@@ -148,7 +150,7 @@
         });
         $("#image_file_input").change(function(){
             readURL(this);
-            $("#file_name_value").html(this.value.substr(this.value.lastIndexOf("\\")+1,15));
+            $("#file_name_value").html(this.value.substr(this.value.lastIndexOf("\\")+1,55));
         })
         /*$(".autocomplete input[type=text]").autocomplete({
           source: "get-cities",

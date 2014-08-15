@@ -271,6 +271,10 @@ LOGIN
 #submit-tip #map{width: 100%; height: 190px;}
 #submit-tip .thanks{width: 90%; margin: 0 auto;}
 #submit-tip .thanks h1{font-size: 1.6em;}
+#submit-tip .option{width: 45%; float: left;}
+#submit-tip .menu-img{width: 95%; margin:0 auto;}
+#submit-tip .image_upload_box{clear: both;}
+#submit-tip #file_name_value{display: block; line-height: 15px; padding-top: 10px; width: 300px;}
 
 /* BUSCANDO A JENNY */
 .jenny { margin:1em auto; position:relative;}
