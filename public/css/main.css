@@ -61,9 +61,9 @@ textarea {
    GDZ - STYLES
    ========================================================================== */
 html,body{margin: 0; padding: 0;font-family:'boogalooregular','Arial',sans-serif; font-size: 18px; background:url("../img/bg.jpg") top center ;}
-#container{ min-height: 600px; margin-top: -50px;}
+#container{ min-height: 600px;}
 .container{max-width:960px; margin: 0 auto; }
-#content{position: relative; background:url("../img/bg.jpg") #e1ead9 top center ;}
+#content{position: relative;}
 
 /** COMMON **/
 h2{text-shadow: -1px 1px #fff, -4px 4px #333;}
@@ -85,11 +85,11 @@ a:hover{opacity: 0.85;}
 #main-nav{display: none;}
 
 /* HEADER */
-header{background:url("../img/bg-menu-top.png") repeat-x; position: relative; z-index: 1; height: 71px; }
+header{ }
 header ul,
 header ul li{margin:0; padding: 0; list-style: none;}
 header ul{width: 650px; margin:0 auto;}
-header ul.complete{width:950px;}
+header ul.complete{width:850px;}
 header ul li{float:left; padding: 12px 15px; padding-top: 8px; background: top left url('../img/menu-separator.png') no-repeat; }
 header ul li:first-child{background: none;}
 header li a{ color:#fff; font-size: 17px; line-height: 25px; text-decoration: none; padding: 2px; font-weight: normal; display: inline-block; }
@@ -99,7 +99,9 @@ header ul li.active a{border-radius:5px; background: #fff; color:#000;}
 header ul li a.img-btn:hover{background: #666 !important;}
 header ul li.active a.img-btn{background: #666 !important;}
 
-header .submenu{width: 810px; margin: 0 auto; clear: both; }
+header .menu{background:url("../img/bg-menu-top.png") repeat-x; z-index: 1; height: 71px; position: fixed; top: 0; left: 0; width: 100%; }
+
+header .submenu{width: 810px; margin: 0 auto; clear: both; margin-top: 50px; height: 30px; }
 header .submenu .user{width:230px;float:right;padding: 5px; margin-top: 15px; border-radius: 10px; background: rgba(255,255,255,0.7); overflow: hidden;}
 header .submenu .user img{width: 35px; height: 35px; border-radius: 35px; display: block; float:right; margin: 3px 0 3px 10px; border:solid 2px #666;}
 header .submenu .user span{display: block; width: 180px; float: right;text-align: right;}
@@ -222,13 +224,12 @@ LOGIN
 .rating .mark.active:hover{background-position: 0 0; opacity:0.8;}
 
 /* RATING-BIG */
-.rating-big{width: 500px; text-align: left; overflow: hidden; position: relative;}
+.rating-big{width: 500px; text-align: left; overflow: hidden; position: relative; padding-top: 10px;}
 .rating-big .mark{width: 32px; height: 27px; background: url("../img/hearts-big.png") no-repeat 0 0px; overflow: hidden; display: block; float:left; cursor: pointer;  }
 .rating-big .mark.active{background-position: 0 -27px; }
-.rating-big:hover .mark{background-position: 0 0;}
 .rating-big .mark.hover{background-position: 0 -27px;}
 .rating-big label{font-size: 0.9em; display: block; float: left; height: 30px; line-height: 30px; color: #d70303; padding-left: 10px;}
-.rating-big .already_voted{position:absolute; left: 300px; top: -10px;}
+.rating-big .already_voted{position:absolute; left: 300px; top: -1px;}
 /* Categories */
 .categories{background: url("../img/bg-menu-categories.png") center top no-repeat; height: 85px;}
 .categories ul{width: 100%; padding:0; margin: 0 auto; overflow: hidden; text-align: center; list-style: none;}

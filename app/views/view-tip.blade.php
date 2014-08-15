@@ -40,7 +40,12 @@
         <div id="map">
 
         </div>
-        <h2 class="slide recomendacion">Si estuviste aquí o te gustó el dato califícalo.</h2>
+
+        <h2 class="slide recomendacion">
+            @if (!$already_voted)
+                Si estuviste aquí o te gustó el dato califícalo.
+            @endif
+        </h2>
         <div class="rating-big">
             <span class="mark" alt="Ni chicha ni limoná"></span>
             <span class="mark" alt="Piola"></span>
@@ -114,14 +119,18 @@ $(function(){
     });
 
     $(".rating-big .mark").hover(function(){
+        if($(".rating-big").hasClass("disabled"))return false;
+
         var $mark = $(this);
         for(var i = 0; i <= $(".rating-big .mark").index($mark); i++){
             $(".rating-big .mark:eq("+i+")").addClass("hover")
         }
         $(".rating-big label").html($mark.attr("alt"));
     },function(){
+        if($(".rating-big").hasClass("disabled"))return false;
+
         $(".rating-big .mark").removeClass("hover");
-        $(".rating-big label").html("").html($(".rating-big .clicked").attr("alt"));
+        set_rating_text();//$(".rating-big label").html("").html($(".rating-big .clicked").attr("alt"));
     }).click(function(){
         var index = $(".rating-big .mark").index(this);
         set_rating(index+1);
@@ -132,20 +141,39 @@ $(function(){
         set_rating(current_rating);
     }
 
-    function set_rating(num){
-        $(".rating-big .mark").removeClass("active").removeClass("clicked");
-        var $mark = $(this).addClass("clicked");
-        
-        for(var i = 0; i <= num-1; i++){
-            $(".rating-big .mark:eq("+i+")").addClass("active")
-        }
+
+    if(already_rated){
+        $(".rating-big").addClass("disabled");
     }
+
 });
+
+function set_rating_text(){
+    $mark = $(".rating-big .active:last");
+    $(".rating-big label").html($mark.attr("alt"));
+}
+function set_rating(num){
+    if($(".rating-big").hasClass("disabled"))return false;
+
+    $(".rating-big .mark").removeClass("active").removeClass("clicked");
+
+    var $mark = false;
+    for(var i = 0; i <= num-1; i++){
+        $mark = $(".rating-big .mark:eq("+i+")").addClass("active");
+    }
+
+    if($mark){
+        set_rating_text()//$(".rating-big label").html($mark.attr("alt"));
+    }
+
+}
 function post_rating(rating){
+    if($(".rating-big").hasClass("disabled"))return false;
+
     $.post("{{ action('post_rating',$tip->id) }}",{rating:rating+1},function(res){
         $(".rating-big label").html(res.msg);
         if(res.status){
-
+            window.location.reload();
         }else{
 
         }

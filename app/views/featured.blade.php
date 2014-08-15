@@ -14,7 +14,7 @@
 
 	<a id="view-content">&nbsp;</a>
 	<h2 class="title">{{ __("Los datos más populares") }}</h2>
-	<p class="intro">¡Todos estos datos son entregados por usuarios como ustedes, somos una verdadera comunidad!</p>
+	<p class="intro">ESTOS SON LOS DATOS QUE MÁS LE HAN GUSTADO A NUESTRA COMUNIDAD.</p>
 
 	<section class="datos container">
 		@foreach ($tips as $tip)

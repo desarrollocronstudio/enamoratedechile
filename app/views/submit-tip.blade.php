@@ -88,7 +88,12 @@
                     <div class="despcripcion-form">
                         {{ Form::label("DESCRIPCIÓN") }}
                         <br />
-                        {{ Form::textarea("description",null,array("class" => "area-form","placeholder" => "ESTE LUGAR ES UNA EXCELENTE PICADA PARA COMER EN FAMILIA Y CON LOS AMIGOS, ESTA UBICADA EN EL MERCADO DE CHILLÁN. BUENO, BONITO Y BARATO.")) }}    
+                        {{ Form::textarea("description",null,array("class" => "area-form","placeholder" =>
+"EJEMPLO:
+
+ESTE LUGAR ES UNA EXCELENTE PICADA PARA COMER EN FAMILIA Y CON LOS AMIGOS, ESTÁ UBICADA EN EL MERCADO DE CHILLÁN.
+
+BUENO, BONITO Y BARATO.")) }}
 
 
 

@@ -1,19 +1,21 @@
-<?php
-	$menu = Menu::handler('main')->addClass("menu main-nav")
-		->add(action('home'),"INICIO")
-		->add(action('featured'),'LOS DATOS MÁS<br />POPULARES',null,['class'=>'double'])
-		->add(action('RouteController@my_route'),"MIS FAVORITOS")
-		->add(action('list_videos','ideal'),'ESPECIAL<BR />SAN PEDRO',null,['class'=>'double'])
-		->add(action('list_videos','jenny'),'BUSCANDO A JENNY');
+<div class="menu">
+    <?php
+        $menu = Menu::handler('main')->addClass("main-nav")
+            ->add(action('home'),"INICIO")
+            ->add(action('featured'),'LOS DATOS MÁS<br />POPULARES',null,['class'=>'double'])
+            ->add(action('RouteController@my_route'),"MIS FAVORITOS")
+            //->add(action('list_videos','ideal'),'ESPECIAL<BR />SAN PEDRO',null,['class'=>'double'])
+            ->add(action('list_videos','jenny'),'BUSCANDO A JENNY');
 
-	if(!$is_home){
-	    $menu->addClass("complete");
-	    $menu->add(action('home')."#busca","<img src='".asset("img/btn-busca-un-dato-top.png")."' alt='' />",null,['class' => 'img-btn']);
-	    $menu->add(action('submit_tip_form'),"<img src='".asset("img/btn-sube-tu-dato-top.png")."' alt='' />",null,['class' => 'img-btn']);
-	}
+        if(!$is_home){
+            $menu->addClass("complete");
+            $menu->add(action('home')."#busca","<img src='".asset("img/btn-busca-un-dato-top.png")."' alt='' />",null,['class' => 'img-btn']);
+            $menu->add(action('submit_tip_form'),"<img src='".asset("img/btn-sube-tu-dato-top.png")."' alt='' />",null,['class' => 'img-btn']);
+        }
 
-	echo $menu;
-?>
+        echo $menu;
+    ?>
+</div>
 <div class='submenu'>
 	<div class="userdata"> 
 		@if (Auth::check())
