@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3760a16a-703e-4353-9f41-fb5cfb258372" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/btn_anadir.png" afterPath="$PROJECT_DIR$/public/img/btn_anadir.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/featured.blade.php" afterPath="$PROJECT_DIR$/app/views/featured.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/main.css" afterPath="$PROJECT_DIR$/public/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/incs/menu-top.blade.php" afterPath="$PROJECT_DIR$/app/views/incs/menu-top.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/submit-tip.blade.php" afterPath="$PROJECT_DIR$/app/views/submit-tip.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/view-tip.blade.php" afterPath="$PROJECT_DIR$/app/views/view-tip.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="wc.iws" />
@@ -35,8 +30,8 @@
       <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35222223" vertical-offset="1503" max-vertical-offset="10820">
-              <caret line="91" column="27" selection-start-line="91" selection-start-column="27" selection-end-line="91" selection-end-column="27" />
+            <state vertical-scroll-proportion="0.33" vertical-offset="1503" max-vertical-offset="10820">
+              <caret line="90" column="18" selection-start-line="90" selection-start-column="18" selection-end-line="90" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -270,7 +265,13 @@
       <option name="project" value="LOCAL" />
       <updated>1408140192052</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Mejoras varias">
+      <created>1408143924364</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1408143924364</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -320,7 +321,8 @@
     <MESSAGE value="Mejoras form submit" />
     <MESSAGE value="PUnto finales en mensaje de gracias" />
     <MESSAGE value="Mejora problema al ver detalle" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mejora problema al ver detalle" />
+    <MESSAGE value="Mejoras varias" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mejoras varias" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -624,8 +626,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35222223" vertical-offset="1503" max-vertical-offset="10820">
-          <caret line="91" column="27" selection-start-line="91" selection-start-column="27" selection-end-line="91" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.33" vertical-offset="1503" max-vertical-offset="10820">
+          <caret line="90" column="18" selection-start-line="90" selection-start-column="18" selection-end-line="90" selection-end-column="18" />
           <folding />
         </state>
       </provider>

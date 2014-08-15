@@ -88,7 +88,7 @@ a:hover{opacity: 0.85;}
 header{ }
 header ul,
 header ul li{margin:0; padding: 0; list-style: none;}
-header ul{width: 650px; margin:0 auto;}
+header ul{width: 550px; margin:0 auto;}
 header ul.complete{width:850px;}
 header ul li{float:left; padding: 12px 15px; padding-top: 8px; background: top left url('../img/menu-separator.png') no-repeat; }
 header ul li:first-child{background: none;}
