@@ -1855,7 +1855,7 @@ class CitiesTableSeeder extends Seeder {
 			230 => 
 			array (
 				'id' => 231,
-				'name' => 'VILLARICA',
+				'name' => 'VILLARRICA',
 				'province_id' => 32,
 				'lat' => '0.000000000000',
 				'lng' => '0.000000000000',

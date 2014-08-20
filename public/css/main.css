@@ -99,7 +99,7 @@ header ul li.active a{border-radius:5px; background: #fff; color:#000;}
 header ul li a.img-btn:hover{background: #666 !important;}
 header ul li.active a.img-btn{background: #666 !important;}
 
-header .menu{background:url("../img/bg-menu-top.png") repeat-x; z-index: 1; height: 71px; position: fixed; top: 0; left: 0; width: 100%; }
+header .menu{background:url("../img/bg-menu-top.png") repeat-x; z-index: 1; height: 55px; position: fixed; top: 0; left: 0; width: 100%; }
 
 header .submenu{width: 810px; margin: 0 auto; clear: both; margin-top: 50px; height: 30px; }
 header .submenu .user{width:230px;float:right;padding: 5px; margin-top: 15px; border-radius: 10px; background: rgba(255,255,255,0.7); overflow: hidden;}
@@ -109,6 +109,7 @@ header .submenu .userdata .user a{display: block; float: right; text-align: righ
 header .submenu .userdata{width:300px; float:right; text-align: right;}
 header .submenu .userdata a{color: #000;  font-size: 1em;  display: inline-block; padding: 3px 10px; text-decoration: none; text-transform: uppercase;}
 header .submenu .userdata a:hover{color: #333;}
+header.desktop{position: relative; z-index: 1;}
 header.desktop .submenu .shares .fb-like{float: left;}
 header.desktop .submenu .shares .twitter-share-button{padding-top: 5px; float: left; padding-left: 10px;}
 .logo{text-align: center; clear: both; margin: 0 auto; display: block;  display: block;  max-width: 80%; mar}
