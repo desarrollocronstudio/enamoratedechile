@@ -15,29 +15,29 @@ class VideosTableSeeder extends Seeder {
 		 	array (
 				'type' 			=> 'jenny',
 				'active'		=> true,
-				'featured'		=> true,
-				'name' 			=> 'Jenny 1',
+				'featured'		=> false,
+				'name' 			=> 'PATAGONIA DE MI CORAZON',
 				'youtube_code'	=> 'AZNRG0-B0DA'
 			),
 			array (
 				'type' 			=> 'jenny',
 				'featured'		=> false,
 				'active'		=> true,
-				'name' 			=> 'Jenny 2',
+				'name' 			=> 'CARRETE DE PASION',
 				'youtube_code'	=> 'vG3A-17m0o8'
 			),
 			array (
 				'type' 			=> 'jenny',
-				'featured'		=> false,
+				'featured'		=> true,
 				'active'		=> true,
-				'name' 			=> 'Jenny 3',
+				'name' 			=> 'LA CHICA DE SERENA',
 				'youtube_code'	=> '7Zs0LhKZhQU'
 			),
 			array (
 				'type' 			=> 'jenny',
 				'featured'		=> false,
 				'active'		=> true,
-				'name' 			=> 'Jenny 4',
+				'name' 			=> 'AGUACERO DE AMOR',
 				'youtube_code'	=> 'J8BKS0O1w9c'
 			),
 
