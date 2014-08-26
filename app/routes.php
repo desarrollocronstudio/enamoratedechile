@@ -14,7 +14,7 @@ Route::get('/', [
 	"as" => "home", 
 	"uses" => 'HomeController@index'
 ]);
-Route::get('/search-tips', 'TipController@search');
+//Route::get('/search-tips', 'TipController@search');
 Route::get("/partials/{name}","PartialController@show");
 
 /***********************

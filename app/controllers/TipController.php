@@ -3,7 +3,7 @@
 class TipController extends BaseController {
 	
 
-	public function search($city_id,$city_name){
+	public function search($city_id,$city_name = ''){
 		$city = City::find($city_id);
 		if(!$city)Redirect::back();
 		$position = $city->get_position();
