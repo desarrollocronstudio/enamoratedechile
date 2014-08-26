@@ -13,7 +13,7 @@
                 @if ( !Auth::check() )
                     <div class="message warning">
                         Debes iniciar sesión para poder incribir tu dato. 
-                    </div> p
+                    </div>
                 @endif
                 @if ( $errors->count() > 0 )
                 <div class="errors">
