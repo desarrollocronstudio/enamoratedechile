@@ -9,6 +9,7 @@
         <title> @yield("page_title",'Enamórate de Chile') - LAN</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+        <meta name="_token" content="{{ csrf_token() }}" />
 
         <link rel="icon" href="{{ URL::to('/img/logo-small.png') }}" type="image/x-icon">
         <link rel="shortcut icon" href="{{ URL::to('/img/logo-small.png') }}" type="image/x-icon">

@@ -14,7 +14,7 @@ Route::get('/', [
 	"as" => "home", 
 	"uses" => 'HomeController@index'
 ]);
-//Route::get('/search-tips', 'TipController@search');
+//sRoute::get('/search-tips', 'TipController@search');
 Route::get("/partials/{name}","PartialController@show");
 
 /***********************
@@ -23,7 +23,7 @@ MY ROUTE
 Route::get('/my_route', [
 	'as' 	=> 'my_route',
 	'uses'	=> 'RouteController@my_route']);
-Route::any("/tips/add-to-my-route/{id}",[
+Route::post("/tips/add-to-my-route/{id}",[
 	'as'	=> 'add_to_route',
 	'uses'	=> 'RouteController@add_to_my_route']);
 
@@ -31,7 +31,11 @@ Route::any("/tips/add-to-my-route/{id}",[
 AUTH
 ***********************/
 Route::get("/signup",array("as" =>"signup","uses" => 'UserController@signup'));
-Route::post("/signup",array("as" =>"save-signup","uses" => 'UserController@save_signup'));
+Route::post("/signup",[
+    'before'    => 'csrf',
+    "as" =>"save-signup",
+    "uses" => 'UserController@save_signup'
+]);
 Route::get("/logout",array("as" => "logout","uses" => "UserController@logout"));
 Route::get("/login",array("as" => "login","uses" => "UserController@show_login"));
 Route::post("/login",array("as" => "do-login","uses" => "UserController@login"));
@@ -118,6 +122,8 @@ Route::any("/get-cities",[
 	'as' 	=> 'get-cities',
 	'uses'	=> "CityController@cities"
 ]);
+
+Route::when('*', 'csrf', array('post', 'put', 'delete'));
 
 
 

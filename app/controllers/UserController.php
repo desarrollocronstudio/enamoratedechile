@@ -62,15 +62,13 @@ class UserController extends BaseController {
 		$validator = Validator::make($input,$rules,array(
 			"name.required" 	=> "Debes indicar tu nombre",
 			"email.required"	=> "Debes indicar tu email",
+            "email.email"	    => "Debes indicar un email válido",
 			"rut.required"		=> "Debes indicar tu RUT",
 			"password.confirmed"=> "Las contraseñas ingresadas no coinciden",
 			"rut"				=> "El R.U.T. ingresado es inválido"));
 		if ($validator->fails()){
-			if(Request::ajax()){                   
-				$response_values = array(
-					'validation_failed' => 1,
-					'errors' =>  $validator->errors()->toArray());	            
-				return Response::json($response_values);
+			if(Request::ajax()){
+				return $this->sendFail($validator->errors()->toArray());
 			}
 
 		 	return Redirect::back()->withErrors($validator)->withInput();
@@ -81,9 +79,16 @@ class UserController extends BaseController {
 			$exists = Person::where(function($query) use ($input){
 				$query->where("dni","=",$input["rut"])->where("dni_type","=","rut");
 			});
-			if(isset($input["fbid"]))
+
+            if($exists->first())
+            {
+                return $this->sendFail(['Este R.U.T. ya está registrado']);
+            }
+
+			/*if(isset($input["fbid"]))
 				$exists->orWhere("fbid",$input["fbid"]);
-			
+			*/
+
 			$data = $exists->get();
 			//Chck if is connected to Facebook.
 
@@ -110,4 +115,11 @@ class UserController extends BaseController {
 		}
 	}
 
+
+    public function sendFail($errors){
+        $response_values = array(
+            'validation_failed' => 1,
+            'errors' =>  $errors);
+        return Response::json($response_values);
+    }
 }

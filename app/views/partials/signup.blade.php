@@ -3,7 +3,7 @@
 	<div class="wrapper">
 		
 		<a href="" class="facebook-connect">
-			<img src="img/btn-fb-connect.png" alt="Conectar con Facebook">
+			<img src="{{ asset('img/btn-fb-connect.png') }}" alt="Conectar con Facebook">
 		</a>
 		<div class="mini-profile">
 			<img src="" alt="Foto de perfil">
@@ -11,6 +11,8 @@
 		</div>
 		<hr />
 		{{ Form::open(array("url" => "register")) }}
+		<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+
 		{{ Form::text("name",null,array("placeholder" => "Nombre")) }}
 		{{ Form::text("email",null,array("placeholder" => "Email")) }}
 		{{ Form::text("rut",null,array("placeholder" => "R.U.T.")) }}

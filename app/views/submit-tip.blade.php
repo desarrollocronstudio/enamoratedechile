@@ -6,7 +6,7 @@
     <section class="datos">
         <div id="content-form">
             <h1>SUBE TU DATO PARA TODOS PUEDAN ENAMORARSE DE CHILE</h1>
-            {{ Form::open(array("files" => true,"id" => "submit-form")) }}
+            {{ Form::open(array("route" => 'save_tip',"files" => true,"id" => "submit-form")) }}
             {{ Form::hidden('place_lat',null,array("id" => "place_lat")) }}
             {{ Form::hidden('place_lng',null,array("id" => "place_lng")) }}
             <div class="form-in">

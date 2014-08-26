@@ -20,6 +20,10 @@ class Tip extends Eloquent {
 	{
 		return $this->hasMany('Review');
 	}
+    public function favorited()
+    {
+        return $this->hasMany('PostFavorite');
+    }
 	public function scopeFeatured($query){
 		return $query->orderBy('rating_cache','DESC');
 	}
@@ -50,9 +54,13 @@ class Tip extends Eloquent {
 		return $this->hasMany('Peron');
 	}
 
+    public function alreadyFavoritedByCurrentUser(){
+        if(!Auth::check())return false;
+        return (bool)Auth::user()->saved_tips()->where('tip_id',$this->id)->first();
+    }
     public function alreadyVotedByCurrentUser(){
         if(!Auth::check())return false;
-        return $this->reviews()->where('author_id',Auth::user()->id)->first();
+        return (bool)$this->reviews()->where('author_id',Auth::user()->id)->first();
     }
  
 }

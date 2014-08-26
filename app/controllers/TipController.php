@@ -44,9 +44,10 @@ class TipController extends BaseController {
         if(!$tip)return Redirect::route("featured");
         $total_reviews = $tip->rating_count;
 		return View::make('view-tip',[
-			"tip" 			=> $tip,
-            'total_reviews' => $total_reviews,
-            'already_voted' => $tip->alreadyVotedByCurrentUser()
+			"tip" 			        => $tip,
+            'total_reviews'         => $total_reviews,
+            'show_add_route_button' => !$tip->alreadyFavoritedByCurrentUser(),
+            'already_voted'         => $tip->alreadyVotedByCurrentUser()
 		]);
 	}
 

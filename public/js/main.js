@@ -205,6 +205,7 @@ function facebook_connect(on_success, on_failure){
 }
 
 $("body").bind("connected",function(){
-    return true;
     window.location.reload();
+    return true;
+
 });

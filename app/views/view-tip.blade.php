@@ -70,7 +70,11 @@
             </span>
         </div>
         <div class="shared">
-            <a class="ruta" href="{{ action('add_to_route',$tip->id) }}"></a>
+            @if($show_add_route_button)
+                {{ Form::open(['action' => ['add_to_route',$tip->id]]) }}
+                    <input type="submit" class="ruta" />
+                {{ Form::close(); }}
+            @endif
             <a href="" class="face"></a>
             <a class="tw"></a>
         </div>

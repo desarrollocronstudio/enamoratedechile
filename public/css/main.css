@@ -251,7 +251,8 @@ LOGIN
 .detalle_city #map{ width:850px;height:262px;margin:0 auto; padding: 0; float:left;}
 .detalle_city .shared{ width:590px; height:60px; float:right;}
 .detalle_city .shared a:hover{opacity: 0.7;}
-.detalle_city .shared .ruta{ background:url(../img/btn_anadir.png) no-repeat 0 0; width:211px; height:43px; display:block; float:left; cursor:pointer;}
+.detalle_city .shared .ruta{ background:url(../img/btn_anadir.png) no-repeat 0 0; width:211px; height:43px; display:block; float:left; cursor:pointer;border:none; outline: none; font-size: 1px;}
+.detalle_city .shared .ruta:hover{opacity: 0.8;}
 .detalle_city .shared .face{ background:url(../img/btn_facebook.png) no-repeat 0 0; width:182px; height:46px; display:block; float:left; cursor:pointer;}
 .detalle_city .shared .tw{  background: url(../img/btn_twitter.png) no-repeat 0 0; width:185px; height:46px; display:block; float:left; cursor:pointer;}
 .detalle_city .imgs li{width: 150px; display: inline-block; overflow: hidden; border-radius:10px;}
