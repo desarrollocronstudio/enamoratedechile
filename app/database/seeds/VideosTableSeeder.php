@@ -38,7 +38,7 @@ class VideosTableSeeder extends Seeder {
 				'featured'		=> false,
 				'active'		=> true,
 				'name' 			=> 'AGUACERO DE AMOR',
-				'youtube_code'	=> 'J8BKS0O1w9c'
+				'youtube_code'	=> 'bj0JhApNrGQ'
 			),
 
 			//IDEAL
