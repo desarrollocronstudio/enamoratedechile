@@ -61,7 +61,7 @@
         <div class="rating-count">
             <img src="{{ asset('img/black-heart.png') }}" alt="" />
             <span>
-                @if ($total_reviews === 0)
+                @if ($total_reviews == 0)
                     Este dato aún no ha sido calificado ¡Sé el primero!
                 @elseif ($total_reviews > 0)
                     Este dato ha sido calificado {{ $total_reviews." ".(($total_reviews > 1)?"veces":"vez") }}
