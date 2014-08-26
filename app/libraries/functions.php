@@ -8,7 +8,7 @@ if(!function_exists('__')) {
 
 $start_time = microtime(true);
 App::finish(function() use ($start_time) {
-    echo "<script>console.log('App finish: ".round((microtime(true)-$start_time)*1000,3)." ms')</script>";
+    if(!Request::ajax()) echo "<script>console.log('App finish: ".round((microtime(true)-$start_time)*1000,3)." ms')</script>";
 });
 
 Validator::extend('rut', function($attribute, $value, $parameters)
