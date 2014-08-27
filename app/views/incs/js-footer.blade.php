@@ -55,8 +55,8 @@ $.ajaxSetup({
 <!-- Facebook -->
 <div id="fb-root"></div>
 <script>
-  var BASE_URL = '<?php echo URL::to("/"); ?>';
-  var CURRENT_URL = '<?php echo URL::current(); ?>';
+  var BASE_URL = '{{{ URL::to("/") }}}';
+  var CURRENT_URL = '{{{ URL::current() }}}';
   var USER_IP = '{{ Request::getClientIp() }}';  
   window.fbAsyncInit = function() {
 

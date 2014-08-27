@@ -1,7 +1,7 @@
 @extends("layouts/default")
 @section('page_title',ucwords($tip->name))
 @section('metatags')
-    <meta property="og:url" content="{{ Request::url() }}" /> 
+    <meta property="og:url" content='{{{ Request::url() }}}' />
     <meta property="og:title" content="Visita {{ $tip->name }} en {{ $tip->city_name }}" />
 
     <meta property="og:description" content="{{ $tip->content }}" /> 
@@ -12,7 +12,7 @@
 	@include("incs/logo")
 
 	<h2 class="city-title">
-		{{ $tip->city_name }}
+		{{{ $tip->city_name }}}
 		<!--<span>Desde 80 lukas</span>-->
 	</h2> 
 
@@ -80,7 +80,7 @@
         </div>
     </div>
     <div class="comments">
-        <div class="fb-comments" data-width="100%" data-href="{{ Config::get('app.url')."/" }}{{ Request::path() }}" data-numposts="5" data-colorscheme="light"></div>
+        <div class="fb-comments" data-width="100%" data-href="{{{ Config::get('app.url')."/" }}}{{{ Request::path() }}}" data-numposts="5" data-colorscheme="light"></div>
     </div>
 </div>
 
