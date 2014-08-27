@@ -9,7 +9,7 @@
 (function(){
 	$popup = $("#thanks").parent();
 	$popup.find(".close").click(function(){
-		window.location.reload();
+		$("body").trigger("connected");
 		return false;
 	});
 })();
