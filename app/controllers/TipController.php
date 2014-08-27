@@ -82,7 +82,7 @@ class TipController extends BaseController {
             if(Input::get('image_type') =="default"){
                 $rules['default_picture'] = 'required|integer|min:0|max:1';
             }else{
-                $rules['image'] = 'required';
+                $rules['image'] = 'required|image';
             }
 
 
@@ -95,6 +95,7 @@ class TipController extends BaseController {
             "default_picture.required"  => "Debes seleccionar una imagen para tu dato",
             "image_type.required"       => "Debes seleccionar el tipo de imagen que necesitas",
             'image.required'            => "Debes subir una imagen",
+            'image.image'               => "Debes subir una imagen, no otro tipo de archivo",
 
 		));
 		if ($validator->fails()){
