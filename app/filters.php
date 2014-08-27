@@ -87,3 +87,13 @@ Route::filter('csrf', function()
     if (Session::token() != $token)
         throw new Illuminate\Session\TokenMismatchException;
 });
+
+Route::filter('force.ssl', function()
+{
+
+    if( ! Request::secure() && App::environment() !== 'local') // change local with the name of your local environment
+    {
+        return Redirect::secure(Request::getRequestUri());
+    }
+
+});

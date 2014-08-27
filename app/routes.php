@@ -72,6 +72,7 @@ Route::post('/submit-tip', [
 	'uses'	=> 'TipController@save'
 ]);
 
+
 Route::get('/thanks/tip', [
     'as'	=> 'tips.thanks',
     'uses'	=> 'TipController@thanks'
@@ -125,5 +126,4 @@ Route::any("/get-cities",[
 
 Route::when('*', 'csrf', array('post', 'put', 'delete'));
 
-
-
+Route::when('*','force.ssl');
