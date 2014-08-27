@@ -1,12 +1,12 @@
 @extends("layouts.default")
 @section('metatags')
-    <meta property="og:url" content="{{ $og['url'] }}" /> 
-    <meta property="og:title" content="{{ $og['title'] }}" />
+    <meta property="og:url" content="{{{ $og['url'] }}}" />
+    <meta property="og:title" content="{{{ $og['title'] }}}" />
 
-    <meta property="og:description" content="{{ $og['content'] }}" /> 
-    <meta property="og:image" content="{{ $og['image'] }}" />
+    <meta property="og:description" content="{{{ $og['content'] }}}" />
+    <meta property="og:image" content="{{{ $og['image'] }}}" />
     @if (isset($og['video']))
-      <meta property="og:video" content="{{ $og['video'] }}" />
+      <meta property="og:video" content="{{{} $og['video'] }}}" />
     @endif
 @stop
 @section('content')
