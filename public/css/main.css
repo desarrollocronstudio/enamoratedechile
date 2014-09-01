@@ -78,6 +78,9 @@ h4.autor{font-family: Helvetica, Arial, sans-serif;height: 26px;text-transform: 
 .desktop{display: inherit; }
 a:hover{opacity: 0.85;}
 
+.intro-box .intro{font-size: 24px; font-family: 'boogalooregular', 'Arial', sans-serif; }
+.intro-box .title{}
+
 .btn-red{background: url("../img/bg-btn-dato.png") no-repeat; width: 130px; height: 46px; border:none; color: #fff;display: inline-block; text-decoration: none; text-align: center;line-height: 46px;}
 .btn-red:hover{opacity: 0.8;}
 
@@ -88,8 +91,8 @@ a:hover{opacity: 0.85;}
 header{ }
 header ul,
 header ul li{margin:0; padding: 0; list-style: none;}
-header ul{width: 550px; margin:0 auto;}
-header ul.complete{width:850px;}
+header ul{width: 640px; margin:0 auto;}
+header ul.complete{width:960px;}
 header ul li{float:left; padding: 12px 15px; padding-top: 8px; background: top left url('../img/menu-separator.png') no-repeat; }
 header ul li:first-child{background: none;}
 header li a{ color:#fff; font-size: 17px; line-height: 25px; text-decoration: none; padding: 2px; font-weight: normal; display: inline-block; }
@@ -97,14 +100,20 @@ header li a.double{line-height: 18px; text-align: center; margin-top: -5px;}
 header li a:hover{border-radius:5px; background: #fff; color:#5b5b5b; }
 header ul li.active a{border-radius:5px; background: #fff; color:#000;}
 header ul li a.img-btn:hover{background: #666 !important;}
-header ul li.active a.img-btn{background: #666 !important;}
+header ul li .logo{margin-top:-8px}
+header ul li.active a.img-btn{background: #666;}
+header ul li a.logo:hover{background: none !important;}
+header ul li.active a.logo{background: none !important;}
 
-header .menu{background:url("../img/bg-menu-top.png") repeat-x; z-index: 1; height: 55px; position: fixed; top: 0; left: 0; width: 100%; }
+header .menu{background:url("../img/bg-menu-top.png") repeat-x; z-index: 1; height: 51px; position: fixed; top: 0; left: 0; width: 100%; }
 
-header .submenu{width: 810px; margin: 0 auto; clear: both; margin-top: 50px; height: 30px; }
+header .submenu{width: 810px; margin: 0 auto; clear: both; margin-top: 50px; height: 30px; position: relative; z-index: 0; }
 header .submenu .user{width:230px;float:right;padding: 5px; margin-top: 15px; border-radius: 10px; background: rgba(255,255,255,0.7); overflow: hidden;}
 header .submenu .user img{width: 35px; height: 35px; border-radius: 35px; display: block; float:right; margin: 3px 0 3px 10px; border:solid 2px #666;}
 header .submenu .user span{display: block; width: 180px; float: right;text-align: right;}
+header .submenu .links{margin-top:-10px;}
+header .submenu .userdata .links a{background: #000; border-radius: 5px; padding: 10px; color:#fff; font-size: 14px; font-weight: normal; font-family: 'Myriad Pro', 'Helvetica', sans-serif; display: inline-block; }
+header .submenu .userdata .links a:hover{opacity: 1; color:#ccc;}
 header .submenu .userdata .user a{display: block; float: right; text-align: right; padding-left: 33px; color: #000; font-size: 13px; font-weight: normal; margin-top: -5px;}
 header .submenu .userdata{width:300px; float:right; text-align: right;}
 header .submenu .userdata a{color: #000;  font-size: 1em;  display: inline-block; padding: 3px 10px; text-decoration: none; text-transform: uppercase;}
@@ -181,15 +190,16 @@ LOGIN
 .page{text-align: center; padding-bottom: 30px;}
 
 /*** HOME ****/
+
 #home{text-align:center;}
-#home .intro{font-size: 24px; font-style: italic;}
+
+.intro-forrest{background: url('../img/img-top-home.jpg'); width: 1046px; height: 203px; margin: 0 auto; position: relative}
+.intro-forrest p{position: absolute; top: 45px; font-family: 18px; left: 450px; width: 200px; line-height: 20px;}
 .site_intro{overflow: hidden; clear: both; width: 95%; max-width: 600px;position: relative; min-height: 170px; text-align: center; margin: 0 auto; margin-bottom: -23px }
 .site_intro .texts{width: 500px;}
 .site_intro h3{font-family: 'cheap_pine_sanssans'; font-weight: normal; background:url("../img/separedor_titulo.png") no-repeat center bottom; text-transform: uppercase; padding-bottom: 12px; font-size: 24px; margin-bottom: 10px; }
 .site_intro p{font-size:24px; width: 80%; display: block; text-align: center; margin: 0 auto; margin-bottom: 10px; }
 .site_intro img{position:absolute; bottom: 0; right: 0; }
-
-
 .main-sep{margin:40px 0; color:#000; height: 1px; box-shadow:0 0 20px #000; background-color: #000; display: block;}
 
 
@@ -266,8 +276,8 @@ LOGIN
 #view .comments .fb-comments span{width: 100% !important;}
 
 /** MY ROUTE **/
-#my_route .ruta{font-size: 26px; font-style: italic; text-transform: uppercase; margin: 0;}
-#my_route .intro{font-size: 24px; font-style: italic; max-width:90%; width: 500px; margin: 0 auto; display: block; }
+#my_route .ruta{text-transform: uppercase; margin-top: 15px;}
+#my_route .intro-box{max-width:90%; width: 500px; margin: 0 auto; display: block; }
 
 /* SUBMIT TIP */
 #submit-tip #map-container{width:104%; background: #ccc; clear: both; float: left; margin-left: -4%; }

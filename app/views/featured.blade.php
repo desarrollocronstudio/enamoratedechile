@@ -13,8 +13,13 @@
 
 
 	<a id="view-content">&nbsp;</a>
-	<h2 class="title">{{ __("Los datos más populares") }}</h2>
-	<p class="intro">ESTOS SON LOS DATOS QUE MÁS LE HAN GUSTADO A NUESTRA COMUNIDAD.</p>
+	<div class="intro-box">
+        <h2 class="title">{{ __("Los datos más populares") }}</h2>
+        <p class="intro">
+            Estos son los datos que más le han gustado a nuestra comunidad.<br />
+            ¡Navégalos y descubre por que son tan famosos!
+        </p>
+	</div>
 
 	<section class="datos container">
 		@foreach ($tips as $tip)

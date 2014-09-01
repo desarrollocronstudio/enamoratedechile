@@ -11,21 +11,20 @@
 <div class="page" id="home">
 	@include("incs/logo")
 
-	<div class="site_intro">
-	    <div class="texts">
-            <h3>¡Se parte de esta gran comunidad de datos y picadas de Chile! </h3>
-            <p>Busca un dato o entréganos el tuyo y comienza a enamorarte de Chile</p>
-	    </div>
-	    <img src="{{ asset('img/dedo.png') }}" alt="Dedo"/>
+	<div class="intro-forrest">
+	    <p>Buscando a mi polola, me terminé enamorando de Chile. Enamórate tu también con estos increíbles datos.</p>
 	</div>
+
 
 	@include("incs/search-nav")
 
-	<h2 class="title">{{ __("Los datos más populares") }}</h2>
-	<p class="intro">
-	    Estos son los datos que más le han gustado a nuestra comunidad.<br />
-        ¡Navégalos y descubre por que son tan famosos!
-    </p>
+	<div class="intro-box">
+        <h2 class="title">{{ __("Datos más vistos") }}</h2>
+        <p class="intro">
+            Antes de enamorarse hay que pinchar.<br />
+            Pincha en algunos de estos datos o picadas y deja que cupido haga su pega.
+        </p>
+    </div>
 
 	<section class="datos container">
 		@foreach ($tips as $tip)
