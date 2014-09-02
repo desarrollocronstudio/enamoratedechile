@@ -14,31 +14,35 @@ class VideosTableSeeder extends Seeder {
 		\DB::table('videos')->insert(array (
 		 	array (
 				'type' 			=> 'jenny',
-				'active'		=> true,
-				'featured'		=> false,
+                'featured'		=> true,
+                'active'		=> true,
 				'name' 			=> 'PATAGONIA DE MI CORAZON',
-				'youtube_code'	=> 'AZNRG0-B0DA'
+				'youtube_code'	=> 'AZNRG0-B0DA',
+                'order'         => 4
 			),
 			array (
 				'type' 			=> 'jenny',
 				'featured'		=> false,
 				'active'		=> true,
 				'name' 			=> 'CARRETE DE PASION',
-				'youtube_code'	=> 'vG3A-17m0o8'
+				'youtube_code'	=> 'vG3A-17m0o8',
+                'order'         => 3
 			),
 			array (
 				'type' 			=> 'jenny',
-				'featured'		=> true,
+				'featured'		=> false,
 				'active'		=> true,
 				'name' 			=> 'LA CHICA DE SERENA',
-				'youtube_code'	=> '7Zs0LhKZhQU'
+				'youtube_code'	=> '7Zs0LhKZhQU',
+                'order'         => 2
 			),
 			array (
 				'type' 			=> 'jenny',
 				'featured'		=> false,
 				'active'		=> true,
 				'name' 			=> 'AGUACERO DE AMOR',
-				'youtube_code'	=> 'bj0JhApNrGQ'
+				'youtube_code'	=> 'bj0JhApNrGQ',
+                'order'         => 1
 			),
 
 			//IDEAL
