@@ -51,7 +51,8 @@ class VideosTableSeeder extends Seeder {
 				'featured'		=> true,
 				'active'		=> true,
 				'name' 			=> 'Safety Instructions',
-				'youtube_code'	=> 'DuiuM-gmqto'
+				'youtube_code'	=> 'DuiuM-gmqto',
+                'order'         => 1
 			),
 
 			array (
@@ -59,7 +60,8 @@ class VideosTableSeeder extends Seeder {
 				'featured'		=> false,
 				'active'		=> true,
 				'name' 			=> 'Ad from 1992',
-				'youtube_code'	=> 'jst3DOHfvrQ'
+				'youtube_code'	=> 'jst3DOHfvrQ',
+                'order'         => 2
 			),
 
 		));
