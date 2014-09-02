@@ -24,7 +24,7 @@
 			$(".search-box").fadeIn(500);
 			$('html, body').animate({
                 scrollTop: $("#search-nav").offset().top-50
-            }, 2000);
+            }, 800);
 			return false;
 		});
 	})
