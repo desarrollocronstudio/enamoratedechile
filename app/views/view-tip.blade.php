@@ -11,17 +11,20 @@
 <div class="page" id="view">
 	@include("incs/logo")
 
-	<h2 class="city-title">
-		{{{ $tip->city_name }}}
-		<!--<span>Desde 80 lukas</span>-->
-	</h2> 
+    <div class="intro-box">
+        <h2 class="title">
+            {{{ $tip->city_name }}}
+            <!--<span>Desde 80 lukas</span>-->
+        </h2>
+    </div>
 
 	@include("incs/tip-categories",['active' => $tip->type_id,'usable' => false])
     <a name="tip-data"></a>
 
-    <h3 class="lugar">{{ $tip->name }}</h3>
-    <h4 class="autor">{{ Str::words($tip->author->name,1,'') }}</h4>
     <div class="detalle_city">
+         <h3 class="lugar">{{ $tip->name }}</h3>
+        <h4 class="autor">{{ Str::words($tip->author->name,1,'') }}</h4>
+
         <div class="images">
             <h2 class="slide">Imágenes del lugar</h2>
             <ul class="imgs">

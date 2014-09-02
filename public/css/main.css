@@ -66,13 +66,14 @@ html,body{margin: 0; padding: 0;font-family:'boogalooregular','Arial',sans-serif
 #content{position: relative;}
 
 /** COMMON **/
-h2{text-shadow: -1px 1px #fff, -4px 4px #333;}
+h2{text-shadow: -1px 1px #fff, -3px 4px #333;}
 h2 span{text-shadow:none;}
-h2.title{font-family:'cheap_pine_sanssans';  text-transform: uppercase; line-height: 80px; font-size:48px; background: url('../img/bg-title.png') top center no-repeat; margin:0 auto; display: block; }
+h2.title,
+h3.lugar{text-shadow: -1px 1px #fff, -4px 4px #333; font-family:'cheap_pine_sanssans';  text-transform: uppercase; line-height: 80px; font-size:48px; background: url('../img/bg-title.png') top center no-repeat; margin:0 auto; display: block; }
 h2.city-title{font-family:'cheap_pine_sanssans';height: 147px;text-transform: uppercase; line-height: 140px; font-size:100px; background: url('../img/bg-city-title.png') top center no-repeat; margin:0 auto; display: block; }
 h2.city-title span{display: block; font-size: 30px; line-height: 30px; display: block; margin-top: -20px;  }
-h3.lugar{font-family: 'cheap_pine_sanssans';height: 73px;text-transform: uppercase;line-height: 75px;font-size: 3em;margin: 0 auto;display: block;}
-h4.autor{font-family: Helvetica, Arial, sans-serif;height: 26px;text-transform: uppercase;line-height: 30px;font-family: 'boogalooregular'; font-size: 1.6em;text-align: center;margin: 0 auto; display: block;background: url(../img/bg_city_autor.png) no-repeat 0 0;width: 310px;}
+h3.lugar{background: none;}
+h4.autor{font-family: Helvetica, Arial, sans-serif;height: 26px;text-transform: uppercase;line-height: 30px;font-family: 'boogalooregular'; font-size: 1.1em;text-align: center;margin: 0 auto; display: block;background: url(../img/bg_city_autor.png) no-repeat 0 0;width: 310px;}
 .message{background:lightyellow; padding: 20px; border-radius:15px; width: 60%; margin: 0 auto; }
 .mobile{display: none;}
 .desktop{display: inherit; }
@@ -222,7 +223,7 @@ LOGIN
 .available_pictures img.selected{border-color: red;}
 
 /* SEARCH TIPS */
-#search-tips .info{ font-size:23px; padding:0; margin:0; font-style: italic; }
+#search-tips .info{ font-size:23px; padding:0; margin:0; }
 #search-tips .cotizar{float:right;}
 #search-tips .dedo{width: 1046px; height: 211px; background: url("../img/bg-dedo-cuadro.png") no-repeat; margin:0 auto; position: relative; }
 #search-tips .dedo h4{position:absolute; top:40px; left: 450px; width: 200px; font-size: 24px; }
@@ -270,6 +271,8 @@ LOGIN
 .detalle_city .images{width:50%; float: left;}
 .detalle_city .detail{width:45%; float: left; text-align: left;}
 .detalle_city .rating-count{text-align: left;}
+.detalle_city .recomendacion{padding-top: 10px;  margin-bottom: 0;}
+#view .intro-box{padding:20px 0;}
 
 #view .comments{max-width: 90%; width: 910px; margin: 0 auto; background: #eee}
 #view .comments iframe,
