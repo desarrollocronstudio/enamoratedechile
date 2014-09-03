@@ -34,3 +34,13 @@
 	</section>
 </div>
 @stop
+
+@section('js')
+<script>
+    $(function(){
+        if(window.location.hash = "#busca"){
+            $(".go-search").click();
+        }
+    });
+</script>
+@append
