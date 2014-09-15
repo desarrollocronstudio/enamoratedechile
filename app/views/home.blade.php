@@ -38,7 +38,7 @@
 @section('js')
 <script>
     $(function(){
-        if(window.location.hash = "#busca"){
+        if(window.location.hash == "#busca"){
             $(".go-search").click();
         }
     });
