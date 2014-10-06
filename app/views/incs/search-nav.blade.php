@@ -1,4 +1,6 @@
-<div class="nav">
+
+
+<div class="nav" id="search-nav">
 	<a href="{{ action('TipController@post') }}"><img src="{{ asset('img/danos-un-dato.png') }}"></a>
 	<a class="go-search" href=""><img src="{{ asset('img/busca-un-dato.png') }}"></a>
 </div>
@@ -19,7 +21,10 @@
 			//return false;
 		});
 		$(".go-search").click(function(){
-			$(".search-box").fadeIn(500);
+			$(".search-box").fadeIn(500).find("input[type=text]").focus();
+			$('html, body').animate({
+                scrollTop: $("#search-nav").offset().top-50
+            }, 800);
 			return false;
 		});
 	})

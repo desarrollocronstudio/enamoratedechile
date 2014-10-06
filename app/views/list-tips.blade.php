@@ -8,7 +8,7 @@
 	</div>
 
 	<a id="view-content"></a>
-	<h2 class="city-title">
+	<h2 class="title">
 		{{ $city['name'] }}
 		<!--<span>Desde 80 lukas</span>-->
 	</h2>

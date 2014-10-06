@@ -13,14 +13,16 @@
 
 
 	<a id="view-content">&nbsp;</a>
-	<h2 class="city-title">{{ __("Mis favoritos") }}</h2>
+	<div class="intro-box">
+	    <h2 class="title">{{ __("Mis favoritos") }}</h2>
+        @if (Auth::check())
+            <h3 class="ruta">¡Hola, {{{ Str::words(Auth::user()->name,1,'') }}}!</h3>
+        @endif
 
-	@if (Auth::check())
-    	<h3 class="ruta">¡Hola, {{{ Str::words(Auth::user()->name,1,'') }}}!</h3>
-	@endif
+        <p class="intro">Estos son los datos y picadas que más te han gustado y que harán de tu próximo viaje una
+        experiencia inolvidable.</p>
+	</div>
 
-	<p class="intro">Estos son los datos y picadas que más te han gustado y que harán de tu próximo viaje una
-	experiencia inolvidable.</p>
 	@if (Session::has('saved_route'))
 	<div class="message container">
 		Este tip ha sido guardado satisfactoriamente en tus rutas.

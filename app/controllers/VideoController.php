@@ -7,22 +7,22 @@ class VideoController extends BaseController {
 	{
 		if(!in_array($type,['jenny','ideal'])){
 			return Redirect::to("/");
-		}
-		$og = [
+        }
+
+        $featured = Video::type($type)->featured()->first();
+        $videos = Video::type($type)->where('id','<>',$featured->id)->orderBy('order','DESC')->get();
+        $og = [
 			'url'		=> URL::current(),
 			'title' 	=> $type =='jenny'?"Videos: Buscando a Jenny":"Videos: La ruta ideal",
 			'content'	=> 'Revisa los videos que Enamórate de Chile tiene para tí',
 			'image'		=> asset("img/logo-square.png")];
 
-		$featured = Video::type($type)->featured()->first();
-		$videos = Video::type($type)->where('id','<>',$featured->id)->get();
-        $intro = "Jean Phillipe se deja seducir por los encantos de San Pedro.<br />Te invitamos a vivir con él este loco amor.";
-		return View::make('videos.view',['videos' => $videos,'featured'=>$featured,'autoplay' => false,"og" => $og,'intro' => $this->get_intro($type)]);
+        return View::make('videos.view',['videos' => $videos,'featured'=>$featured,'autoplay' => false,"og" => $og,'intro' => $this->get_intro($type)]);
 	}
 	public function view($type,$id)
 	{
 		$featured = Video::where('id',$id)->first();
-		$videos = Video::type($featured->type)->where('id','<>',$id)->get();
+		$videos = Video::type($featured->type)->where('id','<>',$id)->orderBy('order','DESC')->get();
 		$og = [
 			'url'		=> URL::current(),
 			'title' 	=> "Video: ".$featured->name,

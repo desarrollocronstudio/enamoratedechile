@@ -1,11 +1,14 @@
 <div class="menu">
     <?php
-        $menu = Menu::handler('main')->addClass("main-nav")
-            ->add(action('home'),"INICIO")
-            ->add(action('featured'),'LOS DATOS MÁS<br />POPULARES',null,['class'=>'double'])
-            ->add(action('my_route'),"MIS FAVORITOS")
-            //->add(action('list_videos','ideal'),'ESPECIAL<BR />SAN PEDRO',null,['class'=>'double'])
-            ->add(action('list_videos','jenny'),'BUSCANDO A JENNY');
+
+        $menu = Menu::handler('main')->addClass("main-nav");
+        $menu->add(action('home'),"<img src='".asset("img/logo-header.jpg")."' alt='' />",null,['class' => 'img-btn logo']);
+
+        $menu->add(action('home'),"INICIO");
+        $menu->add(action('featured'),'LOS DATOS MÁS<br />POPULARES',null,['class'=>'double']);
+        $menu->add(action('my_route'),"MIS FAVORITOS");
+        //->add(action('list_videos','ideal'),'ESPECIAL<BR />SAN PEDRO',null,['class'=>'double'])
+        $menu->add(action('list_videos','jenny'),'BUSCANDO A JENNY');
 
         if(!$is_home){
             $menu->addClass("complete");
