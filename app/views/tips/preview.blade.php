@@ -6,7 +6,7 @@
 		</a>
 	</div>
 	<div class="meta">
-		<span class="author">Por: {{ Str::limit($tip->author->name,12) }}</span>
+		<span class="author">Por: {{{ Str::limit($tip->author->name,12) }}}</span>
 		<span class="city">{{ ($tip->city_name) }}</span>
 	
 		<span class="type">{{ $tip->category->name }}</span>

@@ -3,14 +3,14 @@
         $menu = Menu::handler('main')->addClass("main-nav")
             ->add(action('home'),"INICIO")
             ->add(action('featured'),'LOS DATOS MÁS<br />POPULARES',null,['class'=>'double'])
-            ->add(action('RouteController@my_route'),"MIS FAVORITOS")
+            ->add(action('my_route'),"MIS FAVORITOS")
             //->add(action('list_videos','ideal'),'ESPECIAL<BR />SAN PEDRO',null,['class'=>'double'])
             ->add(action('list_videos','jenny'),'BUSCANDO A JENNY');
 
         if(!$is_home){
             $menu->addClass("complete");
-            $menu->add(action('home')."#busca","<img src='".asset("img/btn-busca-un-dato-top.png")."' alt='' />",null,['class' => 'img-btn']);
             $menu->add(action('submit_tip_form'),"<img src='".asset("img/btn-sube-tu-dato-top.png")."' alt='' />",null,['class' => 'img-btn']);
+        	$menu->add(action('home')."#busca","<img src='".asset("img/btn-busca-un-dato-top.png")."' alt='' />",null,['class' => 'img-btn']);
         }
 
         echo $menu;
@@ -20,8 +20,8 @@
 	<div class="userdata"> 
 		@if (Auth::check())
 			<div class="user">
-				<img src="{{ Auth::user()->profile_image() }}" alt="{{ Auth::user()->name }}" />
-				<span>{{ Auth::user()->name }}</span>
+				<img src="{{ Auth::user()->profile_image() }}" alt="{{{ Auth::user()->name }}}" />
+				<span>{{{ Auth::user()->name }}}</span>
 				<a href="{{ action('logout') }}">Cerrar sesión</a>
 			</div>
 		@else 

@@ -16,7 +16,7 @@
 	<h2 class="city-title">{{ __("Mis favoritos") }}</h2>
 
 	@if (Auth::check())
-    	<h3 class="ruta">¡Hola, {{ Str::words(Auth::user()->name,1,'') }}!</h3>
+    	<h3 class="ruta">¡Hola, {{{ Str::words(Auth::user()->name,1,'') }}}!</h3>
 	@endif
 
 	<p class="intro">Estos son los datos y picadas que más te han gustado y que harán de tu próximo viaje una

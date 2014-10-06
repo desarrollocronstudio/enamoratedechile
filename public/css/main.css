@@ -99,20 +99,22 @@ header ul li.active a{border-radius:5px; background: #fff; color:#000;}
 header ul li a.img-btn:hover{background: #666 !important;}
 header ul li.active a.img-btn{background: #666 !important;}
 
-header .menu{background:url("../img/bg-menu-top.png") repeat-x; z-index: 1; height: 55px; position: fixed; top: 0; left: 0; width: 100%; }
+header .menu{background:url("../img/bg-menu-top.png") repeat-x; z-index: 11; height: 55px; position: fixed; top: 0; left: 0; width: 100%; }
 
-header .submenu{width: 810px; margin: 0 auto; clear: both; margin-top: 50px; height: 30px; }
+header .submenu{width: 810px; margin: 0 auto; clear: both; margin-top: 50px; height: 30px; position: relative; z-index: 2; }
 header .submenu .user{width:230px;float:right;padding: 5px; margin-top: 15px; border-radius: 10px; background: rgba(255,255,255,0.7); overflow: hidden;}
 header .submenu .user img{width: 35px; height: 35px; border-radius: 35px; display: block; float:right; margin: 3px 0 3px 10px; border:solid 2px #666;}
 header .submenu .user span{display: block; width: 180px; float: right;text-align: right;}
 header .submenu .userdata .user a{display: block; float: right; text-align: right; padding-left: 33px; color: #000; font-size: 13px; font-weight: normal; margin-top: -5px;}
 header .submenu .userdata{width:300px; float:right; text-align: right;}
+header .submenu .userdata .links{margin-top:-10px;}
+header .submenu .userdata .links a{background:#000; border-radius:5px; color:#fff; font-size: 14px; font-weight: normal; font-family: 'Myriad Pro',Helvetica,sans-serif; padding: 10px 10px 10px 10px; display: inline-block; }
 header .submenu .userdata a{color: #000;  font-size: 1em;  display: inline-block; padding: 3px 10px; text-decoration: none; text-transform: uppercase;}
-header .submenu .userdata a:hover{color: #333;}
+header .submenu .userdata a:hover{color: #ccc; opacity: 1;}
 header.desktop{position: relative; z-index: 1;}
 header.desktop .submenu .shares .fb-like{float: left;}
 header.desktop .submenu .shares .twitter-share-button{padding-top: 5px; float: left; padding-left: 10px;}
-.logo{text-align: center; clear: both; margin: 0 auto; display: block;  display: block;  max-width: 80%; mar}
+.logo{text-align: center; clear: both; margin: 0 auto; display: block;  display: block;  max-width: 80%;}
 
 
 /* Search Box */
