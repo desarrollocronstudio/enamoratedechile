@@ -2,9 +2,9 @@
 @section('page_title',ucwords($tip->name))
 @section('metatags')
     <meta property="og:url" content='{{{ Request::url() }}}' />
-    <meta property="og:title" content="Visita {{ $tip->name }} en {{ $tip->city_name }}" />
+    <meta property="og:title" content="Visita {{{ $tip->name }}} en {{ $tip->city_name }}" />
 
-    <meta property="og:description" content="{{ $tip->content }}" /> 
+    <meta property="og:description" content="{{{ $tip->content }}}" />
     <meta property="og:image" content="{{ $tip->image() }}" />
 @stop
 @section('content')
@@ -22,22 +22,22 @@
     <a name="tip-data"></a>
 
     <div class="detalle_city">
-         <h3 class="lugar">{{ $tip->name }}</h3>
-        <h4 class="autor">{{ Str::words($tip->author->name,1,'') }}</h4>
+         <h3 class="lugar">{{{ $tip->name }}}</h3>
+        <h4 class="autor">{{{ Str::words($tip->author->name,1,'') }}}</h4>
 
         <div class="images">
             <h2 class="slide">Imágenes del lugar</h2>
             <ul class="imgs">
                 @foreach($tip->images() as $img)
                     <li><a href="{{ $img }}" rel="shadowbox[gal]">
-                        <img src="{{ $img }}" alt="{{ $tip['name'] }}" />
+                        <img src="{{ $img }}" alt="{{{ $tip['name'] }}}" />
                     </a></li>
                 @endforeach
             </ul>
         </div>
         <div class="detail">
             <h2 class="slide">Detalle</h2>
-            <p>{{ $tip->content }}</p>
+            <p>{{{ $tip->content }}}</p>
         </div>
         <h2 class="slide">Mapa del lugar</h2>
         <div id="map">
@@ -104,7 +104,7 @@
         var marker = new google.maps.Marker({
             position: pos,
             map: map,
-            title:"{{ $tip->name }}"
+            title:"{{{ $tip->name }}}"
         });
     }
 </script>
@@ -112,9 +112,10 @@
 var current_rating = Math.round({{ $tip->rating_cache }});
 var already_rated = {{ ($already_voted)?"true":"false"; }};
 $(function(){
+
     initialize();
     $('html, body').animate({
-        scrollTop: $(".city-title").offset().top
+        scrollTop: $(".title").offset().top
     }, 0);
     $(".ruta").click(function(){
         return;
