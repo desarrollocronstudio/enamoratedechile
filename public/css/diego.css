@@ -33,6 +33,7 @@
 	border-left: 1px solid #2b2f44;
 	display: inline-block;
 }
+.bases{padding-left: 40px;}
 .bases a{
 	color:#666;
 	text-decoration: none;
