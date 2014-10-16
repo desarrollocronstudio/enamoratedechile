@@ -17,28 +17,37 @@
 	width:auto;
 	height:auto;
 	float:left;
-	margin:11px 0px 0px 9px;
+	display: inline-block;
+	width: 40%;
+	margin:11px 0px 0px 0px;
 }
 .social-media{
-	width:99px;
+	width:20%;
 	height:32px;
+	text-align: center;
 	float:left;
-	margin-left:126px;
-	border-right:1px solid #2b2f44;
 }
-.btn-social{
-	width:32px;
-	height:32px;
-	border-left:1px solid #2b2f44;
-	float:left;
+.btn-social {
+	width: 32px;
+	height: 32px;
+	border-left: 1px solid #2b2f44;
+	display: inline-block;
+}
+.bases a{
+	color:#666;
+	text-decoration: none;
+	line-height: 32px;
+}
+.bases a:hover{text-decoration: underline; }
+.btn-social:last-child{
+	border-right:1px solid #2b2f44;
 }
 .btn-social a:hover{opacity: 0.8}
 .up-btn{
 	width:121px;
 	height:32px;
 	background-color:#2a3051;
-	float:left;
-	margin-left:308px;
+	float:right;
 }
 #content-form{
 	width:602px;

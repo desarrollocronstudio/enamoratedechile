@@ -28,7 +28,7 @@
     <body>
         
         <!--[if lt IE 7]>
-            <p class="browsehappy">Están usando un navegador web <strong>obsoleto</strong>. Por favor <a href="http://browsehappy.com/">actualizalo</a> para mejorar tu experiencia.</p>
+                <p class="browsehappy">Están usando un navegador web <strong>obsoleto</strong>. Por favor <a href="http://browsehappy.com/">actualizalo</a> para mejorar tu experiencia.</p>
         <![endif]-->
         <header class="mobile">
              <span class="mobile menu"><img src="{{ asset('img/menu-mobile.png') }}"></span>
