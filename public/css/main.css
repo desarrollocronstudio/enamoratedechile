@@ -338,7 +338,7 @@ LOGIN
         header .submenu{display: none;}*/
         header .menu{float:left; line-height: 60px; padding-right: 1.5%; position:relative; background: none;}
         header.desktop .menu{height: auto; }
-        header.desktop{display: block; position: fixed; top: 0; left: 0; z-index: 0; width: 270px; height: 100%; background: #232323;}
+        header.desktop{display: block; position: fixed; top: 0; left: 0; z-index: 0; width: 270px; height: 100%; background: #232323; overflow: scroll;}
         header.desktop ul{width: 100%; padding-top: 50px;}
         header.desktop ul li{display: block;float: none; text-align: center; border:none; background:none; padding:0; border-bottom: solid 1px #666; margin: 0 5% ;}
         #content{z-index: 2;}
@@ -349,6 +349,15 @@ LOGIN
         header.desktop .submenu .links a{color:#fff; display: block; text-align:center;}
         header.desktop{padding-bottom:40px}
         header .submenu .userdata .links a{background: none;}
+        header ul li.active a.logo{display: none;}
+        header.desktop .menu{line-height: normal;}
+        header.desktop .menu .double{margin:0;}
+        header.desktop .menu a{padding: 15px 0;}
+        header.desktop .menu a:hover,
+        header.desktop .menu .active a{background: none;}
+        header.desktop .menu .active a{color: #ccc;}
+        header.desktop .submenu .shares .fb-like{float:none;}
+        header.desktop .submenu .shares .twitter-share-button{float: none;}
 
         #container{margin-top: 0;}
 
