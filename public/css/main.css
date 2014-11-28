@@ -349,7 +349,7 @@ LOGIN
         header.desktop .submenu .links a{color:#fff; display: block; text-align:center;}
         header.desktop{padding-bottom:40px}
         header .submenu .userdata .links a{background: none;}
-        header ul li.active a.logo{display: none;}
+        header ul li a.logo{display: none;}
         header.desktop .menu{line-height: normal;}
         header.desktop .menu .double{margin:0;}
         header.desktop .menu a{padding: 15px 0;}
@@ -373,6 +373,8 @@ LOGIN
         .desktop{display: none; }
         /************* HOME ****************/
         .intro{padding: 0 3%;}
+        .site_intro img{display:none;}
+        .site_intro .texts{max-width: 90%; margin: 0 auto;}
 
 
         /************* BUSCANDO A JENNY ****************/
