@@ -361,7 +361,7 @@ LOGIN
 
         #container{margin-top: 0;}
 
-        footer{text-align: center; position: fixed; width: 100%; bottom:0; left: 0; z-index: 2;}
+        footer{text-align: center; position: fixed; width: 100%; bottom:0; left: 0; z-index: 2; position: relative;}
         footer #footer_content{width: 100%;}
         footer .contenido-footer{width:100%;float: none; overflow: hidden; height: auto; margin: 0 auto; }
         footer .copyright{float:none; display: block}
