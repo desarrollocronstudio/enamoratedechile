@@ -92,8 +92,8 @@ a:hover{opacity: 0.85;}
 header{ }
 header ul,
 header ul li{margin:0; padding: 0; list-style: none;}
-header ul{width: 640px; margin:0 auto;}
-header ul.complete{width:960px;}
+header ul{width: 550px; margin:0 auto;}
+header ul.complete{width:820px;}
 header ul li{float:left; padding: 12px 15px; padding-top: 8px; background: top left url('../img/menu-separator.png') no-repeat; }
 header ul li:first-child{background: none;}
 header li a{ color:#fff; font-size: 17px; line-height: 25px; text-decoration: none; padding: 2px; font-weight: normal; display: inline-block; }
@@ -199,7 +199,7 @@ LOGIN
 .intro-forrest{background: url('../img/img-top-home.jpg'); width: 1046px; height: 203px; margin: 0 auto; position: relative}
 .intro-forrest p{position: absolute; top: 45px; font-family: 18px; left: 450px; width: 200px; line-height: 20px;}
 .site_intro{overflow: hidden; clear: both; width: 95%; max-width: 600px;position: relative; min-height: 170px; text-align: center; margin: 0 auto; margin-bottom: -23px }
-.site_intro .texts{width: 500px;}
+.site_intro .texts{width: 500px; margin: 0 auto;}
 .site_intro h3{font-family: 'cheap_pine_sanssans'; font-weight: normal; background:url("../img/separedor_titulo.png") no-repeat center bottom; text-transform: uppercase; padding-bottom: 12px; font-size: 24px; margin-bottom: 10px; }
 .site_intro p{font-size:24px; width: 80%; display: block; text-align: center; margin: 0 auto; margin-bottom: 10px; }
 .site_intro img{position:absolute; bottom: 0; right: 0; }

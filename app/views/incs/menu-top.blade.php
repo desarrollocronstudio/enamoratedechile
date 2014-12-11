@@ -8,7 +8,7 @@
         $menu->add(action('featured'),'LOS DATOS MÁS<br />POPULARES',null,['class'=>'double']);
         $menu->add(action('my_route'),"MIS FAVORITOS");
         //->add(action('list_videos','ideal'),'ESPECIAL<BR />SAN PEDRO',null,['class'=>'double'])
-        $menu->add(action('list_videos','jenny'),'BUSCANDO A JENNY');
+        //$menu->add(action('list_videos','jenny'),'BUSCANDO A JENNY');
 
         if(!$is_home){
             $menu->addClass("complete");

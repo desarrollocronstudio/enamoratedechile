@@ -16,7 +16,6 @@
             <h3>¡Se parte de esta gran comunidad de datos y picadas de Chile! </h3>
             <p>Busca un dato o entréganos el tuyo y comienza a enamorarte de Chile</p>
 	    </div>
-	    <img src="{{ asset('img/dedo.png') }}" alt="Dedo"/>
 	</div>
 
 	@include("incs/search-nav")
