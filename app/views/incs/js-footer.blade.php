@@ -61,7 +61,7 @@ $.ajaxSetup({
   window.fbAsyncInit = function() {
 
     FB.init({
-      appId       : '1451242411800345',
+      appId       : '{{ Config::get('facebook.appId')  }}',
       cookie      : true,
       xfbml       : true,
       version     : 'v2.0'

@@ -1,4 +1,6 @@
 <?php
+use Illuminate\Http\Request;
+
 include(app_path()."/libraries/functions.php");
 
 
@@ -81,4 +83,13 @@ App::down(function()
 |
 */
 
+
 require app_path().'/filters.php';
+
+$a = new Request();
+$a->root();
+if(strpos(\Request::root(),'//enamoratedechile.cl') !== false) {
+}elseif(strpos(\Request::root(),'enamorate.app') !== false){
+}else{
+	app('url')->forceRootUrl('http://www.lan.com/enamoratedechile');
+}

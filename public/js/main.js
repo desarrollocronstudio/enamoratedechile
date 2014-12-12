@@ -42,7 +42,7 @@ $(function(){
 		var obj = this;
 		var $parent = $(this).parent();
 		facebook_connect(function(response){
-			$.getJSON("/login/check-login",function(res){
+			$.getJSON(BASE_URL+"/login/check-login",function(res){
 				if(res.loged){
                     $("#signup").parent().remove();
                     $("body").trigger("connected");
@@ -92,7 +92,7 @@ $(function(){
 		var obj = this;
 		var $parent = $(this).parent();
 		facebook_connect(function(response){
-			$.getJSON("/login/check-login",function(res){
+			$.getJSON(BASE_URL + "/login/check-login",function(res){
 				if(res.loged){
                     $("#login").parent().remove();
                     $("body").trigger("connected");
@@ -172,7 +172,7 @@ $(function(){
 function show_popup(name,cb,data,canClose){
 	data = data || false;
 	if(typeof(canClose) == "undefined")canClose = true;
-	$.get("/partials/"+name,data,function(res){
+	$.get(BASE_URL+"/partials/"+name,data,function(res){
 		var $popup = $("<div class='popup'>");
 		$popup.html(res).hide();
 		$("body").append($popup);

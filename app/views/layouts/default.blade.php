@@ -22,7 +22,9 @@
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
         <link rel="stylesheet" href="{{ asset('js/vendor/ui/jquery-ui.css') }}">
         <link rel="stylesheet" href="{{ asset('css/shadowbox.css') }}">
-
+        <script>
+        var BASE_URL = '{{ URL::to('/') }}';
+        </script>
         <script src="{{ asset('js/vendor/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
     </head>
     <body>
