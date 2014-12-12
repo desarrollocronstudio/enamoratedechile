@@ -3,10 +3,6 @@
 <div class="page" id="search-tips">
 	@include("incs/logo")
 
-	<div class="dedo">
-	    <h4>¡BIENVENIDOS A {{ $city['name'] }}!</h4>
-	</div>
-
 	<a id="view-content"></a>
 	<h2 class="title">
 		{{ $city['name'] }}
