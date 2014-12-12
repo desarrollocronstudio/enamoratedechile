@@ -92,5 +92,5 @@ if(strpos(\Request::root(),'//enamoratedechile.cl') !== false) {
 }elseif(strpos(\Request::root(),'enamorate.app') !== false){
 }else{
 	app('url')->forceSchema('http');
-	app('url')->forceRootUrl('http://www.lan.com/enamoratedechile');
+	app('url')->forceRootUrl('https://ssl.lan.com/enamoratedechile');
 }
