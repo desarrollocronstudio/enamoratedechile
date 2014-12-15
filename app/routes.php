@@ -126,4 +126,9 @@ Route::any("/get-cities",[
 
 Route::when('*', 'csrf', array('post', 'put', 'delete'));
 
-Route::when('*','force.ssl');
+Route::get('/request',function(){
+	unset($_SERVER['MANDRILL_USER']);
+	unset($_SERVER['MANDRILL_SECRETº']);
+	dd($_SERVER);
+});
+//Route::when('*','force.ssl');
