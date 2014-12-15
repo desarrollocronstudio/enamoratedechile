@@ -128,7 +128,7 @@ Route::when('*', 'csrf', array('post', 'put', 'delete'));
 
 Route::get('/request',function(){
 	unset($_SERVER['MANDRILL_USER']);
-	unset($_SERVER['MANDRILL_SECRETº']);
+	unset($_SERVER['MANDRILL_SECRET']);
 	dd($_SERVER);
 });
 //Route::when('*','force.ssl');
