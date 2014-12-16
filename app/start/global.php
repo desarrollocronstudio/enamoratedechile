@@ -86,11 +86,5 @@ App::down(function()
 
 require app_path().'/filters.php';
 
-$a = new Request();
-$a->root();
-if(strpos(\Request::root(),'//enamoratedechile.cl') !== false) {
-}elseif(strpos(\Request::root(),'enamorate.app') !== false){
-}else{
-	app('url')->forceSchema('https');
-	app('url')->forceRootUrl('https://ssl.lan.com/enamoratedechile');
-}
+app('url')->forceSchema('https');
+app('url')->forceRootUrl('https://ssl.lan.com/enamoratedechile');

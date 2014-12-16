@@ -126,17 +126,4 @@ Route::any("/get-cities",[
 
 Route::when('*', 'csrf', array('post', 'put', 'delete'));
 
-Route::get('/request',function(){
-	unset($_SERVER['MANDRILL_USER']);
-	unset($_SERVER['MANDRILL_SECRET']);
-	ob_start();
-		echo "<pre>";
-		print_r($_SERVER);
-		echo "</pre>";
-	$a = ob_get_clean();
-	Mail::send('emails.test',['body' => $a],function($message){
-		$message->to('gonzunigad@gmail.com','Gonzalo De Spirito')->subject('Test email');
-	});
-	return $a;
-});
 //Route::when('*','force.ssl');
