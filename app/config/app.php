@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://www.enamoratedechile.cl',
+	'url' => 'https://ssl.lan.com/enamoratedechile',
 
 	/*
 	|--------------------------------------------------------------------------
