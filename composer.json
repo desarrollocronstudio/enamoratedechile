@@ -12,7 +12,8 @@
 		"magniloquent/magniloquent": "dev-master",
 		"vespakoen/menu": "dev-master",
 		"willdurand/geocoder": "@stable",
-		"guzzlehttp/guzzle": "4.*"
+		"guzzlehttp/guzzle": "4.*",
+		"pda/pheanstalk": "2.0"
 	},
 	"autoload": {
 		"classmap": [
