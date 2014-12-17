@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'https://ssl.lan.com/enamoratedechile',
+	'url' => 'https://ssl.lan.com/enamoratedechile	',
 
 	/*
 	|--------------------------------------------------------------------------
