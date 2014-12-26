@@ -203,8 +203,8 @@ BUENO, BONITO Y BARATO.")) }}
             return false;
         }
         $("#city_name").val(city);
-        $("#place_lat").val(result.geometry.location.k);
-        $("#place_lng").val(result.geometry.location.B);
+        $("#place_lat").val(result.geometry.location.lat());
+        $("#place_lng").val(result.geometry.location.lng());
 
         
     }).bind("geocode:dragged", function(event, latLng){ 

@@ -86,12 +86,14 @@ App::down(function()
 
 require app_path().'/filters.php';
 
-if(!isset($_SERVER['HTTP_X_FORWARDED_SERVER']) || $_SERVER['HTTP_X_FORWARDED_SERVER'] != 'ssl.lan.com'){
-	$uri = (isset($_SERVER['REQUEST_URI']))?$_SERVER['REQUEST_URI']:'';
-	header("HTTP/1.1 301 Moved Permanently",null,301);
-	header('Location: https://ssl.lan.com/enamoratedechile'.$uri);
-	exit;
+if(App::environment() == 'production'){
+	if(!isset($_SERVER['HTTP_X_FORWARDED_SERVER']) || $_SERVER['HTTP_X_FORWARDED_SERVER'] != 'ssl.lan.com'){
+		$uri = (isset($_SERVER['REQUEST_URI']))?$_SERVER['REQUEST_URI']:'';
+		header("HTTP/1.1 301 Moved Permanently",null,301);
+		header('Location: https://ssl.lan.com/enamoratedechile'.$uri);
+		exit;
+	}
+	app('url')->forceSchema('https');
+	app('url')->forceRootUrl('https://ssl.lan.com/enamoratedechile');
 }
 
-app('url')->forceSchema('https');
-app('url')->forceRootUrl('https://ssl.lan.com/enamoratedechile');
