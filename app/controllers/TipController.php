@@ -18,7 +18,7 @@ class TipController extends BaseController {
 		foreach($distances as $distance){
 			$table = 'tips';
 
-			$select = "*,((ACOS(SIN($lat * PI() / 180) * SIN(lat * PI() / 180) + COS($lat * PI() / 180) * COS(lat * PI() / 180) * COS(($lng - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) AS `distance`";
+			$select = "*,((ACOS(SIN($lat * PI() / 180) * SIN(lat * PI() / 180) + COS($lat * PI() / 180) * COS(lat * PI() / 180) * COS(($lng - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515 * 1.609344) AS `distance`";
 			$having = "`distance`<=$distance AND active=true";
 
 			$query = Tip::selectRaw(DB::raw($select))
