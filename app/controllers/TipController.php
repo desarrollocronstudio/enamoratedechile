@@ -10,7 +10,7 @@ class TipController extends BaseController {
 		
 		$lat = $position["lat"];
 		$lng = $position["lng"];
-		$distances = [20,50,80,80];
+		$distances = [20,50];
 		$minimum_places = 3;
 
 		$tips = [];
