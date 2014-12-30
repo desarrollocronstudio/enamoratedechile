@@ -78,8 +78,11 @@
                     <input type="submit" class="ruta" />
                 {{ Form::close(); }}
             @endif
-            <a href="" class="face"></a>
-            <a class="tw"></a>
+            @if($canShare)
+                <a href="" class="face"></a>
+                <a class="tw"></a>
+            @endif
+
         </div>
     </div>
     <div class="comments">

@@ -34,8 +34,10 @@
 			</div>
 		@endif
 	</div>
+	@if($canShare)
 	<div class="shares">
 	    <div class="fb-like" data-href="{{ Config::get("app.url") }}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
 	    <a href="https://twitter.com/share" data-url="{{ Config::get("app.url") }}" class="twitter-share-button" data-lang="es">Tweet</a>
 	</div>
-</div>	
+	@endif
+</div>

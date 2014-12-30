@@ -10,13 +10,16 @@ class TipController extends BaseController {
 		
 		$lat = $position["lat"];
 		$lng = $position["lng"];
-		$distances = [20,50,80,100,200,500,800,1000];
+		$distances = [20,50,80,100];
 		$minimum_places = 3;
+
+		$tips = [];
+		$distance = 0;
 		foreach($distances as $distance){
 			$table = 'tips';
 
 			$select = "*,((ACOS(SIN($lat * PI() / 180) * SIN(lat * PI() / 180) + COS($lat * PI() / 180) * COS(lat * PI() / 180) * COS(($lng - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515) AS `distance`";
-			$having = "`distance`<=$distance";
+			$having = "`distance`<=$distance AND active=true";
 
 			$query = Tip::selectRaw(DB::raw($select))
 				->havingRaw(DB::raw($having))
@@ -41,6 +44,7 @@ class TipController extends BaseController {
 	
 	public function view($tip_id){
 		$tip = Tip::find($tip_id);
+		if(!$tip->active)return Redirect::action('home');
         if(!$tip)return Redirect::route("featured");
         $total_reviews = $tip->rating_count;
 		return View::make('view-tip',[
@@ -52,7 +56,7 @@ class TipController extends BaseController {
 	}
 
 	public function featured(){
-		$tips = Tip::featured()->simplePaginate(6);
+		$tips = Tip::active()->featured()->simplePaginate(6);
 		return View::make('featured',array("tips" => $tips));
 	}
 
@@ -120,6 +124,7 @@ class TipController extends BaseController {
 			$tip->place_name	= $input["city_search"];
             $tip->image         = "";
             $tip->default_image = $input["default_picture"];
+			$tip->active 		= false;
             if(Input::get('image_type') == "custom"){
 				$filename = str_rand(12).".".strtolower(Input::file("image")->getClientOriginalExtension());
 				if(Input::file('image')->move(public_path()."/uploads",$filename)){

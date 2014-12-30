@@ -7,7 +7,7 @@
 
 <div class="search-box">
 	<form id="search-form" action="{{ action('TipController@search') }}" method="get">
-		<input type="text" class="box" name="q">
+		<input type="text" class="box" name="q" placeholder="Buscar por ciudad...">
 		<input type="submit" class="submit" value="Buscar">
 	</form>
 	<hr class="main-sep" />

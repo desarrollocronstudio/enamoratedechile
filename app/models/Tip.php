@@ -24,6 +24,9 @@ class Tip extends Eloquent {
     {
         return $this->hasMany('PostFavorite');
     }
+    public function scopeActive($query){
+        return $query->where('active',true);
+    }
 	public function scopeFeatured($query){
 		return $query->orderBy('rating_cache','DESC');
 	}
@@ -51,7 +54,7 @@ class Tip extends Eloquent {
 	}
 
 	public function users_who_saved_it(){
-		return $this->hasMany('Peron');
+		return $this->hasMany('Person');
 	}
 
     public function alreadyFavoritedByCurrentUser(){
