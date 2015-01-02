@@ -173,8 +173,8 @@ function show_popup(name,cb,data,canClose){
 	data = data || false;
 	if(typeof(canClose) == "undefined")canClose = true;
 
-	var popup_url = BASE_URL+"/partials/"+name;
-	$.get(popup_url,data,function(res){
+	var popup_url = "/partials/"+name;
+	$.get(BASE_URL+popup_url,data,function(res){
 		ga('send', 'pageview',popup_url);
 
 		var $popup = $("<div class='popup'>");
