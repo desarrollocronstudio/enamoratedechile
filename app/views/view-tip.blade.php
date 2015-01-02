@@ -40,6 +40,7 @@
             <p>{{{ $tip->content }}}</p>
         </div>
         <h2 class="slide">Mapa del lugar</h2>
+        <span class="address">{{ $tip->place_name }}</span>
         <div id="map">
 
         </div>
