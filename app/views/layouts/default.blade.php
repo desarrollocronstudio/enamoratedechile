@@ -24,6 +24,7 @@
         <link rel="stylesheet" href="{{ asset('css/shadowbox.css') }}">
         <script>
         var BASE_URL = '{{ URL::to('/') }}';
+        var CURRENT_URL = '{{ Request::path() }}';
         </script>
         <script src="{{ asset('js/vendor/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
     </head>
@@ -40,6 +41,7 @@
         </header>
         <div id="container">
             <div id="content">
+
                 @yield('content')
             </div>
             <footer>

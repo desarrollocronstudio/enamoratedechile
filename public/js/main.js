@@ -172,7 +172,11 @@ $(function(){
 function show_popup(name,cb,data,canClose){
 	data = data || false;
 	if(typeof(canClose) == "undefined")canClose = true;
-	$.get(BASE_URL+"/partials/"+name,data,function(res){
+
+	var popup_url = BASE_URL+"/partials/"+name;
+	$.get(popup_url,data,function(res){
+		ga('send', 'pageview',popup_url);
+
 		var $popup = $("<div class='popup'>");
 		$popup.html(res).hide();
 		$("body").append($popup);

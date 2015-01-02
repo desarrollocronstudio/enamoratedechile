@@ -45,7 +45,7 @@ $.ajaxSetup({
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-43478943-5', 'auto');
-  ga('send', 'pageview');
+  ga('send', 'pageview',CURRENT_URL);
 
 </script>
 
