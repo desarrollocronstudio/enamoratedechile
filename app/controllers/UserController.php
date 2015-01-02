@@ -16,7 +16,7 @@ class UserController extends BaseController {
 		return Redirect::to("/");
 	}
 	public function login(){
-		$check = array("dni" => normalizar_rut(Input::get('rut')),"dni_type" => "rut","password" => Input::get("password"));
+		$check = array("dni" => Rut::normalize(Input::get('rut')),"dni_type" => "rut","password" => Input::get("password"));
 		if($res = Auth::attempt($check)){
 			if(Request::ajax()){                   
 				$response_values = array(
@@ -65,7 +65,7 @@ class UserController extends BaseController {
             "email.email"	    => "Debes indicar un email válido",
 			"rut.required"		=> "Debes indicar tu RUT",
 			"password.confirmed"=> "Las contraseñas ingresadas no coinciden",
-			"rut"				=> "El R.U.T. ingresado es inválido"));
+			"cl_rut"			=> "El R.U.T. ingresado es inválido"));
 		if ($validator->fails()){
 			if(Request::ajax()){
 				return $this->sendFail($validator->errors()->toArray());
@@ -74,7 +74,7 @@ class UserController extends BaseController {
 		 	return Redirect::back()->withErrors($validator)->withInput();
 		}else{
 			$input = Input::all();
-			$input["rut"] = normalizar_rut($input["rut"]);
+			$input["rut"] = Rut::normalize($input["rut"]);
 
 			$exists = Person::where(function($query) use ($input){
 				$query->where("dni","=",$input["rut"])->where("dni_type","=","rut");
@@ -99,7 +99,7 @@ class UserController extends BaseController {
 			if($user)$person->fbid = $user;
 			$person->name		= $input["name"];
 			$person->email		= $input["email"];
-			$person->dni		= normalizar_rut($input["rut"]);
+			$person->dni		= Rut::normalize($input["rut"]);
 			$person->dni_type	= "rut";
 			$person->password 	= Hash::make($input["password"]);
 			$person->save();

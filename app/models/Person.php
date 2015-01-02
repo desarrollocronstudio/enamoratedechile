@@ -11,7 +11,7 @@ class Person extends Eloquent implements UserInterface, RemindableInterface {
 	public static $rules =  array(	
 		'name' 		=> 'required|min:3',
 		'email'		=> 'required|email',
-		'rut'		=> 'required|rut');
+		'rut'		=> 'required|cl_rut');
 	
 	protected $hidden = array('password', 'remember_token');
 

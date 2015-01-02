@@ -125,7 +125,8 @@ return array(
 		'Barryvdh\MigrationGenerator\MigrationGeneratorServiceProvider',
 		'Orangehill\Iseed\IseedServiceProvider',
 		'Menu\MenuServiceProvider',
-		'Codesleeve\Social\SocialServiceProvider'
+		'Codesleeve\Social\SocialServiceProvider',
+		'Freshwork\ChileanBundle\Laravel\ChileanBundleServiceProvider'
 	),
 
 	/*

@@ -19,7 +19,7 @@ class RemindersController extends BaseController {
 	 */
 	public function postRemind()
 	{
-		switch ($response = Password::remind( ["dni_type"=>"rut","dni" => normalizar_rut(Input::only('rut'))],function($message){
+		switch ($response = Password::remind( ["dni_type"=>"rut","dni" => Rut::normalize(Input::only('rut'))],function($message){
 			$message->subject('Recupera tu contraseña');
 		}))
 		{
