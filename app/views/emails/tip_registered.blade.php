@@ -24,7 +24,7 @@
 		        </tr>
 		        <tr>
 		            <td>Imagen</td>
-		            <td><img src='{{ $tip['image'] }}' alt="" /></td>
+		            <td><img width="200" src='{{ $tip['image'] }}' alt="" /></td>
 		        </tr>
 		        <tr>
 		            <td>Detalle</td>
