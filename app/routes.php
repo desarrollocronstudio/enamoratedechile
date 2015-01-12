@@ -91,6 +91,11 @@ Route::get('/featured', [
 	'uses'	=> 'TipController@featured'
 ]);
 
+Route::get('/tip/active/{status}/{id}/{token}',[
+	'as'	=> 'tip.active',
+	'uses'	=> 'TipController@active'
+]);
+
 
 /***********************
 cateogires

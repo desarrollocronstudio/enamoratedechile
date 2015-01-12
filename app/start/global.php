@@ -85,6 +85,7 @@ App::down(function()
 
 
 require app_path().'/filters.php';
+require app_path().'/events.php';
 
 if(App::environment() == 'production'){
 	if(!isset($_SERVER['HTTP_X_FORWARDED_SERVER']) || $_SERVER['HTTP_X_FORWARDED_SERVER'] != 'ssl.lan.com'){

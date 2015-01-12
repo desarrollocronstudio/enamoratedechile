@@ -132,6 +132,7 @@ class TipController extends BaseController {
 				}	
 			}
 			$tip->save();
+			Event::fire('tip.registered',[$tip,Auth::user()]);
 			return Redirect::route('tips.thanks')->with('tip.last_saved', $tip->id);
 
 		}
@@ -147,4 +148,18 @@ class TipController extends BaseController {
             "tip" 			=> $tip
         ]);
     }
+
+	public function active($status,$id,$token){
+		$originalToken = Cache::get('tip.token.'.$id);
+		if($token != $originalToken){
+			return 'Unauthorized';
+		}
+		$tip = Tip::findOrFail($id);
+
+		$tip->active = $status=='false'?false:true;
+
+		$tip->save();
+
+		return 'OK';
+	}
 }
