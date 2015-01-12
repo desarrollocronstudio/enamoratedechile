@@ -4,7 +4,7 @@ Event::listen('tip.registered',function($tip,$author){
     $tip = [
         'id'        => $tip->id,
         'name'      => $tip->name,
-        'detail'    => $tip->detail,
+        'detail'    => $tip->content,
         'image'     => $tip->image(),
         'place_name'=> $tip->place_name,
     ];
