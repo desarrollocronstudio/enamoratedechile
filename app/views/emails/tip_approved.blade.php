@@ -5,7 +5,7 @@
 	</head>
 	<body style="margin:0; padding: 0; font-family: Verdana, Arial, sans-serif; font-size: 12px;">
 
-		<div style="width: 600px; max-width: 100%; padding: 10px;padding-bottom: 30px;  background: #e2eadd url({{ asset('/img/bg.jpg') }}) left top; background-color:#ccc; border-radius:10px;  overflow: hidden;">
+		<div style="margin:0 auto;width: 600px; max-width: 100%; padding: 10px;padding-bottom: 30px;  background: #e2eadd url({{ asset('/img/bg.jpg') }}) left top; background-color:#ccc; border-radius:10px;  overflow: hidden;">
 			<h1 style="margin: 0; padding-bottom: 20px;">¡Tu dato ha sido aprobado!</h1>
 
 
