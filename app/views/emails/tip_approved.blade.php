@@ -15,7 +15,7 @@
 		    		<td colspan="2" style="font-weight: bold">Este es el detalle de tu dato:</td>
 		    	</tr>
 		        <tr>
-		            <td>Nombre</td>
+		            <td width="70">Nombre</td>
 		            <td>{{ $tip['name'] }}</td>
 		        </tr>
 		        <tr>
@@ -27,7 +27,7 @@
 		            <td>{{ $tip['place_name'] }}</td>
 		        </tr>
 		        <tr>
-		            <td>Detalle</td>
+		            <td width="70">Detalle</td>
 		            <td width="200">{{ $tip['content'] }}</td>
 		        </tr>
 		        <tr>
