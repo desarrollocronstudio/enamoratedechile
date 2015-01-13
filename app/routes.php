@@ -131,7 +131,8 @@ Route::any("/get-cities",[
 
 Route::when('*', 'csrf', array('post', 'put', 'delete'));
 
-Route::get('/test/email/{id}',function($id){
+/*
+	Route::get('/test/email/{id}',function($id){
 	$tip = Tip::find($id);
 	$tip['image'] = $tip->image();
 	$author = Person::find($tip->author_id);
@@ -139,5 +140,6 @@ Route::get('/test/email/{id}',function($id){
 
 	return View::make('emails.tip_approved',compact('tip','author','link'));
 });
+*/
 
 //Route::when('*','force.ssl');
