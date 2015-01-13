@@ -34,7 +34,7 @@
 		        	<td colspan="2" style="padding-top: 20px; font-weight: bold; width: 200px;">Puedes verlo y compartirlo en el siguiente link</td>
 		        </tr>
 		        <tr>
-		            <td colspan="2"><a href="{{ $link }}">{{ $link }}</a></td>
+		            <td colspan="2"><a href="{{ $link }}">Revisar mi dato</a></td>
 		        </tr>
 		    </table>
 
