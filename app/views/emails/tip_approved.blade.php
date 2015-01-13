@@ -9,7 +9,7 @@
 			<h1 style="margin: 0; padding-bottom: 20px;">¡Tu dato ha sido aprobado!</h1>
 
 
-		    <img src="{{ $tip['image'] }}" style="float:left; width: 300px; border-radius: 10px;" width="300" />
+		    <img src="{{ $tip['image'] }}" style="float:left; width: 250px; border-radius: 10px;" width="250" />
 		    <table style="float: left;">
 		    	<tr>
 		    		<td colspan="2" style="font-weight: bold">Este es el detalle de tu dato:</td>
