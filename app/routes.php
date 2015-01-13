@@ -131,4 +131,5 @@ Route::any("/get-cities",[
 
 Route::when('*', 'csrf', array('post', 'put', 'delete'));
 
+
 //Route::when('*','force.ssl');

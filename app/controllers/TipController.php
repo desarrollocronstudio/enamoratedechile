@@ -156,9 +156,11 @@ class TipController extends BaseController {
 		}
 		$tip = Tip::findOrFail($id);
 
-		$tip->active = $status=='false'?false:true;
+		$final_status = $status=='false'?false:true;
+		$tip->active = $final_status;
 
 		$tip->save();
+		Event::fire('tip.change_status',[$tip,$final_status]);
 
 		return 'OK';
 	}

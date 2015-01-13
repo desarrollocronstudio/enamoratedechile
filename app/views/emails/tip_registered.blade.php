@@ -16,7 +16,7 @@
 		        </tr>
 		        <tr>
 					<td>Autor</td>
-					<td>{{ $author['name'] }}</td>
+					<td>{{ $author['name'] }} &lt;{{ $author['email'] }}&gt;</td>
 				</tr>
 		        <tr>
 		            <td>Lugar</td>

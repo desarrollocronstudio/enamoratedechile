@@ -44,6 +44,10 @@ class Tip extends Eloquent {
         return false;
 	}
 
+    public function link(){
+        return URL::action('view-tip',$this->id);
+    }
+
 	public function recalculateRating()
 	{
 		$reviews = $this->reviews();
