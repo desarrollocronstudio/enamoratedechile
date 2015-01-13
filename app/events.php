@@ -26,6 +26,7 @@ Event::listen('tip.change_status',function($tip,$status) {
     {
         $author = Person::find($tip->author_id);
         $link = $tip->link();
+        $tip['image'] = $tip->image();
 
         Mail::queue('emails.tip_approved',compact('author','tip','link'),function(Message $message) use($author){
             $message
