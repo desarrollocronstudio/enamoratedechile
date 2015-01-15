@@ -215,6 +215,8 @@ BUENO, BONITO Y BARATO.")) }}
     });
 
     function change_available_pictures(id){
+        if(id == '')return false;
+
         $ap = $(".available_pictures").hide().html("");
         $("#default_picture").val("");
         var url = $("[name=tip_category]").data("img-source");
