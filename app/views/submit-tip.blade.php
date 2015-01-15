@@ -189,7 +189,7 @@ BUENO, BONITO Y BARATO.")) }}
 
         //initialize_map();
     }).bind("geocode:result", function(event, result){
-        console.log(result);
+        //console.log(result);
         var city = false;
         $.each(result.address_components, function (i, address_component) {
             if (address_component.types[0] == "locality"){
@@ -225,7 +225,7 @@ BUENO, BONITO Y BARATO.")) }}
         $.get(url,function(data){
             for(var i in data.images){
                 var img = data.images[i];
-                console.log(img);
+                //console.log(img);
                 $ap.append("<img src='{{ URL::to('img/default')."/" }}"+img+"' alt='' />");
             }
             $ap.fadeIn(500);
