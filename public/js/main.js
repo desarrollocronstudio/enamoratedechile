@@ -213,3 +213,17 @@ $("body").bind("connected",function(){
     return true;
 
 });
+
+$(document).bind('fb_load',function(){
+	FB.Event.subscribe('comment.create', function(targetUrl) {
+
+		ga('send','social', 'facebook', 'comment', targetUrl);
+
+	});
+
+	FB.Event.subscribe('comment.remove', function(targetUrl) {
+
+		ga('send','social', 'facebook', 'uncomment', targetUrl);
+
+	});
+});
