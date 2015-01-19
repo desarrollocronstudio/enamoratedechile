@@ -216,7 +216,7 @@ $("body").bind("connected",function(){
 
 $(document).bind('fb_load',function(){
 	FB.Event.subscribe('comment.create', function(targetUrl) {
-
+		console.log('Add Comment '+targetUrl);
 		ga('send','social', 'facebook', 'comment', targetUrl);
 
 	});
