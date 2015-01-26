@@ -14,8 +14,8 @@ Event::listen('tip.registered',function($tip,$author){
     Cache::put('tip.token.'.$tip['id'],$token,43200);
     Mail::queue('emails.tip_registered',['tip' => $tip,'author' => $author,'token'  => $token],function(Message $message){
         $message
-            ->to('gonzunigad@gmail.com')
-            ->cc('mariana@freshworkstudio.com')
+            ->to('gonzalo@enamoratedechile.cl')
+            ->cc('mariana@enamoratedechile.cl')
             ->subject('Enámorate de Chile - Nuevo Tip');
     });
 
