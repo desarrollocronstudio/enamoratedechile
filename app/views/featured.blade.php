@@ -1,4 +1,5 @@
 @extends("layouts/default")
+@section('page_title','Datos Destacados')
 @section('metatags')
 	<meta property="og:url" content="{{ URL::to('/?i=1') }}" /> 
 	<meta property="og:title" content="Enámorate de Chile - LAN.com" />

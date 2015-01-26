@@ -1,4 +1,5 @@
 @extends("layouts.default")
+@section('page_title','REestablece tu contraseña')
 @section('content')
 	<div class="page" id="home">
 		@include("incs/logo")

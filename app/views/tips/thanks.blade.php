@@ -1,4 +1,5 @@
 @extends("layouts/default")
+@section('page_title','Gracias por tu dato')
 @section('content')
 <div class="page" id="submit-tip">
     @include("incs/logo")

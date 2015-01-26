@@ -1,4 +1,5 @@
 @extends("layouts/default")
+@section('page_title','Lista de datos')
 @section('content')
 <div class="page" id="search-tips">
 	@include("incs/logo")
