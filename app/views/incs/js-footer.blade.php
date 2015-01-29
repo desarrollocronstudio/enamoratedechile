@@ -1,6 +1,7 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
 <script src="{{ asset('js/vendor/ui/jquery-ui.js') }}"></script>
+<script src="{{ asset('js/vendor/jquery.placeholder.js') }}"></script>
 <script src="{{ asset('js/vendor/shadowbox.js') }}"></script>
 <script src="{{ asset('js/plugins.js') }}"></script>
 <script src="{{ asset('js/main.js') }}"></script>

@@ -25,3 +25,8 @@
 	</div>
 	<span class="bottom"></span>
 </div>
+<script>
+$(function(){
+	$('input, textarea').placeholder();
+})
+</script>

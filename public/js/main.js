@@ -168,10 +168,12 @@ $(function(){
 });
 
 
-
+var loading_popup = false;
 function show_popup(name,cb,data,canClose){
 	data = data || false;
 	if(typeof(canClose) == "undefined")canClose = true;
+	if(loading_popup)return false;
+	loading_popup = true;
 
 	var popup_url = "/partials/"+name;
 	$.get(BASE_URL+popup_url,data,function(res){
@@ -188,6 +190,7 @@ function show_popup(name,cb,data,canClose){
 				$(this).remove();
 			});
 		}
+		loading_popup = false;
 		if(canClose){
 			$popup.click(function(e){
 				if(e.target != this)return;
