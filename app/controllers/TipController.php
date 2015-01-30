@@ -168,16 +168,26 @@ class TipController extends BaseController {
     }
 
 	public function active($status,$id,$token){
-		$tip = Tip::findOrFail($id);
+
+		try{
+			$tip = Tip::withTrashed()->findOrFail($id);
+		}catch(Exception $e){
+			return 'El tipo no se puede encontrar';
+		}
 
 		if($token != $tip->code){
 			return 'Unauthorized';
 		}
 
 		$final_status = $status=='false'?false:true;
-		$tip->active = $final_status;
+		if($final_status == false){
+			$tip->delete();
+		}else{
+			$tip->restore();
+			$tip->active = $final_status;
+			$tip->save();
+		}
 
-		$tip->save();
 		Event::fire('tip.change_status',[$tip,$final_status]);
 
 		return 'OK';

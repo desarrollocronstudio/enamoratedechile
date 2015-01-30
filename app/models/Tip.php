@@ -1,5 +1,9 @@
 <?php
+use Illuminate\Database\Eloquent\SoftDeletingTrait;
+
 class Tip extends Eloquent {
+    use SoftDeletingTrait;
+
  	public static $rules =  array(	
 		'user_id' 	=> 'required|min:3',
 		'email'		=> 'required|email');
