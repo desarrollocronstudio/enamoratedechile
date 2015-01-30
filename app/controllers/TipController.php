@@ -3,15 +3,7 @@
 class TipController extends BaseController {
 	
 
-	public function search($city_id,$city_name = ''){
-		$city = City::find($city_id);
-		if(!$city)Redirect::back();
-		$position = $city->get_position();
-
-		Search::create(['city_id' => $city_id]);
-
-		$lat = $position["lat"];
-		$lng = $position["lng"];
+	public function search($city_name, $lat,$lng){
 		$distances = [80];
 		$minimum_places = 3;
 
@@ -34,7 +26,9 @@ class TipController extends BaseController {
 		}
 		
 		
-
+		$city = [
+			'name'	=> str_replace('_',' ',$city_name)
+		];
 
 		$data = array(
 			"tips" 		=> $tips,

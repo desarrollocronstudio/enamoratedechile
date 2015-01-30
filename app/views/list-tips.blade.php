@@ -1,10 +1,11 @@
 @extends("layouts/default")
-@section('page_title','Lista de datos')
+@section('page_title','Datos en '.$city['name'])
 @section('content')
 <div class="page" id="search-tips">
 	@include("incs/logo")
 
 	<a id="view-content"></a>
+	<span class="cerca">Datos Cerca de</span>
 	<h2 class="title">
 		{{ $city['name'] }}
 		<!--<span>Desde 80 lukas</span>-->

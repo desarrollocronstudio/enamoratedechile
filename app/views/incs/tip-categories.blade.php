@@ -1,12 +1,15 @@
 <div class="categories">
 	<ul>
-		@foreach($tips_categories as $tip)
-			<li class="{{ $active == $tip->id?'active':'' }} {{ $usable?'':'disabled' }}">
+		@foreach($tips_categories as $category)
+			<li class="{{ $active == $category->id?'active':'' }} {{ $usable?'':'disabled' }}">
 				@if ($usable)
-
-					<a href="{{ URL::current().qs_url(['cat' => ($active == $tip->id?'':$tip->id)]) }}">{{ $tip["name"] }}</a>
+					@if(isset($from) && $from == 'tip')
+						<a href="{{ URL::route('tip_search',[$tip->sluged_name(),$tip['lat'],$tip['lng']]).qs_url(['cat' => ($active == $category->id?'':$category->id)]) }}">{{ $category["name"] }}</a>
+					@else
+						<a href="{{ URL::current().qs_url(['cat' => ($active == $category->id?'':$category->id)]) }}">{{ $category["name"] }}</a>
+					@endif
 				@else
-					<span>{{ $tip["name"] }}</span>
+					<span>{{ $category["name"] }}</span>
 				@endif
 			</li>
 		@endforeach

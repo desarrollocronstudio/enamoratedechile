@@ -1,36 +1,17 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+
 <script src="{{ asset('js/vendor/ui/jquery-ui.js') }}"></script>
 <script src="{{ asset('js/vendor/jquery.placeholder.js') }}"></script>
 <script src="{{ asset('js/vendor/shadowbox.js') }}"></script>
+<script src="{{ asset('js/vendor/jquery.geocomplete.js') }} "></script>
+
 <script src="{{ asset('js/plugins.js') }}"></script>
 <script src="{{ asset('js/main.js') }}"></script>
 <script>
-$(function(){
-    var cache = {};
-    $("#search-form").submit(function(){
-    return false;
-    });
-    $("#search-form .box").autocomplete({
-        source: function( request, response ) {
-            var term = request.term;
-            if ( term in cache ) {
-              response( cache[ term ] );
-              return;
-            }
 
-            $.getJSON( '{{ action("get-cities") }}', request, function( data, status, xhr ) {
-              cache[ term ] = data;
-              response( data );
-            });
-        },
-        minLength: 2,
-        delay:0,
-        select: function( event, ui ) {
-            window.location = "{{ URL::to('/search') }}"+"/"+ui.item.id+"/"+ui.item.value.replace(" ","-");
-        }
-    });
-});
+
 $.ajaxSetup({
     headers: {
         'X-CSRF-Token': $('meta[name="_token"]').attr('content')

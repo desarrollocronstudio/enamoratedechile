@@ -232,7 +232,8 @@ LOGIN
 #search-tips .cotizar{float:right;}
 #search-tips .dedo{width: 1046px; height: 211px; background: url("../img/bg-dedo-cuadro.png") no-repeat; margin:0 auto; position: relative; }
 #search-tips .dedo h4{position:absolute; top:40px; left: 450px; width: 200px; font-size: 24px; }
-
+#search-tips .title{}
+#search-tips .cerca{font-size: 20px;margin-top: 20px; text-transform: uppercase; display:block}
 /* RATING */
 .rating{width:100px; padding-left: 13px; padding-top: 1px; height: 25px; background: url("../img/bg-puntaje.png") no-repeat; overflow: hidden;}
 .rating .mark{width: 14px; height: 11px; background: url("../img/hearts.png") no-repeat 0 -11px; overflow: hidden; display: inline-block;  }

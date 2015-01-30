@@ -4,6 +4,9 @@ class Tip extends Eloquent {
 		'user_id' 	=> 'required|min:3',
 		'email'		=> 'required|email');
 
+    public function sluged_name(){
+        return str_replace(' ','_',$this->name);
+    }
  	public function author()
     {
         return $this->belongsTo('Person');

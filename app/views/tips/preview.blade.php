@@ -1,7 +1,7 @@
 <div class="dato-small">
 	<span class="nombre">{{{ $tip->name }}}</span>
 	<div class="img">
-		<a href="{{ action('view-tip',array($tip->id)) }}">
+		<a href="{{ action('view-tip',[$tip->id, $tip->sluged_name()]) }}">
 			<img src="{{ $tip->image() }}">
 		</a>
 	</div>
@@ -19,5 +19,5 @@
 		@endfor
 	</div>
 	@endif
-	<a class="red-btn" href="{{ action('view-tip',array($tip->id)) }}#view-content">{{ trans("Leer más") }}</a>
+	<a class="red-btn" href="{{ action('view-tip',[$tip->id, $tip->sluged_name()]) }}#view-content">{{ trans("Leer más") }}</a>
 </div>

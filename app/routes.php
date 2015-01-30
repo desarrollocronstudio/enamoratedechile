@@ -78,11 +78,11 @@ Route::get('/thanks/tip', [
     'uses'	=> 'TipController@thanks'
 ]);
 
-Route::get('/search/{city_id}/{city_name}',[
+Route::get('/search/{lat}/{lng}/{city_name}',[
 	'as' 	=> "tip_search",
 	'uses'	=> "TipController@search"
 ]);
-Route::get('/ver/{id}', [
+Route::get('/ver/{id}/{name?}', [
 	'as' 	=> 'view-tip',
 	'uses'	=> 'TipController@view'
 ]);

@@ -18,7 +18,7 @@
         </h2>
     </div>
 
-	@include("incs/tip-categories",['active' => $tip->type_id,'usable' => false])
+	@include("incs/tip-categories",['active' => $tip->type_id,'usable' => true,'from' => 'tip','tip' => $tip])
     <a name="tip-data"></a>
 
     <div class="detalle_city">

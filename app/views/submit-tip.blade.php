@@ -115,8 +115,6 @@ BUENO, BONITO Y BARATO.")) }}
 </div>
 @stop
 @section('js')
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
-<script type="text/javascript" src="{{ asset('js/vendor/jquery.geocomplete.js') }} "></script>
 <script type="text/javascript">
     var map = false;
     var marker = false;
@@ -179,7 +177,6 @@ BUENO, BONITO Y BARATO.")) }}
             mapOptions: {
                 zoom: 14
             },
-            location:'Santiago, Chile',
             componentRestrictions:{country: 'cl'},
             markerOptions: {
                 draggable: true
