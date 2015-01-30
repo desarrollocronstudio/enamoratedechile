@@ -25,7 +25,7 @@
 			<div class="user">
 				<img src="{{ Auth::user()->profile_image() }}" alt="{{{ Auth::user()->name }}}" />
 				<span>{{{ Auth::user()->name }}}</span>
-				<a href="{{ action('logout') }}">Cerrar sesión</a>
+				<a class="sign_out" href="{{ action('logout') }}">Cerrar sesión</a>
 			</div>
 		@else 
 			<div class="links">

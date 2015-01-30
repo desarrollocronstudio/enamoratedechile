@@ -37,6 +37,14 @@ $(function(){
 	    return false;
 	  });
 
+	/* SIGN OUT */
+	$(document).on("click",".sign_out",function(){
+		var _this = this;
+		FB.logout(function(){
+			window.location = _this.href;
+		});
+		return false;
+	});
 	/* SIGN UP */
 	$(document).on("click","#signup .facebook-connect",function(){
 		var obj = this;
@@ -228,5 +236,16 @@ $(document).bind('fb_load',function(){
 
 		ga('send','social', 'facebook', 'uncomment', targetUrl);
 
+	});
+
+	FB.getLoginStatus(function(response) {
+		if (response.status === 'connected') {
+			if(!LOGED_IN)window.location.reload();
+		} else if (response.status === 'not_authorized') {
+			// the user is logged in to Facebook,
+			// but has not authenticated your app
+		} else {
+			// the user isn't logged in to Facebook.
+		}
 	});
 });
