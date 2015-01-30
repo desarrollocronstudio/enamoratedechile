@@ -19,7 +19,7 @@
         <link rel="stylesheet" href="{{ asset('css/normalize.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
         <link rel="stylesheet" href="{{ asset('css/diego.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/main.css?r=1') }}">
         <link rel="stylesheet" href="{{ asset('js/vendor/ui/jquery-ui.css') }}">
         <link rel="stylesheet" href="{{ asset('css/shadowbox.css') }}">
         <script>
