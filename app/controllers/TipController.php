@@ -120,6 +120,7 @@ class TipController extends BaseController {
             $tip->image         = "";
             $tip->default_image = $input["default_picture"];
 			$tip->active 		= false;
+			$tip->code			= str_rand(32);
             if(Input::get('image_type') == "custom"){
 				$filename = str_rand(12).".".strtolower(Input::file("image")->getClientOriginalExtension());
 				if(Input::file('image')->move(public_path()."/uploads",$filename)){
@@ -145,11 +146,11 @@ class TipController extends BaseController {
     }
 
 	public function active($status,$id,$token){
-		$originalToken = Cache::get('tip.token.'.$id);
-		if($token != $originalToken){
+		$tip = Tip::findOrFail($id);
+
+		if($token != $tip->code){
 			return 'Unauthorized';
 		}
-		$tip = Tip::findOrFail($id);
 
 		$final_status = $status=='false'?false:true;
 		$tip->active = $final_status;

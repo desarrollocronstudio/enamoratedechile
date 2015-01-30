@@ -236,12 +236,16 @@ BUENO, BONITO Y BARATO.")) }}
         e.preventDefault();
     });
 
+    var sending_form = false;
     $("#submit-form").submit(function(e){
         if(!loged){
             waiting_signin = true;
             show_popup("signup",null,null,true);
             e.preventDefault();
         }
+
+        if(sending_form== true)return false;
+        sending_form = true;
     });
 
     $("[name=tip_category]").change(function(){
