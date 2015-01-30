@@ -1,4 +1,4 @@
-@extends("layouts/default")
+@extends("...layouts.default")
 @section('page_title',ucwords($tip->name))
 @section('metatags')
     <meta property="og:url" content='{{{ Request::url() }}}' />
@@ -9,7 +9,7 @@
 @stop
 @section('content')
 <div class="page" id="view">
-	@include("incs/logo")
+	@include("...incs.logo")
 
     <div class="intro-box">
         <h2 class="title">
@@ -18,11 +18,16 @@
         </h2>
     </div>
 
-	@include("incs/tip-categories",['active' => $tip->type_id,'usable' => true,'from' => 'tip','tip' => $tip])
+	@include("...incs.tip-categories",['active' => $tip->type_id,'usable' => true,'from' => 'tip','tip' => $tip])
     <a name="tip-data"></a>
 
     <div class="detalle_city">
-         <h3 class="lugar">{{{ $tip->name }}}</h3>
+        @unless($tip->active)
+            <div class="msg error">
+                ESTE DATO ESTA DESACTIVADO. SOLO LO PUEDE VER UN ADMIN.
+            </div>
+        @endunless
+         <h3 class="lugar">{{{ $tip->name }}} @if(is_admin()) | <a href="{{ URL::route('tip.edit',$tip->id) }}">Editar</a> @endif</h3>
         <h4 class="autor">{{{ Str::words($tip->author->name,1,'') }}}</h4>
 
         <div class="images">

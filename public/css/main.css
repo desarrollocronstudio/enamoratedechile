@@ -60,6 +60,11 @@ textarea {
     color:#999;
 }
 
+.msg.error{
+    padding: 10px; background: lightyellow; border:solid 1px orange; border-radius: 10px;
+    width: 80%; margin: 10px auto;
+}
+
 /* ==========================================================================
    GDZ - STYLES
    ========================================================================== */

@@ -40,9 +40,13 @@ $(function(){
 	/* SIGN OUT */
 	$(document).on("click",".sign_out",function(){
 		var _this = this;
-		FB.logout(function(){
+		try {
+			FB.logout(function () {
+				window.location = _this.href;
+			});
+		}catch(err){
 			window.location = _this.href;
-		});
+		}
 		return false;
 	});
 	/* SIGN UP */
@@ -240,7 +244,7 @@ $(document).bind('fb_load',function(){
 
 	FB.getLoginStatus(function(response) {
 		if (response.status === 'connected') {
-			if(!LOGED_IN)window.location.reload();
+			if(!LOGGED_IN)window.location.reload();
 		} else if (response.status === 'not_authorized') {
 			// the user is logged in to Facebook,
 			// but has not authenticated your app

@@ -86,6 +86,16 @@ Route::get('/ver/{id}/{name?}', [
 	'as' 	=> 'view-tip',
 	'uses'	=> 'TipController@view'
 ]);
+
+Route::get('/editar/{id}/{name?}', [
+	'as' 	=> 'tip.edit',
+	'uses'	=> 'TipController@edit'
+]);
+Route::post('/editar/{id}',[
+	'as' 	=> 'tip.update',
+	'uses'	=> 'TipController@update'
+]);
+
 Route::get('/featured', [
 	'as'	=> 'featured',
 	'uses'	=> 'TipController@featured'

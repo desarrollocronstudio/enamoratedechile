@@ -34,15 +34,15 @@ class TipController extends BaseController {
 			"distance"	=> $distance,
 			"city"		=> $city
 		);
-		return View::make('list-tips',$data);
+		return View::make('tips.list',$data);
 	}
 	
 	public function view($tip_id){
 		$tip = Tip::find($tip_id);
-		if(!$tip->active)return Redirect::action('home');
+		if(!$tip->active && !is_admin())return Redirect::action('home');
         if(!$tip)return Redirect::route("featured");
         $total_reviews = $tip->rating_count;
-		return View::make('view-tip',[
+		return View::make('tips.view',[
 			"tip" 			        => $tip,
             'total_reviews'         => $total_reviews,
             'show_add_route_button' => !$tip->alreadyFavoritedByCurrentUser(),
@@ -62,8 +62,30 @@ class TipController extends BaseController {
 
 
 		);
-		return View::make('submit-tip',$data);
+		return View::make('tips.submit',$data);
 	}
+
+	public function edit($tip_id){
+		if(!Auth::check() || !Auth::user()->admin)return 'Unauthorized';
+
+		$tip = Tip::findOrFail($tip_id);
+		$data = array(
+			"regions" 		=> Region::remember(120)->lists("large_name","id"),
+			"categories"	=> TipType::remember(120)->lists("name","id"),
+			'tip'			=> $tip
+		);
+
+		\Session::flashInput([
+			'place_name'	=> $tip->name,
+			'city_search'	=> $tip->place_name,
+			'tip_category'	=> $tip->type_id,
+			'description'	=> $tip->content,
+			'active'		=> $tip->active
+		]);
+
+		return View::make('tips.edit',$data);
+	}
+
 	public function save(){
 		if(!Auth::check()){
 			return Redirect::back()->with('not_loged', true)->withInput();
@@ -159,5 +181,21 @@ class TipController extends BaseController {
 		Event::fire('tip.change_status',[$tip,$final_status]);
 
 		return 'OK';
+	}
+
+	public function update($id){
+		if(!Auth::check() || !Auth::user()->admin)return 'Unauthorized';
+		$tip = Tip::findOrFail($id);
+
+		$tip->name		= Input::get('place_name');
+		$tip->content	= Input::get('description');
+		$tip->type_id	= Input::get('tip_category');
+		$tip->lat		= Input::get('place_lat');
+		$tip->lng		= Input::get('place_lng');
+		$tip->place_name= Input::get('city_search');
+		$tip->active	= Input::get('active');
+
+		$tip->save();
+		return Redirect::route('view-tip',$tip->id);
 	}
 }

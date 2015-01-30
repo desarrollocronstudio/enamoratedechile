@@ -48,3 +48,7 @@ function qs_url($qs = array(),$merge = array())
     }
     return $url;
 }
+
+function is_admin(){
+    return (Auth::check() && Auth::user()->admin);
+}

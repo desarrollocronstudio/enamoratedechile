@@ -1,8 +1,8 @@
-@extends("layouts/default")
+@extends("...layouts.default")
 @section('page_title','Datos en '.$city['name'])
 @section('content')
 <div class="page" id="search-tips">
-	@include("incs/logo")
+	@include("...incs.logo")
 
 	<a id="view-content"></a>
 	<span class="cerca">Datos Cerca de</span>
@@ -11,13 +11,13 @@
 		<!--<span>Desde 80 lukas</span>-->
 	</h2>
 
-	@include("incs/tip-categories",['active' => Input::get('cat'),'usable' => true])
+	@include("...incs.tip-categories",['active' => Input::get('cat'),'usable' => true])
 	<p class="info">Estos son los datos que te van a robar el corazón cerca de <span>{{ $city['name'] }}</span></p>
 	<!-- Distance: {{ $distance }}kms.-->
 	<section class="datos container">
 		@if ($tips->count() > 0)
 			@foreach ($tips as $tip)
-				@include("tips.preview",["tip" => $tip])
+				@include("preview",["tip" => $tip])
 			@endforeach
 		@else 
 			<div class='message'>

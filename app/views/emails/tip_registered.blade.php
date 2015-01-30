@@ -32,7 +32,7 @@
 		        </tr>
 		    </table>
 			<div>
-		    	<a href="{{ URL::action('tip.active',['true',$tip['id'],$token]) }}">APROBAR</a> | <a href="{{ URL::action('tip.active',['false',$tip['id'],$token]) }}">DESAPROBAR</a>
+		    	<a href="{{ URL::action('tip.edit',[$tip['id']]) }}">EDITAR</a> | <a href="{{ URL::action('tip.active',['true',$tip['id'],$token]) }}">APROBAR</a> | <a href="{{ URL::action('tip.active',['false',$tip['id'],$token]) }}">DESAPROBAR</a>
 			</div>
 		</div>
 	</body>
