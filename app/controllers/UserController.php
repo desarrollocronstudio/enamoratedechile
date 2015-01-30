@@ -17,7 +17,7 @@ class UserController extends BaseController {
 	}
 	public function login(){
 		$check = array("dni" => Rut::normalize(Input::get('rut')),"dni_type" => "rut","password" => Input::get("password"));
-		if($res = Auth::attempt($check)){
+		if($res = Auth::attempt($check,true)){
 			if(Request::ajax()){                   
 				$response_values = array(
 					'loged' => true,
