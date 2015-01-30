@@ -29,7 +29,6 @@ class TipController extends BaseController {
 		$city = [
 			'name'	=> str_replace('_',' ',$city_name)
 		];
-
 		$data = array(
 			"tips" 		=> $tips,
 			"distance"	=> $distance,

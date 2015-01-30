@@ -1,6 +1,9 @@
 <div class="dato-small">
 	<span class="nombre">{{{ $tip->name }}}</span>
 	<div class="img">
+		@if($tip->distance)
+			<span class="distance">{{ round($tip->distance,1) }} <small>Kms.</small></span>
+		@endif
 		<a href="{{ action('view-tip',[$tip->id, $tip->sluged_name()]) }}">
 			<img src="{{ $tip->image() }}">
 		</a>
