@@ -12,7 +12,7 @@
 	</h2>
 
 	@include("incs/tip-categories",['active' => Input::get('cat'),'usable' => true])
-	<p class="info">Estos son los datos que te van a robar el corazón en <span>{{ $city['name'] }}</span></p>
+	<p class="info">Estos son los datos que te van a robar el corazón cerca de <span>{{ $city['name'] }}</span></p>
 	<!-- Distance: {{ $distance }}kms.-->
 	<section class="datos container">
 		@if ($tips->count() > 0)
