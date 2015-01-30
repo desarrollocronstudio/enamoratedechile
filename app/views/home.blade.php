@@ -13,7 +13,7 @@
 
 	<div class="site_intro">
 	    <div class="texts">
-            <h3>¡Se parte de esta gran comunidad de datos y picadas de Chile! </h3>
+            <h3>¡Sé parte de esta gran comunidad de datos y picadas de Chile! </h3>
             <p>Busca un dato o entréganos el tuyo y comienza a enamorarte de Chile</p>
 	    </div>
 	</div>
@@ -23,7 +23,7 @@
 	<h2 class="title">{{ __("Los datos más populares") }}</h2>
 	<p class="intro">
 	    Estos son los datos que más le han gustado a nuestra comunidad.<br />
-        ¡Navégalos y descubre por que son tan famosos!
+        ¡Navégalos y descubre por qué son tan famosos!
     </p>
 
 	<section class="datos container">
