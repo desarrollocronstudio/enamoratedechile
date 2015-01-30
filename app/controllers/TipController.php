@@ -12,7 +12,7 @@ class TipController extends BaseController {
 		foreach($distances as $distance){
 			$table = 'tips';
 
-			$select = "*,((ACOS(SIN($lat * PI() / 180) * SIN(lat * PI() / 180) + COS($lat * PI() / 180) * COS(lat * PI() / 180) * COS(($lng - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515 * 1.609344) AS `distance`";
+			$select = "*,IFNULL(((ACOS(SIN($lat * PI() / 180) * SIN(lat * PI() / 180) + COS($lat * PI() / 180) * COS(lat * PI() / 180) * COS(($lng - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515 * 1.609344),0) AS `distance`";
 			$having = "`distance`<=$distance AND active=true";
 
 			$query = Tip::selectRaw(DB::raw($select))
@@ -24,8 +24,8 @@ class TipController extends BaseController {
 			$tips = $query->simplePaginate(6);
 			if($tips->count() > $minimum_places)break;
 		}
-		
-		
+
+
 		$city = [
 			'name'	=> str_replace('_',' ',$city_name)
 		];
