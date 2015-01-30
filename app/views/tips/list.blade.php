@@ -17,7 +17,7 @@
 	<section class="datos container">
 		@if ($tips->count() > 0)
 			@foreach ($tips as $tip)
-				@include("preview",["tip" => $tip])
+				@include("tips.preview",["tip" => $tip])
 			@endforeach
 		@else 
 			<div class='message'>
