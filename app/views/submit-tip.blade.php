@@ -38,7 +38,7 @@
                                 ["required","id" => "city_name"]); 
                             }}
                             {{ Form::text('city_search','',[
-                                "placeholder" => "Comienza a escribir el nombre de la ciudad...",
+                                "placeholder" => "Comienza a escribir la dirección del lugar...",
                                 "required"
                             ]); }}
                         </span>
