@@ -9,7 +9,6 @@
 @stop
 
 @section('content')
-
 <div class="page" id="home">
 	@include("incs/logo")
 
