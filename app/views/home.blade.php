@@ -11,6 +11,7 @@
 <div class="page" id="home">
 	@include("incs/logo")
 
+	Hola
 	<div class="site_intro">
 	    <div class="texts">
             <h3>¡Sé parte de esta gran comunidad de datos y picadas de Chile! </h3>
