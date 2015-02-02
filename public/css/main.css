@@ -186,7 +186,7 @@ LOGIN
 
 #login form input{display: block; clear: both; width: 94%; margin: 5% 0; outline:none; padding: 3%; font-family: 'boogalooregular'; border-radius:5px; border:solid 1px #ccc; font-size: 15px;}
 #login .facebook-connect img{width: 100%;}
-#login hr{background: url("../img/hr-or.png") no-repeat; width: 259px; margin: 0 auto; display: block; height: 20px; margin: 10px auto; border:none;}
+#login hr{background: url("../img/hr-or.png?r=1") no-repeat; width: 259px; margin: 0 auto; display: block; height: 20px; margin: 10px auto; border:none;}
 #login .btn-red{border:none; width: 136px; margin: 5px auto; padding: 0;  }
 #login .already_registered{display: block; text-align: center; padding-bottom: 10px;}
 
