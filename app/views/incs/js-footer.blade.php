@@ -8,7 +8,7 @@
 <script src="{{ asset('js/vendor/jquery.geocomplete.js') }} "></script>
 
 <script src="{{ asset('js/plugins.js') }}"></script>
-<script src="{{ asset('js/main.js') }}"></script>
+<script src="{{ asset('js/main.js?r=1') }}"></script>
 <script>
 
 
