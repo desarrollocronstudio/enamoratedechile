@@ -48,6 +48,7 @@ Route::post("/forgot",[
 	'as'	=> 'forgot',
 	'uses'	=> 'RemindersController@postRemind'
 	]);
+
 /***********************
 Videos
 ***********************/

@@ -253,3 +253,27 @@ $(document).bind('fb_load',function(){
 		}
 	});
 });
+
+function get_locality_name_from_result(result,search_for){
+	console.log(result.address_components);
+	if(typeof(search_for) == 'undefined'){
+		search_for = ['neighborhood','administrative_area_level_3','locality'];
+	}
+	var city = false;
+	var last_search_for_index = search_for.length;
+	$.each(result.address_components, function (i, address_component) {
+		$.each(address_component.types,function(n,type){
+
+			var index = search_for.indexOf(type);
+			if(index != -1 && index < last_search_for_index)
+			{
+				//alert(address_component.long_name+": "+type);
+				city=address_component.long_name;
+				last_search_for_index = index;
+
+			}
+		});
+
+	});
+	return city;
+}

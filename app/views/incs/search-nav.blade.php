@@ -41,29 +41,12 @@
 
 			var loc = result.geometry.location;
 
-			console.log(result.address_components);
-			var search_for = ['neighborhood','administrative_area_level_3','locality'];
-			var city = false;
-			var last_search_for_index = search_for.length;
-			$.each(result.address_components, function (i, address_component) {
-				$.each(address_component.types,function(n,type){
-
-					var index = search_for.indexOf(type);
-					if(index != -1 && index < last_search_for_index)
-					{
-						//alert(address_component.long_name+": "+type);
-						city=address_component.long_name;
-						last_search_for_index = index;
-
-					}
-				});
-
-			});
+			var city = get_locality_name_from_result(result);
 			redirecting = true;
 
 			$("#search-form [type=submit]").val('Buscando...').attr("disabled",'disabled');
 
-			var address = result.formatted_address.toString().toLowerCase().replace(/,/g,'').replace(/ /g,'-');
+			//var address = result.formatted_address.toString().toLowerCase().replace(/,/g,'').replace(/ /g,'-');
 			var address = city.replace(/ /g,'_');
 			//alert(address);
 

@@ -37,10 +37,16 @@ class UserController extends BaseController {
 		
 	}
 	public function show_login(){
+		if(Auth::check()){
+			return Redirect::route('home');
+		}
 		return View::make("login");
 	}
 
 	public function signup(){
+		if(Auth::check()){
+			return Redirect::route('home');
+		}
 		return View::make('signup');
 	}
 

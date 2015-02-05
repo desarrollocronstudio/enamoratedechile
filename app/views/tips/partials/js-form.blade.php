@@ -17,6 +17,8 @@
         }
     }
     $(function(){
+        var $autocomplete_input =  $(".autocomplete input[type=text]");
+
         $("#custom_image,#default_image").change(function(){
             if($("#custom_image").is(":checked")){
                 $(".image_upload_box").show();
@@ -29,7 +31,7 @@
                 $("#image_file_input").attr("disabled","disabled");
                 $('#place_photo').data("last-src",$('#place_photo').attr("src")).attr("src",$('#place_photo').data("default"));
             }
-        })
+        });
         $("#default_image").trigger("change");
         $(".bsc-btn").click(function(){
             $("#image_file_input").click();
@@ -38,7 +40,7 @@
         $("#image_file_input").change(function(){
             readURL(this);
             $("#file_name_value").html(this.value.substr(this.value.lastIndexOf("\\")+1,55));
-        })
+        });
         /*$(".autocomplete input[type=text]").autocomplete({
           source: "get-cities",
           minLength: 2,
@@ -55,7 +57,9 @@
             });
           }
         });*/
-        $(".autocomplete input[type=text]").geocomplete({
+
+
+        $autocomplete_input.geocomplete({
             map: "#map",
             mapOptions: {
                 zoom: 14
@@ -64,37 +68,27 @@
             markerOptions: {
                 draggable: true
             }
+        }).bind("geocode:result", function(event, result){
+            //console.log(result);
+            var city = get_locality_name_from_result(result);
+            $("#city_name").val(city);
+            $("#place_lat").val(result.geometry.location.lat());
+            $("#place_lng").val(result.geometry.location.lng());
+
+        }).bind("geocode:dragged", function(event, latLng){
+            $autocomplete_input.geocomplete("find", latLng.toString());
         });
-        var map = $(".autocomplete input[type=text]").geocomplete("map");
-        var value = $('.autocomplete input[type=text]').val();
+
+        var map = $autocomplete_input.geocomplete("map");
+        var value = $autocomplete_input.val();
         if(value != ''){
-            $(".autocomplete input[type=text]").geocomplete("find",value);
+            $autocomplete_input.geocomplete("find",value);
         }
         map.setZoom(16);
 
-        //initialize_map();
-    }).bind("geocode:result", function(event, result){
-        //console.log(result);
-        var city = false;
-        $.each(result.address_components, function (i, address_component) {
-            if (address_component.types[0] == "locality"){
-                city=address_component.long_name;
-            }
-        });
-        
-        if(city==false){
-            
-            $(".autocomplete input[type=text]").geocomplete("find",'Santiago, Chile');
-            return false;
-        }
-        $("#city_name").val(city);
-        $("#place_lat").val(result.geometry.location.lat());
-        $("#place_lng").val(result.geometry.location.lng());
-
-        
-    }).bind("geocode:dragged", function(event, latLng){ 
-        $(".autocomplete input[type=text]").geocomplete("find", latLng.toString());
+    //initialize_map();
     });
+
     $(document).bind("fb_load",function(){
         
     });
