@@ -267,7 +267,6 @@ function get_locality_name_from_result(result,search_for){
 			var index = search_for.indexOf(type);
 			if(index != -1 && index < last_search_for_index)
 			{
-				//alert(address_component.long_name+": "+type);
 				city=address_component.long_name;
 				last_search_for_index = index;
 

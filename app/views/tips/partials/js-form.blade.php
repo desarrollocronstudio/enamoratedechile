@@ -72,6 +72,7 @@
             //console.log(result);
             var city = get_locality_name_from_result(result);
             $("#city_name").val(city);
+            console.log(result.geometry.location.lat());
             $("#place_lat").val(result.geometry.location.lat());
             $("#place_lng").val(result.geometry.location.lng());
 
