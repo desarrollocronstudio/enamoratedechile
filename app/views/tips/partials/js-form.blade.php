@@ -103,9 +103,8 @@
         url = url.replace("{id}",id);
 
         $.get(url,function(data){
-            for(var i in data.images){
+            for(var i = 0; i < data.images.length; i++){
                 var img = data.images[i];
-                //console.log(img);
                 $ap.append("<img src='{{ URL::to('img/default')."/" }}"+img+"' alt='' />");
             }
             $ap.fadeIn(500);
@@ -128,8 +127,7 @@
             if(sending_form== true)return false;
             sending_form = true;
         }
-
-
+        return true;
     });
 
     $("[name=tip_category]").change(function(){
