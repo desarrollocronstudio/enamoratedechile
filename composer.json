@@ -3,26 +3,35 @@
 	"description": "The Laravel Framework.",
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
+	"type": "project",
 	"require": {
-		"laravel/framework": "4.2.*",
-		"codesleeve/social": "dev-master",
-		"barryvdh/laravel-migration-generator": "dev-master",
-		"orangehill/iseed": "dev-master",
-		"facebook/php-sdk": "*",
+		"laravel/framework": "5.0.*",
 		"vespakoen/menu": "dev-master",
-		"willdurand/geocoder": "@stable",
-		"guzzlehttp/guzzle": "4.*",
-		"pda/pheanstalk": "2.0",
-		"freshwork/chilean-bundle": "0.1.*"
+		"freshwork/chilean-bundle": "0.1.*",
+		"facebook/php-sdk": "~3.2",
+		"illuminate/html": "~5.0",
+		"guzzlehttp/guzzle": "~5.2"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "~4.0",
+		"phpspec/phpspec": "~2.1"
 	},
 	"autoload": {
 		"classmap": [
-			"app/commands",
-			"app/controllers",
-			"app/models",
-			"app/database/migrations",
-			"app/database/seeds",
-			"app/tests/TestCase.php"
+			"database",
+			"app/Http/Controllers",
+			"app/Models"
+		],
+		"files": [
+			"app/functions.php"
+		],
+		"psr-4": {
+			"App\\": "app/"
+		}
+	},
+	"autoload-dev": {
+		"classmap": [
+			"tests/TestCase.php"
 		]
 	},
 	"scripts": {
@@ -35,11 +44,11 @@
 			"php artisan optimize"
 		],
 		"post-create-project-cmd": [
+			"php -r \"copy('.env.example', '.env');\"",
 			"php artisan key:generate"
 		]
 	},
 	"config": {
 		"preferred-install": "dist"
-	},
-	"minimum-stability": "stable"
+	}
 }
