@@ -25,7 +25,7 @@
 			</div>
 		@endif
 	</section>
-	{{ $tips->fragment('anchor-content')->appends(array('cat' => Input::get('cat')))->render() }}
+	{!! $tips->fragment('anchor-content')->appends(array('cat' => Input::get('cat')))->render() !!}
 
 	<a href="http://www.lan.com" class="black-btn cotizar">Cotiza tu pasaje</a>
 </div>

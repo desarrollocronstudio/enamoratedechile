@@ -27,6 +27,6 @@
 			@include("tips.preview",["tip" => $tip])
 		@endforeach
 	</section>
-	{{ $tips->fragment('view-content')->render() }}
+	{!! $tips->fragment('view-content')->render() !!}
 </div>
 @stop

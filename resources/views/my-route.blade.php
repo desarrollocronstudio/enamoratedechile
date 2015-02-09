@@ -44,7 +44,7 @@
 	</section>
 
 	@if (count($tips) > 0)
-		{{ $tips->fragment('view-content')->render() }}
+		{!! $tips->fragment('view-content')->render() !!}
 	@endif
 </div>
 @stop
