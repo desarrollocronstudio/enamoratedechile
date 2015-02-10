@@ -425,7 +425,7 @@ LOGIN
         .menu-img{text-align: center;float: none; padding:0; margin: 0; padding-top: 10px; width: 100%;}
         .bsc-btn{margin: 0 auto; float: none;}
         .despcripcion-form{width: 90%; margin: 0 auto; padding: 0; float: none; overflow: hidden; padding-bottom: 10px;}
-        .area-form{width: 93%; padding: 3%; margin: 0;}
+        .area-form{width: 93%; padding: 3%; margin: 0; text-decoration: none;}
         .btn-enviar{width: 100%; float: none; margin: 0 auto; overflow: hidden; padding-top: 10px; background-repeat: no-repeat; background-position: center center; }
         .copyright{width: 90%; margin: 10px auto;}
         .bases{padding: 0;}

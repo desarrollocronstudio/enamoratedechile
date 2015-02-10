@@ -1,27 +1,9 @@
 <?php namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Support\Facades\Auth;
 
-class Authenticate {
-
-	/**
-	 * The Guard implementation.
-	 *
-	 * @var Guard
-	 */
-	protected $auth;
-
-	/**
-	 * Create a new filter instance.
-	 *
-	 * @param  Guard  $auth
-	 * @return void
-	 */
-	public function __construct(Guard $auth)
-	{
-		$this->auth = $auth;
-	}
+class AuthenticateIfNotAdmin {
 
 	/**
 	 * Handle an incoming request.
@@ -32,8 +14,8 @@ class Authenticate {
 	 */
 	public function handle($request, Closure $next)
 	{
-		if ($this->auth->guest())
-		{
+
+		if(!Auth::check() && !Auth::user()->admin){
 			if ($request->ajax())
 			{
 				return response('Unauthorized.', 401);
@@ -42,8 +24,8 @@ class Authenticate {
 			{
 				return redirect()->guest('login');
 			}
-		}
 
+		}
 		return $next($request);
 	}
 

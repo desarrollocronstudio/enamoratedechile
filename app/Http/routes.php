@@ -34,7 +34,7 @@ AUTH
 Route::get("/signup",array("as" =>"signup","uses" => 'UserController@signup'));
 Route::post("/signup",[
     "as" =>"save-signup",
-    "uses" => 'UserController@save_signup'
+    "uses" => 'AuthController@store_signup'
 ]);
 Route::get("/logout",array("as" => "logout","uses" => "UserController@logout"));
 Route::get("/login",array("as" => "login","uses" => "UserController@show_login"));

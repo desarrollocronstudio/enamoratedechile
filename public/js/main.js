@@ -83,22 +83,25 @@ $(function(){
 		$(this).data("sending",true);
 		$(this).find("[type=submit]").val("Registrando...");
 		$.post(BASE_URL+"/signup",$(this).serialize(),function(res){
-			if(res.validation_failed){
-				$(obj).data("sending",false);
-				$(obj).find("[type=submit]").val("Registrar");
-				var msg = "Se encontraron los siguientes errores: \n";
-				for(var i in res.errors){
-					var error = res.errors[i];
-					msg += "- "+error+"\n";
-				}
-				alert(msg);
-			}else{
-				$("#signup").parent().remove();
-				show_popup("thanks",function($popup){
-					
-				});
-				$("#signup").html();
+				
+			$("#signup").parent().remove();
+			show_popup("thanks",function($popup){
+				
+			});
+				
+		}).fail(function(xhr)
+		{
+			$(obj).data("sending",false);
+			$(obj).find("[type=submit]").val("Registrar");
+
+			var errors = $.parseJSON(xhr.responseText);
+			var msg = "Se encontraron los siguientes errores: \n";
+
+			for(var i in errors){
+				var error = errors[i];
+				msg += "- "+error+"\n";
 			}
+			alert(msg);
 		});
 		e.preventDefault();
 	});

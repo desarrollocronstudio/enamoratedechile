@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Mail\Message;
-
 Event::listen('tip.registered',function($tip,$author){
     $tip = [
         'id'        => $tip->id,

@@ -1,9 +1,25 @@
 <?php namespace App\Http\Controllers;
 
-use App\Http\Controllers\BaseController;
+use App\Http\Requests\SubmitTipRequest;
+use Exception;
+use Illuminate\Http\Request;
+use Illuminate\Session\SessionManager;
 
 class TipController extends BaseController {
-	
+
+
+	function __construct()
+	{
+		$this->middleware('auth',['only' => [
+			'save'
+		]]);
+
+		$this->middleware('auth.admin',['only' => [
+			'edit',
+			'active',
+			'update'
+		]]);
+	}
 
 	public function search($city_name, $lat,$lng){
 		$distances = [80];
@@ -12,7 +28,6 @@ class TipController extends BaseController {
 		$tips = [];
 		$distance = 0;
 		foreach($distances as $distance){
-			$table = 'tips';
 
 			$select = "*,IFNULL(((ACOS(SIN($lat * PI() / 180) * SIN(lat * PI() / 180) + COS($lat * PI() / 180) * COS(lat * PI() / 180) * COS(($lng - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515 * 1.609344),0) AS `distance`";
 			$having = "`distance`<=$distance AND active=true";
@@ -96,78 +111,41 @@ class TipController extends BaseController {
 		return view('tips.edit',$data);
 	}
 
-	public function save(){
-		if(!\Auth::check()){
-			return \Redirect::back()->with('not_loged', true)->withInput();
-		}
-
-		$input = \Input::all();
+	/**
+	 * @param Request $request
+	 * @return mixed
+     */
+	public function save(SubmitTipRequest $request){
+		$input = $request->all();
 		$input["user_id"] = \Auth::user()->id;
 
-		$rules =  array(
-            'image_type'    => 'required',
-			'city'		    => 'required',
-			'tip_category'	=> 'required'
-		);
-        if(\Input::has('image_type')){
-            if(\Input::get('image_type') =="default"){
-                $rules['default_picture'] = 'required|integer|min:0|max:1';
-            }else{
-                $rules['image'] = 'required|image';
-            }
-
-
-        }
-
-
-		$validator = Validator::make($input,$rules,array(
-			"city.required" 			=> "Debes seleccionar una ciudad. ¿Donde es tu dato?",
-			'tip_category.required'		=> "Debes indicar una categoría para tu dato",
-            "default_picture.required"  => "Debes seleccionar una imagen para tu dato",
-            "image_type.required"       => "Debes seleccionar el tipo de imagen que necesitas",
-            'image.required'            => "Debes subir una imagen",
-            'image.image'               => "Debes subir una imagen, no otro tipo de archivo",
-
-		));
-		if ($validator->fails()){
-			if(Request::ajax()){                    
-				$response_values = array(
-					'validation_failed' => 1,
-					'errors' =>  $validator->errors()->toArray()
-				);
-				return Response::json($response_values);
+		$tip = new \Tip();
+		$tip->name 			= $input["place_name"];
+		$tip->city_name		= $input['city'];
+		$tip->author_id		= $input["user_id"];
+		$tip->content 		= $input["description"];
+		$tip->type_id 		= $input["tip_category"];
+		$tip->lat 			= $input["place_lat"];
+		$tip->lng 			= $input["place_lng"];
+		$tip->place_name	= $input["city_search"];
+		$tip->image         = "";
+		$tip->default_image = $input["default_picture"];
+		$tip->active 		= false;
+		$tip->code			= str_rand(32);
+		if($request->get('image_type') == "custom"){
+			$filename = str_rand(12).".".strtolower($request->file("image")->getClientOriginalExtension());
+			if($request->file('image')->move(public_path()."/uploads",$filename)){
+				$tip->image = $filename;
 			}
-
-		 	return \Redirect::back()->withErrors($validator)->withInput();
-		}else{
-			$tip = new Tip;
-			$tip->name 			= $input["place_name"];
-			$tip->city_name		= $input['city'];
-			$tip->author_id		= $input["user_id"];
-			$tip->content 		= $input["description"];
-			$tip->type_id 		= $input["tip_category"];
-			$tip->lat 			= $input["place_lat"];
-			$tip->lng 			= $input["place_lng"];
-			$tip->place_name	= $input["city_search"];
-            $tip->image         = "";
-            $tip->default_image = $input["default_picture"];
-			$tip->active 		= false;
-			$tip->code			= str_rand(32);
-            if(\Input::get('image_type') == "custom"){
-				$filename = str_rand(12).".".strtolower(\Input::file("image")->getClientOriginalExtension());
-				if(\Input::file('image')->move(public_path()."/uploads",$filename)){
-					$tip->image = $filename;
-				}	
-			}
-			$tip->save();
-			\Event::fire('tip.registered',[$tip,\Auth::user()]);
-			return \Redirect::route('tips.thanks')->with('tip.last_saved', $tip->id);
-
 		}
+		$tip->save();
+		\Event::fire('tip.registered',[$tip,\Auth::user()]);
+
+		return \Redirect::route('tips.thanks')->with('tip.last_saved', $tip->id);
 	}
-    public function thanks(){
-        $tip_id = Session::get('tip.last_saved');
-        Session::reflash();
+    public function thanks(SessionManager $session){
+        $tip_id = $session->get('tip.last_saved');
+        $session->reflash();
         $tip = \Tip::find($tip_id);
         if(!$tip){
             return \Redirect::route('submit_tip_form');
@@ -204,7 +182,6 @@ class TipController extends BaseController {
 	}
 
 	public function update($id){
-		if(!\Auth::check() || !\Auth::user()->admin)return 'Unauthorized';
 		$tip = \Tip::findOrFail($id);
 
 		$tip->name		= \Input::get('place_name');

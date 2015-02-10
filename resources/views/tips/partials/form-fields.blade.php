@@ -59,10 +59,10 @@
     {!! Form::label("DESCRIPCIÓN") !!}
     <br />
     {!! Form::textarea("description",null,array("class" => "area-form","placeholder" =>
-"EJEMPLO:
+"Ejemplo:
 
-ESTE LUGAR ES UNA EXCELENTE PICADA PARA COMER EN FAMILIA Y CON LOS AMIGOS, ESTÁ UBICADA EN EL MERCADO DE CHILLÁN.
+Este lugar es una excelente picada para comer en familia y con los amigos, está ubicada en el mercado de Chillán.
 
-BUENO, BONITO Y BARATO.")) !!}
+ Bueno, bonito y barato.")) !!}
 
 </div>

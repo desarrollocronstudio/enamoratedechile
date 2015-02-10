@@ -3,6 +3,7 @@
     var marker = false;
     var waiting_signin = false;
     var loged = {{ Auth::check()?"true":"false" }};
+    var closedScopeAdress = false;
 
     function readURL(input) {
 
@@ -69,10 +70,10 @@
                 draggable: true
             }
         }).bind("geocode:result", function(event, result){
-            //console.log(result);
+            console.log(result);
+            closedScopeAdress = get_locality_name_from_result(result,['route','street_number'])!=false;
             var city = get_locality_name_from_result(result);
             $("#city_name").val(city);
-            console.log(result.geometry.location.lat());
             $("#place_lat").val(result.geometry.location.lat());
             $("#place_lng").val(result.geometry.location.lng());
 
@@ -124,6 +125,11 @@
             show_popup("signup",null,null,true);
             e.preventDefault();
         }else{
+            if(!closedScopeAdress)
+            {
+                if(!confirm("La dirección ingresada es poco detallada. Es probable que no aprobemos tu dato si no colocas instrucciones sobre como llegar. Para editarla, presiona cancelar. Para continuar de todas formas, presiona aceptar."))
+                    return false;
+            }
             if(sending_form== true)return false;
             sending_form = true;
         }
