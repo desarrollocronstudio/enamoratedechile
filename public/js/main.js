@@ -86,7 +86,9 @@ $(function(){
 				
 			$("#signup").parent().remove();
 			show_popup("thanks",function($popup){
-				
+				setTimeout(function(){
+					window.location.reload();
+				},5000);
 			});
 				
 		}).fail(function(xhr)

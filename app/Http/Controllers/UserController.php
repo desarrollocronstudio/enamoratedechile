@@ -94,17 +94,7 @@ class UserController extends BaseController {
                 return $this->sendFail(['Este R.U.T. ya está registrado']);
             }
 
-			/*if(isset($input["fbid"]))
-				$exists->orWhere("fbid",$input["fbid"]);
-			*/
-
-			$data = $exists->get();
-			//Chck if is connected to Facebook.
-
-			$fb = init_facebook();
-			$user = $fb->getUser();
-
-			$person = ($data->count() > 0)?$data[0]:new \Person;
+			$person = new \Person();
 			if($user)$person->fbid = $user;
 			$person->name		= $input["name"];
 			$person->email		= $input["email"];
@@ -113,10 +103,10 @@ class UserController extends BaseController {
 			$person->password 	= \Hash::make($input["password"]);
 			$person->save();
 
-			if(\Request::ajax()){                   
+			if(\Request::ajax()){
 				$response_values = array(
 					'validation_failed' => false,
-					'user_data' =>  $person->get()[0]);	            
+					'user_data' =>  $person->get()[0]);
 				return \Response::json($response_values);
 			}
 			return \Redirect::back()->with('tip_saved', true);
