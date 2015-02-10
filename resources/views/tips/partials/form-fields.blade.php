@@ -10,7 +10,7 @@
             "placeholder" => "Busca la ubicación exacta del lugar...",
             "required"
         ]) !!}
-        <span class="error too-general">La ubicación seleccionada es muy amplia. Intenta con una ubicación más específica como una dirección o una calle. También puedes arrastrar el marcador del mapa para especificar mejor la ubicación. </span>
+        <span class="error too-general">La ubicación seleccionada parece ser muy amplia. Intenta con una ubicación más específica como una dirección o una calle. También puedes arrastrar el marcador del mapa para especificar mejor la ubicación. </span>
 
     </span>
 </div>

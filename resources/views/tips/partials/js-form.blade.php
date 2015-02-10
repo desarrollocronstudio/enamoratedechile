@@ -86,14 +86,24 @@
                  $autocomplete_input.geocomplete("find","Santiago, Chile");
             }
 
-            closedScopeAdress = get_locality_name_from_result(result,['route','street_number'])!=false;
+            if(check_type_from_result(result,'establishment'))
+            {
+                closedScopeAdress = true;
+            }
+            else
+            {
+                closedScopeAdress = get_locality_name_from_result(result,['route','street_number'])!=false;
+            }
+
             if(!closedScopeAdress)
             {
                 $(".too-general").show();
             }else{
                 $(".too-general").hide();
             }
+
             var city = get_locality_name_from_result(result);
+
             $("#city_name").val(city);
             $("#place_lat").val(result.geometry.location.lat());
             $("#place_lng").val(result.geometry.location.lng());

@@ -106,7 +106,7 @@
 }
 .dato-in small{font-style: italic; font-size: 13px; color: #666; padding-left: 10px; padding-top: 5px; text-transform: uppercase;}
 .dato-in .error{
-	color: red;
+	color: #e14f1c;
 	font-size: 14px;
 	display: none;
 	text-transform: uppercase;
