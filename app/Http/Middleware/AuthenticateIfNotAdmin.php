@@ -15,7 +15,7 @@ class AuthenticateIfNotAdmin {
 	public function handle($request, Closure $next)
 	{
 
-		if(!Auth::check() && !Auth::user()->admin){
+		if(!Auth::check() || !Auth::user()->admin){
 			if ($request->ajax())
 			{
 				return response('Unauthorized.', 401);
