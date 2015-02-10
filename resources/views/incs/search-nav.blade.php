@@ -36,21 +36,27 @@
 		});
 
 		$("#search-form .box").geocomplete({
-			componentRestrictions:{country: 'cl'}
+			componentRestrictions:{country: 'cl'},
+			types:['geocode','establishment']
 		}).bind("geocode:result", function(event, result){
-
 			var loc = result.geometry.location;
-
-			var city = get_locality_name_from_result(result);
-			redirecting = true;
+			var place = false;
 
 			$("#search-form [type=submit]").val('Buscando...').attr("disabled",'disabled');
-
+			if(check_type_from_result(result,'establishment'))
+			{
+				place = result.name;
+			}
+			else
+			{
+				place = get_locality_name_from_result(result,['neighborhood','administrative_area_level_3','locality','administrative_area_level_2','administrative_area_level_1']);
+			}
+			console.log(result);
 			//var address = result.formatted_address.toString().toLowerCase().replace(/,/g,'').replace(/ /g,'-');
-			var address = city.replace(/ /g,'_');
+			var place_url = place.replace(/ /g,'_');
 			//alert(address);
 
-			window.location = '{{ URL::to('/search') }}/'+address+'/'+loc.lat()+'/'+loc.lng();
+			window.location = '{{ URL::to('/search') }}/'+place_url+'/'+loc.lat()+'/'+loc.lng();
 		});
 
 	});

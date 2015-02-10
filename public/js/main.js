@@ -285,3 +285,15 @@ function get_locality_name_from_result(result,search_for, asObject){
 	});
 	return city;
 }
+
+function check_type_from_result(result,type){
+	var resp = false;
+	$.each(result.types,function(i,rtype){
+		if(rtype == type)
+		{
+			resp = true;
+			return true;
+		}
+	});
+	return resp;
+}
