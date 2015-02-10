@@ -2,7 +2,7 @@
 {!! Form::hidden('place_lng',null,array("id" => "place_lng")) !!}
 <div class="autocomplete">
     <span class="dato-in large">
-        {!! Form::label("¿Dónde es tu dato?") !!}<br />
+        {!! Form::label("¿Dónde es tu dato?") !!}<small>Puedes buscar por la dirección exacta o nombre del lugar.</small>
         {!! Form::hidden('city','',
             ["required","id" => "city_name"])
         !!}
@@ -11,7 +11,7 @@
             "required"
         ]) !!}
         <span class="error too-general">La ubicación seleccionada es muy amplia. Intenta con una ubicación más específica como una dirección o una calle. También puedes arrastrar el marcador del mapa para especificar mejor la ubicación. </span>
-        <small>Puedes buscar por la dirección exacta o nombre del lugar.</small>
+
     </span>
 </div>
 <div id="map-container">
@@ -19,6 +19,15 @@
 
     </div>
 </div>
+<div>
+    <div class="precisar">
+       <p>Puedes arrastrar el marcador para precisar mejor la ubicación de tu dato.</p>
+    </div>
+    <div class="dato-picada">
+        *SI TU DATO O PICADA ESTÁ CERCA DE UNA CIUDAD Y NO EN ELLA EXACTAMENTE, ESCRÍBELO EN LA DESCRIPCIÓN
+    </div>
+</div>
+<hr />
 <span class="dato-in">
     {!! Form::label("Nombre del lugar") !!}
     {!! Form::text('place_name','',array("placeholder" => "Onde'l Pala","required")) !!}
@@ -27,17 +36,6 @@
     {!! Form::label("Categoría") !!}<br />
     {!! Form::select('tip_category',['' => "Seleccione una categoría"]+$categories,null,array("required",'data-img-source' => URL::to('/category/{id}/pictures') )) !!}
 </span>
-<div class="precisar">
-   <p>Puedes arrastrar el marcador para precisar mejor la ubicación de tu dato.</p>
-</div>
-<div class="dato-picada">
-    *SI TU DATO O PICADA ESTÁ CERCA DE UNA CIUDAD Y NO<br />
-    EN ELLA EXACTAMENTE, ESCRÍBELO EN LA DESCRIPCIÓN
-</div>
-
-<div class="available_pictures">
-
-</div>
 {!! Form::hidden("default_picture",null,['id' => 'default_picture']) !!}
 
 <div class="menu-img">
@@ -55,8 +53,12 @@
         {!! Form::file("image",array("accept" => "image/*","id" => "image_file_input")) !!}
         <span id="file_name_value"></span>
     </div>
+</div>
+
+<div class="available_pictures">
 
 </div>
+
 <div class="despcripcion-form">
     {!! Form::label("DESCRIPCIÓN") !!}
     <br />

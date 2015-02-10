@@ -88,26 +88,28 @@
 	height:auto;
 }
 .form-in{
-	width:582px;
 	height:auto;
 	float:left;
 	padding-left:4%;
+	padding-right: 4%;
+
 }
-.precisar{clear: both; float: left;}
-.precisar p{margin:0; margin-top: 20px; padding-left: 10px; color: #333;}
+.precisar{clear: both; text-align: center; padding-top: 10px; text-transform: uppercase;}
+.precisar p{margin:0; font-size: 14px;  color: #333;}
 .dato-in{
-	width:271px;
+	width:261px;
 	float:left;
 	text-align:left;
 	font-size:18px;
 	display: block;
 	margin:10px 0px 0px 10px;
 }
-.dato-in small{font-style: italic; display: block;}
+.dato-in small{font-style: italic; font-size: 13px; color: #666; padding-left: 10px; padding-top: 5px; text-transform: uppercase;}
 .dato-in .error{
 	color: red;
-	font-size: 15px;
+	font-size: 14px;
 	display: none;
+	text-transform: uppercase;
 }
 .dato-in.large{width: 500px; margin-bottom: 10px;}
 .dato-in.large input{width: 520px;}
@@ -115,7 +117,7 @@
 .dato-in input,.dato-in select,.dato-in textarea{
 	font-family: 'boogalooregular','Arial',sans-serif;
 	text-transform: uppercase;
-	width:257px;
+	width:247px;
 	height:53px;
 		/*para Firefox*/
 	-moz-border-radius: 10px 10px 10px 10px;
@@ -129,15 +131,13 @@
 }
 .dato-in.ok input{border-color:green;}
 .dato-picada{
-	font-size:14px;
-	color:#444343;
-	width:340px;
-	height:53px;
+	font-size:12px;
+	text-align: center;
+	color:#666;
 	margin-left:auto;
 	margin-right:auto;
-	margin-top:10px !important;
 	clear:both;
-	padding-top:30px;
+	padding-top:5px;
 	margin-bottom:10px;
 }
 .form-in img{
@@ -145,12 +145,12 @@
 }
 .menu-img{
 	width:283px;
-	height:120px;
 	margin-left:8px;
 	float:left;
 	text-align:left;
 	font-size:15px;
 	padding-left:28px;
+	padding-top: 20px;
 }
 .bsc-btn{background: url("../img/bg-btn-dato-buscar.png") no-repeat; width: 130px; height: 46px; overflow: hidden; display: block; float: left; font-size: 1px; text-indent: -1000px;}
 .bsc-btn:hover{opacity: 0.7;}

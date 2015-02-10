@@ -42,6 +42,15 @@
             readURL(this);
             $("#file_name_value").html(this.value.substr(this.value.lastIndexOf("\\")+1,55));
         });
+
+        $("[name=image_type]").change(function(){
+            if(this.value == 'custom')
+            {
+                $(".available_pictures").hide();
+            }else{
+                $(".available_pictures").show();
+            }
+        });
         /*$(".autocomplete input[type=text]").autocomplete({
           source: "get-cities",
           minLength: 2,
@@ -111,7 +120,7 @@
     function change_available_pictures(id){
         if(id == '')return false;
 
-        $ap = $(".available_pictures").hide().html("");
+        $ap = $(".available_pictures").html("");
         $("#default_picture").val("");
         var url = $("[name=tip_category]").data("img-source");
         url = url.replace("{id}",id);
@@ -121,7 +130,7 @@
                 var img = data.images[i];
                 $ap.append("<img src='{{ URL::to('img/default')."/" }}"+img+"' alt='' />");
             }
-            $ap.fadeIn(500);
+            //$ap.fadeIn(500);
         },"json");
     }
     $("#submit-tip").on("click",".available_pictures img",function(e){
@@ -167,6 +176,8 @@ $(function(){
         $("#submit-form").submit();
        }
     });
+
+    $("[name=image_type]").change();
 })
 
 </script>
