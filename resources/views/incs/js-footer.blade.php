@@ -9,7 +9,7 @@
 <script src="{{ asset('js/vendor/jquery.rut.min.js') }} "></script>
 
 <script src="{{ asset('js/plugins.js') }}"></script>
-<script src="{{ asset('js/main.js?r=3') }}"></script>
+<script src="{{ asset('js/main.js?r=4') }}"></script>
 <script>
 
 
