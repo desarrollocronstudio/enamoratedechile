@@ -7,10 +7,17 @@
             ["required","id" => "city_name"])
         !!}
         {!! Form::text('city_search','',[
-            "placeholder" => "Dirección exacta del lugar...",
+            "placeholder" => "Busca la ubicación exacta del lugar...",
             "required"
         ]) !!}
+        <span class="error too-general">La ubicación seleccionada es muy amplia. Intenta con una ubicación más específica como una dirección o una calle. También puedes arrastrar el marcador del mapa para especificar mejor la ubicación. </span>
+        <small>Puedes buscar por la dirección exacta o nombre del lugar.</small>
     </span>
+</div>
+<div id="map-container">
+    <div id="map">
+
+    </div>
 </div>
 <span class="dato-in">
     {!! Form::label("Nombre del lugar") !!}
@@ -22,11 +29,6 @@
 </span>
 <div class="precisar">
    <p>Puedes arrastrar el marcador para precisar mejor la ubicación de tu dato.</p>
-</div>
-<div id="map-container">
-    <div id="map">
-
-    </div>
 </div>
 <div class="dato-picada">
     *SI TU DATO O PICADA ESTÁ CERCA DE UNA CIUDAD Y NO<br />

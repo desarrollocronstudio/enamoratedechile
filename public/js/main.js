@@ -263,8 +263,8 @@ $(document).bind('fb_load',function(){
 	});
 });
 
-function get_locality_name_from_result(result,search_for){
-	console.log(result.address_components);
+function get_locality_name_from_result(result,search_for, asObject){
+	if(typeof asObject == 'undefined')asObject = false;
 	if(typeof(search_for) == 'undefined'){
 		search_for = ['neighborhood','administrative_area_level_3','locality'];
 	}
@@ -276,7 +276,7 @@ function get_locality_name_from_result(result,search_for){
 			var index = search_for.indexOf(type);
 			if(index != -1 && index < last_search_for_index)
 			{
-				city=address_component.long_name;
+				city=(asObject)?address_component:address_component.long_name;
 				last_search_for_index = index;
 
 			}

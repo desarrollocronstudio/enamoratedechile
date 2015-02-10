@@ -68,10 +68,22 @@
             componentRestrictions:{country: 'cl'},
             markerOptions: {
                 draggable: true
-            }
+            },
+            types:['geocode','establishment']
         }).bind("geocode:result", function(event, result){
-            console.log(result);
+            var country = get_locality_name_from_result(result,['country'],true);
+            if(country.short_name != 'CL')
+            {
+                 $autocomplete_input.geocomplete("find","Santiago, Chile");
+            }
+
             closedScopeAdress = get_locality_name_from_result(result,['route','street_number'])!=false;
+            if(!closedScopeAdress)
+            {
+                $(".too-general").show();
+            }else{
+                $(".too-general").hide();
+            }
             var city = get_locality_name_from_result(result);
             $("#city_name").val(city);
             $("#place_lat").val(result.geometry.location.lat());
@@ -79,7 +91,8 @@
 
         }).bind("geocode:dragged", function(event, latLng){
             $autocomplete_input.geocomplete("find", latLng.toString());
-        });
+        })
+
 
         var map = $autocomplete_input.geocomplete("map");
         var value = $autocomplete_input.val();
