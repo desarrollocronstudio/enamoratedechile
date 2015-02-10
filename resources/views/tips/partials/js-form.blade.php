@@ -86,9 +86,12 @@
                  $autocomplete_input.geocomplete("find","Santiago, Chile");
             }
 
+            console.log(result);
             if(check_type_from_result(result,'establishment'))
             {
                 closedScopeAdress = true;
+                $("[name=place_name]").val(result.name);
+                $autocomplete_input.val(result.formatted_address);
             }
             else
             {
