@@ -177,7 +177,7 @@ $(function(){
        }
     });
 
-    $("[name=image_type]").change();
+    $("[name=image_type]:selected").change();
 })
 
 </script>
