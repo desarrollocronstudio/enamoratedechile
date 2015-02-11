@@ -28,16 +28,30 @@
                         <td>{{ $tip->place_name }}</td>
                         <td><img width="100" src='{{ $tip->image() }}' alt="" /></td>
                         <td>
-                            <ul>
-                                @if($tip->active)
-                                    <li><a href="{{ route('panel.tips.deactivate',$tip->id) }}">Desaprobar</a></li>
-                                @else
-                                    <li><a href="{{ route('panel.tips.activate',$tip->id) }}">Aprobar</a></li>
-                                @endif
+                            {!! Form::open(['route' => ['panel.tips.destroy',$tip->id], 'method' => 'DELETE' ]) !!}
 
-                                <li><a href="{{ route('panel.tips.update',$tip->id) }}">Editar</a></li>
-                                <li><a href="{{ route('panel.tips.destroy',$tip->id) }}">Eliminar</a></li>
-                            </ul>
+                            <div class="btn-group">
+
+                                    @if($tip->active)
+                                        <a class="btn btn-default" title="Desctivar" href="{{ route('panel.tips.deactivate',$tip->id) }}">
+                                            <i class="fa fa-circle"></i>
+                                        </a>
+                                    @else
+                                        <a class="btn btn-default"  title="Activar" href="{{ route('panel.tips.activate',$tip->id) }}">
+                                            <i class="fa fa-circle-thin"></i>
+                                        </a>
+                                    @endif
+
+                                    <a class="btn btn-default" href="{{ route('tip.edit',$tip->id) }}">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+
+                                    <button type="submit" class="btn btn-danger">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                            </div>
+                            {!! Form::close() !!}
+
                         </td>
                     </tr>
                 @endforeach
@@ -49,7 +63,6 @@
                     <th>Lugar</th>
                     <th>Imagen</th>
                     <th>Opciones</th>
-
                 </tr>
             </tfoot>
         </table>
@@ -59,14 +72,20 @@
 
 @section('js')
 <script type="text/javascript">
+    var table;
     $(function() {
-        $('#tips').dataTable({
+        table = $('#tips').DataTable({
             "bPaginate": true,
-            "bLengthChange": false,
-            "bFilter": false,
+            "bLengthChange": true,
+            "bFilter": true,
             "bSort": true,
             "bInfo": true,
             "bAutoWidth": false
+        });
+
+        $("#search-table").on('keyup',function(){
+            table.search(this.value).draw();
+            console.log(this.value);
         });
     });
 </script>

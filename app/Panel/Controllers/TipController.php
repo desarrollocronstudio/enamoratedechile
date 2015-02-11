@@ -76,6 +76,18 @@ class TipController extends Controller {
 	}
 
 	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param \Tip $tip
+	 * @return Response
+	 */
+	public function destroy(\Tip $tip)
+	{
+		$tip->delete();
+		return redirect()->back()->with('message',['message' => 'Tip "'.$tip->name.'" eliminado satisfactoriamente','status' => 'success']);
+	}
+
+	/**
 	 * Update the specified resource in storage.
 	 *
 	 * @param  int  $id
@@ -84,18 +96,6 @@ class TipController extends Controller {
 	public function update($id)
 	{
 		//
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy(\Tip $tip)
-	{
-		$tip->destroy();
-		return redirect()->back()->with('message',['message' => 'Tip "'.$tip->name.'" activado satisfactoriamente','status' => 'success']);
 	}
 
 	public function activate(\Tip $tip){

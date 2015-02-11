@@ -4,6 +4,13 @@ Route::group(['middleware' => ['auth.admin']],function()
 {
 
     /************************************
+     * Base
+     * **********************************/
+
+    Route::get('/','App\Panel\Controllers\DashboardController@index');
+
+
+    /************************************
      * TIPS
      * **********************************/
     Route::model('tips', 'Tip', function()
