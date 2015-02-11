@@ -21,11 +21,16 @@ class Tip extends Eloquent {
     }
     public function images(){
         $images = explode(",",$this->images);
-    	$images = array_merge([$this->image()],$images);
         foreach($images as $k=> $v)
         {
-            if(trim($v) == "")unset($images[$k]);
+            if(trim($v) == "")
+            {
+                unset($images[$k]);
+            }else{
+                $images[$k] => asset('uploads/'.$v);
+            }
         }
+        $images = array_merge([$this->image()],$images);
         return $images;
     }
     
