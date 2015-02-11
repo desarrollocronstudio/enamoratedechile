@@ -27,7 +27,7 @@ class Tip extends Eloquent {
             {
                 unset($images[$k]);
             }else{
-                $images[$k] => asset('uploads/'.$v);
+                $images[$k] = asset('uploads/'.$v);
             }
         }
         $images = array_merge([$this->image()],$images);
