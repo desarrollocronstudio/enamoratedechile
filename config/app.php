@@ -148,6 +148,7 @@ return [
 		'App\Providers\EnamorateServiceProvider',
 		'Freshwork\ChileanBundle\Laravel\ChileanBundleServiceProvider',
 		'Illuminate\Html\HtmlServiceProvider',
+		'App\Panel\PanelServiceProvider'
 
 	],
 

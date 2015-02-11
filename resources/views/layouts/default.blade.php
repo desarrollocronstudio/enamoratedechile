@@ -16,12 +16,8 @@
 
         @yield('metatags')
 
-        <link rel="stylesheet" href="{{ asset('css/normalize.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/diego.css?r=5') }}">
-        <link rel="stylesheet" href="{{ asset('css/main.css?r=6') }}">
-        <link rel="stylesheet" href="{{ asset('js/vendor/ui/jquery-ui.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/shadowbox.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/everything.css') }}">
+
         <script>
         var BASE_URL = '{{ URL::to('/') }}';
         var CURRENT_URL = '{{ Request::path() }}';

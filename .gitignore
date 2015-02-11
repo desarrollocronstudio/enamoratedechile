@@ -11,3 +11,4 @@ public/uploads
 .idea
 .idea/*
 .env
+node_modules

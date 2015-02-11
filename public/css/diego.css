@@ -102,7 +102,7 @@
 	text-align:left;
 	font-size:18px;
 	display: block;
-	margin:10px 0px 0px 10px;
+	margin:10px 0 0 10px;
 }
 .dato-in small{font-style: italic; font-size: 13px; color: #666; padding-left: 10px; padding-top: 5px; text-transform: uppercase;}
 .dato-in .error{

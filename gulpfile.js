@@ -11,6 +11,14 @@ var elixir = require('laravel-elixir');
  |
  */
 
+
 elixir(function(mix) {
-    mix.less('app.less');
+    mix.styles([
+        'public/css/normalize.min.css',
+        'public/css/diego.css',
+        'public/css/fonts.css',
+        'public/css/main.css',
+        'public/js/vendor/ui/jquery-ui.css',
+        'public/css/shadowbox.css'
+    ],'public/css/everything.css','public/css');
 });
