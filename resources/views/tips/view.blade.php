@@ -42,7 +42,7 @@
         </div>
         <div class="detail">
             <h2 class="slide">Detalle</h2>
-            <p>{{{ $tip->content }}}</p>
+            <p>{{{ nl2br($tip->content) }}}</p>
         </div>
         <h2 class="slide">Mapa del lugar</h2>
         <span class="address">{{ $tip->place_name }}</span>
