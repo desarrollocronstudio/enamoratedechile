@@ -18,6 +18,7 @@
                     <th>Nombre</th>
                     <th>Lugar</th>
                     <th>Imagen</th>
+                    <th>Fecha</th>
                     <th>Opciones</th>
                 </tr>
             </thead>
@@ -27,6 +28,7 @@
                         <td>{{ $tip->name }}</td>
                         <td>{{ $tip->place_name }}</td>
                         <td><img width="100" src='{{ $tip->image() }}' alt="" /></td>
+                        <td>{{ $tip->created_at->format('Y-m-d') }}</td>
                         <td>
                             {!! Form::open(['route' => ['panel.tips.destroy',$tip->id], 'method' => 'DELETE' ]) !!}
 
@@ -62,6 +64,7 @@
                     <th>Nombre</th>
                     <th>Lugar</th>
                     <th>Imagen</th>
+                    <th>Fecha</th>
                     <th>Opciones</th>
                 </tr>
             </tfoot>
