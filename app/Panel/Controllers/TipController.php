@@ -101,12 +101,18 @@ class TipController extends Controller {
 	public function activate(\Tip $tip){
 		$tip->active = true;
 		$tip->save();
+
+		\Event::fire('tip.change_status',[$tip,true]);
+
 		return redirect()->back()->with('message',['message' => 'Tip "'.$tip->name.'" activado satisfactoriamente','status' => 'success']);
 	}
 
 	public function deactivate(\Tip $tip){
 		$tip->active = false;
 		$tip->save();
+
+		\Event::fire('tip.change_status',[$tip,false]);
+
 		return redirect()->back()->with('message',['message' => 'Tip "'.$tip->name.'" desactivado satisfactoriamente','status' => 'success']);
 	}
 }
