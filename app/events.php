@@ -10,7 +10,7 @@ Event::listen('tip.registered',function($tip,$author){
         'place_name'=> $tip->place_name,
         'code'      => $tip->code
     ];
-    Mail::queue('emails.tip_registered',['tip' => $tip,'author' => $author,'token'  => $tip['code']],function(Message $message){
+    Mail::send('emails.tip_registered',['tip' => $tip,'author' => $author,'token'  => $tip['code']],function(Message $message){
         $message
             ->to('gonzalo@enamoratedechile.cl')
             ->cc('mariana@enamoratedechile.cl')
@@ -26,7 +26,7 @@ Event::listen('tip.change_status',function($tip,$status) {
         $link = $tip->link()."?source=approved_mail";
         $tip['image'] = $tip->image();
 
-        Mail::queue('emails.tip_approved',compact('author','tip','link'),function(Message $message) use($author){
+        Mail::send('emails.tip_approved',compact('author','tip','link'),function(Message $message) use($author){
             $message
                 ->to($author->email)
                 ->subject('Tu dato ha sido aprobado - Enámorate de Chile');
