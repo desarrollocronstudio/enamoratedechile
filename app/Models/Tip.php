@@ -20,7 +20,13 @@ class Tip extends Eloquent {
         return $this->belongsTo('TipType','type_id','id');
     }
     public function images(){
-    	return array($this->image());
+        $images = explode(",",$this->images);
+    	$images = array_merge([$this->image()],$images);
+        foreach($images as $k=> $v)
+        {
+            if(trim($v) == "")unset($images[$k]);
+        }
+        return $images;
     }
     
 	public function reviews()
