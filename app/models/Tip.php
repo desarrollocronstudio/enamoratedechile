@@ -52,7 +52,7 @@ class Tip extends Eloquent {
 	}
 
     public function link(){
-        return URL::route('view-tip',$this->id, $this->sluged_name());
+        return route('view-tip',[$this->id, $this->sluged_name()]   );
     }
 
 	public function recalculateRating()
