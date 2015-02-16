@@ -298,7 +298,7 @@
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
                         <li class="active">
-                            <a href="index.html">
+                            <a href="{{ URL::route('panel.dashboard') }}">
                                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                             </a>
                         </li>
@@ -313,6 +313,12 @@
                                 <li><a href="{{ URL::route('panel.tips.index') }}"><i class="fa fa-angle-double-right"></i> Listar todos</a></li>
                                 <li><a href="{{ URL::route('submit_tip_form') }}"><i class="fa fa-angle-double-right"></i> Nuevo</a></li>
                             </ul>
+                        </li>
+
+                        <li class="active">
+                            <a href="{{ URL::route('panel.stats.index') }}">
+                                <i class="fa fa-bar-chart"></i> <span>Estadísticas</span>
+                            </a>
                         </li>
 
                     </ul>

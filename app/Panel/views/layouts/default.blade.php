@@ -400,9 +400,11 @@
                     </ol>
                 </section>
 
+
                 <!-- Main content -->
                 <section class="content">
-                    @include('panel::partials.message-box')
+                    @include('packages.panel-core.partials.message-box')
+                    Mensaje
                     @yield('content')
                 </section><!-- /.content -->
             </aside><!-- /.right-side -->
@@ -410,7 +412,7 @@
 
 
         <!-- jQuery 2.0.2 -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
         <!-- Bootstrap -->
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" type="text/javascript"></script>
         <!-- Datatables -->

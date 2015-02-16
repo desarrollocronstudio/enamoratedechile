@@ -1,5 +1,7 @@
 <?php
 
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
 Route::group(['middleware' => ['auth.admin']],function()
 {
 
@@ -7,7 +9,7 @@ Route::group(['middleware' => ['auth.admin']],function()
      * Base
      * **********************************/
 
-    Route::get('/','App\Panel\Controllers\DashboardController@index');
+    Route::get('/',['as' => 'panel.dashboard','uses' => 'App\Panel\Controllers\DashboardController@index']);
 
 
     /************************************
