@@ -79,8 +79,8 @@ class StatController extends Controller{
 
         $data = $tips->get()->toArray();
 
-        $headers = ['Categoría','Número de tips',];
-        $title = 'Tips por categoría';
+        $headers = ['Ciudad','Número de tips',];
+        $title = 'Tips por ciudad';
         $cols = 6;
 
         return view('panel.stats::report',compact('start','end','data','headers','title','cols'));
