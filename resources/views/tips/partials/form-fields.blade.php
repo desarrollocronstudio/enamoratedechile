@@ -38,26 +38,28 @@
 </span>
 {!! Form::hidden("default_picture",null,['id' => 'default_picture']) !!}
 
-<div class="menu-img">
-    <div class="option">
-        {!! Form::radio("image_type",'default',true,array("id" => "default_image")) !!}
-        {!! Form::label("default_image","USAR IMAGEN PREDETERMINADA") !!}
-    </div>
-    <div class="option">
-        {!! Form::radio("image_type",'custom','',array("id" => "custom_image")) !!}
-        {!! Form::label("custom_image","SUBIR IMAGEN") !!}
+@if(isset($canEditPicture) && $canEditPicture)
+    <div class="menu-img">
+        <div class="option">
+            {!! Form::radio("image_type",'default',true,array("id" => "default_image")) !!}
+            {!! Form::label("default_image","USAR IMAGEN PREDETERMINADA") !!}
+        </div>
+        <div class="option">
+            {!! Form::radio("image_type",'custom','',array("id" => "custom_image")) !!}
+            {!! Form::label("custom_image","SUBIR IMAGEN") !!}
+        </div>
+
+        <div class="image_upload_box">
+            <a class="bsc-btn" href="">{!! trans("BUSCAR") !!}</a>
+            {!! Form::file("image",array("accept" => "image/*","id" => "image_file_input")) !!}
+            <span id="file_name_value"></span>
+        </div>
     </div>
 
-    <div class="image_upload_box">
-        <a class="bsc-btn" href="">{!! trans("BUSCAR") !!}</a>
-        {!! Form::file("image",array("accept" => "image/*","id" => "image_file_input")) !!}
-        <span id="file_name_value"></span>
+    <div class="available_pictures">
+
     </div>
-</div>
-
-<div class="available_pictures">
-
-</div>
+@endif
 
 <div class="despcripcion-form">
     {!! Form::label("DESCRIPCIÓN") !!}

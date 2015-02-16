@@ -15,9 +15,7 @@ class TipController extends BaseController {
 		]]);
 
 		$this->middleware('auth.admin',['only' => [
-			'edit',
 			'active',
-			'update'
 		]]);
 	}
 
@@ -87,9 +85,11 @@ class TipController extends BaseController {
 	}
 
 	public function edit($tip_id){
-		if(!\Auth::check() || !\Auth::user()->admin)return 'Unauthorized';
-
 		$tip = \Tip::findOrFail($tip_id);
+		if(!\Auth::check() || (!\Auth::user()->admin && \Auth::user()->id != $tip->author_id))return \Redirect::route('home');
+
+		$isAdmin = (bool)\Auth::user()->admin;
+
 		$data = array(
 			"regions" 		=> \Cache::remember('regions',120,function(){
 				\Region::lists("large_name","id");
@@ -97,7 +97,9 @@ class TipController extends BaseController {
 			"categories"	=> \Cache::remember('tip_types_list',120,function(){
 				return \TipType::lists("name","id");
 			}),
-			'tip'			=> $tip
+			'tip'				=> $tip,
+			'canEditPicture'	=> false,
+			'canEditState'		=> $isAdmin
 		);
 
 		\Session::flashInput([
@@ -183,6 +185,10 @@ class TipController extends BaseController {
 
 	public function update($id){
 		$tip = \Tip::findOrFail($id);
+		if(!\Auth::check() || (!\Auth::user()->admin && \Auth::user()->id != $tip->author_id))return \Redirect::route('home');
+
+		$isAdmin = (bool)\Auth::user()->admin;
+
 
 		$tip->name		= \Input::get('place_name');
 		$tip->content	= \Input::get('description');
@@ -191,9 +197,15 @@ class TipController extends BaseController {
 		$tip->lng		= \Input::get('place_lng');
 		$tip->place_name= \Input::get('city_search');
 		$tip->city_name= \Input::get('city');
-		$tip->active	= \Input::get('active');
-
+		if(\Input::has('active')){
+			$tip->active = \Input::get('active');
+		}
 		$tip->save();
+		if(!$isAdmin)
+		{
+			\Event::fire('tip.registered',[$tip,\Auth::user()]);
+		}
+
 		return \Redirect::route('view-tip',$tip->id);
 	}
 }

@@ -23,12 +23,14 @@
                     </div>
                 @else
 
-                    @include('tips.partials.form-fields')
+                    @include('tips.partials.form-fields',compact('canEditPicture'))
 
-                    <span class="dato-in">
-                        {!! Form::label('Estado') !!}
-                        {!! Form::select('active',['0' => 'Desactivado','1' => 'Activo']) !!}
-                    </span>
+                    @if($canEditState)
+                        <span class="dato-in">
+                            {!! Form::label('Estado') !!}
+                            {!! Form::select('active',['0' => 'Desactivado','1' => 'Activo']) !!}
+                        </span>
+                    @endif
                     <div class="btn-enviar">
                         <input type="submit" class="btn-envia-dato" value="EDITAR DATO" />
                     </div>
