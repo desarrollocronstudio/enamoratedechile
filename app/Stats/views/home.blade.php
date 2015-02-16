@@ -27,7 +27,7 @@
                 <div class="col-md-6">
                     <!-- Date and time range -->
                     <div class="form-group">
-                        <label>Selecciona un rango de fechas:</label>
+                        <label for="reservationtime">Selecciona un rango de fechas:</label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" name="daterange" id="reservationtime" class="form-control" value="" />
                         </div>
@@ -72,9 +72,8 @@
                         'Lun-Dom':[moment().isoWeekday(1),moment().isoWeekday(7)],
                         'Últimos 30 Días': [moment().subtract('days', 29), moment()]
                     },
-                    startDate: moment().isoWeekday(1),
-                    endDate: moment().isoWeekday(7),
-                    format:'YYYY/MM/DD'
+                    format:'YYYY/MM/DD',
+                    opens:'center'
                 },
         function(start, end) {
             $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
