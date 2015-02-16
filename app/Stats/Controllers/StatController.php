@@ -38,7 +38,7 @@ class StatController extends Controller{
 
     private function getTipsPerCategory(Request $request)
     {
-        $tips = \Tip::join('tips_categories as tc','tips.type_id','=','tc.id')->select('tc.name')->selectRaw('count(*) as total')->groupBy('tc.id');
+        $tips = \Tip::join('tips_categories as tc','tips.type_id','=','tc.id')->select('tc.name')->selectRaw('count(*) as total')->groupBy('tc.id')->orderBy('total','DESC');;
         if($request->get('daterange'))
         {
             list($start, $end) = $this->parseDateRange($request->get('daterange'));
@@ -69,7 +69,7 @@ class StatController extends Controller{
 
     private function getTipsPerCity($request)
     {
-        $tips = \Tip::select('tips.city_name')->selectRaw('count(*) as total')->groupBy('tips.city_name');
+        $tips = \Tip::select('tips.city_name')->selectRaw('count(*) as total')->groupBy('tips.city_name')->orderBy('total','DESC');
         if($request->get('daterange'))
         {
             list($start, $end) = $this->parseDateRange($request->get('daterange'));
