@@ -149,7 +149,7 @@ return [
 		'Freshwork\ChileanBundle\Laravel\ChileanBundleServiceProvider',
 		'Illuminate\Html\HtmlServiceProvider',
 		'App\Panel\PanelServiceProvider',
-		'App\Stats\statsServiceProvider',
+		'App\Stats\StatsServiceProvider',
 
 	],
 
