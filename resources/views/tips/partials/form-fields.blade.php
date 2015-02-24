@@ -37,8 +37,7 @@
     {!! Form::select('tip_category',['' => "Seleccione una categoría"]+$categories,null,array("required",'data-img-source' => URL::to('/category/{id}/pictures') )) !!}
 </span>
 {!! Form::hidden("default_picture",null,['id' => 'default_picture']) !!}
-
-@if(isset($canEditPicture) && $canEditPicture)
+@if(!$isEdit || (isset($canEditPicture) && $canEditPicture))
     <div class="menu-img">
         <div class="option">
             {!! Form::radio("image_type",'default',true,array("id" => "default_image")) !!}

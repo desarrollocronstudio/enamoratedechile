@@ -22,7 +22,7 @@
                         Tu dato ha sido guardado exitosamente. ¡Gracias!
                     </div>
                 @else
-                    @include('tips.partials.form-fields')
+                    @include('tips.partials.form-fields',['isEdit' => false])
 
                     <div class="btn-enviar">
                         <input type="submit" class="btn-envia-dato" value="SUBE TU DATO" />

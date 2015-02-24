@@ -23,7 +23,7 @@
                     </div>
                 @else
 
-                    @include('tips.partials.form-fields',compact('canEditPicture'))
+                    @include('tips.partials.form-fields',compact('isEdit','canEditPicture'))
 
                     @if($canEditState)
                         <span class="dato-in">

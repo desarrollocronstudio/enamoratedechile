@@ -1,5 +1,5 @@
 @if(Session::has('message'))
-    <div class="alert alert-{{ Session::get('message')['status'] }} alert-dismissable">
+    <div class="alert alert-{{ Session::get('message')['status'] }} alert-dismissable {{ $class or ''}}">
         
         @if(Session::get('message')['status'] == 'success')
             <i class="fa fa-check"></i>
