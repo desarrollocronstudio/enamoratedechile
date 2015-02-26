@@ -98,6 +98,7 @@ class TipController extends BaseController {
 				return \TipType::lists("name","id");
 			}),
 			'tip'				=> $tip,
+			'isEdit'			=> true,
 			'canEditPicture'	=> false,
 			'canEditState'		=> $isAdmin
 		);
