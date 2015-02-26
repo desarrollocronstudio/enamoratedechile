@@ -22,10 +22,10 @@ class ReviewController extends BaseController {
 		}
 
 		$input = array(
-			'rating'  => Input::get('rating')
+			'rating'  => \Input::get('rating')
 		);
 		// instantiate Rating model
-		$review = new Review;
+		$review = new \Review;
 
 		// Validate that the user's input corresponds to the rules specified in the review model
 		$validator = \Validator::make( $input, array('rating' => 'integer|min:1|max:5'));
@@ -39,7 +39,7 @@ class ReviewController extends BaseController {
 					'msg'		=> "Calificación agregada satisfactoriamente"
 				]);
 			}
-			return Redirect::to(route('view-tip',$id).'#reviews-anchor')->with('review_posted',true);
+			return \Redirect::to(route('view-tip',$id).'#reviews-anchor')->with('review_posted',true);
 		}
 
 		if(\Request::ajax()){                              
@@ -48,7 +48,7 @@ class ReviewController extends BaseController {
 				'msg'		=> "No se pudo guardar la calificación. Intante más tarde.",
 			]);
 		}
-		return Redirect::to(route('view-tip',$id).'#reviews-anchor')->withErrors($validator)->withInput();
+		return \Redirect::to(route('view-tip',$id).'#reviews-anchor')->withErrors($validator)->withInput();
 	}
 
 }
