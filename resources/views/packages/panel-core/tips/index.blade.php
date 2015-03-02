@@ -18,9 +18,9 @@
                     <th>Nombre</th>
                     <th>Lugar</th>
                     <th>Descripción</th>
-                    <th>Imagen</th>
-                    <th>Fecha</th>
-                    <th>Activo</th>
+                    <th width="200">Imagen</th>
+                    <th width="100">Fecha</th>
+                    <th width="20">Activo</th>
                     <th width="130">Opciones</th>
                 </tr>
             </thead>
