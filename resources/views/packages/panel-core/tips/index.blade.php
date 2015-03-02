@@ -17,10 +17,11 @@
                 <tr>
                     <th>Nombre</th>
                     <th>Lugar</th>
+                    <th>Descripción</th>
                     <th>Imagen</th>
                     <th>Fecha</th>
                     <th>Activo</th>
-                    <th>Opciones</th>
+                    <th width="130">Opciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -28,8 +29,9 @@
                     <tr class="error">
                         <td>{{ $tip->name }}</td>
                         <td>{{ $tip->place_name }}</td>
+                        <td>{{ $tip->content }}</td>
                         <td><img width="100" src='{{ $tip->image() }}' alt="" /></td>
-                        <td>{{ $tip->created_at->format('Y-m-d') }}</td>
+                        <td>{{ $tip->created_at->diffForHumans() }}</td>
                         <td>{{ $tip->active?'Sí':'No'}}</td>
                         <td>
                             {!! Form::open(['route' => ['panel.tips.destroy',$tip->id], 'method' => 'DELETE' ]) !!}
@@ -65,6 +67,7 @@
                 <tr>
                     <th>Nombre</th>
                     <th>Lugar</th>
+                    <th>Descripción</th>
                     <th>Imagen</th>
                     <th>Fecha</th>
                     <th>Activo</th>

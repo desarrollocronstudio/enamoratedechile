@@ -20,7 +20,7 @@
                     <th>Imagen</th>
                     <th>Fecha</th>
                     <th>Activo</th>
-                    <th>Opciones</th>
+                    <th width="200">Opciones</th>
                 </tr>
             </thead>
             <tbody>
