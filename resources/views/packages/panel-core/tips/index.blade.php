@@ -18,7 +18,7 @@
                     <th>Nombre</th>
                     <th>Lugar</th>
                     <th>Descripción</th>
-                    <th width="200">Imagen</th>
+                    <th width="100">Imagen</th>
                     <th width="100">Fecha</th>
                     <th width="20">Activo</th>
                     <th width="130">Opciones</th>
