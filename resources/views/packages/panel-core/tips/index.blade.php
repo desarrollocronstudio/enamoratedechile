@@ -19,6 +19,7 @@
                     <th>Lugar</th>
                     <th>Imagen</th>
                     <th>Fecha</th>
+                    <th>Activo</th>
                     <th>Opciones</th>
                 </tr>
             </thead>
@@ -29,6 +30,7 @@
                         <td>{{ $tip->place_name }}</td>
                         <td><img width="100" src='{{ $tip->image() }}' alt="" /></td>
                         <td>{{ $tip->created_at->format('Y-m-d') }}</td>
+                        <td>{{ $tip->active?'Sí':'No'}}</td>
                         <td>
                             {!! Form::open(['route' => ['panel.tips.destroy',$tip->id], 'method' => 'DELETE' ]) !!}
 
@@ -65,6 +67,7 @@
                     <th>Lugar</th>
                     <th>Imagen</th>
                     <th>Fecha</th>
+                    <th>Activo</th>
                     <th>Opciones</th>
                 </tr>
             </tfoot>
@@ -78,6 +81,7 @@
     var table;
     $(function() {
         table = $('#tips').DataTable({
+            stateSave:true,
             "bPaginate": true,
             "bLengthChange": true,
             "bFilter": true,
