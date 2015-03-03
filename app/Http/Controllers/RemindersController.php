@@ -26,7 +26,7 @@ class RemindersController extends BaseController {
 		});
 		switch ($response)
 		{
-			case \Password::INVALID_USER:
+			case 'passwords.user':
 				if(\Request::ajax()){                  	
 					return \Response::json(['status' => false]);
 				}

@@ -163,7 +163,7 @@ $(function(){
 			if(!res.status){
 				$(obj).data("sending",false);
 				$(obj).find("[type=submit]").val("Recuperar");
-				$("#forgot .msg").html("Ocurrió un error. Revisa que tu RUT esté bien ingresado.");
+				$("#forgot .msg").html("Revisa que tu RUT esté bien ingresado que ya estés registrado.");
 			}else{
 				$("#forgot .msg").html("Revisa tu correo con las instrucciones para continuar.");
 				$("#forgot input").remove();

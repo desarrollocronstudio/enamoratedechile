@@ -10,3 +10,9 @@
 	</div>
 	<span class="bottom"></span>
 </div>
+<script>
+$(function(){
+	$('input, textarea').placeholder();
+	$('[name=rut]').Rut();
+})
+</script>
