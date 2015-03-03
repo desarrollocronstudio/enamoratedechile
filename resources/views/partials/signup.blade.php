@@ -11,7 +11,6 @@
 		</div>
 		<hr />
 		{!! Form::open(array("url" => "register")) !!}
-		<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 
 		{!! Form::text("name",null,array("placeholder" => "Nombre")) !!}
 		{!! Form::text("email",null,array("placeholder" => "Email")) !!}

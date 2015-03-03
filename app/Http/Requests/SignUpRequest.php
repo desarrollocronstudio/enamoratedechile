@@ -24,7 +24,7 @@ class SignUpRequest extends Request {
 		if($user)
 		{
 			$this->merge([
-				'fbid'	=> '$user'
+				'fbid'	=> $user
 			]);
 		}
 
@@ -59,6 +59,7 @@ class SignUpRequest extends Request {
 			'password.required'	=> 'Debe ingresar una contraseña',
 			"password.confirmed"=> "Las contraseñas ingresadas no coinciden",
 			"cl_rut"			=> "El R.U.T. ingresado es inválido",
+			"fbid.unique"		=> "Al parecer ya estás registrado a través de facebook. Intenta iniciar sesión.",
 			"rut.unique"		=> "El R.U.T. ingresado ya está registrado",
 		];
 	}
