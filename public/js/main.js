@@ -190,7 +190,8 @@ $(function(){
 
 	$(document).on("click", "div.categories > ul > li", function(){
 
-		alert('buscando');
+		$(this).fadeOut();
+		$("div.categories > ul > li.active").fadeIn();
 
 	});
 
