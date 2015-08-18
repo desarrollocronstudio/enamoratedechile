@@ -188,7 +188,11 @@ $(function(){
 	});
 
 
-	alert('holas');
+	$(document).on("click", "div.categories > ul > li", function(){
+
+		alert('buscando');
+
+	});
 
 });
 
