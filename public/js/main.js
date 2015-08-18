@@ -186,6 +186,10 @@ $(function(){
 		show_popup("login");
 		return false;
 	});
+
+
+	alert('holas');
+
 });
 
 
@@ -297,3 +301,5 @@ function check_type_from_result(result,type){
 	});
 	return resp;
 }
+
+
