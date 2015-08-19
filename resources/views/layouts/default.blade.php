@@ -32,7 +32,7 @@
         <header class="mobile">
              <span class="mobile menu"><img src="{{ asset('img/menu-mobile.png') }}"></span>
         </header>
-        <header class="desktop">
+        <header class="desktop" stats="hidden">
             @include("incs/menu-top",['is_home'=>$is_home])
         </header>
         <div id="container">
