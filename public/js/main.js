@@ -1,6 +1,7 @@
 $(function(){
 	var swiped = false;
 	$("header .mobile.menu").click(function(){
+		alert('aaa');
 		if(!swiped){
 			$("#content,header.mobile").animate({left:270},500);
 			swiped = true;
