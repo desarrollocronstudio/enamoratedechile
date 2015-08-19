@@ -3,11 +3,11 @@ $(function(){
 	$("header .mobile.menu").click(function(){
 
 		if(!swiped){
-			$(this).show();
+			$('header[stats="hidden"]').show();
 			$("#content,header.mobile").animate({left:270},500);
 			swiped = true;
 		}else{
-			$(this).hide();
+			$('header[stats="hidden"]').hide();
 			$("#content,header.mobile").animate({left:0},500);
 			swiped=false;
 		}
