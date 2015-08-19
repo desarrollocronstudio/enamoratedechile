@@ -22,7 +22,7 @@
 		$(".go-search").click(function(){
 			$(".search-box").fadeIn(500).find("input[type=text]").focus();
 			$('html, body').animate({
-                scrollTop: $("#search-nav").offset().top+50
+                scrollTop: $("#search-nav").offset().top+70
             }, 800);
 			return false;
 		});
