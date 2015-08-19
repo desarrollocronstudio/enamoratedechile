@@ -1590,7 +1590,7 @@ header.desktop .submenu .shares .twitter-share-button {
         height:auto
     }
     header.desktop {
-        display:block;
+        display:none;
         position:fixed;
         top:0;
         left:0;
