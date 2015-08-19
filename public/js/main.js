@@ -1,11 +1,13 @@
 $(function(){
 	var swiped = false;
 	$("header .mobile.menu").click(function(){
-		alert('aaa');
+
 		if(!swiped){
+			$(this).show();
 			$("#content,header.mobile").animate({left:270},500);
 			swiped = true;
 		}else{
+			$(this).hide();
 			$("#content,header.mobile").animate({left:0},500);
 			swiped=false;
 		}
