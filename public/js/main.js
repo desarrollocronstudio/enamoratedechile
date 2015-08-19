@@ -11,8 +11,8 @@ $(function(){
 				left:0
 			},500, function() {
 			    $('header[stats="hidden"]').hide();
-			  });
-			);
+			});
+
 			swiped=false;
 			
 		}
