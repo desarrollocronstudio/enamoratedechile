@@ -7,9 +7,9 @@ $(function(){
 			$("#content,header.mobile").animate({left:270},500);
 			swiped = true;
 		}else{
-			$('header[stats="hidden"]').hide();
 			$("#content,header.mobile").animate({left:0},500);
 			swiped=false;
+			$('header[stats="hidden"]').hide();
 		}
 		
 	});
