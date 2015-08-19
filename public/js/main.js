@@ -7,9 +7,14 @@ $(function(){
 			$("#content,header.mobile").animate({left:270},500);
 			swiped = true;
 		}else{
-			$("#content,header.mobile").animate({left:0},500);
+			$("#content,header.mobile").animate({
+				left:0
+			},500, function() {
+			    $('header[stats="hidden"]').hide();
+			  });
+			);
 			swiped=false;
-			$('header[stats="hidden"]').hide();
+			
 		}
 		
 	});
