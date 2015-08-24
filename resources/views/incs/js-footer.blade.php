@@ -44,10 +44,10 @@ $.ajaxSetup({
   window.fbAsyncInit = function() {
 
     FB.init({
-      appId       : '{{ Config::get('facebook.appId')  }}',
+      appId       : '424272764430614',
       cookie      : true,
       xfbml       : true,
-      version     : 'v2.0'
+      version     : 'v2.4'
     });
     $(document).trigger("fb_load");
   };
