@@ -19,6 +19,7 @@ elixir(function(mix) {
         'public/css/fonts.css',
         'public/css/main.css',
         'public/js/vendor/ui/jquery-ui.css',
-        'public/css/shadowbox.css'
+        'public/css/shadowbox.css',
+        'public/css/cronstudio.css'
     ],'public/css/everything.css','public/css');
 });
