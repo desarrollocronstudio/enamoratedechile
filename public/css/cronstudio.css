@@ -1,1 +1,11 @@
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+
+#avatar{
+	float: right;
+    margin-right: 4%;
+    margin-top: 2%;
+	border-radius: 7px 7px 7px 7px;
+	-moz-border-radius: 7px 7px 7px 7px;
+	-webkit-border-radius: 7px 7px 7px 7px;
+	border: 0px solid #000000;
+}
