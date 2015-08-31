@@ -362,7 +362,7 @@ LOGIN
         header.desktop .submenu .user{margin: 0 auto; float: none;}
         header.desktop .submenu .shares{text-align: center; padding-top: 20px;}
         header.desktop .submenu .links a{color:#fff; display: block; text-align:center;}
-        header.desktop{padding-bottom:40px}
+        header.desktop{padding-bottom:40px; display: none; }
         header .submenu .userdata .links a{background: none;}
         header ul li a.logo{display: none;}
         header.desktop .menu{line-height: normal;}
