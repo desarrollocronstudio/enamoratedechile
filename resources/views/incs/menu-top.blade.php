@@ -29,8 +29,8 @@
 			</div>
 		@else 
 			<div class="links">
-			    <a href="{{ route('signup') }}" class="signup">Regístrate</a>
-				<a href="{{ route('login') }}" class="login">Iniciar sesión</a>
+			    <div class="registrate"><a href="{{ route('signup') }}" class="signup">Regístrate</a></div>
+				<div class="inicia-sesion"><a href="{{ route('login') }}" class="login">Iniciar sesión</a></div>
 			</div>
 		@endif
 	</div>

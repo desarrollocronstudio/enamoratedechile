@@ -9,3 +9,14 @@
 	-webkit-border-radius: 7px 7px 7px 7px;
 	border: 0px solid #000000;
 }
+
+.links .registrate{
+	background-color: #6FB7C0; 
+	width: 90%; 
+	margin-left: 5%;
+}
+.links .inicia-sesion{
+	background-color: #4F4F4F; 
+	width: 90%; 
+	margin-left: 5%;
+}
