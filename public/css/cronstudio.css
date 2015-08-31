@@ -36,14 +36,14 @@ li.active:nth-child(2){
 
 	.links a.registrate{
 		display: block;
-		background-color: #6FB7C0; 
-		width: 90%; 
+		background-color: #6FB7C0 !important; 
+		width: 83%; 
 		margin-left: 5%;
 	}
 	.links a.inicia-sesion{
 		display: block;
-		background-color: #4F4F4F; 
-		width: 90%; 
+		background-color: #4F4F4F !important; 
+		width: 83%; 
 		margin-left: 5%;
 		margin-top: 2%;
 	}
