@@ -35,17 +35,18 @@ li.active:nth-child(2){
 	}
 
 	.links a.registrate{
-		display: block !important;
-		background-color: #6FB7C0 !important; 
+		display: block;
+		background-color: #6FB7C0 ; 
 		width: 83%; 
 		margin-left: 5%;
 	}
 	.links a.inicia-sesion{
-		display: block !important;
-		background-color: #4F4F4F !important; 
+		display: block;
+		background-color: #4F4F4F; 
 		width: 83%; 
 		margin-left: 5%;
 		margin-top: 2%;
+		float: left;
 	}
 
 	.logo-casa{
