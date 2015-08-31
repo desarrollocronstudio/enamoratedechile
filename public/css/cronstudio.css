@@ -7,6 +7,10 @@ li.active.logo-casa{
 /* All Mobile Sizes (devices and browser) */
 @media only screen and (max-width: 767px) {
 
+	li.active:nth-child(2){
+		display: none;
+	}
+
 	#avatar{
 		float: right;
 	    margin-right: 4%;
