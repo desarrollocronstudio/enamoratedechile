@@ -1,5 +1,9 @@
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 
+.logo-casa{
+	display: none;
+}
+
 /* All Mobile Sizes (devices and browser) */
 @media only screen and (max-width: 767px) {
 
@@ -23,6 +27,10 @@
 		width: 90%; 
 		margin-left: 5%;
 		margin-top: 2%;
+	}
+
+	.logo-casa{
+		display: block;
 	}
 
 }
