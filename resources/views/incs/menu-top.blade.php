@@ -30,8 +30,8 @@
 			</div>
 		@else 
 			<div class="links">
-			    <div class="registrate"><a href="{{ route('signup') }}" class="signup">Regístrate</a></div>
-				<div class="inicia-sesion"><a href="{{ route('login') }}" class="login">Iniciar sesión</a></div>
+			    <a href="{{ route('signup') }}" class="signup registrate">Regístrate</a>
+				<a href="{{ route('login') }}" class="login inicia-sesion">Iniciar sesión</a>
 			</div>
 		@endif
 	</div>
