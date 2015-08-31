@@ -34,12 +34,12 @@ li.active:nth-child(2){
 		border: 0px solid #000000;
 	}
 
-	.links .registrate{
+	.links a.registrate{
 		background-color: #6FB7C0; 
 		width: 90%; 
 		margin-left: 5%;
 	}
-	.links .inicia-sesion{
+	.links a.inicia-sesion{
 		background-color: #4F4F4F; 
 		width: 90%; 
 		margin-left: 5%;
