@@ -5,7 +5,7 @@
         $menu->add(route('home'),"<img src='".asset("img/logo-header.jpg")."' alt='' />",null,['class' => 'img-btn logo']);
 
         $menu->add(route('home'),"INICIO");
-        echo '<li class="active logo-casa"><img src="img/icono-home.png" alt='' /></li>';
+        $menu->add(route('home'),"<img src='".asset("img/icono-home.png")."' alt='' />",null,['class' => 'logo-casa']);
         $menu->add(route('featured'),'LOS DATOS MÁS<br />POPULARES',null,['class'=>'double']);
         $menu->add(route('my_route'),"MIS FAVORITOS");
         //->add(route('list_videos','ideal'),'ESPECIAL<BR />SAN PEDRO',null,['class'=>'double'])
