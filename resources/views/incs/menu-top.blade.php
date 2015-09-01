@@ -21,7 +21,7 @@
     ?>
 </div>
 <div class='submenu'>
-	<div class="userdata">
+	<div class="userdata"> 
 		@if (Auth::check())
 			<div class="user">
 				<img src="{{ Auth::user()->profile_image() }}" alt="{{{ Auth::user()->name }}}" />
