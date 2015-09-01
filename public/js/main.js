@@ -213,6 +213,8 @@ $(function(){
 	    
 	});
 
+	$('.categories ul li.no-active').slideDown();
+
 });
 
 
