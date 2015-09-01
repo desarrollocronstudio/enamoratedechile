@@ -196,9 +196,9 @@ $(function(){
 	});
 
 
-	$(document).on("click", "div.categories > ul > li", function(){
+	$(document).on("click", "div.categories > ul > li > a", function(){
 
-		//$(this).fadeOut();
+		var categoria = $(this).text();
 		//$("div.categories > ul > li.active").fadeIn();
 
 	});
@@ -219,7 +219,7 @@ $(function(){
 
 $(document).ready(function(){
 	alert('aaaaa');
-	$('.categories ul li.no-active').slideDown();
+	$('.categories ul li.no-active').slideUp();
 });
 
 
