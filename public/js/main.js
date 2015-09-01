@@ -203,8 +203,8 @@ $(function(){
 
 	});
 
-	$(document).on('click',".categories ul li#secciones a").click(function(){
-
+	$(document).on("click",".categories ul li#secciones a").click(function(){
+		alert('aaaaa');
 	    if ( $('.categories ul li').hasClass('active')){
 	        $('.categories ul li.no-active').slideDown();
 	    }else{
