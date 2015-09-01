@@ -58,4 +58,16 @@ li.active:nth-child(2){
 		margin-top: 0px;
 	}
 
+	#secciones{
+		display: block;
+	    color: #fff;
+	    background-color: #000;
+	    margin-left: 38px;
+	    width: 300px;
+	    padding: 13px 0;
+	    text-decoration: none;
+	    border-bottom: 1px solid #fff;
+	    text-transform: uppercase;
+	}
+
 }

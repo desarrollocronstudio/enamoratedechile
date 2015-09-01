@@ -2,7 +2,7 @@
 
 <span class="cerca mobile "><font color="#D83E3F">{{$tips->count()}}</font> Resultados para <font color="#575757">"<?php echo Session::get('categoria'); ?>"</font></span>
 
-<a id="secciones" href="javascript:void(0);" style="display: block">En otras secciones</a>
+<span id="secciones" href="javascript:void(0);" style="display: block">En otras secciones</span>
 
 <div class="categories">
 	<ul>
