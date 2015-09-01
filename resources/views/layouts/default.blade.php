@@ -31,10 +31,11 @@
         <![endif]-->
         <header class="mobile" style="position: fixed; top: 0px; z-index: 1000;">
              <span class="mobile menu">
-                <img src="{{ asset('img/menu-mobile.png') }}">
-                @if (Auth::check())
-                    <img id="avatar" src="{{ Auth::user()->profile_image() }}" alt="{{{ Auth::user()->name }}}">
-                @endif
+
+             <img src="{{ asset('img/menu-mobile.png') }}">
+             @if (Auth::check())
+                <img id="avatar" src="{{ Auth::user()->profile_image() }}" alt="{{{ Auth::user()->name }}}">
+             @endif
              </span>
         </header>
         <header class="desktop" stats="hidden">
