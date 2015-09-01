@@ -32,6 +32,7 @@ li.active:nth-child(2){
 		-moz-border-radius: 7px 7px 7px 7px;
 		-webkit-border-radius: 7px 7px 7px 7px;
 		border: 0px solid #000000;
+		width: 50px;
 	}
 
 	.links a.registrate{
