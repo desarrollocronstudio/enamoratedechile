@@ -218,7 +218,6 @@ $(function(){
 });
 
 $(document).ready(function(){
-	alert('aaaaa');
 	$('.categories ul li.no-active').slideUp();
 });
 
