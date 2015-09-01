@@ -21,7 +21,7 @@
         <script>
         var BASE_URL    = '{{ URL::to('/') }}';
         var CURRENT_URL = '{{ Request::path() }}';
-        var LOGGED_IN   = "{{ Auth::check() ? 'true':'false' }}";
+        var LOGGED_IN ={{ Auth::check()?'true':'false' }};
         </script>
         <script src="{{ asset('js/vendor/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
     </head>
@@ -33,9 +33,7 @@
              <span class="mobile menu">
 
              <img src="{{ asset('img/menu-mobile.png') }}">
-             @if (Auth::check())
-                <img id="avatar" src="{{ Auth::user()->profile_image() }}" alt="{{{ Auth::user()->name }}}">
-             @endif
+             <img id="avatar" src="{{ Auth::user()->profile_image() }}" alt="{{{ Auth::user()->name }}}">
              </span>
         </header>
         <header class="desktop" stats="hidden">
