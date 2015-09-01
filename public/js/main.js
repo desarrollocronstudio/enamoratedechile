@@ -198,7 +198,7 @@ $(function(){
 
 	$(document).on("click", "div.categories > ul > li", function(){
 
-		$(this).fadeOut();
+		//$(this).fadeOut();
 		//$("div.categories > ul > li.active").fadeIn();
 
 	});
