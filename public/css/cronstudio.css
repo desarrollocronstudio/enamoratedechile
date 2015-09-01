@@ -68,6 +68,10 @@ li.active:nth-child(2){
 	    text-decoration: none;
 	    border-bottom: 1px solid #fff;
 	    text-transform: uppercase;
+	    border-image: url ("../img/arrows.png");
+	    background-repeat: no-repeat;
+	    background-position: center right;
+
 	}
 
 }
