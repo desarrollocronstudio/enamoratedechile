@@ -1,4 +1,5 @@
 <span class="cerca">Resultados:</span>
+<span class="cerca"><font color="#D83E3F">12</font> Resultados para <font color="#575757">"comida"</font></span>
 
 <div class="categories">
 	<ul>
