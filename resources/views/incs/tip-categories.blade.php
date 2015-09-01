@@ -4,7 +4,7 @@
 <div class="categories">
 	<ul>
 			<li id="secciones">
-				<a href="javascript:;">En otras secciones</a>
+				<a href="#">En otras secciones</a>
 			</li>
 		@foreach($tips_categories as $category)
 			<li class="{{ $active == $category->id?'active':'no-active' }} {{ $usable?'':'disabled' }}">
