@@ -28,7 +28,7 @@
 				<span>{{{ Auth::user()->name }}}</span>
 				<a class="sign_out" href="{{ route('logout') }}">Cerrar sesión</a>
 			</div>
-		@else 
+		@else
 			<div class="links">
 			    <a href="{{ route('signup') }}" class="signup registrate">Regístrate</a>
 				<a href="{{ route('login') }}" class="login inicia-sesion">Iniciar sesión</a>
