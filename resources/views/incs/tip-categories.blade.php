@@ -1,8 +1,8 @@
 <span class="cerca">Resultados:</span>
 
 <span class="cerca mobile "><font color="#D83E3F">{{$tips->count()}}</font> Resultados para <font color="#575757">"<?php echo Session::get('categoria'); ?>"</font></span>
-
-<span id="secciones" href="javascript:void(0);" style="display: block">En otras secciones</span>
+<?php Session::put('categoria', ''); ?>
+<span id="secciones" style="display: block">En otras secciones</span>
 
 <div class="categories">
 	<ul>
