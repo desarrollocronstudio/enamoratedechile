@@ -1,6 +1,5 @@
 <div class="menu">
     <?php
-
         $menu = Menu::handler('main')->addClass("main-nav");
         $menu->add(route('home'),"<img src='".asset("img/logo-header.jpg")."' alt='' />",null,['class' => 'img-btn logo']);
 

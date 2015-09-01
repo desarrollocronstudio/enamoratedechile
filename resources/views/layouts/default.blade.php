@@ -33,7 +33,7 @@
              <span class="mobile menu">
 
              <img src="{{ asset('img/menu-mobile.png') }}">
-             <img id="avatar" src="{{ Auth::user()->profile_image() }}" alt="{{{ Auth::user()->name }}}">
+             <img id="avatar" src="//graph.facebook.com/10207277755040967/picture" alt="Ricardo Wichar Mosqueira">
              </span>
         </header>
         <header class="desktop" stats="hidden">
