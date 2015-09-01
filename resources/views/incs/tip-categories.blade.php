@@ -2,13 +2,8 @@
 <span class="cerca mobile "><font color="#D83E3F">12</font> Resultados para <font color="#575757">"Comida"</font></span>
 
 <div class="categories">
-	<select>
-		<option>En otras secciones</option>
-	</select>
-</div>
-
-<div class="categories">
 	<ul>
+			<li id="secciones">En otras secciones</li>
 		@foreach($tips_categories as $category)
 			<li class="{{ $active == $category->id?'active':'' }} {{ $usable?'':'disabled' }}">
 				@if ($usable)
