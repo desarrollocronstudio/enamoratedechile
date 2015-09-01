@@ -207,8 +207,10 @@ $(function(){
 		
 	    if ( $('.categories ul li.no-active').is(':visible') ){
 	        $('.categories ul li.no-active').slideUp();
+	        $(this).css('background-position', '256px -39px');
 	    }else{
 	        $('.categories ul li.no-active').slideDown();
+	        $(this).css('background-position', '256px 19px');
 	    }
 	    
 	});

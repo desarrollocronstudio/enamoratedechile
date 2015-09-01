@@ -70,7 +70,7 @@ li.active:nth-child(2){
 	    text-transform: uppercase;
 	    background-image: url("../img/arrows.png");
 	    background-repeat: no-repeat;
-	    background-position: center right;
+	    background-position: 256px 19px;
 
 	}
 
