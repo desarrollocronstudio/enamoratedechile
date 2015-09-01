@@ -7,7 +7,7 @@
 				<a href="javascript:void(0);">En otras secciones</a>
 			</li>
 		@foreach($tips_categories as $category)
-			<li class="{{ $active == $category->id?'active':'' }} {{ $usable?'':'disabled' }}">
+			<li class="{{ $active == $category->id?'active':'no-active' }} {{ $usable?'':'disabled' }}">
 				@if ($usable)
 					@if(isset($from) && $from == 'tip')
 						<a href="{{ URL::route('tip_search',[$tip->sluged_name(),$tip['lat'],$tip['lng']]).qs_url(['cat' => ($active == $category->id?'':$category->id)]) }}">{{ $category["name"] }}</a>
