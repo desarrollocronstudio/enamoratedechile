@@ -2,11 +2,13 @@
 
 <span class="cerca mobile "><font color="#D83E3F">{{$tips->count()}}</font> Resultados para <font color="#575757">"<?php echo Session::get('categoria'); ?>"</font></span>
 
+<a id="secciones" href="javascript:void(0);" style="display: block">En otras secciones</a>
+
 <div class="categories">
 	<ul>
-			<li id="secciones">
+			<!--li id="secciones">
 				<a href="#">En otras secciones</a>
-			</li>
+			</li-->
 		@foreach($tips_categories as $category)
 			<li class="{{ $active == $category->id?'active':'no-active' }} {{ $usable?'':'disabled' }}">
 				@if ($usable)
