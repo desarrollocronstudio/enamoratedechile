@@ -13,7 +13,7 @@
 		<span class="city">{{ ($tip->city_name) }}</span>
 	
 		<span class="type">{{ $tip->category->name }}</span>
-		{{ Session::put('categoria', '$tip->category->name) }}
+
 	</div>
 	<div class="text">{{{ str_limit($tip["content"], 100) }}}</div>
 	@if (isset($show_rating) && $show_rating === true)
