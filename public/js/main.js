@@ -205,10 +205,10 @@ $(function(){
 
 	$(document).on("click","span#secciones", function(){
 		
-	    if ( $('.categories ul li').hasClass('active')){
-	        $('.categories ul li.no-active').slideDown();
+	    if ( $('.categories ul li').is(':visible') ){
+	        $('.categories ul li').slideDown();
 	    }else{
-	        $('.categories ul li.no-active').slideUp();
+	        $('.categories ul li').slideUp();
 	    }
 	    
 	});
