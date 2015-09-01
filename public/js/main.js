@@ -203,6 +203,16 @@ $(function(){
 
 	});
 
+	$(document).on('click',".categories ul li#secciones a").click(function(){
+
+	    if ( $('.categories ul li').hasClass('active')){
+	        $('.categories ul li.no-active').slideDown();
+	    }else{
+	        $('.categories ul li.no-active').slideUp();
+	    }
+	    
+	});
+
 });
 
 
@@ -316,12 +326,4 @@ function check_type_from_result(result,type){
 }
 
 
-$(document).on('click',".categories ul li#secciones a").click(function(){
-
-    if ( $('.categories ul li').hasClass('active')){
-        $('.categories ul li.no-active').slideDown();
-    }else{
-        $('.categories ul li.no-active').slideUp();
-    }
-});
 
