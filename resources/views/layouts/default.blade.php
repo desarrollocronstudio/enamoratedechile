@@ -33,7 +33,9 @@
              <span class="mobile menu">
 
              <img src="{{ asset('img/menu-mobile.png') }}">
-             <img id="avatar" src="//graph.facebook.com/10207277755040967/picture" alt="Ricardo Wichar Mosqueira">
+             @if (Auth::check())
+                <img id="avatar" src="//graph.facebook.com/10207277755040967/picture" alt="Ricardo Wichar Mosqueira">
+             @endif
              </span>
         </header>
         <header class="desktop" stats="hidden">
