@@ -206,9 +206,9 @@ $(function(){
 	$(document).on("click","span#secciones", function(){
 		
 	    if ( $('.categories ul li').is(':visible') ){
-	        $('.categories ul li').slideDown();
-	    }else{
 	        $('.categories ul li').slideUp();
+	    }else{
+	        $('.categories ul li').slideDown();
 	    }
 	    
 	});
