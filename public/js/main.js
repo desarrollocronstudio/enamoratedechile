@@ -218,7 +218,7 @@ $(function(){
 });
 
 $(document).ready(function(){
-	$('.categories ul li.no-active').slideUp();
+	//$('.categories ul li.no-active').slideUp();
 });
 
 
