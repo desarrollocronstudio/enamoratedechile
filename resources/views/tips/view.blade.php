@@ -31,7 +31,7 @@
         <h4 class="autor">{{{ Laravel\Str::words($tip->author->name,1,'') }}}</h4>
 
         <div class="images">
-            <h2 class="slide">Imágenes del lugar</h2>
+            <h2 class="slide">Imágenes del Detalle del Lugar</h2>
             <ul class="imgs">
                 @foreach($tip->images() as $img)
                     <li><a href="{{ $img }}" rel="shadowbox[gal]">
@@ -41,7 +41,7 @@
             </ul>
         </div>
         <div class="detail">
-            <h2 class="slide">Detalle</h2>
+            <!--h2 class="slide">Detalle</h2-->
             <p>{!! nl2br(e($tip->content)) !!}</p>
         </div>
         <h2 class="slide">Mapa del lugar</h2>

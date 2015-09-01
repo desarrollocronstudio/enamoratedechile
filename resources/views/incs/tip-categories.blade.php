@@ -1,4 +1,4 @@
-<div class="categories">
+<div class="categories">hhh
 	<ul>
 		@foreach($tips_categories as $category)
 			<li class="{{ $active == $category->id?'active':'' }} {{ $usable?'':'disabled' }}">

@@ -285,7 +285,7 @@ LOGIN
 .detalle_city .imgs li{width: 150px; display: inline-block; overflow: hidden; border-radius:10px;}
 .detalle_city .imgs li img{width: 100%; border-radius:10px;}
 .detalle_city .images{width:100%; float: left;}
-.detalle_city .detail{width:45%; float: left; text-align: left;}
+.detalle_city .detail{width:100%; float: left; text-align: left;}
 .detalle_city .rating-count{text-align: left;}
 .detalle_city .recomendacion{padding-top: 10px;  margin-bottom: 0;}
 .detalle_city .address{text-align: left; margin-top:0; margin-bottom: 10px; display:block}
@@ -408,7 +408,7 @@ LOGIN
         /*.detalle_city .imgs li img {width:100%;float: left;border-radius: 10px;}*/
         .detalle_city .imgs li img {width: 320px; float: left; border-radius: 10px; height: 200px;}
         .principal{display: none;}
-        .detalle_city h2.slide {font-family: 'boogalooregular';font-size: 1.8em;color: #d70303;text-shadow:none;text-align: left;clear: both; margin: 0}
+        .detalle_city h2.slide {font-family: 'boogalooregular';font-size: 1.7em;color: #d70303;text-shadow:none;text-align: left;clear: both; margin: 0}
         .detalle_city h2.recomendacion {font-size: 1.1em;color: #d70303;text-shadow:none;text-align: left;clear: both; line-height: 1.1em;margin: 5% 0;}
         .detalle_city ul {width: 100%;margin: 0 auto;text-align: center;list-style: none;padding: 0;}
         .detalle_city .imgs li {width: 125px;overflow: hidden;}
