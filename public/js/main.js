@@ -196,12 +196,12 @@ $(function(){
 	});
 
 
-	$(document).on("click", "div.categories > ul > li > a", function(){
+	/*$(document).on("click", "div.categories > ul > li > a", function(){
 
 		var categoria = $(this).text();
 		//$("div.categories > ul > li.active").fadeIn();
 
-	});
+	});*/
 
 	$(document).on("click",".categories ul li#secciones a").click(function(){
 		

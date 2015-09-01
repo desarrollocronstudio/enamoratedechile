@@ -1,5 +1,5 @@
 <span class="cerca">Resultados:</span>
-<?php print_r($_SESSION); ?>
+<?php echo Session::get('categoria'); ?>
 <span class="cerca mobile "><font color="#D83E3F">{{$tips->count()}}</font> Resultados para <font color="#575757">"comida"</font></span>
 
 <div class="categories">
