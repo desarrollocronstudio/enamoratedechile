@@ -1,7 +1,6 @@
-<div class="categories">
-
 <span class="cerca">Resultados:</span>
 
+<div class="categories">
 	<ul>
 		@foreach($tips_categories as $category)
 			<li class="{{ $active == $category->id?'active':'' }} {{ $usable?'':'disabled' }}">
