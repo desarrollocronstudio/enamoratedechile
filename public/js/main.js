@@ -203,7 +203,7 @@ $(function(){
 
 	});*/
 
-	$(document).on("click","span#secciones").click(function(){
+	$(document).on("click","span#secciones", function(){
 		
 		alert('aaa');
 	    
