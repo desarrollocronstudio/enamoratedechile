@@ -34,7 +34,7 @@
 
              <img src="{{ asset('img/menu-mobile.png') }}">
              @if (Auth::check())
-                <img id="avatar" src="//graph.facebook.com/10207277755040967/picture" alt="Ricardo Wichar Mosqueira">
+                <img src="{{ Auth::user()->profile_image() }}" alt="{{{ Auth::user()->name }}}" />
              @endif
              </span>
         </header>
