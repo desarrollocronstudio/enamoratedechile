@@ -17,7 +17,6 @@
 	<section class="datos container">
 		@if ($tips->count() > 0)
 			@foreach ($tips as $tip)
-				<?php Session::put('categoria', $tip->category->name); ?>
 				@include("tips.preview",["tip" => $tip])
 			@endforeach
 		@else 
