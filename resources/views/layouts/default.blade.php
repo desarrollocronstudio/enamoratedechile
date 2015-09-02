@@ -33,7 +33,7 @@
              <span class="mobile menu">
                  <img src="{{ asset('img/menu-mobile.png') }}">
                  @if (Auth::check())
-                    <img class="avatar" src="{{ Auth::user()->profile_image() }}" alt="{{{ Auth::user()->name }}}" />
+                    <img class="avatar"  src="{{ Auth::user()->profile_image() }}" alt="{{{ Auth::user()->name }}}" />
                  @endif
              </span>
         </header>
