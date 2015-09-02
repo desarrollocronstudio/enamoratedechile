@@ -89,4 +89,8 @@ li.active:nth-child(2){
 		border: 0px solid #000000;
 	}
 
+	#conteiner{
+		overflow: hidden;
+	}
+
 }
