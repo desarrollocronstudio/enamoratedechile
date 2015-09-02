@@ -30,7 +30,7 @@
                 <p class="browsehappy">Están usando un navegador web <strong>obsoleto</strong>. Por favor <a href="http://browsehappy.com/">actualízalo</a> para mejorar tu experiencia.</p>
         <![endif]-->
         <header class="mobile" style="position: fixed; top: 0px; z-index: 1000;">
-             <span class="mobile menu">s
+             <span class="mobile menu">
                  <img src="{{ asset('img/menu-mobile.png') }}">
                  @if (Auth::check())
                     <img src="{{ Auth::user()->profile_image() }}" alt="{{{ Auth::user()->name }}}" />
