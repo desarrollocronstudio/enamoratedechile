@@ -23,7 +23,9 @@
 	<div class="userdata"> 
 		@if (Auth::check())
 			<div class="user">
-				<img src="{{ Auth::user()->profile_image() }}" alt="{{{ Auth::user()->name }}}" />
+				@if (Auth::check())
+					<img src="{{ Auth::user()->profile_image() }}" alt="{{{ Auth::user()->name }}}" />
+				@endif
 				<span>{{{ Auth::user()->name }}}</span>
 				<a class="sign_out" href="{{ route('logout') }}">Cerrar sesión</a>
 			</div>
