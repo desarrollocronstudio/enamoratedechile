@@ -24,7 +24,7 @@
         var LOGGED_IN ={{ Auth::check()?'true':'false' }};
         </script>
         <script src="{{ asset('js/vendor/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
-    </head>
+    </head> 
     <body>
         <!--[if lt IE 9]>
                 <p class="browsehappy">Están usando un navegador web <strong>obsoleto</strong>. Por favor <a href="http://browsehappy.com/">actualízalo</a> para mejorar tu experiencia.</p>
