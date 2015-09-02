@@ -35,4 +35,4 @@
 <script>
 	window.location.hash="view-content";
 </script>
-@append
+@append 

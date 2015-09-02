@@ -40,4 +40,4 @@
 	    <a href="https://twitter.com/share" data-url="{{ Config::get("app.url") }}" class="twitter-share-button" data-lang="es">Tweet</a>
 	</div>
 	@endif
-</div>
+</div> 

@@ -24,4 +24,4 @@
 	</div>
 	@endif
 	<a class="red-btn" href="{{ route('view-tip',[$tip->id, $tip->sluged_name()]) }}#view-content">{{ trans("Leer más") }}</a>
-</div>
+</div> 

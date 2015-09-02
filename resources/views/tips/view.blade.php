@@ -198,5 +198,5 @@ function post_rating(rating){
     },"json");
 }
 Shadowbox.init();
-</script>
+</script> 
 @append
