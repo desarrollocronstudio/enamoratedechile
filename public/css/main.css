@@ -133,7 +133,7 @@ header .submenu .userdata a:hover{color: #ccc; opacity: 1;}
 header.desktop{position: relative; z-index: 1;}
 header.desktop .submenu .shares .fb-like{float: left;}
 header.desktop .submenu .shares .twitter-share-button{padding-top: 5px; float: left; padding-left: 10px;}
-.logo{text-align: center; clear: both; margin: 0 auto; display: block;  display: block;  max-width: 80%;}
+.logo{text-align: center; clear: both; margin: 0 auto; display: block;  display: block;  max-width: 80%; padding-top: 3%;}
 
 
 /* Search Box */
@@ -431,7 +431,6 @@ LOGIN
         .btn-enviar{width: 100%; float: none; margin: 0 auto; overflow: hidden; padding-top: 10px; background-repeat: no-repeat; background-position: center center; }
         .copyright{width: 90%; margin: 10px auto;}
         .bases{padding: 0;}
-        .logo{padding-top: 3%;}
     }
     /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
     @media only screen and (min-width: 480px) and (max-width: 767px) {
